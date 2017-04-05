@@ -1,0 +1,1436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3A700471E40803C00E5393F /* MAIKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700451E40803C00E5393F /* MAIKit-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700541E40806800E5393F /* MAIKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700521E40806800E5393F /* MAIKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700EC1E40808300E5393F /* MAIAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005A1E40808300E5393F /* MAIAccessibilityElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700ED1E40808300E5393F /* MAIAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005A1E40808300E5393F /* MAIAccessibilityElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700EE1E40808300E5393F /* MAIAccessibilityElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7005B1E40808300E5393F /* MAIAccessibilityElement.m */; };
+		B3A700EF1E40808300E5393F /* MAIAccessibilityElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7005B1E40808300E5393F /* MAIAccessibilityElement.m */; };
+		B3A700F01E40808300E5393F /* MAIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005C1E40808300E5393F /* MAIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700F11E40808300E5393F /* MAIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005C1E40808300E5393F /* MAIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700F21E40808300E5393F /* MAIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7005D1E40808300E5393F /* MAIApplication.m */; };
+		B3A700F31E40808300E5393F /* MAIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7005D1E40808300E5393F /* MAIApplication.m */; };
+		B3A700F41E40808300E5393F /* MAIApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005E1E40808300E5393F /* MAIApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700F51E40808300E5393F /* MAIApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005E1E40808300E5393F /* MAIApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700F61E40808300E5393F /* MAIBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005F1E40808300E5393F /* MAIBezierPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700F71E40808300E5393F /* MAIBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7005F1E40808300E5393F /* MAIBezierPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700F81E40808300E5393F /* MAIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700601E40808300E5393F /* MAIBezierPath.m */; };
+		B3A700F91E40808300E5393F /* MAIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700601E40808300E5393F /* MAIBezierPath.m */; };
+		B3A700FA1E40808300E5393F /* MAIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700611E40808300E5393F /* MAIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700FB1E40808300E5393F /* MAIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700611E40808300E5393F /* MAIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700FC1E40808300E5393F /* MAIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700621E40808300E5393F /* MAIButton.m */; };
+		B3A700FD1E40808300E5393F /* MAIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700621E40808300E5393F /* MAIButton.m */; };
+		B3A700FE1E40808300E5393F /* MAICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700631E40808300E5393F /* MAICollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A700FF1E40808300E5393F /* MAICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700631E40808300E5393F /* MAICollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701001E40808300E5393F /* MAICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700641E40808300E5393F /* MAICollectionView.m */; };
+		B3A701011E40808300E5393F /* MAICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700641E40808300E5393F /* MAICollectionView.m */; };
+		B3A701021E40808300E5393F /* MAICollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700651E40808300E5393F /* MAICollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701031E40808300E5393F /* MAICollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700651E40808300E5393F /* MAICollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701041E40808300E5393F /* MAICollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700661E40808300E5393F /* MAICollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701051E40808300E5393F /* MAICollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700661E40808300E5393F /* MAICollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701061E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700671E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701071E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700671E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701081E40808300E5393F /* MAICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700681E40808300E5393F /* MAICollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701091E40808300E5393F /* MAICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700681E40808300E5393F /* MAICollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7010A1E40808300E5393F /* MAICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700691E40808300E5393F /* MAICollectionViewFlowLayout.m */; };
+		B3A7010B1E40808300E5393F /* MAICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700691E40808300E5393F /* MAICollectionViewFlowLayout.m */; };
+		B3A7010C1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7006A1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7010D1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7006A1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7010E1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7006B1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m */; };
+		B3A7010F1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7006B1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m */; };
+		B3A701101E40808300E5393F /* MAICollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7006C1E40808300E5393F /* MAICollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701111E40808300E5393F /* MAICollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7006C1E40808300E5393F /* MAICollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701121E40808300E5393F /* MAICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7006D1E40808300E5393F /* MAICollectionViewLayout.m */; };
+		B3A701131E40808300E5393F /* MAICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7006D1E40808300E5393F /* MAICollectionViewLayout.m */; };
+		B3A701141E40808300E5393F /* MAICollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7006E1E40808300E5393F /* MAICollectionViewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701151E40808300E5393F /* MAICollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7006E1E40808300E5393F /* MAICollectionViewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701161E40808300E5393F /* MAICollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7006F1E40808300E5393F /* MAICollectionViewLayoutAttributes.m */; };
+		B3A701171E40808300E5393F /* MAICollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7006F1E40808300E5393F /* MAICollectionViewLayoutAttributes.m */; };
+		B3A701181E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700701E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701191E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700701E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7011A1E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700711E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m */; };
+		B3A7011B1E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700711E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m */; };
+		B3A7011C1E40808300E5393F /* MAICollectionViewTransitionLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700721E40808300E5393F /* MAICollectionViewTransitionLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7011D1E40808300E5393F /* MAICollectionViewTransitionLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700721E40808300E5393F /* MAICollectionViewTransitionLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7011E1E40808300E5393F /* MAICollectionViewTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700731E40808300E5393F /* MAICollectionViewTransitionLayout.m */; };
+		B3A7011F1E40808300E5393F /* MAICollectionViewTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700731E40808300E5393F /* MAICollectionViewTransitionLayout.m */; };
+		B3A701201E40808300E5393F /* MAICollectionViewUpdateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700741E40808300E5393F /* MAICollectionViewUpdateItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701211E40808300E5393F /* MAICollectionViewUpdateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700741E40808300E5393F /* MAICollectionViewUpdateItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701221E40808300E5393F /* MAICollectionViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700751E40808300E5393F /* MAICollectionViewUpdateItem.m */; };
+		B3A701231E40808300E5393F /* MAICollectionViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700751E40808300E5393F /* MAICollectionViewUpdateItem.m */; };
+		B3A701241E40808300E5393F /* MAIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700761E40808300E5393F /* MAIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701251E40808300E5393F /* MAIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700761E40808300E5393F /* MAIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701261E40808300E5393F /* MAIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700771E40808300E5393F /* MAIColor.m */; };
+		B3A701271E40808300E5393F /* MAIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700771E40808300E5393F /* MAIColor.m */; };
+		B3A701281E40808300E5393F /* MAIControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700781E40808300E5393F /* MAIControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701291E40808300E5393F /* MAIControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700781E40808300E5393F /* MAIControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7012A1E40808300E5393F /* MAIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700791E40808300E5393F /* MAIControl.m */; };
+		B3A7012B1E40808300E5393F /* MAIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700791E40808300E5393F /* MAIControl.m */; };
+		B3A7012C1E40808300E5393F /* MAIDataAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007A1E40808300E5393F /* MAIDataAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7012D1E40808300E5393F /* MAIDataAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007A1E40808300E5393F /* MAIDataAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7012E1E40808300E5393F /* MAIDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7007B1E40808300E5393F /* MAIDataAsset.m */; };
+		B3A7012F1E40808300E5393F /* MAIDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7007B1E40808300E5393F /* MAIDataAsset.m */; };
+		B3A701301E40808300E5393F /* MAIDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007C1E40808300E5393F /* MAIDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701311E40808300E5393F /* MAIDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007C1E40808300E5393F /* MAIDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701321E40808300E5393F /* MAIDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7007D1E40808300E5393F /* MAIDatePicker.m */; };
+		B3A701331E40808300E5393F /* MAIDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7007D1E40808300E5393F /* MAIDatePicker.m */; };
+		B3A701341E40808300E5393F /* MAIDeclarations.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007E1E40808300E5393F /* MAIDeclarations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701351E40808300E5393F /* MAIDeclarations.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007E1E40808300E5393F /* MAIDeclarations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701361E40808300E5393F /* MAIDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007F1E40808300E5393F /* MAIDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701371E40808300E5393F /* MAIDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7007F1E40808300E5393F /* MAIDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701381E40808300E5393F /* MAIDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700801E40808300E5393F /* MAIDocument.m */; };
+		B3A701391E40808300E5393F /* MAIDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700801E40808300E5393F /* MAIDocument.m */; };
+		B3A7013A1E40808300E5393F /* MAIEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700811E40808300E5393F /* MAIEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7013B1E40808300E5393F /* MAIEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700811E40808300E5393F /* MAIEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7013C1E40808300E5393F /* MAIEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700821E40808300E5393F /* MAIEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7013D1E40808300E5393F /* MAIEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700821E40808300E5393F /* MAIEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7013E1E40808300E5393F /* MAIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700831E40808300E5393F /* MAIEvent.m */; };
+		B3A7013F1E40808300E5393F /* MAIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700831E40808300E5393F /* MAIEvent.m */; };
+		B3A701401E40808300E5393F /* MAIFont.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700841E40808300E5393F /* MAIFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701411E40808300E5393F /* MAIFont.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700841E40808300E5393F /* MAIFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701421E40808300E5393F /* MAIFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700851E40808300E5393F /* MAIFont.m */; };
+		B3A701431E40808300E5393F /* MAIFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700851E40808300E5393F /* MAIFont.m */; };
+		B3A701441E40808300E5393F /* MAIFontDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700861E40808300E5393F /* MAIFontDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701451E40808300E5393F /* MAIFontDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700861E40808300E5393F /* MAIFontDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701461E40808300E5393F /* MAIFontDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700871E40808300E5393F /* MAIFontDescriptor.m */; };
+		B3A701471E40808300E5393F /* MAIFontDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700871E40808300E5393F /* MAIFontDescriptor.m */; };
+		B3A701481E40808300E5393F /* MAIGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700881E40808300E5393F /* MAIGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701491E40808300E5393F /* MAIGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700881E40808300E5393F /* MAIGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7014A1E40808300E5393F /* MAIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700891E40808300E5393F /* MAIGestureRecognizer.m */; };
+		B3A7014B1E40808300E5393F /* MAIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700891E40808300E5393F /* MAIGestureRecognizer.m */; };
+		B3A7014C1E40808300E5393F /* MAIGestureRecognizerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008A1E40808300E5393F /* MAIGestureRecognizerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7014D1E40808300E5393F /* MAIGestureRecognizerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008A1E40808300E5393F /* MAIGestureRecognizerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7014E1E40808300E5393F /* MAIImage.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008B1E40808300E5393F /* MAIImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7014F1E40808300E5393F /* MAIImage.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008B1E40808300E5393F /* MAIImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701501E40808300E5393F /* MAIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7008C1E40808300E5393F /* MAIImage.m */; };
+		B3A701511E40808300E5393F /* MAIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7008C1E40808300E5393F /* MAIImage.m */; };
+		B3A701521E40808300E5393F /* MAIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008D1E40808300E5393F /* MAIImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701531E40808300E5393F /* MAIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008D1E40808300E5393F /* MAIImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701541E40808300E5393F /* MAIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7008E1E40808300E5393F /* MAIImageView.m */; };
+		B3A701551E40808300E5393F /* MAIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7008E1E40808300E5393F /* MAIImageView.m */; };
+		B3A701561E40808300E5393F /* MAIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008F1E40808300E5393F /* MAIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701571E40808300E5393F /* MAIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7008F1E40808300E5393F /* MAIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701581E40808300E5393F /* MAILayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700901E40808300E5393F /* MAILayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701591E40808300E5393F /* MAILayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700901E40808300E5393F /* MAILayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7015A1E40808300E5393F /* MAILayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700911E40808300E5393F /* MAILayoutConstraint.m */; };
+		B3A7015B1E40808300E5393F /* MAILayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700911E40808300E5393F /* MAILayoutConstraint.m */; };
+		B3A7015C1E40808300E5393F /* MAILayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700921E40808300E5393F /* MAILayoutDimension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7015D1E40808300E5393F /* MAILayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700921E40808300E5393F /* MAILayoutDimension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7015E1E40808300E5393F /* MAILayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700931E40808300E5393F /* MAILayoutDimension.m */; };
+		B3A7015F1E40808300E5393F /* MAILayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700931E40808300E5393F /* MAILayoutDimension.m */; };
+		B3A701601E40808300E5393F /* MAILayoutGuide.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700941E40808300E5393F /* MAILayoutGuide.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701611E40808300E5393F /* MAILayoutGuide.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700941E40808300E5393F /* MAILayoutGuide.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701621E40808300E5393F /* MAILayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700951E40808300E5393F /* MAILayoutGuide.m */; };
+		B3A701631E40808300E5393F /* MAILayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700951E40808300E5393F /* MAILayoutGuide.m */; };
+		B3A701641E40808300E5393F /* MAILayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700961E40808300E5393F /* MAILayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701651E40808300E5393F /* MAILayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700961E40808300E5393F /* MAILayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701661E40808300E5393F /* MAILayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700971E40808300E5393F /* MAILayoutManager.m */; };
+		B3A701671E40808300E5393F /* MAILayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700971E40808300E5393F /* MAILayoutManager.m */; };
+		B3A701681E40808300E5393F /* MAILayoutManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700981E40808300E5393F /* MAILayoutManagerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701691E40808300E5393F /* MAILayoutManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700981E40808300E5393F /* MAILayoutManagerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7016A1E40808300E5393F /* MAILayoutXAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700991E40808300E5393F /* MAILayoutXAxisAnchor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7016B1E40808300E5393F /* MAILayoutXAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700991E40808300E5393F /* MAILayoutXAxisAnchor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7016C1E40808300E5393F /* MAILayoutXAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7009A1E40808300E5393F /* MAILayoutXAxisAnchor.m */; };
+		B3A7016D1E40808300E5393F /* MAILayoutXAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7009A1E40808300E5393F /* MAILayoutXAxisAnchor.m */; };
+		B3A7016E1E40808300E5393F /* MAILayoutYAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7009B1E40808300E5393F /* MAILayoutYAxisAnchor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7016F1E40808300E5393F /* MAILayoutYAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7009B1E40808300E5393F /* MAILayoutYAxisAnchor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701701E40808300E5393F /* MAILayoutYAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7009C1E40808300E5393F /* MAILayoutYAxisAnchor.m */; };
+		B3A701711E40808300E5393F /* MAILayoutYAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7009C1E40808300E5393F /* MAILayoutYAxisAnchor.m */; };
+		B3A701721E40808300E5393F /* MAIMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7009D1E40808300E5393F /* MAIMenuItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701731E40808300E5393F /* MAIMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7009D1E40808300E5393F /* MAIMenuItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701741E40808300E5393F /* MAIMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7009E1E40808300E5393F /* MAIMenuItem.m */; };
+		B3A701751E40808300E5393F /* MAIMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A7009E1E40808300E5393F /* MAIMenuItem.m */; };
+		B3A701761E40808300E5393F /* MAIMutableParagraphStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7009F1E40808300E5393F /* MAIMutableParagraphStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701771E40808300E5393F /* MAIMutableParagraphStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A7009F1E40808300E5393F /* MAIMutableParagraphStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701781E40808300E5393F /* MAIMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A01E40808300E5393F /* MAIMutableParagraphStyle.m */; };
+		B3A701791E40808300E5393F /* MAIMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A01E40808300E5393F /* MAIMutableParagraphStyle.m */; };
+		B3A7017A1E40808300E5393F /* MAINib.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A11E40808300E5393F /* MAINib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7017B1E40808300E5393F /* MAINib.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A11E40808300E5393F /* MAINib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7017C1E40808300E5393F /* MAINib.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A21E40808300E5393F /* MAINib.m */; };
+		B3A7017D1E40808300E5393F /* MAINib.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A21E40808300E5393F /* MAINib.m */; };
+		B3A7017E1E40808300E5393F /* MAIPanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A31E40808300E5393F /* MAIPanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7017F1E40808300E5393F /* MAIPanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A31E40808300E5393F /* MAIPanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701801E40808300E5393F /* MAIPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A41E40808300E5393F /* MAIPanGestureRecognizer.m */; };
+		B3A701811E40808300E5393F /* MAIPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A41E40808300E5393F /* MAIPanGestureRecognizer.m */; };
+		B3A701821E40808300E5393F /* MAIParagraphStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A51E40808300E5393F /* MAIParagraphStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701831E40808300E5393F /* MAIParagraphStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A51E40808300E5393F /* MAIParagraphStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701841E40808300E5393F /* MAIParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A61E40808300E5393F /* MAIParagraphStyle.m */; };
+		B3A701851E40808300E5393F /* MAIParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A61E40808300E5393F /* MAIParagraphStyle.m */; };
+		B3A701861E40808300E5393F /* MAIPasteboard.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A71E40808300E5393F /* MAIPasteboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701871E40808300E5393F /* MAIPasteboard.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A71E40808300E5393F /* MAIPasteboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701881E40808300E5393F /* MAIPasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A81E40808300E5393F /* MAIPasteboard.m */; };
+		B3A701891E40808300E5393F /* MAIPasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700A81E40808300E5393F /* MAIPasteboard.m */; };
+		B3A7018A1E40808300E5393F /* MAIPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A91E40808300E5393F /* MAIPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7018B1E40808300E5393F /* MAIPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700A91E40808300E5393F /* MAIPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7018C1E40808300E5393F /* MAIPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700AA1E40808300E5393F /* MAIPrinter.m */; };
+		B3A7018D1E40808300E5393F /* MAIPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700AA1E40808300E5393F /* MAIPrinter.m */; };
+		B3A7018E1E40808300E5393F /* MAIPrintInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700AB1E40808300E5393F /* MAIPrintInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7018F1E40808300E5393F /* MAIPrintInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700AB1E40808300E5393F /* MAIPrintInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701901E40808300E5393F /* MAIPrintInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700AC1E40808300E5393F /* MAIPrintInfo.m */; };
+		B3A701911E40808300E5393F /* MAIPrintInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700AC1E40808300E5393F /* MAIPrintInfo.m */; };
+		B3A701921E40808300E5393F /* MAIResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700AD1E40808300E5393F /* MAIResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701931E40808300E5393F /* MAIResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700AD1E40808300E5393F /* MAIResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701941E40808300E5393F /* MAIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700AE1E40808300E5393F /* MAIResponder.m */; };
+		B3A701951E40808300E5393F /* MAIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700AE1E40808300E5393F /* MAIResponder.m */; };
+		B3A701961E40808300E5393F /* MAIRotationGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700AF1E40808300E5393F /* MAIRotationGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701971E40808300E5393F /* MAIRotationGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700AF1E40808300E5393F /* MAIRotationGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701981E40808300E5393F /* MAIRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B01E40808300E5393F /* MAIRotationGestureRecognizer.m */; };
+		B3A701991E40808300E5393F /* MAIRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B01E40808300E5393F /* MAIRotationGestureRecognizer.m */; };
+		B3A7019A1E40808300E5393F /* MAIScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B11E40808300E5393F /* MAIScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7019B1E40808300E5393F /* MAIScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B11E40808300E5393F /* MAIScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7019C1E40808300E5393F /* MAIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B21E40808300E5393F /* MAIScreen.m */; };
+		B3A7019D1E40808300E5393F /* MAIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B21E40808300E5393F /* MAIScreen.m */; };
+		B3A7019E1E40808300E5393F /* MAIScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B31E40808300E5393F /* MAIScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7019F1E40808300E5393F /* MAIScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B31E40808300E5393F /* MAIScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701A01E40808300E5393F /* MAIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B41E40808300E5393F /* MAIScrollView.m */; };
+		B3A701A11E40808300E5393F /* MAIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B41E40808300E5393F /* MAIScrollView.m */; };
+		B3A701A21E40808300E5393F /* MAISegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B51E40808300E5393F /* MAISegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701A31E40808300E5393F /* MAISegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B51E40808300E5393F /* MAISegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701A41E40808300E5393F /* MAISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B61E40808300E5393F /* MAISegmentedControl.m */; };
+		B3A701A51E40808300E5393F /* MAISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B61E40808300E5393F /* MAISegmentedControl.m */; };
+		B3A701A61E40808300E5393F /* MAIShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B71E40808300E5393F /* MAIShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701A71E40808300E5393F /* MAIShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B71E40808300E5393F /* MAIShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701A81E40808300E5393F /* MAIShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B81E40808300E5393F /* MAIShadow.m */; };
+		B3A701A91E40808300E5393F /* MAIShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700B81E40808300E5393F /* MAIShadow.m */; };
+		B3A701AA1E40808300E5393F /* MAISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B91E40808300E5393F /* MAISlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701AB1E40808300E5393F /* MAISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700B91E40808300E5393F /* MAISlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701AC1E40808300E5393F /* MAISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700BA1E40808300E5393F /* MAISlider.m */; };
+		B3A701AD1E40808300E5393F /* MAISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700BA1E40808300E5393F /* MAISlider.m */; };
+		B3A701AE1E40808300E5393F /* MAISplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700BB1E40808300E5393F /* MAISplitViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701AF1E40808300E5393F /* MAISplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700BB1E40808300E5393F /* MAISplitViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701B01E40808300E5393F /* MAISplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700BC1E40808300E5393F /* MAISplitViewController.m */; };
+		B3A701B11E40808300E5393F /* MAISplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700BC1E40808300E5393F /* MAISplitViewController.m */; };
+		B3A701B21E40808300E5393F /* MAIStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700BD1E40808300E5393F /* MAIStackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701B31E40808300E5393F /* MAIStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700BD1E40808300E5393F /* MAIStackView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701B41E40808300E5393F /* MAIStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700BE1E40808300E5393F /* MAIStackView.m */; };
+		B3A701B51E40808300E5393F /* MAIStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700BE1E40808300E5393F /* MAIStackView.m */; };
+		B3A701B61E40808300E5393F /* MAIStepper.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700BF1E40808300E5393F /* MAIStepper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701B71E40808300E5393F /* MAIStepper.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700BF1E40808300E5393F /* MAIStepper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701B81E40808300E5393F /* MAIStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C01E40808300E5393F /* MAIStepper.m */; };
+		B3A701B91E40808300E5393F /* MAIStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C01E40808300E5393F /* MAIStepper.m */; };
+		B3A701BA1E40808300E5393F /* MAIStoryboard.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C11E40808300E5393F /* MAIStoryboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701BB1E40808300E5393F /* MAIStoryboard.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C11E40808300E5393F /* MAIStoryboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701BC1E40808300E5393F /* MAIStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C21E40808300E5393F /* MAIStoryboard.m */; };
+		B3A701BD1E40808300E5393F /* MAIStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C21E40808300E5393F /* MAIStoryboard.m */; };
+		B3A701BE1E40808300E5393F /* MAIStoryboardSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C31E40808300E5393F /* MAIStoryboardSegue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701BF1E40808300E5393F /* MAIStoryboardSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C31E40808300E5393F /* MAIStoryboardSegue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701C01E40808300E5393F /* MAIStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C41E40808300E5393F /* MAIStoryboardSegue.m */; };
+		B3A701C11E40808300E5393F /* MAIStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C41E40808300E5393F /* MAIStoryboardSegue.m */; };
+		B3A701C21E40808300E5393F /* MAIStringDrawingContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C51E40808300E5393F /* MAIStringDrawingContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701C31E40808300E5393F /* MAIStringDrawingContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C51E40808300E5393F /* MAIStringDrawingContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701C41E40808300E5393F /* MAIStringDrawingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C61E40808300E5393F /* MAIStringDrawingContext.m */; };
+		B3A701C51E40808300E5393F /* MAIStringDrawingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C61E40808300E5393F /* MAIStringDrawingContext.m */; };
+		B3A701C61E40808300E5393F /* MAITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C71E40808300E5393F /* MAITableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701C71E40808300E5393F /* MAITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C71E40808300E5393F /* MAITableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701C81E40808300E5393F /* MAITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C81E40808300E5393F /* MAITableView.m */; };
+		B3A701C91E40808300E5393F /* MAITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700C81E40808300E5393F /* MAITableView.m */; };
+		B3A701CA1E40808300E5393F /* MAITableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C91E40808300E5393F /* MAITableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701CB1E40808300E5393F /* MAITableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700C91E40808300E5393F /* MAITableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701CC1E40808300E5393F /* MAITableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CA1E40808300E5393F /* MAITableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701CD1E40808300E5393F /* MAITableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CA1E40808300E5393F /* MAITableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701CE1E40808300E5393F /* MAITableViewRowAction.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CB1E40808300E5393F /* MAITableViewRowAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701CF1E40808300E5393F /* MAITableViewRowAction.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CB1E40808300E5393F /* MAITableViewRowAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701D01E40808300E5393F /* MAITableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700CC1E40808300E5393F /* MAITableViewRowAction.m */; };
+		B3A701D11E40808300E5393F /* MAITableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700CC1E40808300E5393F /* MAITableViewRowAction.m */; };
+		B3A701D21E40808300E5393F /* MAITextAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CD1E40808300E5393F /* MAITextAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701D31E40808300E5393F /* MAITextAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CD1E40808300E5393F /* MAITextAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701D41E40808300E5393F /* MAITextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700CE1E40808300E5393F /* MAITextAttachment.m */; };
+		B3A701D51E40808300E5393F /* MAITextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700CE1E40808300E5393F /* MAITextAttachment.m */; };
+		B3A701D61E40808300E5393F /* MAITextAttachmentContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CF1E40808300E5393F /* MAITextAttachmentContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701D71E40808300E5393F /* MAITextAttachmentContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700CF1E40808300E5393F /* MAITextAttachmentContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701D81E40808300E5393F /* MAITextContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D01E40808300E5393F /* MAITextContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701D91E40808300E5393F /* MAITextContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D01E40808300E5393F /* MAITextContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701DA1E40808300E5393F /* MAITextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700D11E40808300E5393F /* MAITextContainer.m */; };
+		B3A701DB1E40808300E5393F /* MAITextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700D11E40808300E5393F /* MAITextContainer.m */; };
+		B3A701DC1E40808300E5393F /* MAITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D21E40808300E5393F /* MAITextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701DD1E40808300E5393F /* MAITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D21E40808300E5393F /* MAITextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701DE1E40808300E5393F /* MAITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700D31E40808300E5393F /* MAITextField.m */; };
+		B3A701DF1E40808300E5393F /* MAITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700D31E40808300E5393F /* MAITextField.m */; };
+		B3A701E01E40808300E5393F /* MAITextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D41E40808300E5393F /* MAITextFieldDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E11E40808300E5393F /* MAITextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D41E40808300E5393F /* MAITextFieldDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E21E40808300E5393F /* MAITextInput.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D51E40808300E5393F /* MAITextInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E31E40808300E5393F /* MAITextInput.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D51E40808300E5393F /* MAITextInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E41E40808300E5393F /* MAITextLayoutOrientationProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D61E40808300E5393F /* MAITextLayoutOrientationProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E51E40808300E5393F /* MAITextLayoutOrientationProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D61E40808300E5393F /* MAITextLayoutOrientationProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E61E40808300E5393F /* MAITextStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D71E40808300E5393F /* MAITextStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E71E40808300E5393F /* MAITextStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D71E40808300E5393F /* MAITextStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701E81E40808300E5393F /* MAITextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700D81E40808300E5393F /* MAITextStorage.m */; };
+		B3A701E91E40808300E5393F /* MAITextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700D81E40808300E5393F /* MAITextStorage.m */; };
+		B3A701EA1E40808300E5393F /* MAITextStorageDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D91E40808300E5393F /* MAITextStorageDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701EB1E40808300E5393F /* MAITextStorageDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700D91E40808300E5393F /* MAITextStorageDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701EC1E40808300E5393F /* MAITextTab.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DA1E40808300E5393F /* MAITextTab.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701ED1E40808300E5393F /* MAITextTab.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DA1E40808300E5393F /* MAITextTab.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701EE1E40808300E5393F /* MAITextTab.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700DB1E40808300E5393F /* MAITextTab.m */; };
+		B3A701EF1E40808300E5393F /* MAITextTab.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700DB1E40808300E5393F /* MAITextTab.m */; };
+		B3A701F01E40808300E5393F /* MAITextView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DC1E40808300E5393F /* MAITextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701F11E40808300E5393F /* MAITextView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DC1E40808300E5393F /* MAITextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701F21E40808300E5393F /* MAITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700DD1E40808300E5393F /* MAITextView.m */; };
+		B3A701F31E40808300E5393F /* MAITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700DD1E40808300E5393F /* MAITextView.m */; };
+		B3A701F41E40808300E5393F /* MAITextViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DE1E40808300E5393F /* MAITextViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701F51E40808300E5393F /* MAITextViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DE1E40808300E5393F /* MAITextViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701F61E40808300E5393F /* MAIToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DF1E40808300E5393F /* MAIToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701F71E40808300E5393F /* MAIToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700DF1E40808300E5393F /* MAIToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701F81E40808300E5393F /* MAIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E01E40808300E5393F /* MAIToolbar.m */; };
+		B3A701F91E40808300E5393F /* MAIToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E01E40808300E5393F /* MAIToolbar.m */; };
+		B3A701FA1E40808300E5393F /* MAIToolbarDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E11E40808300E5393F /* MAIToolbarDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701FB1E40808300E5393F /* MAIToolbarDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E11E40808300E5393F /* MAIToolbarDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701FC1E40808300E5393F /* MAITouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E21E40808300E5393F /* MAITouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701FD1E40808300E5393F /* MAITouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E21E40808300E5393F /* MAITouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A701FE1E40808300E5393F /* MAITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E31E40808300E5393F /* MAITouch.m */; };
+		B3A701FF1E40808300E5393F /* MAITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E31E40808300E5393F /* MAITouch.m */; };
+		B3A702001E40808300E5393F /* MAIView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E41E40808300E5393F /* MAIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A702011E40808300E5393F /* MAIView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E41E40808300E5393F /* MAIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A702021E40808300E5393F /* MAIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E51E40808300E5393F /* MAIView.m */; };
+		B3A702031E40808300E5393F /* MAIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E51E40808300E5393F /* MAIView.m */; };
+		B3A702041E40808300E5393F /* MAIViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E61E40808300E5393F /* MAIViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A702051E40808300E5393F /* MAIViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E61E40808300E5393F /* MAIViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A702061E40808300E5393F /* MAIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E71E40808300E5393F /* MAIViewController.m */; };
+		B3A702071E40808300E5393F /* MAIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E71E40808300E5393F /* MAIViewController.m */; };
+		B3A702081E40808300E5393F /* MAIVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E81E40808300E5393F /* MAIVisualEffectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A702091E40808300E5393F /* MAIVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700E81E40808300E5393F /* MAIVisualEffectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7020A1E40808300E5393F /* MAIVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E91E40808300E5393F /* MAIVisualEffectView.m */; };
+		B3A7020B1E40808300E5393F /* MAIVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700E91E40808300E5393F /* MAIVisualEffectView.m */; };
+		B3A7020C1E40808300E5393F /* MAIWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700EA1E40808300E5393F /* MAIWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7020D1E40808300E5393F /* MAIWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A700EA1E40808300E5393F /* MAIWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A7020E1E40808300E5393F /* MAIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700EB1E40808300E5393F /* MAIWindow.m */; };
+		B3A7020F1E40808300E5393F /* MAIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A700EB1E40808300E5393F /* MAIWindow.m */; };
+		B3C70A361E40B258001C3893 /* NSLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C70A341E40B258001C3893 /* NSLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3C70A371E40B258001C3893 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C70A351E40B258001C3893 /* NSLabel.m */; };
+		B3C70A3E1E40B36D001C3893 /* MAILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C70A3C1E40B36D001C3893 /* MAILabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3C70A3F1E40B36D001C3893 /* MAILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B3C70A3C1E40B36D001C3893 /* MAILabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3C70A401E40B36D001C3893 /* MAILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C70A3D1E40B36D001C3893 /* MAILabel.m */; };
+		B3C70A411E40B36D001C3893 /* MAILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C70A3D1E40B36D001C3893 /* MAILabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B3A700421E40803C00E5393F /* MAIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MAIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A700451E40803C00E5393F /* MAIKit-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAIKit-macOS.h"; sourceTree = "<group>"; };
+		B3A700461E40803C00E5393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A700501E40806800E5393F /* MAIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MAIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A700521E40806800E5393F /* MAIKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAIKit-iOS.h"; sourceTree = "<group>"; };
+		B3A700531E40806800E5393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A7005A1E40808300E5393F /* MAIAccessibilityElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIAccessibilityElement.h; sourceTree = "<group>"; };
+		B3A7005B1E40808300E5393F /* MAIAccessibilityElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIAccessibilityElement.m; sourceTree = "<group>"; };
+		B3A7005C1E40808300E5393F /* MAIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIApplication.h; sourceTree = "<group>"; };
+		B3A7005D1E40808300E5393F /* MAIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIApplication.m; sourceTree = "<group>"; };
+		B3A7005E1E40808300E5393F /* MAIApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIApplicationDelegate.h; sourceTree = "<group>"; };
+		B3A7005F1E40808300E5393F /* MAIBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIBezierPath.h; sourceTree = "<group>"; };
+		B3A700601E40808300E5393F /* MAIBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIBezierPath.m; sourceTree = "<group>"; };
+		B3A700611E40808300E5393F /* MAIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIButton.h; sourceTree = "<group>"; };
+		B3A700621E40808300E5393F /* MAIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIButton.m; sourceTree = "<group>"; };
+		B3A700631E40808300E5393F /* MAICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionView.h; sourceTree = "<group>"; };
+		B3A700641E40808300E5393F /* MAICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionView.m; sourceTree = "<group>"; };
+		B3A700651E40808300E5393F /* MAICollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewDataSource.h; sourceTree = "<group>"; };
+		B3A700661E40808300E5393F /* MAICollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewDelegate.h; sourceTree = "<group>"; };
+		B3A700671E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
+		B3A700681E40808300E5393F /* MAICollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		B3A700691E40808300E5393F /* MAICollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		B3A7006A1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewFlowLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		B3A7006B1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewFlowLayoutInvalidationContext.m; sourceTree = "<group>"; };
+		B3A7006C1E40808300E5393F /* MAICollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewLayout.h; sourceTree = "<group>"; };
+		B3A7006D1E40808300E5393F /* MAICollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewLayout.m; sourceTree = "<group>"; };
+		B3A7006E1E40808300E5393F /* MAICollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		B3A7006F1E40808300E5393F /* MAICollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		B3A700701E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		B3A700711E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewLayoutInvalidationContext.m; sourceTree = "<group>"; };
+		B3A700721E40808300E5393F /* MAICollectionViewTransitionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewTransitionLayout.h; sourceTree = "<group>"; };
+		B3A700731E40808300E5393F /* MAICollectionViewTransitionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewTransitionLayout.m; sourceTree = "<group>"; };
+		B3A700741E40808300E5393F /* MAICollectionViewUpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewUpdateItem.h; sourceTree = "<group>"; };
+		B3A700751E40808300E5393F /* MAICollectionViewUpdateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewUpdateItem.m; sourceTree = "<group>"; };
+		B3A700761E40808300E5393F /* MAIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIColor.h; sourceTree = "<group>"; };
+		B3A700771E40808300E5393F /* MAIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIColor.m; sourceTree = "<group>"; };
+		B3A700781E40808300E5393F /* MAIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIControl.h; sourceTree = "<group>"; };
+		B3A700791E40808300E5393F /* MAIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIControl.m; sourceTree = "<group>"; };
+		B3A7007A1E40808300E5393F /* MAIDataAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIDataAsset.h; sourceTree = "<group>"; };
+		B3A7007B1E40808300E5393F /* MAIDataAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIDataAsset.m; sourceTree = "<group>"; };
+		B3A7007C1E40808300E5393F /* MAIDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIDatePicker.h; sourceTree = "<group>"; };
+		B3A7007D1E40808300E5393F /* MAIDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIDatePicker.m; sourceTree = "<group>"; };
+		B3A7007E1E40808300E5393F /* MAIDeclarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIDeclarations.h; sourceTree = "<group>"; };
+		B3A7007F1E40808300E5393F /* MAIDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIDocument.h; sourceTree = "<group>"; };
+		B3A700801E40808300E5393F /* MAIDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIDocument.m; sourceTree = "<group>"; };
+		B3A700811E40808300E5393F /* MAIEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIEnums.h; sourceTree = "<group>"; };
+		B3A700821E40808300E5393F /* MAIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIEvent.h; sourceTree = "<group>"; };
+		B3A700831E40808300E5393F /* MAIEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIEvent.m; sourceTree = "<group>"; };
+		B3A700841E40808300E5393F /* MAIFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIFont.h; sourceTree = "<group>"; };
+		B3A700851E40808300E5393F /* MAIFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIFont.m; sourceTree = "<group>"; };
+		B3A700861E40808300E5393F /* MAIFontDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIFontDescriptor.h; sourceTree = "<group>"; };
+		B3A700871E40808300E5393F /* MAIFontDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIFontDescriptor.m; sourceTree = "<group>"; };
+		B3A700881E40808300E5393F /* MAIGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIGestureRecognizer.h; sourceTree = "<group>"; };
+		B3A700891E40808300E5393F /* MAIGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIGestureRecognizer.m; sourceTree = "<group>"; };
+		B3A7008A1E40808300E5393F /* MAIGestureRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIGestureRecognizerDelegate.h; sourceTree = "<group>"; };
+		B3A7008B1E40808300E5393F /* MAIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIImage.h; sourceTree = "<group>"; };
+		B3A7008C1E40808300E5393F /* MAIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIImage.m; sourceTree = "<group>"; };
+		B3A7008D1E40808300E5393F /* MAIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIImageView.h; sourceTree = "<group>"; };
+		B3A7008E1E40808300E5393F /* MAIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIImageView.m; sourceTree = "<group>"; };
+		B3A7008F1E40808300E5393F /* MAIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIKit.h; sourceTree = "<group>"; };
+		B3A700901E40808300E5393F /* MAILayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutConstraint.h; sourceTree = "<group>"; };
+		B3A700911E40808300E5393F /* MAILayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutConstraint.m; sourceTree = "<group>"; };
+		B3A700921E40808300E5393F /* MAILayoutDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutDimension.h; sourceTree = "<group>"; };
+		B3A700931E40808300E5393F /* MAILayoutDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutDimension.m; sourceTree = "<group>"; };
+		B3A700941E40808300E5393F /* MAILayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutGuide.h; sourceTree = "<group>"; };
+		B3A700951E40808300E5393F /* MAILayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutGuide.m; sourceTree = "<group>"; };
+		B3A700961E40808300E5393F /* MAILayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutManager.h; sourceTree = "<group>"; };
+		B3A700971E40808300E5393F /* MAILayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutManager.m; sourceTree = "<group>"; };
+		B3A700981E40808300E5393F /* MAILayoutManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutManagerDelegate.h; sourceTree = "<group>"; };
+		B3A700991E40808300E5393F /* MAILayoutXAxisAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutXAxisAnchor.h; sourceTree = "<group>"; };
+		B3A7009A1E40808300E5393F /* MAILayoutXAxisAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutXAxisAnchor.m; sourceTree = "<group>"; };
+		B3A7009B1E40808300E5393F /* MAILayoutYAxisAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutYAxisAnchor.h; sourceTree = "<group>"; };
+		B3A7009C1E40808300E5393F /* MAILayoutYAxisAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutYAxisAnchor.m; sourceTree = "<group>"; };
+		B3A7009D1E40808300E5393F /* MAIMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIMenuItem.h; sourceTree = "<group>"; };
+		B3A7009E1E40808300E5393F /* MAIMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIMenuItem.m; sourceTree = "<group>"; };
+		B3A7009F1E40808300E5393F /* MAIMutableParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIMutableParagraphStyle.h; sourceTree = "<group>"; };
+		B3A700A01E40808300E5393F /* MAIMutableParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIMutableParagraphStyle.m; sourceTree = "<group>"; };
+		B3A700A11E40808300E5393F /* MAINib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAINib.h; sourceTree = "<group>"; };
+		B3A700A21E40808300E5393F /* MAINib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAINib.m; sourceTree = "<group>"; };
+		B3A700A31E40808300E5393F /* MAIPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIPanGestureRecognizer.h; sourceTree = "<group>"; };
+		B3A700A41E40808300E5393F /* MAIPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIPanGestureRecognizer.m; sourceTree = "<group>"; };
+		B3A700A51E40808300E5393F /* MAIParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIParagraphStyle.h; sourceTree = "<group>"; };
+		B3A700A61E40808300E5393F /* MAIParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIParagraphStyle.m; sourceTree = "<group>"; };
+		B3A700A71E40808300E5393F /* MAIPasteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIPasteboard.h; sourceTree = "<group>"; };
+		B3A700A81E40808300E5393F /* MAIPasteboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIPasteboard.m; sourceTree = "<group>"; };
+		B3A700A91E40808300E5393F /* MAIPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIPrinter.h; sourceTree = "<group>"; };
+		B3A700AA1E40808300E5393F /* MAIPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIPrinter.m; sourceTree = "<group>"; };
+		B3A700AB1E40808300E5393F /* MAIPrintInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIPrintInfo.h; sourceTree = "<group>"; };
+		B3A700AC1E40808300E5393F /* MAIPrintInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIPrintInfo.m; sourceTree = "<group>"; };
+		B3A700AD1E40808300E5393F /* MAIResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIResponder.h; sourceTree = "<group>"; };
+		B3A700AE1E40808300E5393F /* MAIResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIResponder.m; sourceTree = "<group>"; };
+		B3A700AF1E40808300E5393F /* MAIRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIRotationGestureRecognizer.h; sourceTree = "<group>"; };
+		B3A700B01E40808300E5393F /* MAIRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIRotationGestureRecognizer.m; sourceTree = "<group>"; };
+		B3A700B11E40808300E5393F /* MAIScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIScreen.h; sourceTree = "<group>"; };
+		B3A700B21E40808300E5393F /* MAIScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIScreen.m; sourceTree = "<group>"; };
+		B3A700B31E40808300E5393F /* MAIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIScrollView.h; sourceTree = "<group>"; };
+		B3A700B41E40808300E5393F /* MAIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIScrollView.m; sourceTree = "<group>"; };
+		B3A700B51E40808300E5393F /* MAISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAISegmentedControl.h; sourceTree = "<group>"; };
+		B3A700B61E40808300E5393F /* MAISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAISegmentedControl.m; sourceTree = "<group>"; };
+		B3A700B71E40808300E5393F /* MAIShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIShadow.h; sourceTree = "<group>"; };
+		B3A700B81E40808300E5393F /* MAIShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIShadow.m; sourceTree = "<group>"; };
+		B3A700B91E40808300E5393F /* MAISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAISlider.h; sourceTree = "<group>"; };
+		B3A700BA1E40808300E5393F /* MAISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAISlider.m; sourceTree = "<group>"; };
+		B3A700BB1E40808300E5393F /* MAISplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAISplitViewController.h; sourceTree = "<group>"; };
+		B3A700BC1E40808300E5393F /* MAISplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAISplitViewController.m; sourceTree = "<group>"; };
+		B3A700BD1E40808300E5393F /* MAIStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStackView.h; sourceTree = "<group>"; };
+		B3A700BE1E40808300E5393F /* MAIStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStackView.m; sourceTree = "<group>"; };
+		B3A700BF1E40808300E5393F /* MAIStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStepper.h; sourceTree = "<group>"; };
+		B3A700C01E40808300E5393F /* MAIStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStepper.m; sourceTree = "<group>"; };
+		B3A700C11E40808300E5393F /* MAIStoryboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStoryboard.h; sourceTree = "<group>"; };
+		B3A700C21E40808300E5393F /* MAIStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStoryboard.m; sourceTree = "<group>"; };
+		B3A700C31E40808300E5393F /* MAIStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStoryboardSegue.h; sourceTree = "<group>"; };
+		B3A700C41E40808300E5393F /* MAIStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStoryboardSegue.m; sourceTree = "<group>"; };
+		B3A700C51E40808300E5393F /* MAIStringDrawingContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStringDrawingContext.h; sourceTree = "<group>"; };
+		B3A700C61E40808300E5393F /* MAIStringDrawingContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStringDrawingContext.m; sourceTree = "<group>"; };
+		B3A700C71E40808300E5393F /* MAITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITableView.h; sourceTree = "<group>"; };
+		B3A700C81E40808300E5393F /* MAITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITableView.m; sourceTree = "<group>"; };
+		B3A700C91E40808300E5393F /* MAITableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITableViewDataSource.h; sourceTree = "<group>"; };
+		B3A700CA1E40808300E5393F /* MAITableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITableViewDelegate.h; sourceTree = "<group>"; };
+		B3A700CB1E40808300E5393F /* MAITableViewRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITableViewRowAction.h; sourceTree = "<group>"; };
+		B3A700CC1E40808300E5393F /* MAITableViewRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITableViewRowAction.m; sourceTree = "<group>"; };
+		B3A700CD1E40808300E5393F /* MAITextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextAttachment.h; sourceTree = "<group>"; };
+		B3A700CE1E40808300E5393F /* MAITextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITextAttachment.m; sourceTree = "<group>"; };
+		B3A700CF1E40808300E5393F /* MAITextAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextAttachmentContainer.h; sourceTree = "<group>"; };
+		B3A700D01E40808300E5393F /* MAITextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextContainer.h; sourceTree = "<group>"; };
+		B3A700D11E40808300E5393F /* MAITextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITextContainer.m; sourceTree = "<group>"; };
+		B3A700D21E40808300E5393F /* MAITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextField.h; sourceTree = "<group>"; };
+		B3A700D31E40808300E5393F /* MAITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITextField.m; sourceTree = "<group>"; };
+		B3A700D41E40808300E5393F /* MAITextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextFieldDelegate.h; sourceTree = "<group>"; };
+		B3A700D51E40808300E5393F /* MAITextInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextInput.h; sourceTree = "<group>"; };
+		B3A700D61E40808300E5393F /* MAITextLayoutOrientationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextLayoutOrientationProvider.h; sourceTree = "<group>"; };
+		B3A700D71E40808300E5393F /* MAITextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextStorage.h; sourceTree = "<group>"; };
+		B3A700D81E40808300E5393F /* MAITextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITextStorage.m; sourceTree = "<group>"; };
+		B3A700D91E40808300E5393F /* MAITextStorageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextStorageDelegate.h; sourceTree = "<group>"; };
+		B3A700DA1E40808300E5393F /* MAITextTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextTab.h; sourceTree = "<group>"; };
+		B3A700DB1E40808300E5393F /* MAITextTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITextTab.m; sourceTree = "<group>"; };
+		B3A700DC1E40808300E5393F /* MAITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextView.h; sourceTree = "<group>"; };
+		B3A700DD1E40808300E5393F /* MAITextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITextView.m; sourceTree = "<group>"; };
+		B3A700DE1E40808300E5393F /* MAITextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextViewDelegate.h; sourceTree = "<group>"; };
+		B3A700DF1E40808300E5393F /* MAIToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIToolbar.h; sourceTree = "<group>"; };
+		B3A700E01E40808300E5393F /* MAIToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIToolbar.m; sourceTree = "<group>"; };
+		B3A700E11E40808300E5393F /* MAIToolbarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIToolbarDelegate.h; sourceTree = "<group>"; };
+		B3A700E21E40808300E5393F /* MAITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITouch.h; sourceTree = "<group>"; };
+		B3A700E31E40808300E5393F /* MAITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITouch.m; sourceTree = "<group>"; };
+		B3A700E41E40808300E5393F /* MAIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIView.h; sourceTree = "<group>"; };
+		B3A700E51E40808300E5393F /* MAIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIView.m; sourceTree = "<group>"; };
+		B3A700E61E40808300E5393F /* MAIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIViewController.h; sourceTree = "<group>"; };
+		B3A700E71E40808300E5393F /* MAIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIViewController.m; sourceTree = "<group>"; };
+		B3A700E81E40808300E5393F /* MAIVisualEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIVisualEffectView.h; sourceTree = "<group>"; };
+		B3A700E91E40808300E5393F /* MAIVisualEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIVisualEffectView.m; sourceTree = "<group>"; };
+		B3A700EA1E40808300E5393F /* MAIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIWindow.h; sourceTree = "<group>"; };
+		B3A700EB1E40808300E5393F /* MAIWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIWindow.m; sourceTree = "<group>"; };
+		B3C70A341E40B258001C3893 /* NSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLabel.h; sourceTree = "<group>"; };
+		B3C70A351E40B258001C3893 /* NSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLabel.m; sourceTree = "<group>"; };
+		B3C70A3C1E40B36D001C3893 /* MAILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILabel.h; sourceTree = "<group>"; };
+		B3C70A3D1E40B36D001C3893 /* MAILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILabel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3A7003E1E40803C00E5393F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3A7004C1E40806800E5393F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3A700361E407E5700E5393F = {
+			isa = PBXGroup;
+			children = (
+				B3A700581E40808300E5393F /* Sources */,
+				B3A700441E40803C00E5393F /* MAIKit-macOS */,
+				B3A700511E40806800E5393F /* MAIKit-iOS */,
+				B3A700431E40803C00E5393F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3A700431E40803C00E5393F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3A700421E40803C00E5393F /* MAIKit.framework */,
+				B3A700501E40806800E5393F /* MAIKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3A700441E40803C00E5393F /* MAIKit-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				B3A700451E40803C00E5393F /* MAIKit-macOS.h */,
+				B3A700461E40803C00E5393F /* Info.plist */,
+			);
+			path = "MAIKit-macOS";
+			sourceTree = "<group>";
+		};
+		B3A700511E40806800E5393F /* MAIKit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B3A700521E40806800E5393F /* MAIKit-iOS.h */,
+				B3A700531E40806800E5393F /* Info.plist */,
+			);
+			path = "MAIKit-iOS";
+			sourceTree = "<group>";
+		};
+		B3A700581E40808300E5393F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B3C70A321E40B217001C3893 /* Classes */,
+				B3A700591E40808300E5393F /* Generated */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B3A700591E40808300E5393F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7005A1E40808300E5393F /* MAIAccessibilityElement.h */,
+				B3A7005B1E40808300E5393F /* MAIAccessibilityElement.m */,
+				B3A7005C1E40808300E5393F /* MAIApplication.h */,
+				B3A7005D1E40808300E5393F /* MAIApplication.m */,
+				B3A7005E1E40808300E5393F /* MAIApplicationDelegate.h */,
+				B3A7005F1E40808300E5393F /* MAIBezierPath.h */,
+				B3A700601E40808300E5393F /* MAIBezierPath.m */,
+				B3A700611E40808300E5393F /* MAIButton.h */,
+				B3A700621E40808300E5393F /* MAIButton.m */,
+				B3A700631E40808300E5393F /* MAICollectionView.h */,
+				B3A700641E40808300E5393F /* MAICollectionView.m */,
+				B3A700651E40808300E5393F /* MAICollectionViewDataSource.h */,
+				B3A700661E40808300E5393F /* MAICollectionViewDelegate.h */,
+				B3A700671E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h */,
+				B3A700681E40808300E5393F /* MAICollectionViewFlowLayout.h */,
+				B3A700691E40808300E5393F /* MAICollectionViewFlowLayout.m */,
+				B3A7006A1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h */,
+				B3A7006B1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m */,
+				B3A7006C1E40808300E5393F /* MAICollectionViewLayout.h */,
+				B3A7006D1E40808300E5393F /* MAICollectionViewLayout.m */,
+				B3A7006E1E40808300E5393F /* MAICollectionViewLayoutAttributes.h */,
+				B3A7006F1E40808300E5393F /* MAICollectionViewLayoutAttributes.m */,
+				B3A700701E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h */,
+				B3A700711E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m */,
+				B3A700721E40808300E5393F /* MAICollectionViewTransitionLayout.h */,
+				B3A700731E40808300E5393F /* MAICollectionViewTransitionLayout.m */,
+				B3A700741E40808300E5393F /* MAICollectionViewUpdateItem.h */,
+				B3A700751E40808300E5393F /* MAICollectionViewUpdateItem.m */,
+				B3A700761E40808300E5393F /* MAIColor.h */,
+				B3A700771E40808300E5393F /* MAIColor.m */,
+				B3A700781E40808300E5393F /* MAIControl.h */,
+				B3A700791E40808300E5393F /* MAIControl.m */,
+				B3A7007A1E40808300E5393F /* MAIDataAsset.h */,
+				B3A7007B1E40808300E5393F /* MAIDataAsset.m */,
+				B3A7007C1E40808300E5393F /* MAIDatePicker.h */,
+				B3A7007D1E40808300E5393F /* MAIDatePicker.m */,
+				B3A7007E1E40808300E5393F /* MAIDeclarations.h */,
+				B3A7007F1E40808300E5393F /* MAIDocument.h */,
+				B3A700801E40808300E5393F /* MAIDocument.m */,
+				B3A700811E40808300E5393F /* MAIEnums.h */,
+				B3A700821E40808300E5393F /* MAIEvent.h */,
+				B3A700831E40808300E5393F /* MAIEvent.m */,
+				B3A700841E40808300E5393F /* MAIFont.h */,
+				B3A700851E40808300E5393F /* MAIFont.m */,
+				B3A700861E40808300E5393F /* MAIFontDescriptor.h */,
+				B3A700871E40808300E5393F /* MAIFontDescriptor.m */,
+				B3A700881E40808300E5393F /* MAIGestureRecognizer.h */,
+				B3A700891E40808300E5393F /* MAIGestureRecognizer.m */,
+				B3A7008A1E40808300E5393F /* MAIGestureRecognizerDelegate.h */,
+				B3A7008B1E40808300E5393F /* MAIImage.h */,
+				B3A7008C1E40808300E5393F /* MAIImage.m */,
+				B3A7008D1E40808300E5393F /* MAIImageView.h */,
+				B3A7008E1E40808300E5393F /* MAIImageView.m */,
+				B3A7008F1E40808300E5393F /* MAIKit.h */,
+				B3A700901E40808300E5393F /* MAILayoutConstraint.h */,
+				B3A700911E40808300E5393F /* MAILayoutConstraint.m */,
+				B3A700921E40808300E5393F /* MAILayoutDimension.h */,
+				B3A700931E40808300E5393F /* MAILayoutDimension.m */,
+				B3A700941E40808300E5393F /* MAILayoutGuide.h */,
+				B3A700951E40808300E5393F /* MAILayoutGuide.m */,
+				B3A700961E40808300E5393F /* MAILayoutManager.h */,
+				B3A700971E40808300E5393F /* MAILayoutManager.m */,
+				B3A700981E40808300E5393F /* MAILayoutManagerDelegate.h */,
+				B3A700991E40808300E5393F /* MAILayoutXAxisAnchor.h */,
+				B3A7009A1E40808300E5393F /* MAILayoutXAxisAnchor.m */,
+				B3A7009B1E40808300E5393F /* MAILayoutYAxisAnchor.h */,
+				B3A7009C1E40808300E5393F /* MAILayoutYAxisAnchor.m */,
+				B3A7009D1E40808300E5393F /* MAIMenuItem.h */,
+				B3A7009E1E40808300E5393F /* MAIMenuItem.m */,
+				B3A7009F1E40808300E5393F /* MAIMutableParagraphStyle.h */,
+				B3A700A01E40808300E5393F /* MAIMutableParagraphStyle.m */,
+				B3A700A11E40808300E5393F /* MAINib.h */,
+				B3A700A21E40808300E5393F /* MAINib.m */,
+				B3A700A31E40808300E5393F /* MAIPanGestureRecognizer.h */,
+				B3A700A41E40808300E5393F /* MAIPanGestureRecognizer.m */,
+				B3A700A51E40808300E5393F /* MAIParagraphStyle.h */,
+				B3A700A61E40808300E5393F /* MAIParagraphStyle.m */,
+				B3A700A71E40808300E5393F /* MAIPasteboard.h */,
+				B3A700A81E40808300E5393F /* MAIPasteboard.m */,
+				B3A700A91E40808300E5393F /* MAIPrinter.h */,
+				B3A700AA1E40808300E5393F /* MAIPrinter.m */,
+				B3A700AB1E40808300E5393F /* MAIPrintInfo.h */,
+				B3A700AC1E40808300E5393F /* MAIPrintInfo.m */,
+				B3A700AD1E40808300E5393F /* MAIResponder.h */,
+				B3A700AE1E40808300E5393F /* MAIResponder.m */,
+				B3A700AF1E40808300E5393F /* MAIRotationGestureRecognizer.h */,
+				B3A700B01E40808300E5393F /* MAIRotationGestureRecognizer.m */,
+				B3A700B11E40808300E5393F /* MAIScreen.h */,
+				B3A700B21E40808300E5393F /* MAIScreen.m */,
+				B3A700B31E40808300E5393F /* MAIScrollView.h */,
+				B3A700B41E40808300E5393F /* MAIScrollView.m */,
+				B3A700B51E40808300E5393F /* MAISegmentedControl.h */,
+				B3A700B61E40808300E5393F /* MAISegmentedControl.m */,
+				B3A700B71E40808300E5393F /* MAIShadow.h */,
+				B3A700B81E40808300E5393F /* MAIShadow.m */,
+				B3A700B91E40808300E5393F /* MAISlider.h */,
+				B3A700BA1E40808300E5393F /* MAISlider.m */,
+				B3A700BB1E40808300E5393F /* MAISplitViewController.h */,
+				B3A700BC1E40808300E5393F /* MAISplitViewController.m */,
+				B3A700BD1E40808300E5393F /* MAIStackView.h */,
+				B3A700BE1E40808300E5393F /* MAIStackView.m */,
+				B3A700BF1E40808300E5393F /* MAIStepper.h */,
+				B3A700C01E40808300E5393F /* MAIStepper.m */,
+				B3A700C11E40808300E5393F /* MAIStoryboard.h */,
+				B3A700C21E40808300E5393F /* MAIStoryboard.m */,
+				B3A700C31E40808300E5393F /* MAIStoryboardSegue.h */,
+				B3A700C41E40808300E5393F /* MAIStoryboardSegue.m */,
+				B3A700C51E40808300E5393F /* MAIStringDrawingContext.h */,
+				B3A700C61E40808300E5393F /* MAIStringDrawingContext.m */,
+				B3A700C71E40808300E5393F /* MAITableView.h */,
+				B3A700C81E40808300E5393F /* MAITableView.m */,
+				B3A700C91E40808300E5393F /* MAITableViewDataSource.h */,
+				B3A700CA1E40808300E5393F /* MAITableViewDelegate.h */,
+				B3A700CB1E40808300E5393F /* MAITableViewRowAction.h */,
+				B3A700CC1E40808300E5393F /* MAITableViewRowAction.m */,
+				B3A700CD1E40808300E5393F /* MAITextAttachment.h */,
+				B3A700CE1E40808300E5393F /* MAITextAttachment.m */,
+				B3A700CF1E40808300E5393F /* MAITextAttachmentContainer.h */,
+				B3A700D01E40808300E5393F /* MAITextContainer.h */,
+				B3A700D11E40808300E5393F /* MAITextContainer.m */,
+				B3A700D21E40808300E5393F /* MAITextField.h */,
+				B3A700D31E40808300E5393F /* MAITextField.m */,
+				B3A700D41E40808300E5393F /* MAITextFieldDelegate.h */,
+				B3A700D51E40808300E5393F /* MAITextInput.h */,
+				B3A700D61E40808300E5393F /* MAITextLayoutOrientationProvider.h */,
+				B3A700D71E40808300E5393F /* MAITextStorage.h */,
+				B3A700D81E40808300E5393F /* MAITextStorage.m */,
+				B3A700D91E40808300E5393F /* MAITextStorageDelegate.h */,
+				B3A700DA1E40808300E5393F /* MAITextTab.h */,
+				B3A700DB1E40808300E5393F /* MAITextTab.m */,
+				B3A700DC1E40808300E5393F /* MAITextView.h */,
+				B3A700DD1E40808300E5393F /* MAITextView.m */,
+				B3A700DE1E40808300E5393F /* MAITextViewDelegate.h */,
+				B3A700DF1E40808300E5393F /* MAIToolbar.h */,
+				B3A700E01E40808300E5393F /* MAIToolbar.m */,
+				B3A700E11E40808300E5393F /* MAIToolbarDelegate.h */,
+				B3A700E21E40808300E5393F /* MAITouch.h */,
+				B3A700E31E40808300E5393F /* MAITouch.m */,
+				B3A700E41E40808300E5393F /* MAIView.h */,
+				B3A700E51E40808300E5393F /* MAIView.m */,
+				B3A700E61E40808300E5393F /* MAIViewController.h */,
+				B3A700E71E40808300E5393F /* MAIViewController.m */,
+				B3A700E81E40808300E5393F /* MAIVisualEffectView.h */,
+				B3A700E91E40808300E5393F /* MAIVisualEffectView.m */,
+				B3A700EA1E40808300E5393F /* MAIWindow.h */,
+				B3A700EB1E40808300E5393F /* MAIWindow.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		B3C70A321E40B217001C3893 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B3C70A381E40B2E2001C3893 /* Common */,
+				B3C70A331E40B217001C3893 /* macOS */,
+				E94C2EA61E6C87680037CBFF /* iOS */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B3C70A331E40B217001C3893 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				B3C70A341E40B258001C3893 /* NSLabel.h */,
+				B3C70A351E40B258001C3893 /* NSLabel.m */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		B3C70A381E40B2E2001C3893 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B3C70A3C1E40B36D001C3893 /* MAILabel.h */,
+				B3C70A3D1E40B36D001C3893 /* MAILabel.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E94C2EA61E6C87680037CBFF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B3A7003F1E40803C00E5393F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A702041E40808300E5393F /* MAIViewController.h in Headers */,
+				B3A7011C1E40808300E5393F /* MAICollectionViewTransitionLayout.h in Headers */,
+				B3A701341E40808300E5393F /* MAIDeclarations.h in Headers */,
+				B3A701481E40808300E5393F /* MAIGestureRecognizer.h in Headers */,
+				B3A701961E40808300E5393F /* MAIRotationGestureRecognizer.h in Headers */,
+				B3A701861E40808300E5393F /* MAIPasteboard.h in Headers */,
+				B3A701F41E40808300E5393F /* MAITextViewDelegate.h in Headers */,
+				B3A701061E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h in Headers */,
+				B3A7010C1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */,
+				B3A700FE1E40808300E5393F /* MAICollectionView.h in Headers */,
+				B3A700F41E40808300E5393F /* MAIApplicationDelegate.h in Headers */,
+				B3A701301E40808300E5393F /* MAIDatePicker.h in Headers */,
+				B3A702081E40808300E5393F /* MAIVisualEffectView.h in Headers */,
+				B3A701641E40808300E5393F /* MAILayoutManager.h in Headers */,
+				B3A7013A1E40808300E5393F /* MAIEnums.h in Headers */,
+				B3A701FA1E40808300E5393F /* MAIToolbarDelegate.h in Headers */,
+				B3A7018E1E40808300E5393F /* MAIPrintInfo.h in Headers */,
+				B3A701E01E40808300E5393F /* MAITextFieldDelegate.h in Headers */,
+				B3A701B61E40808300E5393F /* MAIStepper.h in Headers */,
+				B3A7016E1E40808300E5393F /* MAILayoutYAxisAnchor.h in Headers */,
+				B3A701921E40808300E5393F /* MAIResponder.h in Headers */,
+				B3A701101E40808300E5393F /* MAICollectionViewLayout.h in Headers */,
+				B3A7014E1E40808300E5393F /* MAIImage.h in Headers */,
+				B3A701EA1E40808300E5393F /* MAITextStorageDelegate.h in Headers */,
+				B3A701601E40808300E5393F /* MAILayoutGuide.h in Headers */,
+				B3A700EC1E40808300E5393F /* MAIAccessibilityElement.h in Headers */,
+				B3A701181E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h in Headers */,
+				B3A701B21E40808300E5393F /* MAIStackView.h in Headers */,
+				B3A701141E40808300E5393F /* MAICollectionViewLayoutAttributes.h in Headers */,
+				B3A7012C1E40808300E5393F /* MAIDataAsset.h in Headers */,
+				B3A7017E1E40808300E5393F /* MAIPanGestureRecognizer.h in Headers */,
+				B3A701BA1E40808300E5393F /* MAIStoryboard.h in Headers */,
+				B3A700FA1E40808300E5393F /* MAIButton.h in Headers */,
+				B3A7019A1E40808300E5393F /* MAIScreen.h in Headers */,
+				B3A701D21E40808300E5393F /* MAITextAttachment.h in Headers */,
+				B3A701C61E40808300E5393F /* MAITableView.h in Headers */,
+				B3A701CE1E40808300E5393F /* MAITableViewRowAction.h in Headers */,
+				B3A701EC1E40808300E5393F /* MAITextTab.h in Headers */,
+				B3A701681E40808300E5393F /* MAILayoutManagerDelegate.h in Headers */,
+				B3A7017A1E40808300E5393F /* MAINib.h in Headers */,
+				B3A701BE1E40808300E5393F /* MAIStoryboardSegue.h in Headers */,
+				B3A701081E40808300E5393F /* MAICollectionViewFlowLayout.h in Headers */,
+				B3A701821E40808300E5393F /* MAIParagraphStyle.h in Headers */,
+				B3A701AE1E40808300E5393F /* MAISplitViewController.h in Headers */,
+				B3A701F61E40808300E5393F /* MAIToolbar.h in Headers */,
+				B3A701021E40808300E5393F /* MAICollectionViewDataSource.h in Headers */,
+				B3A701721E40808300E5393F /* MAIMenuItem.h in Headers */,
+				B3A701A21E40808300E5393F /* MAISegmentedControl.h in Headers */,
+				B3A701F01E40808300E5393F /* MAITextView.h in Headers */,
+				B3A701D61E40808300E5393F /* MAITextAttachmentContainer.h in Headers */,
+				B3A701581E40808300E5393F /* MAILayoutConstraint.h in Headers */,
+				B3A701AA1E40808300E5393F /* MAISlider.h in Headers */,
+				B3A701FC1E40808300E5393F /* MAITouch.h in Headers */,
+				B3A701521E40808300E5393F /* MAIImageView.h in Headers */,
+				B3A7018A1E40808300E5393F /* MAIPrinter.h in Headers */,
+				B3A701041E40808300E5393F /* MAICollectionViewDelegate.h in Headers */,
+				B3A701C21E40808300E5393F /* MAIStringDrawingContext.h in Headers */,
+				B3A701201E40808300E5393F /* MAICollectionViewUpdateItem.h in Headers */,
+				B3A701E41E40808300E5393F /* MAITextLayoutOrientationProvider.h in Headers */,
+				B3A701DC1E40808300E5393F /* MAITextField.h in Headers */,
+				B3A701281E40808300E5393F /* MAIControl.h in Headers */,
+				B3A701401E40808300E5393F /* MAIFont.h in Headers */,
+				B3A701241E40808300E5393F /* MAIColor.h in Headers */,
+				B3A701CC1E40808300E5393F /* MAITableViewDelegate.h in Headers */,
+				B3A701E61E40808300E5393F /* MAITextStorage.h in Headers */,
+				B3A701E21E40808300E5393F /* MAITextInput.h in Headers */,
+				B3A7015C1E40808300E5393F /* MAILayoutDimension.h in Headers */,
+				B3A702001E40808300E5393F /* MAIView.h in Headers */,
+				B3A7014C1E40808300E5393F /* MAIGestureRecognizerDelegate.h in Headers */,
+				B3A7013C1E40808300E5393F /* MAIEvent.h in Headers */,
+				B3A701CA1E40808300E5393F /* MAITableViewDataSource.h in Headers */,
+				B3A7016A1E40808300E5393F /* MAILayoutXAxisAnchor.h in Headers */,
+				B3A700F61E40808300E5393F /* MAIBezierPath.h in Headers */,
+				B3A7019E1E40808300E5393F /* MAIScrollView.h in Headers */,
+				B3A700F01E40808300E5393F /* MAIApplication.h in Headers */,
+				B3A701441E40808300E5393F /* MAIFontDescriptor.h in Headers */,
+				B3A701761E40808300E5393F /* MAIMutableParagraphStyle.h in Headers */,
+				B3A701561E40808300E5393F /* MAIKit.h in Headers */,
+				B3A701A61E40808300E5393F /* MAIShadow.h in Headers */,
+				B3A701361E40808300E5393F /* MAIDocument.h in Headers */,
+				B3A701D81E40808300E5393F /* MAITextContainer.h in Headers */,
+				B3C70A361E40B258001C3893 /* NSLabel.h in Headers */,
+				B3A700471E40803C00E5393F /* MAIKit-macOS.h in Headers */,
+				B3C70A3E1E40B36D001C3893 /* MAILabel.h in Headers */,
+				B3A7020C1E40808300E5393F /* MAIWindow.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3A7004D1E40806800E5393F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A702051E40808300E5393F /* MAIViewController.h in Headers */,
+				B3A7011D1E40808300E5393F /* MAICollectionViewTransitionLayout.h in Headers */,
+				B3A701351E40808300E5393F /* MAIDeclarations.h in Headers */,
+				B3A701491E40808300E5393F /* MAIGestureRecognizer.h in Headers */,
+				B3A701971E40808300E5393F /* MAIRotationGestureRecognizer.h in Headers */,
+				B3A701871E40808300E5393F /* MAIPasteboard.h in Headers */,
+				B3A701F51E40808300E5393F /* MAITextViewDelegate.h in Headers */,
+				B3A701071E40808300E5393F /* MAICollectionViewDelegateFlowLayout.h in Headers */,
+				B3A7010D1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */,
+				B3A700FF1E40808300E5393F /* MAICollectionView.h in Headers */,
+				B3A700F51E40808300E5393F /* MAIApplicationDelegate.h in Headers */,
+				B3A701311E40808300E5393F /* MAIDatePicker.h in Headers */,
+				B3A702091E40808300E5393F /* MAIVisualEffectView.h in Headers */,
+				B3A701651E40808300E5393F /* MAILayoutManager.h in Headers */,
+				B3A7013B1E40808300E5393F /* MAIEnums.h in Headers */,
+				B3A701FB1E40808300E5393F /* MAIToolbarDelegate.h in Headers */,
+				B3A7018F1E40808300E5393F /* MAIPrintInfo.h in Headers */,
+				B3A701E11E40808300E5393F /* MAITextFieldDelegate.h in Headers */,
+				B3A701B71E40808300E5393F /* MAIStepper.h in Headers */,
+				B3A7016F1E40808300E5393F /* MAILayoutYAxisAnchor.h in Headers */,
+				B3A701931E40808300E5393F /* MAIResponder.h in Headers */,
+				B3A701111E40808300E5393F /* MAICollectionViewLayout.h in Headers */,
+				B3A7014F1E40808300E5393F /* MAIImage.h in Headers */,
+				B3A701EB1E40808300E5393F /* MAITextStorageDelegate.h in Headers */,
+				B3A701611E40808300E5393F /* MAILayoutGuide.h in Headers */,
+				B3A700ED1E40808300E5393F /* MAIAccessibilityElement.h in Headers */,
+				B3A701191E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.h in Headers */,
+				B3A701B31E40808300E5393F /* MAIStackView.h in Headers */,
+				B3A701151E40808300E5393F /* MAICollectionViewLayoutAttributes.h in Headers */,
+				B3A7012D1E40808300E5393F /* MAIDataAsset.h in Headers */,
+				B3A7017F1E40808300E5393F /* MAIPanGestureRecognizer.h in Headers */,
+				B3A701BB1E40808300E5393F /* MAIStoryboard.h in Headers */,
+				B3A700FB1E40808300E5393F /* MAIButton.h in Headers */,
+				B3A7019B1E40808300E5393F /* MAIScreen.h in Headers */,
+				B3A701D31E40808300E5393F /* MAITextAttachment.h in Headers */,
+				B3A701C71E40808300E5393F /* MAITableView.h in Headers */,
+				B3A701CF1E40808300E5393F /* MAITableViewRowAction.h in Headers */,
+				B3A701ED1E40808300E5393F /* MAITextTab.h in Headers */,
+				B3A701691E40808300E5393F /* MAILayoutManagerDelegate.h in Headers */,
+				B3A7017B1E40808300E5393F /* MAINib.h in Headers */,
+				B3A701BF1E40808300E5393F /* MAIStoryboardSegue.h in Headers */,
+				B3A701091E40808300E5393F /* MAICollectionViewFlowLayout.h in Headers */,
+				B3A701831E40808300E5393F /* MAIParagraphStyle.h in Headers */,
+				B3A701AF1E40808300E5393F /* MAISplitViewController.h in Headers */,
+				B3A701F71E40808300E5393F /* MAIToolbar.h in Headers */,
+				B3A701031E40808300E5393F /* MAICollectionViewDataSource.h in Headers */,
+				B3A701731E40808300E5393F /* MAIMenuItem.h in Headers */,
+				B3A701A31E40808300E5393F /* MAISegmentedControl.h in Headers */,
+				B3A701F11E40808300E5393F /* MAITextView.h in Headers */,
+				B3A701D71E40808300E5393F /* MAITextAttachmentContainer.h in Headers */,
+				B3A701591E40808300E5393F /* MAILayoutConstraint.h in Headers */,
+				B3A701AB1E40808300E5393F /* MAISlider.h in Headers */,
+				B3A701FD1E40808300E5393F /* MAITouch.h in Headers */,
+				B3A701531E40808300E5393F /* MAIImageView.h in Headers */,
+				B3A7018B1E40808300E5393F /* MAIPrinter.h in Headers */,
+				B3A701051E40808300E5393F /* MAICollectionViewDelegate.h in Headers */,
+				B3A701C31E40808300E5393F /* MAIStringDrawingContext.h in Headers */,
+				B3A701211E40808300E5393F /* MAICollectionViewUpdateItem.h in Headers */,
+				B3A701E51E40808300E5393F /* MAITextLayoutOrientationProvider.h in Headers */,
+				B3A701DD1E40808300E5393F /* MAITextField.h in Headers */,
+				B3A701291E40808300E5393F /* MAIControl.h in Headers */,
+				B3A701411E40808300E5393F /* MAIFont.h in Headers */,
+				B3A701251E40808300E5393F /* MAIColor.h in Headers */,
+				B3A701CD1E40808300E5393F /* MAITableViewDelegate.h in Headers */,
+				B3A701E71E40808300E5393F /* MAITextStorage.h in Headers */,
+				B3A701E31E40808300E5393F /* MAITextInput.h in Headers */,
+				B3A7015D1E40808300E5393F /* MAILayoutDimension.h in Headers */,
+				B3A702011E40808300E5393F /* MAIView.h in Headers */,
+				B3A7014D1E40808300E5393F /* MAIGestureRecognizerDelegate.h in Headers */,
+				B3A7013D1E40808300E5393F /* MAIEvent.h in Headers */,
+				B3A701CB1E40808300E5393F /* MAITableViewDataSource.h in Headers */,
+				B3A7016B1E40808300E5393F /* MAILayoutXAxisAnchor.h in Headers */,
+				B3A700F71E40808300E5393F /* MAIBezierPath.h in Headers */,
+				B3A7019F1E40808300E5393F /* MAIScrollView.h in Headers */,
+				B3A700F11E40808300E5393F /* MAIApplication.h in Headers */,
+				B3A701451E40808300E5393F /* MAIFontDescriptor.h in Headers */,
+				B3A701771E40808300E5393F /* MAIMutableParagraphStyle.h in Headers */,
+				B3A701571E40808300E5393F /* MAIKit.h in Headers */,
+				B3A701A71E40808300E5393F /* MAIShadow.h in Headers */,
+				B3A701371E40808300E5393F /* MAIDocument.h in Headers */,
+				B3A701D91E40808300E5393F /* MAITextContainer.h in Headers */,
+				B3A700541E40806800E5393F /* MAIKit-iOS.h in Headers */,
+				B3C70A3F1E40B36D001C3893 /* MAILabel.h in Headers */,
+				B3A7020D1E40808300E5393F /* MAIWindow.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B3A700411E40803C00E5393F /* MAIKit-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3A700481E40803C00E5393F /* Build configuration list for PBXNativeTarget "MAIKit-macOS" */;
+			buildPhases = (
+				B3A7003D1E40803C00E5393F /* Sources */,
+				B3A7003E1E40803C00E5393F /* Frameworks */,
+				B3A7003F1E40803C00E5393F /* Headers */,
+				B3A700401E40803C00E5393F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MAIKit-macOS";
+			productName = "MAIKit-macOS";
+			productReference = B3A700421E40803C00E5393F /* MAIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3A7004F1E40806800E5393F /* MAIKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3A700551E40806800E5393F /* Build configuration list for PBXNativeTarget "MAIKit-iOS" */;
+			buildPhases = (
+				B3A7004B1E40806800E5393F /* Sources */,
+				B3A7004C1E40806800E5393F /* Frameworks */,
+				B3A7004D1E40806800E5393F /* Headers */,
+				B3A7004E1E40806800E5393F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MAIKit-iOS";
+			productName = "MAIKit-iOS";
+			productReference = B3A700501E40806800E5393F /* MAIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3A700371E407E5700E5393F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				TargetAttributes = {
+					B3A700411E40803C00E5393F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GQE994U6EG;
+						ProvisioningStyle = Automatic;
+					};
+					B3A7004F1E40806800E5393F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GQE994U6EG;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B3A7003A1E407E5700E5393F /* Build configuration list for PBXProject "MAIKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B3A700361E407E5700E5393F;
+			productRefGroup = B3A700431E40803C00E5393F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3A700411E40803C00E5393F /* MAIKit-macOS */,
+				B3A7004F1E40806800E5393F /* MAIKit-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3A700401E40803C00E5393F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3A7004E1E40806800E5393F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3A7003D1E40803C00E5393F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A701121E40808300E5393F /* MAICollectionViewLayout.m in Sources */,
+				B3A701501E40808300E5393F /* MAIImage.m in Sources */,
+				B3A701381E40808300E5393F /* MAIDocument.m in Sources */,
+				B3A7012A1E40808300E5393F /* MAIControl.m in Sources */,
+				B3A701C81E40808300E5393F /* MAITableView.m in Sources */,
+				B3A701A81E40808300E5393F /* MAIShadow.m in Sources */,
+				B3A701D01E40808300E5393F /* MAITableViewRowAction.m in Sources */,
+				B3A701A41E40808300E5393F /* MAISegmentedControl.m in Sources */,
+				B3A7010A1E40808300E5393F /* MAICollectionViewFlowLayout.m in Sources */,
+				B3A701161E40808300E5393F /* MAICollectionViewLayoutAttributes.m in Sources */,
+				B3A7012E1E40808300E5393F /* MAIDataAsset.m in Sources */,
+				B3A701D41E40808300E5393F /* MAITextAttachment.m in Sources */,
+				B3A701E81E40808300E5393F /* MAITextStorage.m in Sources */,
+				B3A7011E1E40808300E5393F /* MAICollectionViewTransitionLayout.m in Sources */,
+				B3A701421E40808300E5393F /* MAIFont.m in Sources */,
+				B3A701DA1E40808300E5393F /* MAITextContainer.m in Sources */,
+				B3A701661E40808300E5393F /* MAILayoutManager.m in Sources */,
+				B3A701AC1E40808300E5393F /* MAISlider.m in Sources */,
+				B3A701221E40808300E5393F /* MAICollectionViewUpdateItem.m in Sources */,
+				B3A7013E1E40808300E5393F /* MAIEvent.m in Sources */,
+				B3A7014A1E40808300E5393F /* MAIGestureRecognizer.m in Sources */,
+				B3A701881E40808300E5393F /* MAIPasteboard.m in Sources */,
+				B3A7018C1E40808300E5393F /* MAIPrinter.m in Sources */,
+				B3A7015E1E40808300E5393F /* MAILayoutDimension.m in Sources */,
+				B3A700F21E40808300E5393F /* MAIApplication.m in Sources */,
+				B3A701F81E40808300E5393F /* MAIToolbar.m in Sources */,
+				B3A701781E40808300E5393F /* MAIMutableParagraphStyle.m in Sources */,
+				B3A7020A1E40808300E5393F /* MAIVisualEffectView.m in Sources */,
+				B3A701841E40808300E5393F /* MAIParagraphStyle.m in Sources */,
+				B3A701461E40808300E5393F /* MAIFontDescriptor.m in Sources */,
+				B3A700FC1E40808300E5393F /* MAIButton.m in Sources */,
+				B3A701F21E40808300E5393F /* MAITextView.m in Sources */,
+				B3A701741E40808300E5393F /* MAIMenuItem.m in Sources */,
+				B3A7017C1E40808300E5393F /* MAINib.m in Sources */,
+				B3A701BC1E40808300E5393F /* MAIStoryboard.m in Sources */,
+				B3A701C41E40808300E5393F /* MAIStringDrawingContext.m in Sources */,
+				B3A701001E40808300E5393F /* MAICollectionView.m in Sources */,
+				B3A701EE1E40808300E5393F /* MAITextTab.m in Sources */,
+				B3A701B81E40808300E5393F /* MAIStepper.m in Sources */,
+				B3A7011A1E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m in Sources */,
+				B3A701541E40808300E5393F /* MAIImageView.m in Sources */,
+				B3A701A01E40808300E5393F /* MAIScrollView.m in Sources */,
+				B3A7015A1E40808300E5393F /* MAILayoutConstraint.m in Sources */,
+				B3A701B41E40808300E5393F /* MAIStackView.m in Sources */,
+				B3A701621E40808300E5393F /* MAILayoutGuide.m in Sources */,
+				B3A701C01E40808300E5393F /* MAIStoryboardSegue.m in Sources */,
+				B3A701941E40808300E5393F /* MAIResponder.m in Sources */,
+				B3A7019C1E40808300E5393F /* MAIScreen.m in Sources */,
+				B3C70A371E40B258001C3893 /* NSLabel.m in Sources */,
+				B3A701701E40808300E5393F /* MAILayoutYAxisAnchor.m in Sources */,
+				B3A701DE1E40808300E5393F /* MAITextField.m in Sources */,
+				B3A7016C1E40808300E5393F /* MAILayoutXAxisAnchor.m in Sources */,
+				B3A700EE1E40808300E5393F /* MAIAccessibilityElement.m in Sources */,
+				B3A7010E1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				B3A7020E1E40808300E5393F /* MAIWindow.m in Sources */,
+				B3A702021E40808300E5393F /* MAIView.m in Sources */,
+				B3A701321E40808300E5393F /* MAIDatePicker.m in Sources */,
+				B3A701B01E40808300E5393F /* MAISplitViewController.m in Sources */,
+				B3A701901E40808300E5393F /* MAIPrintInfo.m in Sources */,
+				B3A702061E40808300E5393F /* MAIViewController.m in Sources */,
+				B3A701FE1E40808300E5393F /* MAITouch.m in Sources */,
+				B3A700F81E40808300E5393F /* MAIBezierPath.m in Sources */,
+				B3A701801E40808300E5393F /* MAIPanGestureRecognizer.m in Sources */,
+				B3A701981E40808300E5393F /* MAIRotationGestureRecognizer.m in Sources */,
+				B3C70A401E40B36D001C3893 /* MAILabel.m in Sources */,
+				B3A701261E40808300E5393F /* MAIColor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3A7004B1E40806800E5393F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A701131E40808300E5393F /* MAICollectionViewLayout.m in Sources */,
+				B3A701511E40808300E5393F /* MAIImage.m in Sources */,
+				B3A701391E40808300E5393F /* MAIDocument.m in Sources */,
+				B3A7012B1E40808300E5393F /* MAIControl.m in Sources */,
+				B3A701C91E40808300E5393F /* MAITableView.m in Sources */,
+				B3A701A91E40808300E5393F /* MAIShadow.m in Sources */,
+				B3A701D11E40808300E5393F /* MAITableViewRowAction.m in Sources */,
+				B3A701A51E40808300E5393F /* MAISegmentedControl.m in Sources */,
+				B3A7010B1E40808300E5393F /* MAICollectionViewFlowLayout.m in Sources */,
+				B3A701171E40808300E5393F /* MAICollectionViewLayoutAttributes.m in Sources */,
+				B3A7012F1E40808300E5393F /* MAIDataAsset.m in Sources */,
+				B3A701D51E40808300E5393F /* MAITextAttachment.m in Sources */,
+				B3A701E91E40808300E5393F /* MAITextStorage.m in Sources */,
+				B3A7011F1E40808300E5393F /* MAICollectionViewTransitionLayout.m in Sources */,
+				B3A701431E40808300E5393F /* MAIFont.m in Sources */,
+				B3A701DB1E40808300E5393F /* MAITextContainer.m in Sources */,
+				B3A701671E40808300E5393F /* MAILayoutManager.m in Sources */,
+				B3A701AD1E40808300E5393F /* MAISlider.m in Sources */,
+				B3A701231E40808300E5393F /* MAICollectionViewUpdateItem.m in Sources */,
+				B3A7013F1E40808300E5393F /* MAIEvent.m in Sources */,
+				B3A7014B1E40808300E5393F /* MAIGestureRecognizer.m in Sources */,
+				B3A701891E40808300E5393F /* MAIPasteboard.m in Sources */,
+				B3A7018D1E40808300E5393F /* MAIPrinter.m in Sources */,
+				B3A7015F1E40808300E5393F /* MAILayoutDimension.m in Sources */,
+				B3A700F31E40808300E5393F /* MAIApplication.m in Sources */,
+				B3A701F91E40808300E5393F /* MAIToolbar.m in Sources */,
+				B3A701791E40808300E5393F /* MAIMutableParagraphStyle.m in Sources */,
+				B3A7020B1E40808300E5393F /* MAIVisualEffectView.m in Sources */,
+				B3A701851E40808300E5393F /* MAIParagraphStyle.m in Sources */,
+				B3A701471E40808300E5393F /* MAIFontDescriptor.m in Sources */,
+				B3A700FD1E40808300E5393F /* MAIButton.m in Sources */,
+				B3A701F31E40808300E5393F /* MAITextView.m in Sources */,
+				B3A701751E40808300E5393F /* MAIMenuItem.m in Sources */,
+				B3A7017D1E40808300E5393F /* MAINib.m in Sources */,
+				B3A701BD1E40808300E5393F /* MAIStoryboard.m in Sources */,
+				B3C70A411E40B36D001C3893 /* MAILabel.m in Sources */,
+				B3A701C51E40808300E5393F /* MAIStringDrawingContext.m in Sources */,
+				B3A701011E40808300E5393F /* MAICollectionView.m in Sources */,
+				B3A701EF1E40808300E5393F /* MAITextTab.m in Sources */,
+				B3A701B91E40808300E5393F /* MAIStepper.m in Sources */,
+				B3A7011B1E40808300E5393F /* MAICollectionViewLayoutInvalidationContext.m in Sources */,
+				B3A701551E40808300E5393F /* MAIImageView.m in Sources */,
+				B3A701A11E40808300E5393F /* MAIScrollView.m in Sources */,
+				B3A7015B1E40808300E5393F /* MAILayoutConstraint.m in Sources */,
+				B3A701B51E40808300E5393F /* MAIStackView.m in Sources */,
+				B3A701631E40808300E5393F /* MAILayoutGuide.m in Sources */,
+				B3A701C11E40808300E5393F /* MAIStoryboardSegue.m in Sources */,
+				B3A701951E40808300E5393F /* MAIResponder.m in Sources */,
+				B3A7019D1E40808300E5393F /* MAIScreen.m in Sources */,
+				B3A701711E40808300E5393F /* MAILayoutYAxisAnchor.m in Sources */,
+				B3A701DF1E40808300E5393F /* MAITextField.m in Sources */,
+				B3A7016D1E40808300E5393F /* MAILayoutXAxisAnchor.m in Sources */,
+				B3A700EF1E40808300E5393F /* MAIAccessibilityElement.m in Sources */,
+				B3A7010F1E40808300E5393F /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				B3A7020F1E40808300E5393F /* MAIWindow.m in Sources */,
+				B3A702031E40808300E5393F /* MAIView.m in Sources */,
+				B3A701331E40808300E5393F /* MAIDatePicker.m in Sources */,
+				B3A701B11E40808300E5393F /* MAISplitViewController.m in Sources */,
+				B3A701911E40808300E5393F /* MAIPrintInfo.m in Sources */,
+				B3A702071E40808300E5393F /* MAIViewController.m in Sources */,
+				B3A701FF1E40808300E5393F /* MAITouch.m in Sources */,
+				B3A700F91E40808300E5393F /* MAIBezierPath.m in Sources */,
+				B3A701811E40808300E5393F /* MAIPanGestureRecognizer.m in Sources */,
+				B3A701991E40808300E5393F /* MAIRotationGestureRecognizer.m in Sources */,
+				B3A701271E40808300E5393F /* MAIColor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B3A7003B1E407E5700E5393F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		B3A7003C1E407E5700E5393F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		B3A700491E40803C00E5393F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GQE994U6EG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "MAIKit-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.meandmymac.MAIKit-macOS";
+				PRODUCT_NAME = MAIKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3A7004A1E40803C00E5393F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GQE994U6EG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "MAIKit-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.meandmymac.MAIKit-macOS";
+				PRODUCT_NAME = MAIKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3A700561E40806800E5393F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GQE994U6EG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "MAIKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.meandmymac.MAIKit-iOS";
+				PRODUCT_NAME = MAIKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3A700571E40806800E5393F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GQE994U6EG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "MAIKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.meandmymac.MAIKit-iOS";
+				PRODUCT_NAME = MAIKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3A7003A1E407E5700E5393F /* Build configuration list for PBXProject "MAIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A7003B1E407E5700E5393F /* Debug */,
+				B3A7003C1E407E5700E5393F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3A700481E40803C00E5393F /* Build configuration list for PBXNativeTarget "MAIKit-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A700491E40803C00E5393F /* Debug */,
+				B3A7004A1E40803C00E5393F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3A700551E40806800E5393F /* Build configuration list for PBXNativeTarget "MAIKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A700561E40806800E5393F /* Debug */,
+				B3A700571E40806800E5393F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3A700371E407E5700E5393F /* Project object */;
+}

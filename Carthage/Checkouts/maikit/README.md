@@ -1,0 +1,1 @@
+Grouping in macOS NSTableView: http://stackoverflow.com/a/39125992
