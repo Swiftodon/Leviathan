@@ -1,3 +1,6 @@
 # General Frameworks
 git "https://thbonk@bitbucket.org/meandmymacde/extappkit.git" "master"
 git "https://thbonk@bitbucket.org/meandmymacde/maikit.git" "8.3.0"
+
+# Alamofire HTTP networking library
+github "Alamofire/Alamofire" ~> 4.4.0
