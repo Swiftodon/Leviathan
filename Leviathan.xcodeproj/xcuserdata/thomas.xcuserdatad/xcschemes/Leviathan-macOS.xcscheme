@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E984B5E31E98DB0D008DACDC"
-               BuildableName = "Leviathan-macOS.app"
+               BuildableName = "Leviathan.app"
                BlueprintName = "Leviathan-macOS"
                ReferencedContainer = "container:Leviathan.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E984B5E31E98DB0D008DACDC"
-            BuildableName = "Leviathan-macOS.app"
+            BuildableName = "Leviathan.app"
             BlueprintName = "Leviathan-macOS"
             ReferencedContainer = "container:Leviathan.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E984B5E31E98DB0D008DACDC"
-            BuildableName = "Leviathan-macOS.app"
+            BuildableName = "Leviathan.app"
             BlueprintName = "Leviathan-macOS"
             ReferencedContainer = "container:Leviathan.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E984B5E31E98DB0D008DACDC"
-            BuildableName = "Leviathan-macOS.app"
+            BuildableName = "Leviathan.app"
             BlueprintName = "Leviathan-macOS"
             ReferencedContainer = "container:Leviathan.xcodeproj">
          </BuildableReference>
