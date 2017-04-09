@@ -10,11 +10,7 @@
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
-		E984B5FE1E98DC7F008DACDC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E984B5FB1E98DC7F008DACDC /* Alamofire.framework */; };
-		E984B5FF1E98DC7F008DACDC /* ExtAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E984B5FC1E98DC7F008DACDC /* ExtAppKit.framework */; };
 		E984B6001E98DC7F008DACDC /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E984B5FD1E98DC7F008DACDC /* MAIKit.framework */; };
-		E984B6021E98DC94008DACDC /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E984B5FB1E98DC7F008DACDC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E984B6031E98DC94008DACDC /* ExtAppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E984B5FC1E98DC7F008DACDC /* ExtAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E984B6041E98DC94008DACDC /* MAIKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E984B5FD1E98DC7F008DACDC /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -25,8 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E984B6021E98DC94008DACDC /* Alamofire.framework in Copy Frameworks */,
-				E984B6031E98DC94008DACDC /* ExtAppKit.framework in Copy Frameworks */,
 				E984B6041E98DC94008DACDC /* MAIKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -40,8 +34,6 @@
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E984B5F01E98DB0D008DACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E984B5F71E98DC0F008DACDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E984B5FB1E98DC7F008DACDC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		E984B5FC1E98DC7F008DACDC /* ExtAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExtAppKit.framework; path = Carthage/Build/Mac/ExtAppKit.framework; sourceTree = "<group>"; };
 		E984B5FD1E98DC7F008DACDC /* MAIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAIKit.framework; path = Carthage/Build/Mac/MAIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,8 +42,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E984B5FE1E98DC7F008DACDC /* Alamofire.framework in Frameworks */,
-				E984B5FF1E98DC7F008DACDC /* ExtAppKit.framework in Frameworks */,
 				E984B6001E98DC7F008DACDC /* MAIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,8 +113,6 @@
 		E984B5FA1E98DC7F008DACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E984B5FB1E98DC7F008DACDC /* Alamofire.framework */,
-				E984B5FC1E98DC7F008DACDC /* ExtAppKit.framework */,
 				E984B5FD1E98DC7F008DACDC /* MAIKit.framework */,
 			);
 			name = Frameworks;
@@ -383,6 +371,7 @@
 				E984B5F21E98DB0D008DACDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
