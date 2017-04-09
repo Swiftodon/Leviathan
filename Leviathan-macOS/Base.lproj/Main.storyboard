@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -666,31 +667,59 @@
                     <window key="window" title="Leviathan" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="640" height="480"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="640" height="480"/>
+                        <value key="minSize" type="size" width="480" height="480"/>
                         <toolbar key="toolbar" implicitIdentifier="591D4673-63D9-4805-84C7-366330A4A63E" displayMode="iconAndLabel" sizeMode="regular" id="AK6-cv-HSa">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="aD6-UI-jmi"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="fS4-ch-Ycw"/>
-                                <toolbarItem implicitItemIdentifier="D97A6B69-A3AF-4612-985D-30CEF3799B48" label="User" paletteLabel="User" tag="-1" image="ic_account" id="jNr-Ki-RBO"/>
                                 <toolbarItem implicitItemIdentifier="811CC781-2EC3-4E37-B0C1-CBD07C87DB7B" label="Toot" paletteLabel="Toot" tag="-1" image="ic_write_post" id="6m5-ok-viV"/>
+                                <toolbarItem implicitItemIdentifier="D9FC7269-5223-40CB-8271-25E1BA1ABB53" label="User" paletteLabel="User" tag="-1" image="ic_account" id="Pqa-XM-eeb"/>
+                                <toolbarItem implicitItemIdentifier="62F34267-ECFE-43A7-A93D-7E8E4E79FD3A" label="Home" paletteLabel="Home" tag="-1" image="ic_home" id="9e5-BB-oGy"/>
+                                <toolbarItem implicitItemIdentifier="ED6C4213-E540-4367-B2C6-83C45A10E83E" label="Local" paletteLabel="Local" tag="-1" image="ic_local" id="QIh-eh-2vz"/>
+                                <toolbarItem implicitItemIdentifier="9BDED83E-74FE-4077-BC3F-2DD324F3B00C" label="Federated" paletteLabel="Federated" tag="-1" image="ic_federated" id="XBW-Cf-v8X"/>
+                                <toolbarItem implicitItemIdentifier="21AC52A6-FB34-4D03-9DEF-C0F55E506C93" label="Notifications" paletteLabel="Notifications" tag="-1" image="ic_notifications_none" id="rqr-xt-Zph"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="jNr-Ki-RBO"/>
+                                <toolbarItem reference="Pqa-XM-eeb"/>
+                                <toolbarItem reference="rqr-xt-Zph"/>
+                                <toolbarItem reference="9e5-BB-oGy"/>
+                                <toolbarItem reference="QIh-eh-2vz"/>
+                                <toolbarItem reference="XBW-Cf-v8X"/>
                                 <toolbarItem reference="fS4-ch-Ycw"/>
                                 <toolbarItem reference="6m5-ok-viV"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
+                    <connections>
+                        <segue destination="Y3b-fY-e5J" kind="relationship" relationship="window.shadowedContentViewController" id="MOv-kh-Y8l"/>
+                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="340"/>
+            <point key="canvasLocation" x="122" y="342"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hb8-gC-1t9">
+            <objects>
+                <viewController id="Y3b-fY-e5J" sceneMemberID="viewController">
+                    <view key="view" id="aVP-80-9uW">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="Rhq-2E-MDN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="1018"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_account" width="18" height="18"/>
+        <image name="ic_federated" width="512" height="512"/>
+        <image name="ic_home" width="512" height="512"/>
+        <image name="ic_local" width="512" height="512"/>
+        <image name="ic_notifications_none" width="512" height="512"/>
         <image name="ic_write_post" width="18" height="18"/>
     </resources>
 </document>
