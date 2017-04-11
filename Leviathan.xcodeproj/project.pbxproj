@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E96B17E91E9CDEF00029D636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B17E81E9CDEF00029D636 /* AppDelegate.swift */; };
+		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
+		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
+		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
+		E96B17FB1E9CDF500029D636 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96B17FA1E9CDF500029D636 /* MAIKit.framework */; };
+		E96B17FC1E9CDF500029D636 /* MAIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E96B17FA1E9CDF500029D636 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
@@ -15,6 +21,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E96B17FD1E9CDF500029D636 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E96B17FC1E9CDF500029D636 /* MAIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E984B6011E98DC85008DACDC /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,6 +46,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E96B17E81E9CDEF00029D636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E96B17F41E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E96B17F61E9CDEF00029D636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E96B17FA1E9CDF500029D636 /* MAIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAIKit.framework; path = Carthage/Build/iOS/MAIKit.framework; sourceTree = "<group>"; };
 		E984B5E41E98DB0D008DACDC /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984B5EB1E98DB0D008DACDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +62,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E96B17E31E9CDEF00029D636 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96B17FB1E9CDF500029D636 /* MAIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E984B5E11E98DB0D008DACDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,15 +85,29 @@
 			isa = PBXGroup;
 			children = (
 				E984B5E61E98DB0D008DACDC /* Leviathan-macOS */,
+				E96B17E71E9CDEF00029D636 /* Leviathan-iOS */,
 				E984B5E51E98DB0D008DACDC /* Products */,
 				E984B5FA1E98DC7F008DACDC /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		E96B17E71E9CDEF00029D636 /* Leviathan-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E96B17E81E9CDEF00029D636 /* AppDelegate.swift */,
+				E96B17EE1E9CDEF00029D636 /* Main.storyboard */,
+				E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */,
+				E96B17F11E9CDEF00029D636 /* Assets.xcassets */,
+				E96B17F61E9CDEF00029D636 /* Info.plist */,
+			);
+			path = "Leviathan-iOS";
 			sourceTree = "<group>";
 		};
 		E984B5E51E98DB0D008DACDC /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				E984B5E41E98DB0D008DACDC /* Leviathan.app */,
+				E96B17E61E9CDEF00029D636 /* Leviathan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +159,7 @@
 		E984B5FA1E98DC7F008DACDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E96B17FA1E9CDF500029D636 /* MAIKit.framework */,
 				E984B5FD1E98DC7F008DACDC /* MAIKit.framework */,
 			);
 			name = Frameworks;
@@ -121,12 +168,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E96B17E51E9CDEF00029D636 /* Leviathan-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E96B17F71E9CDEF00029D636 /* Build configuration list for PBXNativeTarget "Leviathan-iOS" */;
+			buildPhases = (
+				E96B17E21E9CDEF00029D636 /* Sources */,
+				E96B17E31E9CDEF00029D636 /* Frameworks */,
+				E96B17E41E9CDEF00029D636 /* Resources */,
+				E96B17FD1E9CDF500029D636 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Leviathan-iOS";
+			productName = "Leviathan-iOS";
+			productReference = E96B17E61E9CDEF00029D636 /* Leviathan.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E984B5E31E98DB0D008DACDC /* Leviathan-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E984B5F31E98DB0D008DACDC /* Build configuration list for PBXNativeTarget "Leviathan-macOS" */;
 			buildPhases = (
 				E984B5E01E98DB0D008DACDC /* Sources */,
-				E984B6051E98DCA2008DACDC /* Increase Build Number */,
 				E984B5E11E98DB0D008DACDC /* Frameworks */,
 				E984B5E21E98DB0D008DACDC /* Resources */,
 				E984B6011E98DC85008DACDC /* Copy Frameworks */,
@@ -149,6 +213,10 @@
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				TargetAttributes = {
+					E96B17E51E9CDEF00029D636 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
 					E984B5E31E98DB0D008DACDC = {
 						CreatedOnToolsVersion = 8.3;
 						ProvisioningStyle = Automatic;
@@ -169,11 +237,22 @@
 			projectRoot = "";
 			targets = (
 				E984B5E31E98DB0D008DACDC /* Leviathan-macOS */,
+				E96B17E51E9CDEF00029D636 /* Leviathan-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E96B17E41E9CDEF00029D636 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */,
+				E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */,
+				E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E984B5E21E98DB0D008DACDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,24 +264,15 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		E984B6051E98DCA2008DACDC /* Increase Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		E96B17E21E9CDEF00029D636 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			name = "Increase Build Number";
-			outputPaths = (
+				E96B17E91E9CDEF00029D636 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		E984B5E01E98DB0D008DACDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +284,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E96B17EE1E9CDEF00029D636 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E96B17EF1E9CDEF00029D636 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E96B17F41E9CDEF00029D636 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		E984B5ED1E98DB0D008DACDC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -235,6 +321,119 @@
 		E95B2C0A1E9554F000EDC598 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+			};
+			name = Release;
+		};
+		E96B17F81E9CDEF00029D636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Leviathan-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
+				PRODUCT_NAME = Leviathan;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E96B17F91E9CDEF00029D636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Leviathan-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
+				PRODUCT_NAME = Leviathan;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -290,7 +489,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = de.meandmymac.Leviathan;
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
 				PRODUCT_NAME = Leviathan;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -344,7 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = de.meandmymac.Leviathan;
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
 				PRODUCT_NAME = Leviathan;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -363,6 +562,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E96B17F71E9CDEF00029D636 /* Build configuration list for PBXNativeTarget "Leviathan-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E96B17F81E9CDEF00029D636 /* Debug */,
+				E96B17F91E9CDEF00029D636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		E984B5F31E98DB0D008DACDC /* Build configuration list for PBXNativeTarget "Leviathan-macOS" */ = {
 			isa = XCConfigurationList;

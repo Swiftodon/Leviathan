@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Leviathan.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>E96B17CC1E9CDD5E0029D636</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E96B17E51E9CDEF00029D636</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E984B5E31E98DB0D008DACDC</key>
 		<dict>
 			<key>primary</key>

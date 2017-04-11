@@ -683,8 +683,8 @@
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Pqa-XM-eeb"/>
-                                <toolbarItem reference="rqr-xt-Zph"/>
                                 <toolbarItem reference="9e5-BB-oGy"/>
+                                <toolbarItem reference="rqr-xt-Zph"/>
                                 <toolbarItem reference="QIh-eh-2vz"/>
                                 <toolbarItem reference="XBW-Cf-v8X"/>
                                 <toolbarItem reference="fS4-ch-Ycw"/>
@@ -693,25 +693,147 @@
                         </toolbar>
                     </window>
                     <connections>
-                        <segue destination="Y3b-fY-e5J" kind="relationship" relationship="window.shadowedContentViewController" id="MOv-kh-Y8l"/>
+                        <segue destination="Oub-bH-kYf" kind="relationship" relationship="window.shadowedContentViewController" id="Qs8-Xu-1as"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122" y="342"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hb8-gC-1t9">
+        <!--Tab View Controller-->
+        <scene sceneID="io8-s5-qVW">
             <objects>
-                <viewController id="Y3b-fY-e5J" sceneMemberID="viewController">
-                    <view key="view" id="aVP-80-9uW">
+                <tabViewController showSeguePresentationStyle="single" selectedTabViewItemIndex="0" tabStyle="unspecified" id="Oub-bH-kYf" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="z4a-ri-X2k"/>
+                        <tabViewItem identifier="" id="svT-ju-Y9p"/>
+                        <tabViewItem id="psM-bc-owf"/>
+                        <tabViewItem id="E3p-z6-sBq"/>
+                    </tabViewItems>
+                    <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="cQM-5k-rup">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="ccx-dO-h7i" kind="relationship" relationship="tabItems" id="Sk5-gu-RVO"/>
+                        <segue destination="Nca-12-EDh" kind="relationship" relationship="tabItems" id="0ue-pV-Le2"/>
+                        <segue destination="V1S-l7-SfV" kind="relationship" relationship="tabItems" id="O4j-KH-aSd"/>
+                        <segue destination="soE-Jc-rTe" kind="relationship" relationship="tabItems" id="e8K-li-uhc"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="Who-RJ-Gxo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="942"/>
+        </scene>
+        <!--Federated-->
+        <scene sceneID="kAV-As-dvQ">
+            <objects>
+                <viewController title="Federated" id="soE-Jc-rTe" sceneMemberID="viewController">
+                    <view key="view" id="aKf-Ni-Eky">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRi-Mt-7mO">
+                                <rect key="frame" x="180" y="232" width="121" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Federated Timeline" id="wMA-dX-C4N">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nRi-Mt-7mO" firstAttribute="centerX" secondItem="aKf-Ni-Eky" secondAttribute="centerX" id="Fjy-Rg-455"/>
+                            <constraint firstItem="nRi-Mt-7mO" firstAttribute="centerY" secondItem="aKf-Ni-Eky" secondAttribute="centerY" id="QBE-Fi-rWZ"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <customObject id="Rhq-2E-MDN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="cFQ-sL-ne5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="1018"/>
+            <point key="canvasLocation" x="-221" y="1796"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="qeK-75-aMX">
+            <objects>
+                <viewController title="Home" id="ccx-dO-h7i" sceneMemberID="viewController">
+                    <view key="view" id="p28-6z-OV4">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPP-tl-Z5c">
+                                <rect key="frame" x="220" y="231" width="40" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Home" id="YwQ-Qk-TDn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MPP-tl-Z5c" firstAttribute="centerX" secondItem="p28-6z-OV4" secondAttribute="centerX" id="61Q-6T-aDj"/>
+                            <constraint firstItem="MPP-tl-Z5c" firstAttribute="centerY" secondItem="p28-6z-OV4" secondAttribute="centerY" id="TgN-Gx-Bsm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="7Or-lq-5m8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="942"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="tqe-MM-tBs">
+            <objects>
+                <viewController title="Notifications" id="Nca-12-EDh" sceneMemberID="viewController">
+                    <view key="view" id="Ydh-8P-k9C">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arr-JC-LJw">
+                                <rect key="frame" x="200" y="231" width="81" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notifications" id="B3v-rW-Wqm">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Arr-JC-LJw" firstAttribute="centerY" secondItem="Ydh-8P-k9C" secondAttribute="centerY" id="NJZ-xh-fcQ"/>
+                            <constraint firstItem="Arr-JC-LJw" firstAttribute="centerX" secondItem="Ydh-8P-k9C" secondAttribute="centerX" id="tue-u5-aFz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="eSw-uH-DBl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="1796"/>
+        </scene>
+        <!--Local-->
+        <scene sceneID="c9B-m0-fq5">
+            <objects>
+                <viewController title="Local" id="V1S-l7-SfV" sceneMemberID="viewController">
+                    <view key="view" id="F4U-9M-DjO">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-3f-P49">
+                                <rect key="frame" x="195" y="231" width="91" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Local Timeline" id="IcD-XW-3eJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iKH-3f-P49" firstAttribute="centerY" secondItem="F4U-9M-DjO" secondAttribute="centerY" id="3jX-9Y-oaf"/>
+                            <constraint firstItem="iKH-3f-P49" firstAttribute="centerX" secondItem="F4U-9M-DjO" secondAttribute="centerX" id="6qn-qd-9mZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="6Ec-Tl-QkI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="1796"/>
         </scene>
     </scenes>
     <resources>
