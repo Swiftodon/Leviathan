@@ -1,1 +1,2 @@
 git "https://thbonk@bitbucket.org/meandmymacde/maikit.git" "18484263881a043aa9fb9dfc06bbbd733fe5ca7c"
+github "ReactiveX/RxSwift" "3.4.0"

@@ -663,7 +663,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="LeviathanWindowController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Leviathan" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -674,12 +674,28 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="aD6-UI-jmi"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="fS4-ch-Ycw"/>
-                                <toolbarItem implicitItemIdentifier="811CC781-2EC3-4E37-B0C1-CBD07C87DB7B" label="Toot" paletteLabel="Toot" tag="-1" image="ic_write_post" id="6m5-ok-viV"/>
-                                <toolbarItem implicitItemIdentifier="D9FC7269-5223-40CB-8271-25E1BA1ABB53" label="User" paletteLabel="User" tag="-1" image="ic_account" id="Pqa-XM-eeb"/>
-                                <toolbarItem implicitItemIdentifier="62F34267-ECFE-43A7-A93D-7E8E4E79FD3A" label="Home" paletteLabel="Home" tag="-1" image="ic_home" id="9e5-BB-oGy"/>
-                                <toolbarItem implicitItemIdentifier="ED6C4213-E540-4367-B2C6-83C45A10E83E" label="Local" paletteLabel="Local" tag="-1" image="ic_local" id="QIh-eh-2vz"/>
-                                <toolbarItem implicitItemIdentifier="9BDED83E-74FE-4077-BC3F-2DD324F3B00C" label="Federated" paletteLabel="Federated" tag="-1" image="ic_federated" id="XBW-Cf-v8X"/>
-                                <toolbarItem implicitItemIdentifier="21AC52A6-FB34-4D03-9DEF-C0F55E506C93" label="Notifications" paletteLabel="Notifications" tag="-1" image="ic_notifications_none" id="rqr-xt-Zph"/>
+                                <toolbarItem implicitItemIdentifier="811CC781-2EC3-4E37-B0C1-CBD07C87DB7B" label="Toot" paletteLabel="Toot" tag="6000" image="ic_write_post" id="6m5-ok-viV"/>
+                                <toolbarItem implicitItemIdentifier="D9FC7269-5223-40CB-8271-25E1BA1ABB53" label="User" paletteLabel="User" tag="1000" image="ic_account" id="Pqa-XM-eeb"/>
+                                <toolbarItem implicitItemIdentifier="62F34267-ECFE-43A7-A93D-7E8E4E79FD3A" label="Home" paletteLabel="Home" tag="3000" image="ic_home" id="9e5-BB-oGy">
+                                    <connections>
+                                        <action selector="selectTimelineWithSender:" target="B8D-0N-5wS" id="ZAJ-Qy-JoG"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="ED6C4213-E540-4367-B2C6-83C45A10E83E" label="Local" paletteLabel="Local" tag="4000" image="ic_local" id="QIh-eh-2vz">
+                                    <connections>
+                                        <action selector="selectTimelineWithSender:" target="B8D-0N-5wS" id="OaC-QE-MGm"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="9BDED83E-74FE-4077-BC3F-2DD324F3B00C" label="Federated" paletteLabel="Federated" tag="5000" image="ic_federated" id="XBW-Cf-v8X">
+                                    <connections>
+                                        <action selector="selectTimelineWithSender:" target="B8D-0N-5wS" id="0Pf-mh-rLI"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="21AC52A6-FB34-4D03-9DEF-C0F55E506C93" label="Notifications" paletteLabel="Notifications" tag="2000" image="ic_notifications_none" id="rqr-xt-Zph">
+                                    <connections>
+                                        <action selector="selectTimelineWithSender:" target="B8D-0N-5wS" id="C9P-9R-Hcg"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Pqa-XM-eeb"/>
@@ -700,15 +716,15 @@
             </objects>
             <point key="canvasLocation" x="122" y="342"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Leviathan Timelines Tab View Controller-->
         <scene sceneID="io8-s5-qVW">
             <objects>
-                <tabViewController showSeguePresentationStyle="single" selectedTabViewItemIndex="0" tabStyle="unspecified" id="Oub-bH-kYf" sceneMemberID="viewController">
+                <tabViewController showSeguePresentationStyle="single" selectedTabViewItemIndex="0" tabStyle="unspecified" id="Oub-bH-kYf" customClass="LeviathanTimelinesTabViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem identifier="" id="z4a-ri-X2k"/>
-                        <tabViewItem identifier="" id="svT-ju-Y9p"/>
-                        <tabViewItem id="psM-bc-owf"/>
-                        <tabViewItem id="E3p-z6-sBq"/>
+                        <tabViewItem identifier="3000" id="z4a-ri-X2k"/>
+                        <tabViewItem identifier="2000" id="svT-ju-Y9p"/>
+                        <tabViewItem identifier="4000" id="psM-bc-owf"/>
+                        <tabViewItem identifier="5000" id="E3p-z6-sBq"/>
                     </tabViewItems>
                     <tabView key="tabView" misplaced="YES" type="noTabsNoBorder" id="cQM-5k-rup">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
