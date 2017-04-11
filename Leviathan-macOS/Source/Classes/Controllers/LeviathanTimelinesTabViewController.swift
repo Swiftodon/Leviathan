@@ -32,7 +32,6 @@ class LeviathanTimelinesTabViewController: NSTabViewController {
             .index(of: self.tabViewItems
                 .filter({($0.identifier as! String) == identifier})
                     .first!)!
-        
     }
     
 }
