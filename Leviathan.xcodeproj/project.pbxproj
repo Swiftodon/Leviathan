@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90E610F1E9E0C2C00E2DC19 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */; };
+		E90E61101E9E0C2C00E2DC19 /* MAIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
 		E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18011E9CFC4C0029D636 /* AppDelegate.swift */; };
 		E96B18051E9D038F0029D636 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18041E9D038F0029D636 /* Images.swift */; };
 		E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18081E9D3AF70029D636 /* Globals+macOS.swift */; };
-		E96B180D1E9D3D160029D636 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96B180A1E9D3D160029D636 /* RxBlocking.framework */; };
-		E96B180E1E9D3D160029D636 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E96B180A1E9D3D160029D636 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96B18151E9D3D570029D636 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96B180A1E9D3D160029D636 /* RxBlocking.framework */; };
 		E96B18161E9D3D570029D636 /* RxBlocking.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E96B180A1E9D3D160029D636 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96B18171E9D3D570029D636 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96B180B1E9D3D160029D636 /* RxCocoa.framework */; };
@@ -37,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E96B180E1E9D3D160029D636 /* RxBlocking.framework in Embed Frameworks */,
+				E90E61101E9E0C2C00E2DC19 /* MAIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,12 +59,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAIKit.framework; path = Carthage/Build/iOS/MAIKit.framework; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E96B17F41E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E96B17F61E9CDEF00029D636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E96B17FA1E9CDF500029D636 /* MAIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAIKit.framework; path = Carthage/Build/iOS/MAIKit.framework; sourceTree = "<group>"; };
 		E96B18011E9CFC4C0029D636 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E96B18041E9D038F0029D636 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		E96B18081E9D3AF70029D636 /* Globals+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Globals+macOS.swift"; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96B180D1E9D3D160029D636 /* RxBlocking.framework in Frameworks */,
+				E90E610F1E9E0C2C00E2DC19 /* MAIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,7 @@
 		E96B18141E9D3D3C0029D636 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E96B17FA1E9CDF500029D636 /* MAIKit.framework */,
+				E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -673,6 +673,7 @@
 				E96B17F91E9CDEF00029D636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E984B5F31E98DB0D008DACDC /* Build configuration list for PBXNativeTarget "Leviathan-macOS" */ = {
 			isa = XCConfigurationList;
