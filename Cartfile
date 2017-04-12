@@ -3,3 +3,6 @@ git "https://thbonk@bitbucket.org/meandmymacde/maikit.git" "8.3.0"
 
 # Reactive Swift
 github "ReactiveX/RxSwift" ~> 3.0
+
+# Swinject, Dependency Injection Framework
+github "Swinject/Swinject" ~> 2.0.0

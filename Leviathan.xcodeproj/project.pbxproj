@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		E90E610F1E9E0C2C00E2DC19 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */; };
 		E90E61101E9E0C2C00E2DC19 /* MAIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E90E61121E9E888900E2DC19 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61111E9E888900E2DC19 /* Swinject.framework */; };
+		E90E61131E9E888900E2DC19 /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61111E9E888900E2DC19 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E90E61151E9E88A500E2DC19 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61141E9E88A500E2DC19 /* Swinject.framework */; };
+		E90E61161E9E88A500E2DC19 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61141E9E88A500E2DC19 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
+		E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
@@ -38,6 +44,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E90E61101E9E0C2C00E2DC19 /* MAIKit.framework in Embed Frameworks */,
+				E90E61161E9E88A500E2DC19 /* Swinject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +58,7 @@
 				E96B181A1E9D3D570029D636 /* RxSwift.framework in Copy Frameworks */,
 				E96B18181E9D3D570029D636 /* RxCocoa.framework in Copy Frameworks */,
 				E984B6041E98DC94008DACDC /* MAIKit.framework in Copy Frameworks */,
+				E90E61131E9E888900E2DC19 /* Swinject.framework in Copy Frameworks */,
 				E96B18161E9D3D570029D636 /* RxBlocking.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -60,6 +68,9 @@
 
 /* Begin PBXFileReference section */
 		E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAIKit.framework; path = Carthage/Build/iOS/MAIKit.framework; sourceTree = "<group>"; };
+		E90E61111E9E888900E2DC19 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
+		E90E61141E9E88A500E2DC19 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		E90E61181E9E88E500E2DC19 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90E610F1E9E0C2C00E2DC19 /* MAIKit.framework in Frameworks */,
+				E90E61151E9E88A500E2DC19 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +109,7 @@
 				E96B18191E9D3D570029D636 /* RxSwift.framework in Frameworks */,
 				E96B18171E9D3D570029D636 /* RxCocoa.framework in Frameworks */,
 				E984B6001E98DC7F008DACDC /* MAIKit.framework in Frameworks */,
+				E90E61121E9E888900E2DC19 /* Swinject.framework in Frameworks */,
 				E96B18151E9D3D570029D636 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,9 +117,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90E61171E9E88D400E2DC19 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E90E61181E9E88E500E2DC19 /* Globals.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E95B2C041E9554F000EDC598 = {
 			isa = PBXGroup;
 			children = (
+				E90E61171E9E88D400E2DC19 /* Common */,
 				E984B5E61E98DB0D008DACDC /* Leviathan-macOS */,
 				E96B17E71E9CDEF00029D636 /* Leviathan-iOS */,
 				E984B5E51E98DB0D008DACDC /* Products */,
@@ -153,6 +175,7 @@
 		E96B18131E9D3D220029D636 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				E90E61111E9E888900E2DC19 /* Swinject.framework */,
 				E984B5FD1E98DC7F008DACDC /* MAIKit.framework */,
 				E96B180A1E9D3D160029D636 /* RxBlocking.framework */,
 				E96B180B1E9D3D160029D636 /* RxCocoa.framework */,
@@ -164,6 +187,7 @@
 		E96B18141E9D3D3C0029D636 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E90E61141E9E88A500E2DC19 /* Swinject.framework */,
 				E90E610E1E9E0C2C00E2DC19 /* MAIKit.framework */,
 			);
 			name = iOS;
@@ -366,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +401,7 @@
 			files = (
 				E96B181F1E9D40760029D636 /* LeviathanTimelinesTabViewController.swift in Sources */,
 				E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */,
+				E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */,
 				E96B181D1E9D403E0029D636 /* LeviathanWindowController.swift in Sources */,
 				E96B18051E9D038F0029D636 /* Images.swift in Sources */,
