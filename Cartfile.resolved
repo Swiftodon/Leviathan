@@ -1,3 +1,3 @@
-git "https://thbonk@bitbucket.org/meandmymacde/maikit.git" "9c7f77096621bff382c51fa204ea8b5a660cfcd9"
+git "https://thbonk@bitbucket.org/meandmymacde/maikit.git" "8.3.0"
 github "ReactiveX/RxSwift" "3.4.0"
 github "Swinject/Swinject" "2.0.0"
