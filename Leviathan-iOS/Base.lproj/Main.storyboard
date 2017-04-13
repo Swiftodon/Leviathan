@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -47,6 +47,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="acW-dT-cKf"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="3000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +58,7 @@
         <!--Notifications-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -79,6 +82,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Notifications" image="ic_notifications_none" id="cPa-gy-q4n"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="2000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +93,7 @@
         <!--Local-->
         <scene sceneID="oCB-FJ-cqQ">
             <objects>
-                <viewController id="CJy-We-AaZ" sceneMemberID="viewController">
+                <viewController id="CJy-We-AaZ" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0h5-u6-2BX"/>
                         <viewControllerLayoutGuide type="bottom" id="Bl7-uN-N0J"/>
@@ -111,6 +117,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Local" image="ic_local" id="yUI-UY-zpg"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="4000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahl-mV-f05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,7 +128,7 @@
         <!--Federated-->
         <scene sceneID="Q2Y-FL-D6J">
             <objects>
-                <viewController id="zhK-jy-Msd" sceneMemberID="viewController">
+                <viewController id="zhK-jy-Msd" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x48-up-YPM"/>
                         <viewControllerLayoutGuide type="bottom" id="RZE-lg-zTe"/>
@@ -143,6 +152,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Federated" image="ic_federated" id="1Pw-W8-6IT"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="5000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psd-Iw-U60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

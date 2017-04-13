@@ -10,11 +10,6 @@ import Foundation
 import Swinject
 
 
-// MARK: - Dependency Injection Container
-
-public let injectionContainer = Container()
-
-
 // MARK: - Timeline Controller IDs
 
 enum Timeline: String {
@@ -24,3 +19,13 @@ enum Timeline: String {
     case Federated      = "5000"
     case Notification   = "2000"
 }
+
+
+// MARK: - Global Variables and Constants
+
+public struct Globals {
+
+    // The DI Container
+    public static let injectionContainer = Container()
+}
+

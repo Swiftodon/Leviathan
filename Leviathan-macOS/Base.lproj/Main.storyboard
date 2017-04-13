@@ -746,7 +746,7 @@
         <!--Federated-->
         <scene sceneID="kAV-As-dvQ">
             <objects>
-                <viewController title="Federated" id="soE-Jc-rTe" sceneMemberID="viewController">
+                <viewController title="Federated" id="soE-Jc-rTe" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="aKf-Ni-Eky">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -765,6 +765,9 @@
                             <constraint firstItem="nRi-Mt-7mO" firstAttribute="centerY" secondItem="aKf-Ni-Eky" secondAttribute="centerY" id="QBE-Fi-rWZ"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="5000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <customObject id="cFQ-sL-ne5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -773,7 +776,7 @@
         <!--Home-->
         <scene sceneID="qeK-75-aMX">
             <objects>
-                <viewController title="Home" id="ccx-dO-h7i" sceneMemberID="viewController">
+                <viewController title="Home" id="ccx-dO-h7i" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="p28-6z-OV4">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -792,6 +795,9 @@
                             <constraint firstItem="MPP-tl-Z5c" firstAttribute="centerY" secondItem="p28-6z-OV4" secondAttribute="centerY" id="TgN-Gx-Bsm"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="3000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <customObject id="7Or-lq-5m8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -800,7 +806,7 @@
         <!--Notifications-->
         <scene sceneID="tqe-MM-tBs">
             <objects>
-                <viewController title="Notifications" id="Nca-12-EDh" sceneMemberID="viewController">
+                <viewController title="Notifications" id="Nca-12-EDh" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Ydh-8P-k9C">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -819,6 +825,9 @@
                             <constraint firstItem="Arr-JC-LJw" firstAttribute="centerX" secondItem="Ydh-8P-k9C" secondAttribute="centerX" id="tue-u5-aFz"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="2000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <customObject id="eSw-uH-DBl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -827,7 +836,7 @@
         <!--Local-->
         <scene sceneID="c9B-m0-fq5">
             <objects>
-                <viewController title="Local" id="V1S-l7-SfV" sceneMemberID="viewController">
+                <viewController title="Local" id="V1S-l7-SfV" customClass="LeviathanTimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="F4U-9M-DjO">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -846,6 +855,9 @@
                             <constraint firstItem="iKH-3f-P49" firstAttribute="centerX" secondItem="F4U-9M-DjO" secondAttribute="centerX" id="6qn-qd-9mZ"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="4000"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <customObject id="6Ec-Tl-QkI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -853,11 +865,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_account" width="18" height="18"/>
-        <image name="ic_federated" width="512" height="512"/>
-        <image name="ic_home" width="512" height="512"/>
-        <image name="ic_local" width="512" height="512"/>
-        <image name="ic_notifications_none" width="512" height="512"/>
-        <image name="ic_write_post" width="18" height="18"/>
+        <image name="ic_account" width="50" height="50"/>
+        <image name="ic_federated" width="50" height="50"/>
+        <image name="ic_home" width="50" height="50"/>
+        <image name="ic_local" width="50" height="50"/>
+        <image name="ic_notifications_none" width="50" height="50"/>
+        <image name="ic_write_post" width="50" height="50"/>
     </resources>
 </document>
