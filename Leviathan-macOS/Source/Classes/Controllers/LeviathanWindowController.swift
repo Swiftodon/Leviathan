@@ -16,9 +16,9 @@ class LeviathanWindowController: NSWindowController {
     
     @IBAction func selectTimeline(sender: NSToolbarItem) {
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowTabNotification),
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Notifications.ShowTab.rawValue),
                                         object: sender,
-                                        userInfo: [ShowTabNotificationId: sender.tag])
+                                        userInfo: [Notifications.TabId: sender.tag])
         
     }
 }

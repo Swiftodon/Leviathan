@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import Cocoa
 
 class LeviathanTimelinesTabViewController: NSTabViewController {
@@ -15,7 +16,7 @@ class LeviathanTimelinesTabViewController: NSTabViewController {
     override func viewWillAppear() {
         
         _ = NotificationCenter.default.rx
-            .notification(NSNotification.Name(ShowTabNotification))
+            .notification(NSNotification.Name(Notifications.ShowTab.rawValue))
             .takeUntil(rx.methodInvoked(#selector(self.viewWillDisappear)))
             .subscribe(onNext: self.showTab)
     }
@@ -23,9 +24,9 @@ class LeviathanTimelinesTabViewController: NSTabViewController {
     
     // MARK: - Switch Tabs
     
-    func showTab(notification: Notification) {
+    func showTab(_ notification: Notification) -> Void {
         
-        let tag = notification.userInfo?[ShowTabNotificationId] as! Int
+        let tag = notification.userInfo?[Notifications.TabId] as! Int
         let identifier = String(describing: tag)
         
         self.selectedTabViewItemIndex = self.tabViewItems

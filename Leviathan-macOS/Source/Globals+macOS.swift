@@ -10,5 +10,8 @@ import Foundation
 
 // MARK: - Global Constants
 
-public let ShowTabNotification      = "ShowTabNotification"
-public let ShowTabNotificationId    = "ShowTabNotificationId"
+enum Notifications: String {
+
+    case ShowTab  = "ShowTabNotification"
+    case TabId    = "ShowTabNotificationId"
+}
