@@ -6,3 +6,9 @@ github "ReactiveX/RxSwift" ~> 3.0
 
 # Swinject, Dependency Injection Framework
 github "Swinject/Swinject" ~> 2.0.0
+
+# Mastodon.swift
+github "Swiftodon/Mastodon.swift" "master"
+
+# Locksmith (Keychain Wrapper) to store passwords in Keychain
+github "matthewpalmer/Locksmith"

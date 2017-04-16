@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class LeviathanTimelinesTabViewController: NSTabViewController {
+class TimelinesTabViewController: NSTabViewController {
 
     // MARK: - NSViewController, NSTabViewController
     

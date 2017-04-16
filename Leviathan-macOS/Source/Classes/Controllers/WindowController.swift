@@ -1,5 +1,5 @@
 //
-//  LeviathanWindowController.swift
+//  WindowController.swift
 //  Leviathan
 //
 //  Created by Thomas Bonk on 11.04.17.
@@ -10,7 +10,7 @@ import Cocoa
 import RxCocoa
 
 
-class LeviathanWindowController: NSWindowController {
+class WindowController: NSWindowController {
 
     // MARK: - Action Handlers
     
