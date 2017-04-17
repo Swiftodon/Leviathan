@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
 		E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
-		E90E611E1E9F975100E2DC19 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E611D1E9F975100E2DC19 /* TimelineViewController.swift */; };
-		E90E611F1E9F975100E2DC19 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E611D1E9F975100E2DC19 /* TimelineViewController.swift */; };
 		E91354FF1EA289AF0046DAF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EC1EA289AF0046DAF0 /* Alamofire.framework */; };
 		E91355001EA289AF0046DAF0 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354ED1EA289AF0046DAF0 /* Gloss.framework */; };
 		E91355011EA289AF0046DAF0 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EE1EA289AF0046DAF0 /* Locksmith.framework */; };
@@ -98,6 +96,7 @@
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
 		E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */; };
+		E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,7 +160,6 @@
 
 /* Begin PBXFileReference section */
 		E90E61181E9E88E500E2DC19 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		E90E611D1E9F975100E2DC19 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		E91354EC1EA289AF0046DAF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		E91354ED1EA289AF0046DAF0 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/Mac/Gloss.framework; sourceTree = "<group>"; };
 		E91354EE1EA289AF0046DAF0 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/Mac/Locksmith.framework; sourceTree = "<group>"; };
@@ -218,6 +216,7 @@
 		E984B5F01E98DB0D008DACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E984B5F71E98DC0F008DACDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
+		E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,18 +286,9 @@
 		E90E611B1E9F973200E2DC19 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E90E611C1E9F973200E2DC19 /* Controllers */,
 				E91355761EA29DDD0046DAF0 /* Model */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		E90E611C1E9F973200E2DC19 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E90E611D1E9F975100E2DC19 /* TimelineViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		E91355761EA29DDD0046DAF0 /* Model */ = {
@@ -411,6 +401,7 @@
 		E96B181B1E9D403E0029D636 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */,
 				E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */,
 				E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */,
 				E96B181C1E9D403E0029D636 /* WindowController.swift */,
@@ -610,7 +601,6 @@
 				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
 				E91355791EA29E040046DAF0 /* Account.swift in Sources */,
-				E90E611F1E9F975100E2DC19 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,11 +609,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */,
-				E90E611E1E9F975100E2DC19 /* TimelineViewController.swift in Sources */,
 				E91355781EA29E040046DAF0 /* Account.swift in Sources */,
 				E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */,
 				E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */,
+				E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */,
 				E96B181D1E9D403E0029D636 /* WindowController.swift in Sources */,
 				E96B18051E9D038F0029D636 /* Images.swift in Sources */,
 				E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */,

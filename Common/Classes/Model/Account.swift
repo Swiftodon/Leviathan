@@ -11,14 +11,4 @@ import MastodonSwift
 
 class Account {
     
-    // MARK: - Initialization
-    
-    init() {
-        
-    }
-    
-    // MARK: - Properties required for NSTreeController
-    
-    let children: [Account] = []
-    let isLeaf = true
 }
