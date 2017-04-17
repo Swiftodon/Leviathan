@@ -1037,7 +1037,6 @@
                     </view>
                 </viewController>
                 <customObject id="3FF-tR-G5B" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <treeController id="MT0-IM-VHJ"/>
             </objects>
             <point key="canvasLocation" x="2119" y="215.5"/>
         </scene>
