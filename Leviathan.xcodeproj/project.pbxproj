@@ -12,7 +12,6 @@
 		E91354FF1EA289AF0046DAF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EC1EA289AF0046DAF0 /* Alamofire.framework */; };
 		E91355001EA289AF0046DAF0 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354ED1EA289AF0046DAF0 /* Gloss.framework */; };
 		E91355011EA289AF0046DAF0 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EE1EA289AF0046DAF0 /* Locksmith.framework */; };
-		E91355021EA289AF0046DAF0 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EF1EA289AF0046DAF0 /* MAIKit.framework */; };
 		E91355031EA289AF0046DAF0 /* MastodonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F01EA289AF0046DAF0 /* MastodonSwift.framework */; };
 		E91355041EA289AF0046DAF0 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F11EA289AF0046DAF0 /* Moya.framework */; };
 		E91355051EA289AF0046DAF0 /* MoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F21EA289AF0046DAF0 /* MoyaGloss.framework */; };
@@ -30,7 +29,6 @@
 		E91355251EA289D50046DAF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355121EA289D50046DAF0 /* Alamofire.framework */; };
 		E91355261EA289D50046DAF0 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355131EA289D50046DAF0 /* Gloss.framework */; };
 		E91355271EA289D50046DAF0 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355141EA289D50046DAF0 /* Locksmith.framework */; };
-		E91355281EA289D50046DAF0 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355151EA289D50046DAF0 /* MAIKit.framework */; };
 		E91355291EA289D50046DAF0 /* MastodonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355161EA289D50046DAF0 /* MastodonSwift.framework */; };
 		E913552A1EA289D50046DAF0 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355171EA289D50046DAF0 /* Moya.framework */; };
 		E913552B1EA289D50046DAF0 /* MoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355181EA289D50046DAF0 /* MoyaGloss.framework */; };
@@ -48,7 +46,6 @@
 		E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355121EA289D50046DAF0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355131EA289D50046DAF0 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E913554F1EA28AD90046DAF0 /* Locksmith.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355141EA289D50046DAF0 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355501EA28AD90046DAF0 /* MAIKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355151EA289D50046DAF0 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355511EA28AD90046DAF0 /* MastodonSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355161EA289D50046DAF0 /* MastodonSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355521EA28AD90046DAF0 /* Moya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355171EA289D50046DAF0 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355531EA28AD90046DAF0 /* MoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355181EA289D50046DAF0 /* MoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -67,7 +64,6 @@
 		E91355641EA28BD70046DAF0 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EC1EA289AF0046DAF0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355651EA28BD70046DAF0 /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354ED1EA289AF0046DAF0 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355661EA28BD70046DAF0 /* Locksmith.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EE1EA289AF0046DAF0 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355671EA28BD70046DAF0 /* MAIKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EF1EA289AF0046DAF0 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355681EA28BD70046DAF0 /* MastodonSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F01EA289AF0046DAF0 /* MastodonSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355691EA28BD70046DAF0 /* Moya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F11EA289AF0046DAF0 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E913556A1EA28BD70046DAF0 /* MoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F21EA289AF0046DAF0 /* MoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,6 +93,7 @@
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
 		E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */; };
 		E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */; };
+		E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,7 +106,6 @@
 				E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */,
 				E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */,
 				E913554F1EA28AD90046DAF0 /* Locksmith.framework in Copy Frameworks */,
-				E91355501EA28AD90046DAF0 /* MAIKit.framework in Copy Frameworks */,
 				E91355511EA28AD90046DAF0 /* MastodonSwift.framework in Copy Frameworks */,
 				E91355521EA28AD90046DAF0 /* Moya.framework in Copy Frameworks */,
 				E91355531EA28AD90046DAF0 /* MoyaGloss.framework in Copy Frameworks */,
@@ -137,7 +133,6 @@
 				E91355641EA28BD70046DAF0 /* Alamofire.framework in Copy Frameworks */,
 				E91355651EA28BD70046DAF0 /* Gloss.framework in Copy Frameworks */,
 				E91355661EA28BD70046DAF0 /* Locksmith.framework in Copy Frameworks */,
-				E91355671EA28BD70046DAF0 /* MAIKit.framework in Copy Frameworks */,
 				E91355681EA28BD70046DAF0 /* MastodonSwift.framework in Copy Frameworks */,
 				E91355691EA28BD70046DAF0 /* Moya.framework in Copy Frameworks */,
 				E913556A1EA28BD70046DAF0 /* MoyaGloss.framework in Copy Frameworks */,
@@ -217,6 +212,7 @@
 		E984B5F71E98DC0F008DACDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
 		E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +223,6 @@
 				E91355251EA289D50046DAF0 /* Alamofire.framework in Frameworks */,
 				E91355261EA289D50046DAF0 /* Gloss.framework in Frameworks */,
 				E91355271EA289D50046DAF0 /* Locksmith.framework in Frameworks */,
-				E91355281EA289D50046DAF0 /* MAIKit.framework in Frameworks */,
 				E91355291EA289D50046DAF0 /* MastodonSwift.framework in Frameworks */,
 				E913552A1EA289D50046DAF0 /* Moya.framework in Frameworks */,
 				E913552B1EA289D50046DAF0 /* MoyaGloss.framework in Frameworks */,
@@ -253,7 +248,6 @@
 				E91354FF1EA289AF0046DAF0 /* Alamofire.framework in Frameworks */,
 				E91355001EA289AF0046DAF0 /* Gloss.framework in Frameworks */,
 				E91355011EA289AF0046DAF0 /* Locksmith.framework in Frameworks */,
-				E91355021EA289AF0046DAF0 /* MAIKit.framework in Frameworks */,
 				E91355031EA289AF0046DAF0 /* MastodonSwift.framework in Frameworks */,
 				E91355041EA289AF0046DAF0 /* Moya.framework in Frameworks */,
 				E91355051EA289AF0046DAF0 /* MoyaGloss.framework in Frameworks */,
@@ -334,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				E96B18001E9CFC4C0029D636 /* Application */,
+				E9F3C83F1EA557E9009BE3E8 /* Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -401,9 +396,9 @@
 		E96B181B1E9D403E0029D636 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */,
 				E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */,
 				E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */,
+				E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */,
 				E96B181C1E9D403E0029D636 /* WindowController.swift */,
 			);
 			name = Controllers;
@@ -474,6 +469,14 @@
 				E96B18131E9D3D220029D636 /* macOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9F3C83F1EA557E9009BE3E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
+				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,
 				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
 				E91355791EA29E040046DAF0 /* Account.swift in Sources */,
 			);
@@ -711,7 +715,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Leviathan-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -766,7 +770,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Leviathan-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;

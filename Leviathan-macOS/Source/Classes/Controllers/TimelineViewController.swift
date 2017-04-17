@@ -6,17 +6,14 @@
 //
 //
 
-import MAIKit
+import Cocoa
 
 @IBDesignable
-class TimelineViewController: MAIViewController {
+class TimelineViewController: NSViewController {
     
     // MARK: - Private Properties
     
-    @IBOutlet private var _tv: MAITableView!
-    private var _tableView: MAITableViewProtocol! {
-        return self._tv as MAITableViewProtocol
-    }
+    @IBOutlet private var _tableView: NSTableView!
     
 
     // MARK: - Public Properties
