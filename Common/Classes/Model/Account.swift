@@ -7,8 +7,19 @@
 //
 
 import Foundation
-import MastodonSwift
 
 class Account {
     
+    // MARK: - Public Properties
+    
+    public var server  : String = ""
+    public var username: String = ""
+    public var password: String {
+        set {
+            
+        }
+        get {
+            return ""
+        }
+    }
 }
