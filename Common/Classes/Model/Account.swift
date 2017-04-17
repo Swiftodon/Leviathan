@@ -22,4 +22,12 @@ class Account {
             return ""
         }
     }
+    
+    public var clientId    : String = ""
+    public var clientSecret: String = ""
+    public var accessToken : String = ""
+    
+    public var baseUrl: URL {
+        return URL(string: "https://\(self.server)")!
+    }
 }
