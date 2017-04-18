@@ -89,6 +89,7 @@
 		E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18081E9D3AF70029D636 /* Globals+macOS.swift */; };
 		E96B181D1E9D403E0029D636 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B181C1E9D403E0029D636 /* WindowController.swift */; };
 		E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */; };
+		E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */; };
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
@@ -209,6 +210,7 @@
 		E96B18081E9D3AF70029D636 /* Globals+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Globals+macOS.swift"; sourceTree = "<group>"; };
 		E96B181C1E9D403E0029D636 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTabViewController.swift; sourceTree = "<group>"; };
+		E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesNavigationController.swift; sourceTree = "<group>"; };
 		E984B5E41E98DB0D008DACDC /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984B5EB1E98DB0D008DACDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */,
+				E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */,
 				B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */,
 			);
 			path = Controllers;
@@ -608,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */,
 				B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */,
 				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,

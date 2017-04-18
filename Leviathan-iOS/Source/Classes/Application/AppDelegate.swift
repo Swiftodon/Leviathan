@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 name: Bundle.main.object(forInfoDictionaryKey: "UIMainStoryboardFile") as! String,
                 bundle: Bundle.main)
             let viewController = storyboard.instantiateViewController(
-                withIdentifier: AccountsPreferencesViewController.Identifier)
+                withIdentifier: AccountsPreferencesNavigationController.Identifier)
             
             self.window?.rootViewController?.present(viewController, animated: true)
         }

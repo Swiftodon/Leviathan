@@ -8,11 +8,7 @@
 
 import UIKit
 
-class AccountsPreferencesViewController: UIViewController {
-    
-    // MARK: - Public Constants
-    
-    static let Identifier = "MastodonAccountsPreferences"
+class AccountsPreferencesViewController: UITableViewController {
 
     // MARK: - Private Properties
     
@@ -26,4 +22,11 @@ class AccountsPreferencesViewController: UIViewController {
         //self.navigationController?.supportedInterfaceOrientations = .portrait
     }
 
+    
+    // MARK: - Action Handlers
+    
+    @IBAction func done(sender: UIBarButtonItem) {
+        
+        self.navigationController?.dismiss(animated: true)
+    }
 }

@@ -58,7 +58,7 @@
         <!--Mastodon Accounts-->
         <scene sceneID="Yi4-hK-g5W">
             <objects>
-                <tableViewController id="LA0-cW-Vye" sceneMemberID="viewController">
+                <tableViewController id="LA0-cW-Vye" customClass="AccountsPreferencesViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQT-eO-KRk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mastodon Accounts" id="Lye-KA-tiJ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="wjN-aS-DNQ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="wjN-aS-DNQ">
+                            <connections>
+                                <action selector="doneWithSender:" destination="LA0-cW-Vye" id="yDw-c5-rZL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PJ8-FQ-Vw3">
                             <connections>
                                 <segue destination="fnf-eF-bNw" kind="show" id="d7Q-R9-Hie"/>
@@ -138,13 +142,13 @@
                                 <rect key="frame" x="16" y="109" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-Zd-c8p">
                                 <rect key="frame" x="16" y="194" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yyx-Zk-vhJ">
                                 <rect key="frame" x="16" y="282" width="343" height="30"/>
@@ -187,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="1976.8" y="-1357.8710644677662"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Accounts Preferences Navigation Controller-->
         <scene sceneID="6YP-OQ-KE2">
             <objects>
-                <navigationController storyboardIdentifier="MastodonAccountsPreferences" id="AQy-AM-Egi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MastodonAccountsPreferences" id="AQy-AM-Egi" customClass="AccountsPreferencesNavigationController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gxa-AU-WlX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
