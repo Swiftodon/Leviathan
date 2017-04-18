@@ -53,7 +53,155 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="-740" y="-450"/>
+        </scene>
+        <!--Mastodon Accounts-->
+        <scene sceneID="Yi4-hK-g5W">
+            <objects>
+                <tableViewController id="LA0-cW-Vye" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQT-eO-KRk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MastodonAccountCellId" textLabel="eLS-rd-LGh" detailTextLabel="cHe-G9-L7z" imageView="U5x-cJ-dFe" rowHeight="51" style="IBUITableViewCellStyleSubtitle" id="ucG-Nl-xiD">
+                                <rect key="frame" x="0.0" y="28" width="375" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucG-Nl-xiD" id="skI-6X-VDb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eLS-rd-LGh">
+                                            <rect key="frame" x="55" y="8" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cHe-G9-L7z">
+                                            <rect key="frame" x="55" y="28.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="ic_account" id="U5x-cJ-dFe">
+                                            <rect key="frame" x="15" y="12" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fnf-eF-bNw" kind="show" id="yku-68-0v3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mastodon Accounts" id="Lye-KA-tiJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="wjN-aS-DNQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PJ8-FQ-Vw3">
+                            <connections>
+                                <segue destination="fnf-eF-bNw" kind="show" id="d7Q-R9-Hie"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRd-dd-gpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144.8" y="-1362.3688155922041"/>
+        </scene>
+        <!--Add Mastodon Account-->
+        <scene sceneID="TVS-Dg-S9P">
+            <objects>
+                <viewController id="fnf-eF-bNw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zsr-C4-HR1"/>
+                        <viewControllerLayoutGuide type="bottom" id="dTn-yx-9Qc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CU0-lr-74d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-t4-3FJ">
+                                <rect key="frame" x="16" y="80" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-Qr-3L3">
+                                <rect key="frame" x="16" y="165" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter hostname of server" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ovg-rg-P6X">
+                                <rect key="frame" x="16" y="109" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-Zd-c8p">
+                                <rect key="frame" x="16" y="194" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yyx-Zk-vhJ">
+                                <rect key="frame" x="16" y="282" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNi-Vi-3YB">
+                                <rect key="frame" x="16" y="253" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="w9E-Zd-c8p" secondAttribute="trailing" constant="16" id="2r2-EN-0yk"/>
+                            <constraint firstItem="WL1-Qr-3L3" firstAttribute="top" secondItem="ovg-rg-P6X" secondAttribute="bottom" constant="26" id="3tL-Gl-ue7"/>
+                            <constraint firstItem="VDe-t4-3FJ" firstAttribute="leading" secondItem="CU0-lr-74d" secondAttribute="leading" constant="16" id="55R-2b-BHG"/>
+                            <constraint firstItem="w9E-Zd-c8p" firstAttribute="top" secondItem="WL1-Qr-3L3" secondAttribute="bottom" constant="8" id="5WK-hZ-bP7"/>
+                            <constraint firstAttribute="trailing" secondItem="yyx-Zk-vhJ" secondAttribute="trailing" constant="16" id="SLS-P4-vEt"/>
+                            <constraint firstItem="yyx-Zk-vhJ" firstAttribute="leading" secondItem="CU0-lr-74d" secondAttribute="leading" constant="16" id="XeG-PF-3rs"/>
+                            <constraint firstItem="KNi-Vi-3YB" firstAttribute="top" secondItem="w9E-Zd-c8p" secondAttribute="bottom" constant="29" id="c5B-tz-1wE"/>
+                            <constraint firstItem="WL1-Qr-3L3" firstAttribute="leading" secondItem="CU0-lr-74d" secondAttribute="leading" constant="16" id="dsD-JO-Z4a"/>
+                            <constraint firstItem="VDe-t4-3FJ" firstAttribute="top" secondItem="zsr-C4-HR1" secondAttribute="bottom" constant="16" id="h2h-3g-xOF"/>
+                            <constraint firstItem="yyx-Zk-vhJ" firstAttribute="top" secondItem="KNi-Vi-3YB" secondAttribute="bottom" constant="8" id="jrk-rY-rUr"/>
+                            <constraint firstItem="ovg-rg-P6X" firstAttribute="leading" secondItem="CU0-lr-74d" secondAttribute="leading" constant="16" id="jxu-2a-oEp"/>
+                            <constraint firstAttribute="trailing" secondItem="ovg-rg-P6X" secondAttribute="trailing" constant="16" id="mNK-Lu-trx"/>
+                            <constraint firstItem="KNi-Vi-3YB" firstAttribute="leading" secondItem="CU0-lr-74d" secondAttribute="leading" constant="16" id="nek-MM-TZU"/>
+                            <constraint firstItem="w9E-Zd-c8p" firstAttribute="leading" secondItem="CU0-lr-74d" secondAttribute="leading" constant="16" id="tis-dk-X5b"/>
+                            <constraint firstItem="ovg-rg-P6X" firstAttribute="top" secondItem="VDe-t4-3FJ" secondAttribute="bottom" constant="8" id="yqQ-wH-Ast"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Mastodon Account" id="UeF-ey-65w">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="da4-pp-ynm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="dxo-dj-s5I"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hC2-YL-flN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8" y="-1357.8710644677662"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6YP-OQ-KE2">
+            <objects>
+                <navigationController storyboardIdentifier="MastodonAccounts" id="AQy-AM-Egi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gxa-AU-WlX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LA0-cW-Vye" kind="relationship" relationship="rootViewController" id="hGe-Pb-4Cf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRM-dK-wc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218" y="-1362"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="wg7-f3-ORb">
@@ -88,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="-1511" y="-450"/>
         </scene>
         <!--Local-->
         <scene sceneID="oCB-FJ-cqQ">
@@ -123,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahl-mV-f05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-353" y="1012"/>
+            <point key="canvasLocation" x="-3182" y="-450"/>
         </scene>
         <!--Federated-->
         <scene sceneID="Q2Y-FL-D6J">
@@ -158,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psd-Iw-U60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="1012"/>
+            <point key="canvasLocation" x="-2311" y="-450"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -179,7 +327,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="-2"/>
+            <point key="canvasLocation" x="-1959" y="-1247"/>
         </scene>
     </scenes>
     <resources>
@@ -190,4 +338,7 @@
         <image name="ic_notifications_none" width="25" height="25"/>
         <image name="ic_write_post" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yku-68-0v3"/>
+    </inferredMetricsTieBreakers>
 </document>
