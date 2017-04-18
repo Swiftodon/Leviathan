@@ -92,6 +92,8 @@
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
+		E9E258941EA69008001E0E71 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountController.swift */; };
+		E9E258951EA69008001E0E71 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountController.swift */; };
 		E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */; };
 		E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */; };
 		E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */; };
@@ -212,6 +214,7 @@
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E984B5F01E98DB0D008DACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E984B5F71E98DC0F008DACDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9E258931EA69008001E0E71 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
 		E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				E91355771EA29E040046DAF0 /* Account.swift */,
+				E9E258931EA69008001E0E71 /* AccountController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,6 +611,7 @@
 				B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */,
 				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,
+				E9E258951EA69008001E0E71 /* AccountController.swift in Sources */,
 				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
 				E91355791EA29E040046DAF0 /* Account.swift in Sources */,
 			);
@@ -617,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */,
+				E9E258941EA69008001E0E71 /* AccountController.swift in Sources */,
 				E91355781EA29E040046DAF0 /* Account.swift in Sources */,
 				E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */,
 				E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */,

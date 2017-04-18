@@ -9,7 +9,21 @@
 import UIKit
 
 class AccountsPreferencesViewController: UIViewController {
-
     
+    // MARK: - Public Constants
+    
+    static let Identifier = "MastodonAccountsPreferences"
+
+    // MARK: - Private Properties
+    
+    private var _accountController = Globals.injectionContainer.resolve(AccountController.self)
+    
+    
+    // MARK: - UIViewController 
+    
+    override func viewDidLoad() {
+        
+        //self.navigationController?.supportedInterfaceOrientations = .portrait
+    }
 
 }

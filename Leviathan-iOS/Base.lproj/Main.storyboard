@@ -85,7 +85,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="ic_account" id="U5x-cJ-dFe">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="ic_account" id="U5x-cJ-dFe">
                                             <rect key="frame" x="15" y="12" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -190,7 +190,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6YP-OQ-KE2">
             <objects>
-                <navigationController storyboardIdentifier="MastodonAccounts" id="AQy-AM-Egi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MastodonAccountsPreferences" id="AQy-AM-Egi" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gxa-AU-WlX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -26,6 +26,19 @@ enum Timeline: String {
 public struct Globals {
 
     // The DI Container
-    public static let injectionContainer = Container()
+    public static let injectionContainer: Container = {
+        
+        let container = Container()
+        
+        container.register(AccountController.self) { _ in AccountController() }
+        
+        return container
+    }()
+    
+    // The documents directory
+    public static let applicationDocumentsDirectory: URL = {
+       
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    }()
 }
 

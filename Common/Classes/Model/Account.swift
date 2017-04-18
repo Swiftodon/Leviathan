@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Account {
+class Account: Equatable {
     
     // MARK: - Public Properties
     
@@ -25,9 +25,27 @@ class Account {
     
     public var clientId    : String = ""
     public var clientSecret: String = ""
-    public var accessToken : String = ""
+    public var accessToken : String {
+        set {
+            
+        }
+        get {
+            return ""
+        }
+    }
+    
+    public private(set) var avatar: Data? = nil
     
     public var baseUrl: URL {
         return URL(string: "https://\(self.server)")!
+    }
+    
+    // MARK: - Equatable
+    
+    static func ==(lhs: Account, rhs: Account) -> Bool {
+        
+        let equals = lhs.server == rhs.server && lhs.username == rhs.username
+        
+        return equals
     }
 }
