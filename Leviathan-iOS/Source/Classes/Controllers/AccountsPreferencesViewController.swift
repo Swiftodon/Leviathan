@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class AccountsPreferencesViewController: UITableViewController {
 
@@ -17,9 +20,19 @@ class AccountsPreferencesViewController: UITableViewController {
     
     // MARK: - UIViewController 
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        //self.navigationController?.supportedInterfaceOrientations = .portrait
+        let items = Observable.just(self._accountController?.accounts)
+
+        items
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) {
+                (row, element, cell) in
+                
+                cell.textLabel.text = element.username
+                cell.detailTextLabel.text = element.server
+            }
+            .disposed(by: DisposeBag)
     }
 
     
