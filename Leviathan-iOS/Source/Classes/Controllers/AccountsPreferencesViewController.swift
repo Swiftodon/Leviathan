@@ -18,6 +18,7 @@ fileprivate extension String {
 class AccountsPreferencesViewController: UIViewController {
     
     // MARK: - Private Properties
+    
     @IBOutlet weak var tableView : UITableView!
     private let accountController = Globals.injectionContainer.resolve(AccountController.self)
     private let disposeBag = DisposeBag()
@@ -27,11 +28,14 @@ class AccountsPreferencesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         guard let accountController = accountController else {
+            
             preconditionFailure()
         }
         
         Observable.just(accountController.accounts)
-            .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) { (row, element, cell) in
+            .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) {
+                (row, element, cell) in
+                
                 cell.textLabel?.text = element.username
                 cell.detailTextLabel?.text = element.server
             }
