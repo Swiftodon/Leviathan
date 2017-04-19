@@ -7,13 +7,20 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
 
-class AccountsPreferencesViewController: UITableViewController {
+class AccountsPreferencesViewController: UIViewController {
+    
+    // MARK: - Private Constants
+    
+    private let _CellIdentifier = "MastodonAccountCell"
+    
 
     // MARK: - Private Properties
+    
+    @IBOutlet private var _tableView: UITableView!
     
     private var _accountController = Globals.injectionContainer.resolve(AccountController.self)
     
@@ -23,11 +30,13 @@ class AccountsPreferencesViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let items = Observable.just(self._accountController?.accounts)
+        var accounts = Observable.just(self._accountController?.accounts)
 
-        items
-            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) {
-                (row, element, cell) in
+        accounts
+            .bind(to: self._tableView.rx.items) { // TODO: This line gives the error >Ambiguous reference to member 'items'<
+                (tableView, row, element) in
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: AccountsPreferencesViewController._CellIdentifier)!
                 
                 cell.textLabel.text = element.username
                 cell.detailTextLabel.text = element.server
