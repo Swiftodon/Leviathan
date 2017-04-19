@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MastodonAccountCell" textLabel="PFA-Ps-CCN" detailTextLabel="Drm-VR-wyP" imageView="ENF-RR-Xf5" style="IBUITableViewCellStyleSubtitle" id="6fq-e9-qLM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="MastodonAccountCell" textLabel="PFA-Ps-CCN" detailTextLabel="Drm-VR-wyP" imageView="ENF-RR-Xf5" style="IBUITableViewCellStyleSubtitle" id="6fq-e9-qLM">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6fq-e9-qLM" id="VjF-Xy-sQC">
@@ -137,7 +137,7 @@
         <!--Add Mastodon Account-->
         <scene sceneID="TVS-Dg-S9P">
             <objects>
-                <viewController id="fnf-eF-bNw" sceneMemberID="viewController">
+                <viewController id="fnf-eF-bNw" customClass="AccountEditViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zsr-C4-HR1"/>
                         <viewControllerLayoutGuide type="bottom" id="dTn-yx-9Qc"/>
@@ -203,13 +203,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Mastodon Account" id="UeF-ey-65w">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="da4-pp-ynm"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="dxo-dj-s5I"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="da4-pp-ynm">
+                            <connections>
+                                <action selector="saveWithSender:" destination="fnf-eF-bNw" id="5ZP-8n-BbF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="dxo-dj-s5I">
+                            <connections>
+                                <action selector="cancelWithSender:" destination="fnf-eF-bNw" id="rE4-wR-uBo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="w9E-Zd-c8p" id="B0a-pP-E84"/>
+                        <outlet property="passwordTextField" destination="yyx-Zk-vhJ" id="kl5-T5-5eD"/>
+                        <outlet property="serverTextField" destination="ovg-rg-P6X" id="zUz-Bj-xki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hC2-YL-flN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1976.8" y="-1357.8710644677662"/>
+            <point key="canvasLocation" x="1980" y="-1362"/>
         </scene>
         <!--Accounts Preferences Navigation Controller-->
         <scene sceneID="6YP-OQ-KE2">
