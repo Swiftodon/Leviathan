@@ -10,45 +10,37 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+fileprivate extension String {
+    static let accountCell = "MastodonAccountCell"
+}
+
 
 class AccountsPreferencesViewController: UIViewController {
     
-    // MARK: - Private Constants
-    
-    private let _CellIdentifier = "MastodonAccountCell"
-    
-
     // MARK: - Private Properties
-    
-    @IBOutlet private var _tableView: UITableView!
-    
-    private var _accountController = Globals.injectionContainer.resolve(AccountController.self)
-    
+    @IBOutlet weak var tableView : UITableView!
+    private let accountController = Globals.injectionContainer.resolve(AccountController.self)
+    private let disposeBag = DisposeBag()
     
     // MARK: - UIViewController 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        var accounts = Observable.just(self._accountController?.accounts)
-
-        accounts
-            .bind(to: self._tableView.rx.items) { // TODO: This line gives the error >Ambiguous reference to member 'items'<
-                (tableView, row, element) in
-                
-                let cell = tableView.dequeueReusableCell(withIdentifier: AccountsPreferencesViewController._CellIdentifier)!
-                
-                cell.textLabel.text = element.username
-                cell.detailTextLabel.text = element.server
+        guard let accountController = accountController else {
+            preconditionFailure()
+        }
+        
+        Observable.just(accountController.accounts)
+            .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) { (row, element, cell) in
+                cell.textLabel?.text = element.username
+                cell.detailTextLabel?.text = element.server
             }
-            .disposed(by: DisposeBag)
+            .disposed(by: disposeBag)
     }
 
     
     // MARK: - Action Handlers
-    
     @IBAction func done(sender: UIBarButtonItem) {
-        
         self.navigationController?.dismiss(animated: true)
     }
 }
