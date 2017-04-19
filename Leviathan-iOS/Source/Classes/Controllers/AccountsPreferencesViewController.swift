@@ -24,6 +24,7 @@ class AccountsPreferencesViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     // MARK: - UIViewController 
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -44,6 +45,7 @@ class AccountsPreferencesViewController: UIViewController {
 
     
     // MARK: - Action Handlers
+    
     @IBAction func done(sender: UIBarButtonItem) {
         self.navigationController?.dismiss(animated: true)
     }
