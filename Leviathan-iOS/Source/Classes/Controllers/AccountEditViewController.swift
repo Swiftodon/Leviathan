@@ -9,6 +9,9 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Moya
+import RxMoya
+import MastodonSwift
 
 class AccountEditViewController: UIViewController {
 
@@ -39,12 +42,45 @@ class AccountEditViewController: UIViewController {
     
     @IBAction fileprivate func save(sender: UIBarButtonItem) {
         
-        self.navigationController?.popViewController(animated: true)
+        let url = URL(string: "https://\(self.server.value)")
+        
+        RxMoyaProvider<Mastodon.Apps>(plugins: [CredentialsPlugin { _ -> URLCredential? in
+                    return URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
+                }
+                ])
+            .request(.register(url!, "Leviathan", "urn:ietf:wg:oauth:2.0:oob", "read write follow", "https://github.com/Swiftodon"))
+            .mapObject(type: App.self)
+            .subscribe(self.applicationWasRegistered)
+            .disposed(by: disposeBag)
+        
+        //self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction fileprivate func cancel(sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: - RxMoya Handlers
+    
+    fileprivate func applicationWasRegistered(_ event: Event<App>) {
+        
+        switch event {
+        case.next(let app):
+        let url = URL(string: "https://\(self.server.value)")
+        
+        RxMoyaProvider<Mastodon.OAuth>()
+            .request(.authenticate(url!, app, self.email.value, self.password.value))
+            .mapObject(type: AccessToken.self)
+            .subscribe { even in
+                NSLog("")
+        }
+        .disposed(by: disposeBag)
+            
+        default:
+            break
+        }
     }
     
     
