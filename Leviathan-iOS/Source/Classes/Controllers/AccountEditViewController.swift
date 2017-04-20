@@ -27,6 +27,9 @@ class AccountEditViewController: UIViewController {
     @IBOutlet private var passwordTextField: UITextField!
     private var password = Variable<String>("")
     
+    private var url: URL!
+    private var app: App!
+    private var token: AccessToken!
     private let disposeBag = DisposeBag()
 
     
@@ -43,19 +46,27 @@ class AccountEditViewController: UIViewController {
     
     @IBAction fileprivate func save(sender: UIBarButtonItem) {
         
-        let url = "https://\(self.server.value)"
+        self.url = URL(string: "https://\(self.server.value)tralala")
         
-        RxMoyaProvider<Mastodon.Apps>(endpointClosure: /url,
-                                      plugins: [CredentialsPlugin { _ -> URLCredential? in
-                                        return URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
-                                        }
-            ])
-            .request(.register("Leviathan", "urn:ietf:wg:oauth:2.0:oob", "read write follow", "https://github.com/Swiftodon"))
+        RxMoyaProvider<Mastodon.Apps>(endpointClosure: /self.url,
+                                      plugins: [CredentialsPlugin {
+                                                    _ -> URLCredential? in
+                                        
+                                                    return URLCredential(user: self.email.value,
+                                                                         password: self.password.value,
+                                                                         persistence: .none)
+                                                }])
+            // TODO define constants for this
+            .request(.register("Leviathan for iOS",
+                               "urn:ietf:wg:oauth:2.0:oob",
+                               "read write follow",
+                               "https://github.com/Swiftodon"))
             .mapObject(type: App.self)
-            .subscribe(self.applicationWasRegistered)
+            .subscribe(
+                EventHandler(onNext: self.applicationRegistration,
+                             onError: self.requestErrorOccured,
+                             onCompleted: self.applicationRegistrationCompleted))
             .disposed(by: disposeBag)
-        
-        //self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction fileprivate func cancel(sender: UIBarButtonItem) {
@@ -66,24 +77,36 @@ class AccountEditViewController: UIViewController {
     
     // MARK: - RxMoya Handlers
     
-    fileprivate func applicationWasRegistered(_ event: Event<App>) {
+    fileprivate func applicationRegistration(_ app: App) {
 
-        switch event {
-        case.next(let app):
-        let url = "https://\(self.server.value)"
+        self.app = app
+    }
+    
+    fileprivate func requestErrorOccured(_ error: Swift.Error) {
         
-        RxMoyaProvider<Mastodon.OAuth>(endpointClosure: /url)
-            .request(.authenticate(app, self.email.value, self.password.value))
+        // TODO
+    }
+    
+    fileprivate func applicationRegistrationCompleted() {
+        
+        RxMoyaProvider<Mastodon.OAuth>(endpointClosure: /self.url)
+            .request(.authenticate(self.app, self.email.value, self.password.value))
             .mapObject(type: AccessToken.self)
-            .subscribe { even in
-                NSLog("")
-        }
-        .disposed(by: disposeBag)
-            
-        default:
-            break
-        }
-
+            .subscribe(
+                EventHandler(onNext: self.accessTokenReceived,
+                             onError: self.requestErrorOccured,
+                             onCompleted: self.oauthCompleted))
+            .disposed(by: disposeBag)
+    }
+    
+    fileprivate func accessTokenReceived(_ token: AccessToken) {
+        
+        self.token = token
+    }
+    
+    fileprivate func oauthCompleted() {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     

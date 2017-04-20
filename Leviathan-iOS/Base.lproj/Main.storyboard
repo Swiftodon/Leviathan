@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,51 +67,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-Ts-pbY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-Ie-9VU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="MastodonAccountCell" textLabel="PFA-Ps-CCN" detailTextLabel="Drm-VR-wyP" imageView="ENF-RR-Xf5" style="IBUITableViewCellStyleSubtitle" id="6fq-e9-qLM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Mnx-aG-1Md" detailTextLabel="1BN-MB-Ush" imageView="EIb-hx-d3G" style="IBUITableViewCellStyleSubtitle" id="f2d-Zt-7m3">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6fq-e9-qLM" id="VjF-Xy-sQC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f2d-Zt-7m3" id="j2R-T3-oqm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PFA-Ps-CCN">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mnx-aG-1Md">
                                                     <rect key="frame" x="55" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Drm-VR-wyP">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1BN-MB-Ush">
                                                     <rect key="frame" x="55" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="ic_account" id="ENF-RR-Xf5">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="ic_account" id="EIb-hx-d3G">
                                                     <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="fnf-eF-bNw" kind="show" id="4JK-0C-wFW"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6do-t5-oAY" firstAttribute="top" secondItem="eTk-Ts-pbY" secondAttribute="bottom" id="6mX-R6-bBN"/>
-                            <constraint firstItem="eTk-Ts-pbY" firstAttribute="leading" secondItem="WGT-u0-Hyk" secondAttribute="leading" id="NwY-gx-6Iw"/>
-                            <constraint firstItem="eTk-Ts-pbY" firstAttribute="top" secondItem="j6A-01-exr" secondAttribute="bottom" id="Zud-rN-P1A"/>
-                            <constraint firstAttribute="trailing" secondItem="eTk-Ts-pbY" secondAttribute="trailing" id="bZS-Uw-E5S"/>
+                            <constraint firstAttribute="trailing" secondItem="OYN-Ie-9VU" secondAttribute="trailing" id="1gr-bp-nRu"/>
+                            <constraint firstItem="6do-t5-oAY" firstAttribute="top" secondItem="OYN-Ie-9VU" secondAttribute="bottom" id="CfH-KI-igr"/>
+                            <constraint firstItem="OYN-Ie-9VU" firstAttribute="leading" secondItem="WGT-u0-Hyk" secondAttribute="leading" id="F2P-fH-YnE"/>
+                            <constraint firstItem="OYN-Ie-9VU" firstAttribute="top" secondItem="j6A-01-exr" secondAttribute="bottom" constant="-64" id="Fot-Fp-ynK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mastodon Accounts" id="koT-BL-9mq">
@@ -127,7 +123,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="eTk-Ts-pbY" id="Nhr-bI-EA7"/>
+                        <outlet property="tableView" destination="OYN-Ie-9VU" id="hS3-wF-Veg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5g-m9-aXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,7 +371,4 @@
         <image name="ic_notifications_none" width="25" height="25"/>
         <image name="ic_write_post" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="lrU-Ol-pYC"/>
-    </inferredMetricsTieBreakers>
 </document>
