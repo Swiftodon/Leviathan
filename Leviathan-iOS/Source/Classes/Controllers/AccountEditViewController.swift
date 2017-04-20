@@ -13,6 +13,7 @@ import Moya
 import RxMoya
 import MastodonSwift
 
+
 class AccountEditViewController: UIViewController {
 
     // MARK: - Private Properties
@@ -42,13 +43,14 @@ class AccountEditViewController: UIViewController {
     
     @IBAction fileprivate func save(sender: UIBarButtonItem) {
         
-        let url = URL(string: "https://\(self.server.value)")
+        let url = "https://\(self.server.value)"
         
-        RxMoyaProvider<Mastodon.Apps>(plugins: [CredentialsPlugin { _ -> URLCredential? in
-                    return URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
-                }
-                ])
-            .request(.register(url!, "Leviathan", "urn:ietf:wg:oauth:2.0:oob", "read write follow", "https://github.com/Swiftodon"))
+        RxMoyaProvider<Mastodon.Apps>(endpointClosure: /url,
+                                      plugins: [CredentialsPlugin { _ -> URLCredential? in
+                                        return URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
+                                        }
+            ])
+            .request(.register("Leviathan", "urn:ietf:wg:oauth:2.0:oob", "read write follow", "https://github.com/Swiftodon"))
             .mapObject(type: App.self)
             .subscribe(self.applicationWasRegistered)
             .disposed(by: disposeBag)
@@ -65,13 +67,13 @@ class AccountEditViewController: UIViewController {
     // MARK: - RxMoya Handlers
     
     fileprivate func applicationWasRegistered(_ event: Event<App>) {
-        
+
         switch event {
         case.next(let app):
-        let url = URL(string: "https://\(self.server.value)")
+        let url = "https://\(self.server.value)"
         
-        RxMoyaProvider<Mastodon.OAuth>()
-            .request(.authenticate(url!, app, self.email.value, self.password.value))
+        RxMoyaProvider<Mastodon.OAuth>(endpointClosure: /url)
+            .request(.authenticate(app, self.email.value, self.password.value))
             .mapObject(type: AccessToken.self)
             .subscribe { even in
                 NSLog("")
@@ -81,6 +83,7 @@ class AccountEditViewController: UIViewController {
         default:
             break
         }
+
     }
     
     

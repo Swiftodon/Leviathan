@@ -5,7 +5,7 @@ github "ReactiveX/RxSwift" ~> 3.0
 github "Swinject/Swinject" ~> 2.0.0
 
 # Mastodon.swift
-github "Swiftodon/Mastodon.swift" "refactor-settings"
+github "Swiftodon/Mastodon.swift" "refactor-setting-using-endpoint"
 
 # Locksmith (Keychain Wrapper) to store passwords in Keychain
 github "matthewpalmer/Locksmith"
