@@ -84,7 +84,13 @@ class AccountEditViewController: UIViewController {
     
     fileprivate func requestErrorOccured(_ error: Swift.Error) {
         
-        // TODO
+        let alertController = UIAlertController(title: NSLocalizedString("Error", comment: "UIAlertController Title"),
+                                                message: NSLocalizedString("Error while loging in. Error message is: ", comment: "Message")+">\(error.localizedDescription)<",
+                                                preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Button Title"), style: .cancel)
+        
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
     }
     
     fileprivate func applicationRegistrationCompleted() {
