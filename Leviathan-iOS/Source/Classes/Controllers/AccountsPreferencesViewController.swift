@@ -20,7 +20,7 @@ class AccountsPreferencesViewController: UIViewController {
     // MARK: - Private Properties
     
     @IBOutlet weak var tableView : UITableView!
-    private var accountController: AccountController! = nil
+    private var accountController: AccountController! = Globals.injectionContainer.resolve(AccountController.self)
     private let disposeBag = DisposeBag()
     
     // MARK: - UIViewController 
@@ -28,17 +28,18 @@ class AccountsPreferencesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.accountController = Globals.injectionContainer.resolve(AccountController.self)
         guard let accountController = accountController else {
             
             preconditionFailure()
         }
         
+        self.accountController.loadData()
+        
         Observable.just(accountController.accounts)
             .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) {
                 (row, element, cell) in
                 
-                cell.textLabel?.text = element.username
+                cell.textLabel?.text = element.email
                 cell.detailTextLabel?.text = element.server
             }
             .disposed(by: disposeBag)

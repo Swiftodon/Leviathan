@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Gloss
 
 
 class AccountController {
@@ -26,24 +27,23 @@ class AccountController {
         self.loadData()
     }
     
-    deinit {
-        
-        self.saveData()
-    }
-    
     
     // MARK: - Load and save data
     
     func loadData() {
         
-        let arr = NSArray(contentsOf: self.fileUrl)
+        if let arr = NSArray(contentsOf: self.fileUrl) {
+            
+            let jsonArray = arr as! [JSON]
         
-        self.accounts = arr as? [Account] ?? []
+            self.accounts = [Account].from(jsonArray: jsonArray)!
+        }
     }
     
     func saveData() {
         
-        let arr = self.accounts as NSArray
+        let jsonArray = self.accounts.toJSONArray()
+        let arr = jsonArray! as NSArray
         
         arr.write(to: self.fileUrl, atomically: true)
     }
@@ -51,12 +51,12 @@ class AccountController {
     
     // MARK: - Operations
     
-    func createAccount(server: String, username: String) -> Account {
+    func createAccount(server: String, email: String) -> Account {
         
         let account = Account()
         
         account.server = server
-        account.username = username
+        account.email = email
         
         self.accounts.append(account)
         

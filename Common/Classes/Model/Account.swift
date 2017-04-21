@@ -8,13 +8,15 @@
 
 import Foundation
 import Locksmith
+import Gloss
 
-class Account: Equatable {
+
+class Account: Equatable, Decodable, Encodable {
     
     // MARK: - Public Properties
     
     public var server  : String = ""
-    public var username: String = ""
+    public var email: String = ""
     public var password: String {
         set {
             
@@ -65,13 +67,39 @@ class Account: Equatable {
         return URL(string: "https://\(self.server)")!
     }
     
+    
+    // MARK: - Initialization
+    
+    init() {
+        
+        // empty by design
+    }
+    
+    required init?(json: JSON) {
+        
+        self.server = ("server" <~~ json)!
+        self.email = ("email" <~~ json)!
+        
+    }
+    
+    
     // MARK: - Equatable
     
     static func ==(lhs: Account, rhs: Account) -> Bool {
         
-        let equals = lhs.server == rhs.server && lhs.username == rhs.username
+        let equals = lhs.server == rhs.server && lhs.email == rhs.email
         
         return equals
+    }
+    
+    
+    // MARK: - Encodable
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "server" ~~> self.server,
+            "email" ~~> self.email
+            ])
     }
     
     
@@ -89,12 +117,12 @@ class Account: Equatable {
             "accessToken": accessToken ?? self.accessToken
         ]
         
-        try! Locksmith.updateData(data: data, forUserAccount: self.username, inService: self.server)
+        try! Locksmith.updateData(data: data, forUserAccount: self.email, inService: self.server)
     }
     
     fileprivate func loadValueFromKeychain(forKey key: String) -> String {
         
-        let data = Locksmith.loadDataForUserAccount(userAccount: self.username, inService: self.server)
+        let data = Locksmith.loadDataForUserAccount(userAccount: self.email, inService: self.server)
         let value = data?[key] ?? ""
         
         return value as! String

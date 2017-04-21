@@ -117,13 +117,15 @@ class AccountEditViewController: UIViewController {
         if account == nil {
             
             account = self.accountController?.createAccount(server: self.server.value,
-                                                            username: self.email.value)
+                                                            email: self.email.value)
         }
         
         account?.password = self.password.value
         account?.clientId = app.clientId
         account?.clientSecret = app.clientSecret
         account?.accessToken = token.token
+        
+        self.accountController?.saveData()
         
         self.navigationController?.popViewController(animated: true)
     }
