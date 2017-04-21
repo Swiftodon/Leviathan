@@ -31,6 +31,8 @@ class AccountEditViewController: UIViewController {
     private var app: App!
     private var token: AccessToken!
     private let disposeBag = DisposeBag()
+    private var account: Account? = nil
+    private let accountController = Globals.injectionContainer.resolve(AccountController.self)
 
     
     // MARK: - UIViewController
@@ -46,7 +48,7 @@ class AccountEditViewController: UIViewController {
     
     @IBAction fileprivate func save(sender: UIBarButtonItem) {
         
-        self.url = URL(string: "https://\(self.server.value)tralala")
+        self.url = URL(string: "https://\(self.server.value)")
         
         RxMoyaProvider<Mastodon.Apps>(endpointClosure: /self.url,
                                       plugins: [CredentialsPlugin {
@@ -111,6 +113,17 @@ class AccountEditViewController: UIViewController {
     }
     
     fileprivate func oauthCompleted() {
+        
+        if account == nil {
+            
+            account = self.accountController?.createAccount(server: self.server.value,
+                                                            username: self.email.value)
+        }
+        
+        account?.password = self.password.value
+        account?.clientId = app.clientId
+        account?.clientSecret = app.clientSecret
+        account?.accessToken = token.token
         
         self.navigationController?.popViewController(animated: true)
     }

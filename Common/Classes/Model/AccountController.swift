@@ -15,7 +15,7 @@ class AccountController {
     
     public private(set) var accounts: [Account] = []
     public              let fileUrl: URL = {
-        Globals.applicationDocumentsDirectory.appendingPathComponent("Accounts.dat")
+        Globals.applicationDocumentsDirectory.appendingPathComponent("Accounts.json")
     }()
     
     
@@ -51,9 +51,12 @@ class AccountController {
     
     // MARK: - Operations
     
-    func createAccount() -> Account {
+    func createAccount(server: String, username: String) -> Account {
         
         let account = Account()
+        
+        account.server = server
+        account.username = username
         
         self.accounts.append(account)
         
