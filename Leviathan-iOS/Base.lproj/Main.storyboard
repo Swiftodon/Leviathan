@@ -199,14 +199,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Mastodon Account" id="UeF-ey-65w">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="da4-pp-ynm">
-                            <connections>
-                                <action selector="saveWithSender:" destination="fnf-eF-bNw" id="5ZP-8n-BbF"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="dxo-dj-s5I">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dxo-dj-s5I">
                             <connections>
                                 <action selector="cancelWithSender:" destination="fnf-eF-bNw" id="rE4-wR-uBo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="da4-pp-ynm">
+                            <connections>
+                                <action selector="saveWithSender:" destination="fnf-eF-bNw" id="5ZP-8n-BbF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
