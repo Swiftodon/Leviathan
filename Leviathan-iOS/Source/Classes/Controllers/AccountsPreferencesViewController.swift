@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Toucan
 
 fileprivate extension String {
     static let accountCell = "MastodonAccountCell"
@@ -44,7 +45,10 @@ class AccountsPreferencesViewController: UIViewController {
                 
                 if let avatarData = element.avatarData {
                     
-                    cell.imageView?.image = UIImage(data: avatarData)
+                    cell.imageView?.image = Toucan(image: UIImage(data: avatarData)!)
+                                                .maskWithEllipse()
+                                                .image
+                    
                 }
                 else {
                     

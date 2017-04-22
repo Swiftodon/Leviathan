@@ -9,3 +9,6 @@ github "Swiftodon/Mastodon.swift" ~> 1.2.0
 
 # Locksmith (Keychain Wrapper) to store passwords in Keychain
 github "matthewpalmer/Locksmith"
+
+# Image Processing
+github "gavinbunney/Toucan" ~> 0.6.0
