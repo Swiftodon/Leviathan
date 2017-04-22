@@ -39,8 +39,17 @@ class AccountsPreferencesViewController: UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) {
                 (row, element, cell) in
                 
-                cell.textLabel?.text = element.email
-                cell.detailTextLabel?.text = element.server
+                cell.textLabel?.text = "@\(element.username)"
+                cell.detailTextLabel?.text = String(describing: element.baseUrl)
+                
+                if let avatarData = element.avatarData {
+                    
+                    cell.imageView?.image = UIImage(data: avatarData)
+                }
+                else {
+                    
+                    cell.imageView?.image = Asset.Ic_account.image
+                }
             }
             .disposed(by: disposeBag)
     }
