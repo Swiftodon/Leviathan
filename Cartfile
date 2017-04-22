@@ -12,3 +12,6 @@ github "matthewpalmer/Locksmith"
 
 # Image Processing
 github "gavinbunney/Toucan" ~> 0.6.0
+
+# Async helper 
+github "Swiftodon/Do.this" "master"
