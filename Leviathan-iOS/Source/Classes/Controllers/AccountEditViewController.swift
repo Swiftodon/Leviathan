@@ -123,11 +123,13 @@ class AccountEditViewController: UIViewController {
         account?.password = self.password.value
         account?.clientId = app.clientId
         account?.clientSecret = app.clientSecret
-        account?.accessToken = token.token
+        account?.accessToken = token
         
-        self.accountController?.saveData()
+        account?.verifyAccount({ (verified, error) in
         
-        self.navigationController?.popViewController(animated: true)
+            self.accountController?.saveData()
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     

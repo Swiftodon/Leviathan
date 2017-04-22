@@ -8,7 +8,23 @@
 
 import Foundation
 import Locksmith
+import Alamofire
 import Gloss
+import Moya
+import RxSwift
+import RxMoya
+import MastodonSwift
+
+extension MastodonSwift.AccessToken: Encodable {
+ 
+    // MARK: - Encodable
+    
+    public func toJSON() -> JSON? {
+        return jsonify([
+            "access_token" ~~> self.token
+            ])
+    }
+}
 
 
 class Account: Equatable, Decodable, Encodable {
@@ -17,6 +33,7 @@ class Account: Equatable, Decodable, Encodable {
     
     public var server  : String = ""
     public var email: String = ""
+    public var username: String = ""
     public var password: String {
         set {
             
@@ -24,7 +41,7 @@ class Account: Equatable, Decodable, Encodable {
         }
         get {
             
-            return self.loadValueFromKeychain(forKey: "password")
+            return self.loadValueFromKeychain(forKey: "password") ?? ""
         }
     }
     
@@ -35,7 +52,7 @@ class Account: Equatable, Decodable, Encodable {
         }
         get {
             
-            return self.loadValueFromKeychain(forKey: "clientId")
+            return self.loadValueFromKeychain(forKey: "clientId") ?? ""
         }
     }
     
@@ -46,22 +63,31 @@ class Account: Equatable, Decodable, Encodable {
         }
         get {
             
-            return self.loadValueFromKeychain(forKey: "clientSecret")
+            return self.loadValueFromKeychain(forKey: "clientSecret") ?? ""
         }
     }
     
-    public var accessToken : String {
+    public var accessToken : AccessToken? {
         set {
             
-            self.saveToKeychain(accessToken: newValue)
+            let json = newValue?.toJSON()
+            
+            self.saveToKeychain(accessToken: json)
         }
         get {
+        
+            if let json: JSON? = self.loadValueFromKeychain(forKey: "accessToken") {
             
-            return self.loadValueFromKeychain(forKey: "accessToken")
+                return AccessToken(json: json!)
+            }
+            else {
+                
+                return nil
+            }
         }
     }
     
-    public private(set) var avatar: Data? = nil
+    public private(set) var avatarData: Data? = nil
     
     public var baseUrl: URL {
         return URL(string: "https://\(self.server)")!
@@ -79,7 +105,8 @@ class Account: Equatable, Decodable, Encodable {
         
         self.server = ("server" <~~ json)!
         self.email = ("email" <~~ json)!
-        
+        self.username = ("username" <~~ json)!
+        self.avatarData = "avatarData" <~~ json
     }
     
     
@@ -98,8 +125,54 @@ class Account: Equatable, Decodable, Encodable {
     func toJSON() -> JSON? {
         return jsonify([
             "server" ~~> self.server,
-            "email" ~~> self.email
+            "email" ~~> self.email,
+            "username" ~~> self.username,
+            "avatarData" ~~> self.avatarData
             ])
+    }
+    
+    
+    // MARK: - Public Methods
+    
+    func verifyAccount(_ completed: ((_ verified: Bool?, _ error: Swift.Error?) -> ())?) {
+        
+        let disposeBag = DisposeBag()
+        var avatarUrl: URL? = nil
+        
+        RxMoyaProvider<Mastodon.Account>(endpointClosure: /self.baseUrl,
+                                         plugins: [AccessTokenPlugin(token: accessToken!.token)])
+            .request(.verifyCredentials)
+            .mapObject(type: MastodonSwift.Account.self)
+            .subscribe(
+                EventHandler(onNext: { account in
+                    
+                    self.username = account.username
+                    avatarUrl = account.avatar
+                }, onError: { error in
+                    
+                    completed?(false, error)
+                }, onCompleted: {
+                    
+                    if let url = avatarUrl {
+                        
+                        Alamofire
+                            .request(url)
+                            .responseData { response in
+                                
+                                if response.error == nil {
+                                
+                                    self.avatarData = response.data
+                                }
+                                
+                                completed?(true, nil)
+                            }
+                    }
+                    else {
+                        
+                        completed?(true, nil)
+                    }
+                }))
+            //.disposed(by: disposeBag)
     }
     
     
@@ -108,23 +181,28 @@ class Account: Equatable, Decodable, Encodable {
     fileprivate func saveToKeychain(password: String? = nil,
                                     clientId: String? = nil,
                                     clientSecret: String? = nil,
-                                    accessToken: String? = nil) {
+                                    accessToken: JSON? = nil) {
         
         let data = [
             "password": password ?? self.password,
             "clientId": clientId ?? self.clientId,
             "clientSecret": clientSecret ?? self.clientSecret,
-            "accessToken": accessToken ?? self.accessToken
-        ]
+            "accessToken": accessToken ?? self.accessToken?.toJSON() as Any
+        ] as [String : Any]
         
         try! Locksmith.updateData(data: data, forUserAccount: self.email, inService: self.server)
     }
     
-    fileprivate func loadValueFromKeychain(forKey key: String) -> String {
+    fileprivate func loadValueFromKeychain<T>(forKey key: String) -> T? {
         
         let data = Locksmith.loadDataForUserAccount(userAccount: self.email, inService: self.server)
-        let value = data?[key] ?? ""
+        let value = data?[key]
         
-        return value as! String
+        if let _ = value as? NSNull {
+          
+            return nil
+        }
+        
+        return value as! T?
     }
 }
