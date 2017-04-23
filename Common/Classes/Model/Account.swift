@@ -27,7 +27,7 @@ extension MastodonSwift.AccessToken: Encodable {
 }
 
 
-class Account: Equatable, Decodable, Encodable {
+class Account: NSObject, Decodable, Encodable {
     
     // MARK: - Public Properties
     
@@ -96,9 +96,8 @@ class Account: Equatable, Decodable, Encodable {
     
     // MARK: - Initialization
     
-    init() {
-        
-        // empty by design
+    override init() {
+        super.init()
     }
     
     required init?(json: JSON) {

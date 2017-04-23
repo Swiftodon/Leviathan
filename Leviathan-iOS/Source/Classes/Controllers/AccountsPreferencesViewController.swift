@@ -21,7 +21,9 @@ class AccountsPreferencesViewController: UIViewController {
     // MARK: - Private Properties
     
     @IBOutlet weak var tableView : UITableView!
+    
     private var accountController: AccountController! = Globals.injectionContainer.resolve(AccountController.self)
+    private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let disposeBag = DisposeBag()
     
     // MARK: - UIViewController 
@@ -62,6 +64,12 @@ class AccountsPreferencesViewController: UIViewController {
     // MARK: - Action Handlers
     
     @IBAction func done(sender: UIBarButtonItem) {
+        
+        if settings?.activeAccount == nil && accountController.accounts.count > 0 {
+            
+            settings?.activeAccount = accountController.accounts.first
+        }
+        
         self.navigationController?.dismiss(animated: true)
     }
 }

@@ -15,7 +15,7 @@ fileprivate extension String {
     static let activeAccountUsername = "activeAccountUsername"
 }
 
-class Settings: NSObject {
+@objc class Settings: NSObject {
     
     // MARK: - Private Properties
     
@@ -37,7 +37,7 @@ class Settings: NSObject {
     
     // MARK: - Settings
     
-    var activeAccount: Account? {
+    @objc var activeAccount: Account? {
         get {
             
             let server = self.userDefaults.string(forKey: String.activeAccountServer)

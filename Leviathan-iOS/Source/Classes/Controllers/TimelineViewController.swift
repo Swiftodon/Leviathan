@@ -20,7 +20,7 @@ class TimelineViewController: UIViewController {
     
     @IBOutlet private var accountButton: UIButton!
     
-    private let settings = Globals.injectionContainer.resolve(Settings.self)
+    @objc private let settings = Globals.injectionContainer.resolve(Settings.self)
     
 
     // MARK: - Public Properties
@@ -37,7 +37,7 @@ class TimelineViewController: UIViewController {
         self.setAvatarImage()
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    @objc override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
      
         if let _ = object as! Settings? {
             
@@ -53,7 +53,7 @@ class TimelineViewController: UIViewController {
     
     fileprivate func bindControls() {
         
-        settings?.addObserver(self, forKeyPath:  "activeAccount", options: [.new], context: nil)
+        settings?.addObserver(self, forKeyPath: #keyPath(Settings.activeAccount), options: [.new], context: nil)
     }
     
     fileprivate func setAvatarImage() {
