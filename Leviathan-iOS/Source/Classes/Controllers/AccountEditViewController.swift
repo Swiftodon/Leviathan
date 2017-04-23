@@ -116,7 +116,7 @@ class AccountEditViewController: UIViewController {
         
         if account == nil {
             
-            account = self.accountController?.createAccount(server: self.server.value,
+            account = self.accountController?.create(server: self.server.value,
                                                             email: self.email.value)
         }
         

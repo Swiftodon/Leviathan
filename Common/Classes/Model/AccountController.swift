@@ -51,7 +51,7 @@ class AccountController {
     
     // MARK: - Operations
     
-    func createAccount(server: String, email: String) -> Account {
+    func create(server: String, email: String) -> Account {
         
         let account = Account()
         
@@ -63,11 +63,20 @@ class AccountController {
         return account
     }
     
-    func deleteAccount(_ account: Account) {
+    func delete(_ account: Account) {
         
         if let index = self.accounts.index(where: { $0 == account } ) {
             
             self.accounts.remove(at: index)
         }
+    }
+    
+    func find(_ server: String, _ username: String) -> Account? {
+        
+        let foundAccounts = self.accounts.filter { account in
+            account.server == server && account.username == username
+        }
+        
+        return foundAccounts.first
     }
 }

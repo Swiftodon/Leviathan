@@ -43,7 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func checkIfApplicationIsReady(_ this: DoThis) {
         
-        this.done()
+        let finished = Globals.injectionContainer.resolve(Settings.self)?.activeAccount != nil
+        
+        this.done(finished: finished)
     }
     
     fileprivate func selectDefaultAccount(_ this: DoThis) {
@@ -55,6 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             this.done()
             return
         }
+        
+        let settings = Globals.injectionContainer.resolve(Settings.self)
+        
+        settings?.activeAccount = accountController?.accounts.first
         
         this.done(finished: true)
     }

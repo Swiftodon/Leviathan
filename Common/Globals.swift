@@ -31,6 +31,7 @@ public struct Globals {
         let container = Container()
         
         container.register(AccountController.self) { _ in AccountController() }
+        container.register(Settings.self) { _ in Settings() }
         
         return container
     }()
