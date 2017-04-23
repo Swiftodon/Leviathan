@@ -10,11 +10,12 @@ import Foundation
 
 fileprivate extension String {
     
+    static let activeAccount         = "activeAccount"
     static let activeAccountServer   = "activeAccountServer"
     static let activeAccountUsername = "activeAccountUsername"
 }
 
-class Settings {
+class Settings: NSObject {
     
     // MARK: - Private Properties
     
@@ -27,7 +28,9 @@ class Settings {
     
     // MARK: - Initialization
     
-    init() {
+    override init() {
+        super.init()
+        
         self.userDefaults.register(defaults: defaultValues)
     }
     
@@ -46,6 +49,8 @@ class Settings {
         }
         set {
             
+            self.willChangeValue(forKey: String.activeAccount)
+            
             self.userDefaults.willChangeValue(forKey: String.activeAccountServer)
             self.userDefaults.set(newValue?.server, forKey: String.activeAccountServer)
             self.userDefaults.didChangeValue(forKey: String.activeAccountServer)
@@ -53,6 +58,8 @@ class Settings {
             self.userDefaults.willChangeValue(forKey: String.activeAccountUsername)
             self.userDefaults.set(newValue?.username, forKey: String.activeAccountUsername)
             self.userDefaults.didChangeValue(forKey: String.activeAccountUsername)
+            
+            self.didChangeValue(forKey: String.activeAccount)
             
             self.userDefaults.synchronize()
         }
