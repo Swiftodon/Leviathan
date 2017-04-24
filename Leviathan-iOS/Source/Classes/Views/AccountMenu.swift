@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 import Toucan
 import Popover
+import DoThis
 
 fileprivate extension String {
     static let accountCell = "MastodonAccountCell"
@@ -26,9 +27,38 @@ class AccountMenu: Popover {
                         .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6)),
                         .sideEdge(10)
                     ] as [PopoverOption]
+    fileprivate let insets = CGFloat(5)
     fileprivate let accountController = Globals.injectionContainer.resolve(AccountController.self)
+    fileprivate var entries: [(image: UIImage, title: String)] {
+        var acc:[(UIImage,String)] = (self.accountController?.accounts.map { account in
+            
+            let imageSize = CGSize(width: 24, height: 24)
+            var image: UIImage!
+            
+            if let avatarData = account.avatarData {
+                
+                image = Toucan(image: UIImage(data: avatarData)!)
+                            .resize(imageSize)
+                            .maskWithEllipse()
+                            .image
+            }
+            else {
+                
+                image = Toucan(image: Asset.icAccount.image)
+                            .resize(imageSize)
+                            .image
+            }
+            
+            return (image: image, title: "@\(account.username)@\(account.server)")
+        })!
+        
+        acc.append((image: Asset.icAccount.image, title: "Manage Accounts"))
+        
+        return acc
+    }
     fileprivate let disposeBag = DisposeBag()
     fileprivate var tableView: UITableView!
+
     
     fileprivate var tableViewHeight: CGFloat {
         
@@ -51,26 +81,15 @@ class AccountMenu: Popover {
         let frame = CGRect(x: 0, y: 0, width: width, height: height)
         
         self.tableView = UITableView(frame: frame, style: .plain)
+        self.tableView.contentInset = UIEdgeInsets(top: insets, left: insets, bottom: insets, right: insets)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: String.accountCell)
         
-        Observable.just(accountController!.accounts)
+        Observable.just(self.entries)
             .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) {
                 (row, element, cell) in
                 
-                cell.textLabel?.text = "@\(element.username)"
-                cell.detailTextLabel?.text = String(describing: element.baseUrl)
-                
-                if let avatarData = element.avatarData {
-                    
-                    cell.imageView?.image = Toucan(image: UIImage(data: avatarData)!)
-                        .maskWithEllipse()
-                        .image
-                    
-                }
-                else {
-                    
-                    cell.imageView?.image = Asset.icAccount.image
-                }
+                cell.textLabel?.text = element.title
+                cell.imageView?.image = element.image
             }
             .disposed(by: disposeBag)
     }
@@ -84,6 +103,20 @@ class AccountMenu: Popover {
     
     func show(fromView view: UIView) {
         
-        super.show(self.tableView, fromView: view)
+        Do
+            .this { this in
+                
+                super.show(self.tableView, fromView: view)
+                this.done()
+            }
+            .finally { this in
+                
+                var frame = self.frame
+                
+                frame.size.width = frame.size.width + self.insets
+                frame.size.height = frame.size.height + self.insets
+                
+                self.frame = frame
+            }
     }
 }

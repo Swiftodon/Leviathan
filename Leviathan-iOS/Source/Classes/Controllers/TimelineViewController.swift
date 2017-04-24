@@ -54,7 +54,7 @@ class TimelineViewController: UIViewController {
     
     @IBAction fileprivate func showAccountMenu(sender: UIButton) {
         
-        let width = self.view.frame.width / 2
+        let width = self.view.frame.width * 0.8
         let accountMenu = AccountMenu(width: width)
         
         accountMenu.show(fromView: self.accountButton)
@@ -80,7 +80,6 @@ class TimelineViewController: UIViewController {
                 }
                 
                 self.accountButton.setImage(Toucan(image: UIImage(data: avatarData)!)
-                                                //.resize(CGSize(width: 24, height: 24))
                                                 .maskWithEllipse()
                                                 .image,
                                             for: .normal)
