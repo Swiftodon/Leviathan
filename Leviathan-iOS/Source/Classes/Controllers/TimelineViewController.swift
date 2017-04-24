@@ -55,8 +55,7 @@ class TimelineViewController: UIViewController {
     @IBAction fileprivate func showAccountMenu(sender: UIButton) {
         
         let width = self.view.frame.width / 2
-        let frame = CGRect(x: 0, y: 0, width: width, height: width)
-        let accountMenu = AccountMenu(frame: frame)
+        let accountMenu = AccountMenu(width: width)
         
         accountMenu.show(fromView: self.accountButton)
     }
