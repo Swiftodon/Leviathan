@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import Toucan
 import Popover
 
 fileprivate extension String {
@@ -24,6 +27,7 @@ class AccountMenu: Popover {
                         .sideEdge(10)
                     ] as [PopoverOption]
     fileprivate let accountController = Globals.injectionContainer.resolve(AccountController.self)
+    fileprivate let disposeBag = DisposeBag()
     fileprivate var tableView: UITableView!
     
     fileprivate var tableViewHeight: CGFloat {
@@ -48,6 +52,27 @@ class AccountMenu: Popover {
         
         self.tableView = UITableView(frame: frame, style: .plain)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: String.accountCell)
+        
+        Observable.just(accountController!.accounts)
+            .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) {
+                (row, element, cell) in
+                
+                cell.textLabel?.text = "@\(element.username)"
+                cell.detailTextLabel?.text = String(describing: element.baseUrl)
+                
+                if let avatarData = element.avatarData {
+                    
+                    cell.imageView?.image = Toucan(image: UIImage(data: avatarData)!)
+                        .maskWithEllipse()
+                        .image
+                    
+                }
+                else {
+                    
+                    cell.imageView?.image = Asset.icAccount.image
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) {

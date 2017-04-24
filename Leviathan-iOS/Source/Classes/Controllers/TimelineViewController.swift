@@ -89,7 +89,7 @@ class TimelineViewController: UIViewController {
             }
             .orThis { this in
             
-                self.accountButton.setImage(Asset.Ic_account.image, for: .normal)
+                self.accountButton.setImage(Asset.icAccount.image, for: .normal)
                 this.done()
             }
     }

@@ -54,7 +54,7 @@ class AccountsPreferencesViewController: UIViewController {
                 }
                 else {
                     
-                    cell.imageView?.image = Asset.Ic_account.image
+                    cell.imageView?.image = Asset.icAccount.image
                 }
             }
             .disposed(by: disposeBag)
