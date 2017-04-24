@@ -100,6 +100,7 @@
 		E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
 		E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; };
 		E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E971A2521EADC51C00E1F77C /* AccountMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A2511EADC51C00E1F77C /* AccountMenu.swift */; };
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
@@ -229,6 +230,7 @@
 		E971A2471EABBB9E00E1F77C /* DoThis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DoThis.framework; path = Carthage/Build/iOS/DoThis.framework; sourceTree = "<group>"; };
 		E971A24A1EAC9DE700E1F77C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E971A24D1EADBBB000E1F77C /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
+		E971A2511EADC51C00E1F77C /* AccountMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMenu.swift; sourceTree = "<group>"; };
 		E984B5E41E98DB0D008DACDC /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984B5EB1E98DB0D008DACDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 		E96B17FE1E9CFC4C0029D636 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E971A22B1EAB55BA00E1F77C /* Images.swift */,
 				E96B17FF1E9CFC4C0029D636 /* Classes */,
 			);
 			path = Source;
@@ -356,9 +359,9 @@
 		E96B17FF1E9CFC4C0029D636 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E971A22B1EAB55BA00E1F77C /* Images.swift */,
 				E96B18001E9CFC4C0029D636 /* Application */,
 				E9F3C83F1EA557E9009BE3E8 /* Controllers */,
+				E971A2501EADC4E300E1F77C /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -435,6 +438,15 @@
 			);
 			name = Controllers;
 			path = "Leviathan-macOS/Source/Classes/Controllers";
+			sourceTree = SOURCE_ROOT;
+		};
+		E971A2501EADC4E300E1F77C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E971A2511EADC51C00E1F77C /* AccountMenu.swift */,
+			);
+			name = Views;
+			path = "Leviathan-iOS/Source/Classes/Views";
 			sourceTree = SOURCE_ROOT;
 		};
 		E984B5E51E98DB0D008DACDC /* Products */ = {
@@ -652,6 +664,7 @@
 			files = (
 				E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */,
 				B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */,
+				E971A2521EADC51C00E1F77C /* AccountMenu.swift in Sources */,
 				B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */,
 				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,

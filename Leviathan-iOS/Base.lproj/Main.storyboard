@@ -36,6 +36,9 @@
                                             <rect key="frame" x="16" y="9.5" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="ic_account"/>
+                                            <connections>
+                                                <action selector="showAccountMenuWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="2vc-g3-ziK"/>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="arE-QS-4NQ"/>

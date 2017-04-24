@@ -13,6 +13,7 @@ import Toucan
 import DoThis
 
 
+
 @IBDesignable
 class TimelineViewController: UIViewController {
     
@@ -46,6 +47,18 @@ class TimelineViewController: UIViewController {
                 self.setAvatarImage()
             }
         }
+    }
+    
+    
+    // MARK: - Action Handlers
+    
+    @IBAction fileprivate func showAccountMenu(sender: UIButton) {
+        
+        let width = self.view.frame.width / 2
+        let frame = CGRect(x: 0, y: 0, width: width, height: width)
+        let accountMenu = AccountMenu(frame: frame)
+        
+        accountMenu.show(fromView: self.accountButton)
     }
     
     
