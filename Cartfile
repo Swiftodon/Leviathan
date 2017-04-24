@@ -13,5 +13,8 @@ github "matthewpalmer/Locksmith"
 # Image Processing
 github "gavinbunney/Toucan" ~> 0.6.0
 
+# Popver View
+github "corin8823/Popover"
+
 # Async helper 
 github "Swiftodon/Do.this" "master"

@@ -98,6 +98,8 @@
 		E971A2491EABBBA900E1F77C /* DoThis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A2471EABBB9E00E1F77C /* DoThis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E971A24B1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
 		E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
+		E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; };
+		E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
@@ -115,6 +117,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */,
 				E971A2491EABBBA900E1F77C /* DoThis.framework in Copy Frameworks */,
 				E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */,
 				E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */,
@@ -225,6 +228,7 @@
 		E971A22F1EABB1BF00E1F77C /* Toucan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toucan.framework; path = Carthage/Build/iOS/Toucan.framework; sourceTree = "<group>"; };
 		E971A2471EABBB9E00E1F77C /* DoThis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DoThis.framework; path = Carthage/Build/iOS/DoThis.framework; sourceTree = "<group>"; };
 		E971A24A1EAC9DE700E1F77C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E971A24D1EADBBB000E1F77C /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
 		E984B5E41E98DB0D008DACDC /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984B5EB1E98DB0D008DACDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				E91355341EA289D50046DAF0 /* RxMoyaGloss.framework in Frameworks */,
 				E91355351EA289D50046DAF0 /* RxSwift.framework in Frameworks */,
 				E91355371EA289D50046DAF0 /* Swinject.framework in Frameworks */,
+				E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +400,7 @@
 		E96B18141E9D3D3C0029D636 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E971A24D1EADBBB000E1F77C /* Popover.framework */,
 				E971A2471EABBB9E00E1F77C /* DoThis.framework */,
 				E971A22F1EABB1BF00E1F77C /* Toucan.framework */,
 				E91355121EA289D50046DAF0 /* Alamofire.framework */,
