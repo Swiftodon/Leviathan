@@ -29,8 +29,9 @@ class AccountMenu: Popover {
                     ] as [PopoverOption]
     fileprivate let insets = CGFloat(5)
     fileprivate let accountController = Globals.injectionContainer.resolve(AccountController.self)
-    fileprivate var entries: [(image: UIImage, title: String)] {
-        var acc:[(UIImage,String)] = (self.accountController?.accounts.map { account in
+    fileprivate let settings = Globals.injectionContainer.resolve(Settings.self)
+    fileprivate var entries: [(image: UIImage, title: String, account: Account?)] {
+        var acc:[(UIImage,String,Account?)] = (self.accountController?.accounts.map { account in
             
             let imageSize = CGSize(width: 24, height: 24)
             var image: UIImage!
@@ -49,10 +50,10 @@ class AccountMenu: Popover {
                             .image
             }
             
-            return (image: image, title: "@\(account.username)@\(account.server)")
+            return (image: image, title: "@\(account.username)@\(account.server)", account: account)
         })!
         
-        acc.append((image: Asset.icAccount.image, title: "Manage Accounts"))
+        acc.append((image: Asset.icAccount.image, title: "Manage Accounts", account: nil))
         
         return acc
     }
@@ -62,7 +63,7 @@ class AccountMenu: Popover {
     
     fileprivate var tableViewHeight: CGFloat {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         let cellHeight = cell.frame.size.height
         let tableHeight = CGFloat(self.accountController!.accounts.count + 1) * cellHeight
         let maxHeight = CGFloat(500)
@@ -92,6 +93,11 @@ class AccountMenu: Popover {
                 cell.imageView?.image = element.image
             }
             .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .asObservable()
+            .subscribe(self.itemSelected)
+            .disposed(by: disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -117,6 +123,37 @@ class AccountMenu: Popover {
                 frame.size.height = frame.size.height + self.insets
                 
                 self.frame = frame
+            }
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    func itemSelected(_ event: Event<IndexPath>) {
+        
+        Do
+            .this { this in
+                
+                this.done(result: self.entries[event.element!.row].account)
+            }
+            .orThis { this in
+                
+                var finished = false
+                
+                if let account = this.previousResult as! Account? {
+                    
+                    self.settings?.activeAccount = account
+                    self.dismiss()
+                    finished = true
+                }
+                
+                this.done(finished: finished)
+            }
+            .orThis { this in
+                
+                // TODO: open account preferences
+                self.dismiss()
+                this.done()
             }
     }
 }
