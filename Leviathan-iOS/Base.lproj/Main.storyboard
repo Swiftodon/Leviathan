@@ -9,64 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController id="9pv-A4-QxB" customClass="TimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Home" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="139.5" y="313" width="96.5" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZt-W1-vo3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" id="4eg-d3-MSf">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TgH-DJ-BpF">
-                                            <rect key="frame" x="16" y="9.5" width="25" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="ic_account"/>
-                                            <connections>
-                                                <action selector="showAccountMenuWithSender:" destination="9pv-A4-QxB" eventType="touchUpInside" id="2vc-g3-ziK"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="arE-QS-4NQ"/>
-                                    <barButtonItem image="ic_write_post" id="SDY-gN-Zq9"/>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ZZt-W1-vo3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="3yy-0t-dr8"/>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="ZZt-W1-vo3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="dND-CU-TKJ"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                            <constraint firstAttribute="trailing" secondItem="ZZt-W1-vo3" secondAttribute="trailing" id="rjG-hI-Ym6"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="acW-dT-cKf"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="timelineId" value="3000"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="accountButton" destination="TgH-DJ-BpF" id="Vrd-OL-M1S"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-740" y="-450"/>
-        </scene>
         <!--Mastodon Accounts-->
         <scene sceneID="TkM-wr-DzB">
             <objects>
@@ -251,7 +193,7 @@
         <!--Notifications-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="TimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -283,10 +225,71 @@
             </objects>
             <point key="canvasLocation" x="-1511" y="-450"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="bas-zj-oja">
+            <objects>
+                <tableViewController id="SiD-Dw-n5S" customClass="TimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lxL-DS-rMF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tPt-3O-B5r">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tPt-3O-B5r" id="a0f-z9-3NS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SiD-Dw-n5S" id="Z8a-nc-kR7"/>
+                            <outlet property="delegate" destination="SiD-Dw-n5S" id="gFy-xs-E9T"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Home" id="1lt-RZ-EWB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="G3p-sH-kG3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bgc-Nw-ffV">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_account"/>
+                                <connections>
+                                    <action selector="showAccountMenuWithSender:" destination="SiD-Dw-n5S" eventType="touchDown" id="Pyl-u6-KDc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_write_post" id="eg9-hC-Puf"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="accountButton" destination="Bgc-Nw-ffV" id="h4v-M3-3ZN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVx-A3-Q7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="-450"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="gjj-U4-BG4">
+            <objects>
+                <navigationController id="dEy-t0-lGk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="yvY-08-4JH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JQa-jE-GF9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SiD-Dw-n5S" kind="relationship" relationship="rootViewController" id="EE4-a6-wuc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILY-Ld-cpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="-450"/>
+        </scene>
         <!--Local-->
         <scene sceneID="oCB-FJ-cqQ">
             <objects>
-                <viewController id="CJy-We-AaZ" customClass="TimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CJy-We-AaZ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0h5-u6-2BX"/>
                         <viewControllerLayoutGuide type="bottom" id="Bl7-uN-N0J"/>
@@ -321,7 +324,7 @@
         <!--Federated-->
         <scene sceneID="Q2Y-FL-D6J">
             <objects>
-                <viewController id="zhK-jy-Msd" customClass="TimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zhK-jy-Msd" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x48-up-YPM"/>
                         <viewControllerLayoutGuide type="bottom" id="RZE-lg-zTe"/>
@@ -364,7 +367,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="dEy-t0-lGk" kind="relationship" relationship="viewControllers" id="Xzx-Fj-KhI"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="CJy-We-AaZ" kind="relationship" relationship="viewControllers" id="kOF-hX-GAJ"/>
                         <segue destination="zhK-jy-Msd" kind="relationship" relationship="viewControllers" id="aGc-wE-l4l"/>

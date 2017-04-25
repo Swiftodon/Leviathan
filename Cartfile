@@ -16,5 +16,5 @@ github "gavinbunney/Toucan" ~> 0.6.0
 # Popver View
 github "corin8823/Popover"
 
-# Async helper 
-github "Swiftodon/Do.this" "master"
+# Eureka Form Builder for iOS
+github "xmartlabs/Eureka" ~> 3.0

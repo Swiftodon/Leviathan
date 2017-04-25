@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DoThis
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,62 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Public Properties
     
     var window: UIWindow?
-
+    let di = (
+        settings: Globals.injectionContainer.resolve(Settings.self)!,
+        accountController: Globals.injectionContainer.resolve(AccountController.self)!
+    )
 
     // MARK: - UIApplicationDelegate
     
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        DispatchQueue.main.async {
-            
-            self.checkAccountSettings()
-        }
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         return true
     }
     
-    
-    // MARK: - Show account settings
-    
-    private func checkAccountSettings() {
-        
-        Do
-            .this(do: self.checkIfApplicationIsReady)
-            .orThis(do: self.selectDefaultAccount)
-            .orThis(do: self.showAccountSettings)
-    }
-    
-    fileprivate func checkIfApplicationIsReady(_ this: DoThis) {
-        
-        let finished = Globals.injectionContainer.resolve(Settings.self)?.activeAccount != nil
-        
-        this.done(finished: finished)
-    }
-    
-    fileprivate func selectDefaultAccount(_ this: DoThis) {
-        
-        let accountController = Globals.injectionContainer.resolve(AccountController.self)
-        
-        guard (accountController?.accounts.count)! > 0 else {
-            
-            this.done()
-            return
-        }
-        
-        let settings = Globals.injectionContainer.resolve(Settings.self)
-        
-        settings?.activeAccount = accountController?.accounts.first
-        
-        this.done(finished: true)
-    }
-    
-    fileprivate func showAccountSettings(_ this: DoThis) {
-        
-        let accountController = Globals.injectionContainer.resolve(AccountController.self)
-        
-        if accountController?.accounts.count == 0 {
-            
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if let firstAccount = di.accountController.accounts.first {
+            if di.settings.activeAccount == nil {
+                di.settings.activeAccount = firstAccount
+            }
+        } else {
             // Show the account preferences
             let storyboard = UIStoryboard(
                 name: Bundle.main.object(forInfoDictionaryKey: "UIMainStoryboardFile") as! String,
@@ -80,7 +40,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.rootViewController?.present(viewController, animated: true)
         }
-        
-        this.done(finished: true)
     }
 }
