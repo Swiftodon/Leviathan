@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07ABAE371EAEE2E80055DE78 /* Eureka.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 07ABAE361EAEE2E80055DE78 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC61EA7692000B5413D /* AccountEditViewController.swift */; };
 		B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
 		B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
@@ -118,6 +119,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				07ABAE371EAEE2E80055DE78 /* Eureka.framework in Copy Frameworks */,
 				E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */,
 				E971A2491EABBBA900E1F77C /* DoThis.framework in Copy Frameworks */,
 				E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */,
@@ -172,6 +174,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07ABAE361EAEE2E80055DE78 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		B37CECC61EA7692000B5413D /* AccountEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEditViewController.swift; sourceTree = "<group>"; };
 		B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveTools.swift; sourceTree = "<group>"; };
 		B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 		E96B18141E9D3D3C0029D636 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				07ABAE361EAEE2E80055DE78 /* Eureka.framework */,
 				E971A24D1EADBBB000E1F77C /* Popover.framework */,
 				E971A2471EABBB9E00E1F77C /* DoThis.framework */,
 				E971A22F1EABB1BF00E1F77C /* Toucan.framework */,
