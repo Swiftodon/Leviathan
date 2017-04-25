@@ -22,7 +22,7 @@ extension MastodonSwift.AccessToken: Encodable {
     public func toJSON() -> JSON? {
         return jsonify([
             "access_token" ~~> self.token
-            ])
+        ])
     }
 }
 
@@ -197,11 +197,10 @@ class Account: NSObject, Decodable, Encodable {
         let data = Locksmith.loadDataForUserAccount(userAccount: self.email, inService: self.server)
         let value = data?[key]
         
-        if let _ = value as? NSNull {
-          
+        guard let val = value as? T else {
             return nil
         }
         
-        return value as! T?
+        return val
     }
 }
