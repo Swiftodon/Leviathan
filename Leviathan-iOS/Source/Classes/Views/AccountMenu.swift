@@ -108,22 +108,13 @@ class AccountMenu: Popover {
     // MARK: - Public Methods
     
     func show(fromView view: UIView) {
-        
-        Do
-            .this { this in
-                
-                super.show(self.tableView, fromView: view)
-                this.done()
-            }
-            .finally { this in
-                
-                var frame = self.frame
-                
-                frame.size.width = frame.size.width + self.insets
-                frame.size.height = frame.size.height + self.insets
-                
-                self.frame = frame
-            }
+        defer {
+            var frame = self.frame
+            frame.size.width = frame.size.width + self.insets
+            frame.size.height = frame.size.height + self.insets
+            self.frame = frame
+        }
+        super.show(self.tableView, fromView: view)
     }
     
     
@@ -131,29 +122,11 @@ class AccountMenu: Popover {
     
     func itemSelected(_ event: Event<IndexPath>) {
         
-        Do
-            .this { this in
-                
-                this.done(result: self.entries[event.element!.row].account)
-            }
-            .orThis { this in
-                
-                var finished = false
-                
-                if let account = this.previousResult as! Account? {
-                    
-                    self.settings?.activeAccount = account
-                    self.dismiss()
-                    finished = true
-                }
-                
-                this.done(finished: finished)
-            }
-            .orThis { this in
-                
-                // TODO: open account preferences
-                self.dismiss()
-                this.done()
-            }
+        guard let account = self.entries[event.element!.row].account else {
+            return self.dismiss()
+        }
+        
+        self.settings?.activeAccount = account
+        self.dismiss()
     }
 }
