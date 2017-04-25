@@ -259,7 +259,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_write_post" id="eg9-hC-Puf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="eg9-hC-Puf"/>
                     </navigationItem>
                     <connections>
                         <outlet property="accountButton" destination="Bgc-Nw-ffV" id="h4v-M3-3ZN"/>
@@ -384,6 +384,5 @@
         <image name="ic_home" width="25" height="25"/>
         <image name="ic_local" width="25" height="25"/>
         <image name="ic_notifications_none" width="25" height="25"/>
-        <image name="ic_write_post" width="25" height="25"/>
     </resources>
 </document>
