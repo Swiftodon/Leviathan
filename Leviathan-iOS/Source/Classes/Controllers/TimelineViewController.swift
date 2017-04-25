@@ -10,7 +10,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Toucan
-import DoThis
 
 // MARK: - Key Paths
 fileprivate extension String {

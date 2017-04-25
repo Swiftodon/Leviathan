@@ -11,7 +11,6 @@ import RxCocoa
 import RxSwift
 import Toucan
 import Popover
-import DoThis
 
 fileprivate extension String {
     static let accountCell = "MastodonAccountCell"

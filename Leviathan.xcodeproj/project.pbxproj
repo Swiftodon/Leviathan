@@ -96,7 +96,6 @@
 		E971A22C1EAB55BA00E1F77C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A22B1EAB55BA00E1F77C /* Images.swift */; };
 		E971A2301EABB1BF00E1F77C /* Toucan.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A22F1EABB1BF00E1F77C /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E971A2481EABBB9E00E1F77C /* DoThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A2471EABBB9E00E1F77C /* DoThis.framework */; };
-		E971A2491EABBBA900E1F77C /* DoThis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A2471EABBB9E00E1F77C /* DoThis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E971A24B1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
 		E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
 		E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; };
@@ -121,7 +120,6 @@
 			files = (
 				07ABAE371EAEE2E80055DE78 /* Eureka.framework in Copy Frameworks */,
 				E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */,
-				E971A2491EABBBA900E1F77C /* DoThis.framework in Copy Frameworks */,
 				E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */,
 				E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */,
 				E913554F1EA28AD90046DAF0 /* Locksmith.framework in Copy Frameworks */,
