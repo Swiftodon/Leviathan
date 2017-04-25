@@ -36,6 +36,8 @@ class AccountsPreferencesViewController: UIViewController {
             preconditionFailure()
         }
         
+        let imageSize = CGSize(width: 24, height: 24)
+        
         self.accountController.loadData()
         
         Observable.just(accountController.accounts)
@@ -48,6 +50,7 @@ class AccountsPreferencesViewController: UIViewController {
                 if let avatarData = element.avatarData {
                     
                     cell.imageView?.image = Toucan(image: UIImage(data: avatarData)!)
+                                                .resize(imageSize)
                                                 .maskWithEllipse()
                                                 .image
                     
