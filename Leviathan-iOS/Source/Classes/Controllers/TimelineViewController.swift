@@ -12,84 +12,75 @@ import RxSwift
 import Toucan
 import DoThis
 
+// MARK: - Key Paths
+fileprivate extension String {
+    static let activeAccount = "activeAccount"
+}
 
-
-@IBDesignable
-class TimelineViewController: UIViewController {
+class TimelineViewController: UITableViewController {
     
     // MARK: - Private Properties
-    
-    @IBOutlet private var accountButton: UIButton!
-    
-    @objc private let settings = Globals.injectionContainer.resolve(Settings.self)
-    
+    @IBOutlet weak var accountButton: UIButton?
+    private let settings = Globals.injectionContainer.resolve(Settings.self)
+    private let disposeBag = DisposeBag()
 
     // MARK: - Public Properties
-    
-    @IBInspectable var timelineId: String = ""
+    @IBInspectable var timelineId = Timeline.Home
     
     
     // MARK: - UIViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.bindControls()
-        self.setAvatarImage()
-    }
-    
-    @objc override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-     
-        if let _ = object as! Settings? {
-            
-            if keyPath == "activeAccount" {
-            
-                self.setAvatarImage()
-            }
+        guard let settings = settings else {
+            preconditionFailure()
         }
+        
+        setAvatarImage(for: settings.activeAccount)
+        settings.accountSubject.subscribe { event in
+            switch event {
+            case .next(let account):
+                self.setAvatarImage(for: account)
+            default:
+                break
+            }
+        }.addDisposableTo(disposeBag)
     }
-    
     
     // MARK: - Action Handlers
-    
     @IBAction fileprivate func showAccountMenu(sender: UIButton) {
         
         let width = self.view.frame.width * 0.8
         let accountMenu = AccountMenu(width: width)
         
-        accountMenu.show(fromView: self.accountButton)
-    }
-    
-    
-    // MARK: - Private Methods
-    
-    fileprivate func bindControls() {
+        guard let button = self.accountButton else {
+            return
+        }
         
-        settings?.addObserver(self, forKeyPath: #keyPath(Settings.activeAccount), options: [.new], context: nil)
+        accountMenu.show(fromView: button)
     }
-    
-    fileprivate func setAvatarImage() {
+
+    fileprivate func setAvatarImage(for account: Account?) {
         
-        Do
-            .this { this in
-            
-                guard let avatarData = self.settings?.activeAccount?.avatarData else {
-                    
-                    this.done()
-                    return
-                }
-                
-                self.accountButton.setImage(Toucan(image: UIImage(data: avatarData)!)
-                                                .maskWithEllipse()
-                                                .image,
-                                            for: .normal)
-                
-                this.done(finished: true)
-            }
-            .orThis { this in
-            
-                self.accountButton.setImage(Asset.icAccount.image, for: .normal)
-                this.done()
-            }
+        guard let account = account else {
+            self.accountButton?.setImage(Asset.icAccount.image, for: .normal)
+            return
+        }
+
+        guard let avatarData = account.avatarData else {
+            return
+        }
+        
+        guard let image =  UIImage(data: avatarData) else {
+            return
+        }
+        
+        accountButton?.setImage(
+            Toucan(image: image)
+                .maskWithEllipse()
+                .resize(CGSize(width: 36, height: 36))
+                .image,
+            for: .normal
+        )
     }
 }
