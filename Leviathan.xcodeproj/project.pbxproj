@@ -95,7 +95,6 @@
 		E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */; };
 		E971A22C1EAB55BA00E1F77C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A22B1EAB55BA00E1F77C /* Images.swift */; };
 		E971A2301EABB1BF00E1F77C /* Toucan.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A22F1EABB1BF00E1F77C /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E971A2481EABBB9E00E1F77C /* DoThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A2471EABBB9E00E1F77C /* DoThis.framework */; };
 		E971A24B1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
 		E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
 		E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; };
@@ -248,7 +247,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E971A2481EABBB9E00E1F77C /* DoThis.framework in Frameworks */,
 				E91355251EA289D50046DAF0 /* Alamofire.framework in Frameworks */,
 				E91355261EA289D50046DAF0 /* Gloss.framework in Frameworks */,
 				E91355271EA289D50046DAF0 /* Locksmith.framework in Frameworks */,

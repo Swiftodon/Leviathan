@@ -52,7 +52,7 @@ class AccountMenu: Popover {
             return (image: image, title: "@\(account.username)@\(account.server)", account: account)
         })!
         
-        acc.append((image: Asset.icAccount.image, title: "Manage Accounts", account: nil))
+        acc.append((image: Asset.icSettings.image, title: "Manage Accounts", account: nil))
         
         return acc
     }
@@ -122,7 +122,9 @@ class AccountMenu: Popover {
     func itemSelected(_ event: Event<IndexPath>) {
         
         guard let account = self.entries[event.element!.row].account else {
-            return self.dismiss()
+            AccountsPreferencesNavigationController.present()
+            self.dismiss()
+            return
         }
         
         self.settings?.activeAccount = account

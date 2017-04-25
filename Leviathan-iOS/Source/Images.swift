@@ -20,6 +20,7 @@ enum Asset: String {
   case icLocal = "ic_local"
   case icNotifications = "ic_notifications"
   case icNotificationsNone = "ic_notifications_none"
+  case icSettings = "ic_settings"
   case icWritePost = "ic_write_post"
 
   var image: Image {

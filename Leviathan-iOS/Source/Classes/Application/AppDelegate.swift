@@ -10,6 +10,12 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    // MARK: - Class Properties
+    
+    static let shared: AppDelegate = {
+       UIApplication.shared.delegate as! AppDelegate
+    }()
 
     // MARK: - Public Properties
     
@@ -31,14 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 di.settings.activeAccount = firstAccount
             }
         } else {
-            // Show the account preferences
-            let storyboard = UIStoryboard(
-                name: Bundle.main.object(forInfoDictionaryKey: "UIMainStoryboardFile") as! String,
-                bundle: Bundle.main)
-            let viewController = storyboard.instantiateViewController(
-                withIdentifier: AccountsPreferencesNavigationController.Identifier)
-            
-            self.window?.rootViewController?.present(viewController, animated: true)
+            AccountsPreferencesNavigationController.present()
         }
     }
 }
