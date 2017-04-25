@@ -29,9 +29,11 @@ public struct Globals {
     public static let injectionContainer: Container = {
         
         let container = Container()
+        let accountController = AccountController()
+        let settings = Settings()
         
-        container.register(AccountController.self) { _ in AccountController() }
-        container.register(Settings.self) { _ in Settings() }
+        container.register(AccountController.self) { _ in accountController }
+        container.register(Settings.self) { _ in settings }
         
         return container
     }()
