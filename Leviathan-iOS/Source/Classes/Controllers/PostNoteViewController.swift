@@ -43,6 +43,8 @@ class PostNoteViewController: FormViewController {
                 break
             }
         }.addDisposableTo(disposeBag)
+        
+        self.navigationOptions = .Disabled
     }
     
     
