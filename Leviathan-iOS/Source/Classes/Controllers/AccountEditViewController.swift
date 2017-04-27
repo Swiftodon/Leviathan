@@ -12,19 +12,26 @@ import RxSwift
 import Moya
 import RxMoya
 import MastodonSwift
+import Eureka
 
 
-class AccountEditViewController: UIViewController {
+class AccountEditViewController: FormViewController {
 
     // MARK: - Private Properties
+    @IBOutlet private var tv: UITableView! {
+        set {
+            self.tableView = newValue
+        }
+        get {
+            return self.tableView
+        }
+    }
+    @IBOutlet private var spinningView: UIView!
+    @IBOutlet private var cancelButton: UIBarButtonItem!
+    @IBOutlet private var saveButton: UIBarButtonItem!
     
-    @IBOutlet private var serverTextField: UITextField!
     private var server = Variable<String>("")
-    
-    @IBOutlet private var emailTextField: UITextField!
     private var email = Variable<String>("")
-    
-    @IBOutlet private var passwordTextField: UITextField!
     private var password = Variable<String>("")
     
     private var url: URL!
@@ -37,10 +44,10 @@ class AccountEditViewController: UIViewController {
     
     // MARK: - UIViewController
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.bindControls()
+        self.prepareForm()
     }
     
     
@@ -49,6 +56,10 @@ class AccountEditViewController: UIViewController {
     @IBAction fileprivate func save(sender: UIBarButtonItem) {
         
         self.url = URL(string: "https://\(self.server.value)")
+        
+        self.spinningView.isHidden = false
+        self.cancelButton.isEnabled = false
+        self.saveButton.isEnabled = false
         
         RxMoyaProvider<Mastodon.Apps>(endpointClosure: /self.url,
                                       plugins: [CredentialsPlugin {
@@ -90,6 +101,10 @@ class AccountEditViewController: UIViewController {
                                                 message: NSLocalizedString("Error while loging in. Error message is: ", comment: "Message")+">\(error.localizedDescription)<",
                                                 preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Button Title"), style: .cancel)
+        
+        self.spinningView.isHidden = true
+        self.cancelButton.isEnabled = true
+        self.saveButton.isEnabled = true
         
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true)
@@ -135,14 +150,23 @@ class AccountEditViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    fileprivate func bindControls() {
+    fileprivate func prepareForm() {
         
-        // Bind the text fields to the properties
-        (self.serverTextField.rx.text.orEmpty <-> self.server)
-            .disposed(by: self.disposeBag)
-        (self.emailTextField.rx.text.orEmpty <-> self.email)
-            .disposed(by: self.disposeBag)
-        (self.passwordTextField.rx.text.orEmpty <-> self.password)
-            .disposed(by: self.disposeBag)
+        self.form
+            +++ Section("Server")
+                <<< TextRow() { row in
+                    row.placeholder = "Enter hostname of Mastodon server"
+                    row.onChange { self.server.value = $0.value! }
+                }
+            +++ Section("E-Mail")
+                <<< TextRow() { row in
+                    row.placeholder = "Enter e-mail address"
+                    row.onChange { self.email.value = $0.value! }
+                }
+            +++ Section("Password")
+                <<< PasswordRow() { row in
+                    row.placeholder = "Enter password"
+                    row.onChange { self.password.value = $0.value! }
+                }
     }
 }
