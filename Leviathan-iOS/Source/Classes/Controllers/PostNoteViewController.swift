@@ -16,7 +16,6 @@ class PostNoteViewController: FormViewController {
 
     // MARK: - Private Properties
     
-    // FormViewController's property tableView doesn't appear in IB :-(
     @IBOutlet private var tv: UITableView!
     @IBOutlet private var accountIndicatorButton: UIButton!
     private let settings = Globals.injectionContainer.resolve(Settings.self)
@@ -28,8 +27,34 @@ class PostNoteViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.bindAvatarImage()
+        self.prepareForm()
+    }
+    
+    
+    // MARK: - Action Handlers
+    
+    @IBAction fileprivate func cancel(sender: UIBarButtonItem) {
+        
+        self.dismiss(animated: true)
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    fileprivate func prepareForm() {
+        
+        // tableView doesn't appear in IB
         self.tableView = self.tv
         
+        self.form +++ Section("Note")
+            <<< TextAreaRow() { row in
+                    row.textAreaHeight = .dynamic(initialTextViewHeight: 44)
+                }
+    }
+    
+    fileprivate func bindAvatarImage() {
+    
         guard let settings = settings else {
             preconditionFailure()
         }
@@ -42,17 +67,7 @@ class PostNoteViewController: FormViewController {
             default:
                 break
             }
-        }.addDisposableTo(disposeBag)
-        
-        self.navigationOptions = .Disabled
-    }
-    
-    
-    // MARK: - Action Handlers
-    
-    @IBAction fileprivate func cancel(sender: UIBarButtonItem) {
-        
-        self.dismiss(animated: true)
+            }.addDisposableTo(disposeBag)
     }
     
     fileprivate func setAvatarImage(for account: Account?) {

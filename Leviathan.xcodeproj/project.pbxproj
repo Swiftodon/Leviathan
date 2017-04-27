@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07ABAE371EAEE2E80055DE78 /* Eureka.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 07ABAE361EAEE2E80055DE78 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC61EA7692000B5413D /* AccountEditViewController.swift */; };
 		B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
 		B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
 		B3A60A951EB0680400DD5B6D /* PostNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */; };
-		B3A60A991EB06CEB00DD5B6D /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ABAE361EAEE2E80055DE78 /* Eureka.framework */; };
 		B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */; };
 		E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
 		E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
@@ -86,6 +84,8 @@
 		E91355751EA28BD70046DAF0 /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FE1EA289AF0046DAF0 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E91355781EA29E040046DAF0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91355771EA29E040046DAF0 /* Account.swift */; };
 		E91355791EA29E040046DAF0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91355771EA29E040046DAF0 /* Account.swift */; };
+		E944A9D51EB1BD40006AB6A2 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; };
+		E944A9D61EB1BD57006AB6A2 /* Eureka.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
@@ -119,7 +119,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				07ABAE371EAEE2E80055DE78 /* Eureka.framework in Copy Frameworks */,
+				E944A9D61EB1BD57006AB6A2 /* Eureka.framework in Copy Frameworks */,
 				E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */,
 				E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */,
 				E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */,
@@ -173,7 +173,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07ABAE361EAEE2E80055DE78 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		B37CECC61EA7692000B5413D /* AccountEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEditViewController.swift; sourceTree = "<group>"; };
 		B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveTools.swift; sourceTree = "<group>"; };
 		B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNoteViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +216,7 @@
 		E91355231EA289D50046DAF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		E91355241EA289D50046DAF0 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		E91355771EA29E040046DAF0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		E944A9D41EB1BD40006AB6A2 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 		E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesNavigationController.swift; sourceTree = "<group>"; };
 		E971A22B1EAB55BA00E1F77C /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = "Leviathan-iOS/Source/Images.swift"; sourceTree = SOURCE_ROOT; };
 		E971A22F1EABB1BF00E1F77C /* Toucan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toucan.framework; path = Carthage/Build/iOS/Toucan.framework; sourceTree = "<group>"; };
-		E971A2471EABBB9E00E1F77C /* DoThis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DoThis.framework; path = Carthage/Build/iOS/DoThis.framework; sourceTree = "<group>"; };
 		E971A24A1EAC9DE700E1F77C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E971A24D1EADBBB000E1F77C /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
 		E971A2511EADC51C00E1F77C /* AccountMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMenu.swift; sourceTree = "<group>"; };
@@ -250,7 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3A60A991EB06CEB00DD5B6D /* Eureka.framework in Frameworks */,
+				E944A9D51EB1BD40006AB6A2 /* Eureka.framework in Frameworks */,
 				E91355251EA289D50046DAF0 /* Alamofire.framework in Frameworks */,
 				E91355261EA289D50046DAF0 /* Gloss.framework in Frameworks */,
 				E91355271EA289D50046DAF0 /* Locksmith.framework in Frameworks */,
@@ -406,9 +405,8 @@
 		E96B18141E9D3D3C0029D636 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				07ABAE361EAEE2E80055DE78 /* Eureka.framework */,
+				E944A9D41EB1BD40006AB6A2 /* Eureka.framework */,
 				E971A24D1EADBBB000E1F77C /* Popover.framework */,
-				E971A2471EABBB9E00E1F77C /* DoThis.framework */,
 				E971A22F1EABB1BF00E1F77C /* Toucan.framework */,
 				E91355121EA289D50046DAF0 /* Alamofire.framework */,
 				E91355131EA289D50046DAF0 /* Gloss.framework */,
