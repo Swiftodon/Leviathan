@@ -29,6 +29,9 @@ extension MastodonSwift.AccessToken: Encodable {
 
 class Account: NSObject, Decodable, Encodable {
     
+    // MARK: - Private Properties
+    private var disposeBag = DisposeBag()
+    
     // MARK: - Public Properties
     
     public var server  : String = ""
@@ -135,7 +138,6 @@ class Account: NSObject, Decodable, Encodable {
     
     func verifyAccount(_ completed: ((_ verified: Bool?, _ error: Swift.Error?) -> ())?) {
         
-        let disposeBag = DisposeBag()
         var avatarUrl: URL? = nil
         
         RxMoyaProvider<Mastodon.Account>(endpointClosure: /self.baseUrl,
@@ -171,7 +173,7 @@ class Account: NSObject, Decodable, Encodable {
                         completed?(true, nil)
                     }
                 }))
-            //.disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
     

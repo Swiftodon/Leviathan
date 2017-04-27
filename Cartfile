@@ -17,4 +17,4 @@ github "gavinbunney/Toucan" ~> 0.6.0
 github "corin8823/Popover"
 
 # Eureka Form Builder for iOS
-github "xmartlabs/Eureka" ~> 3.0
+github "xmartlabs/Eureka" "master"

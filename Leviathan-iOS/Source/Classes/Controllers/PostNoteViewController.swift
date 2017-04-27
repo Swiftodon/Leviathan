@@ -16,7 +16,15 @@ class PostNoteViewController: FormViewController {
 
     // MARK: - Private Properties
     
-    @IBOutlet private var tv: UITableView!
+    @IBOutlet private var tv: UITableView! {
+        // tableView doesn't appear in IB
+        set {
+            super.tableView = tv
+        }
+        get {
+            return super.tableView
+        }
+    }
     @IBOutlet private var accountIndicatorButton: UIButton!
     private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let disposeBag = DisposeBag()
@@ -43,9 +51,6 @@ class PostNoteViewController: FormViewController {
     // MARK: - Private Methods
     
     fileprivate func prepareForm() {
-        
-        // tableView doesn't appear in IB
-        self.tableView = self.tv
         
         self.form +++ Section("Note")
             <<< TextAreaRow() { row in
