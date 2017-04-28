@@ -159,16 +159,23 @@ class AccountEditViewController: FormViewController {
                 <<< TextRow() { row in
                     row.placeholder = "Enter hostname of Mastodon server"
                     row.onChange { self.server.value = $0.value ?? "" }
+                    row.add(rule: RuleRequired())
+                    row.validationOptions = .validatesOnChange
                 }
             +++ Section("E-Mail")
                 <<< TextRow() { row in
                     row.placeholder = "Enter e-mail address"
                     row.onChange { self.email.value = $0.value ?? "" }
+                    row.add(rule: RuleRequired())
+                    row.add(rule: RuleEmail())
+                    row.validationOptions = .validatesOnChange
                 }
             +++ Section("Password")
                 <<< PasswordRow() { row in
                     row.placeholder = "Enter password"
                     row.onChange { self.password.value = $0.value ?? "" }
+                    row.add(rule: RuleRequired())
+                    row.validationOptions = .validatesOnChange
                 }
     }
     
