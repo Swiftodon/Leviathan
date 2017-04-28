@@ -220,11 +220,10 @@ class AccountEditViewController: FormViewController {
             = Observable.combineLatest([serverAndEmailValid, accountValid, passwordValid]) {
                 $0[0] && $0[1] && $0[2]
             }
-                
+        
+        
         everythingValid
-            .bind { enabled in
-                self.saveButton.isEnabled = enabled
-            }
+            .bind(to: self.saveButton.rx.isEnabled)
             .disposed(by: self.disposeBag)
     }
 }
