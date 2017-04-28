@@ -154,6 +154,11 @@ class AccountEditViewController: FormViewController {
     
     fileprivate func prepareForm() {
         
+        let visualizeValidationError: (TextCell, TextRow) -> ()  = { cell, row in
+            cell.contentView.layer.borderWidth = !row.isValid ? 2 : 0
+            cell.contentView.layer.borderColor = !row.isValid ? UIColor.red.cgColor : UIColor.clear.cgColor
+        }
+        
         self.form
             +++ Section("Server")
                 <<< TextRow() { row in
@@ -162,6 +167,7 @@ class AccountEditViewController: FormViewController {
                     row.add(rule: RuleRequired())
                     row.validationOptions = .validatesOnChange
                 }
+                .cellUpdate(visualizeValidationError)
             +++ Section("E-Mail")
                 <<< TextRow() { row in
                     row.placeholder = "Enter e-mail address"
@@ -170,12 +176,17 @@ class AccountEditViewController: FormViewController {
                     row.add(rule: RuleEmail())
                     row.validationOptions = .validatesOnChange
                 }
+               .cellUpdate(visualizeValidationError)
             +++ Section("Password")
                 <<< PasswordRow() { row in
                     row.placeholder = "Enter password"
                     row.onChange { self.password.value = $0.value ?? "" }
                     row.add(rule: RuleRequired())
                     row.validationOptions = .validatesOnChange
+                }
+                .cellUpdate { cell, row in
+                    cell.contentView.layer.borderWidth = !row.isValid ? 2 : 0
+                    cell.contentView.layer.borderColor = !row.isValid ? UIColor.red.cgColor : UIColor.clear.cgColor
                 }
     }
     
