@@ -174,19 +174,39 @@ class AccountEditViewController: FormViewController {
     
     fileprivate func createBindings() {
         
-        /*self.inputValidator = Observable<Bool>.combineLatest([
-                self.server.asObservable(),
-                self.email.asObservable(),
-                self.password.asObservable()]) {
-                    
-                    return true
-                }
-                .subscribe {
-                    
-                }*/
-                //.disposed(by: self.disposeBag)
-        //!.combineLatest(self.server.) { $0 + $1 }
-        //.filter { $0 >= 0 }               // if `a + b >= 0` is true, `a + b` is passed to the map operator
-        //.map { "\($0) is positive" }
+        // Validations
+        let serverValid: Observable<Bool> = self.server.asObservable()
+            .map { text -> Bool in
+                text.characters.count > 0 && (URL(string: "http://\(text)") != nil)
+            }
+            .shareReplay(1)
+        let emailValid: Observable<Bool> = self.email.asObservable()
+            .map { text -> Bool in
+                text.characters.count > 0
+            }
+            .shareReplay(1)
+        let serverAndEmailValid: Observable<Bool>
+            = Observable.combineLatest(serverValid, emailValid) {
+                $0 && $1
+            }
+        let accountValid: Observable<Bool>
+            = Observable.combineLatest(self.server.asObservable(), self.email.asObservable()) {
+                self.accountController?.find($0, $1) == nil
+            }
+        let passwordValid: Observable<Bool> = self.password.asObservable()
+            .map { text -> Bool in
+                text.characters.count > 0
+            }
+            .shareReplay(1)
+        let everythingValid: Observable<Bool>
+            = Observable.combineLatest([serverAndEmailValid, accountValid, passwordValid]) {
+                $0[0] && $0[1] && $0[2]
+            }
+                
+        everythingValid
+            .bind { enabled in
+                self.saveButton.isEnabled = enabled
+            }
+            .disposed(by: self.disposeBag)
     }
 }
