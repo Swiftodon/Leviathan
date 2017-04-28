@@ -74,7 +74,8 @@ class AccountController {
     func find(_ server: String, _ username: String) -> Account? {
         
         let foundAccounts = self.accounts.filter { account in
-            account.server == server && account.username == username
+            (account.server.caseInsensitiveCompare(server) == .orderedSame) &&
+            (account.username.caseInsensitiveCompare(username) == .orderedSame)
         }
         
         return foundAccounts.first

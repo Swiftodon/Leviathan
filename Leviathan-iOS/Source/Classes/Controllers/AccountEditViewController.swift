@@ -33,6 +33,7 @@ class AccountEditViewController: FormViewController {
     private var server = Variable<String>("")
     private var email = Variable<String>("")
     private var password = Variable<String>("")
+    private var inputValidator: Observable<Bool>!
     
     private var url: URL!
     private var app: App!
@@ -48,6 +49,7 @@ class AccountEditViewController: FormViewController {
         super.viewDidLoad()
         
         self.prepareForm()
+        self.createBindings()
     }
     
     
@@ -156,17 +158,35 @@ class AccountEditViewController: FormViewController {
             +++ Section("Server")
                 <<< TextRow() { row in
                     row.placeholder = "Enter hostname of Mastodon server"
-                    row.onChange { self.server.value = $0.value! }
+                    row.onChange { self.server.value = $0.value ?? "" }
                 }
             +++ Section("E-Mail")
                 <<< TextRow() { row in
                     row.placeholder = "Enter e-mail address"
-                    row.onChange { self.email.value = $0.value! }
+                    row.onChange { self.email.value = $0.value ?? "" }
                 }
             +++ Section("Password")
                 <<< PasswordRow() { row in
                     row.placeholder = "Enter password"
-                    row.onChange { self.password.value = $0.value! }
+                    row.onChange { self.password.value = $0.value ?? "" }
                 }
+    }
+    
+    fileprivate func createBindings() {
+        
+        /*self.inputValidator = Observable<Bool>.combineLatest([
+                self.server.asObservable(),
+                self.email.asObservable(),
+                self.password.asObservable()]) {
+                    
+                    return true
+                }
+                .subscribe {
+                    
+                }*/
+                //.disposed(by: self.disposeBag)
+        //!.combineLatest(self.server.) { $0 + $1 }
+        //.filter { $0 >= 0 }               // if `a + b >= 0` is true, `a + b` is passed to the map operator
+        //.map { "\($0) is positive" }
     }
 }
