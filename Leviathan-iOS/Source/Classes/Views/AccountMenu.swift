@@ -27,10 +27,10 @@ class AccountMenu: Popover {
                         .sideEdge(10)
                     ] as [PopoverOption]
     fileprivate let insets = CGFloat(5)
-    fileprivate let accountController = Globals.injectionContainer.resolve(AccountController.self)
+    fileprivate let accountModel = Globals.injectionContainer.resolve(AccountModel.self)
     fileprivate let settings = Globals.injectionContainer.resolve(Settings.self)
     fileprivate var entries: [(image: UIImage, title: String, account: Account?)] {
-        var acc:[(UIImage,String,Account?)] = (self.accountController?.accounts.map { account in
+        var acc:[(UIImage,String,Account?)] = (self.accountModel?.accounts.map { account in
             
             let imageSize = CGSize(width: 24, height: 24)
             var image: UIImage!
@@ -64,7 +64,7 @@ class AccountMenu: Popover {
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         let cellHeight = cell.frame.size.height
-        let tableHeight = CGFloat(self.accountController!.accounts.count + 1) * cellHeight
+        let tableHeight = CGFloat(self.accountModel!.accounts.count + 1) * cellHeight
         let maxHeight = CGFloat(500)
         
         return min(tableHeight, maxHeight)

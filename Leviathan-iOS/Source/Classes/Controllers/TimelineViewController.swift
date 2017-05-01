@@ -66,12 +66,12 @@ class TimelineViewController: UITableViewController {
             return
         }
 
-        guard let avatarData = account.avatarData else {
-            return
+        var image: UIImage!
+        if let avatarData = account.avatarData {
+            image =  UIImage(data: avatarData)
         }
-        
-        guard let image =  UIImage(data: avatarData) else {
-            return
+        else {
+            image = Asset.icAccount.image
         }
         
         accountButton?.setImage(

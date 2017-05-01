@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MastodonAccountCell" textLabel="Mnx-aG-1Md" detailTextLabel="1BN-MB-Ush" imageView="EIb-hx-d3G" style="IBUITableViewCellStyleSubtitle" id="f2d-Zt-7m3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MastodonAccountCell" textLabel="Mnx-aG-1Md" detailTextLabel="1BN-MB-Ush" imageView="EIb-hx-d3G" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="f2d-Zt-7m3">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f2d-Zt-7m3" id="j2R-T3-oqm">

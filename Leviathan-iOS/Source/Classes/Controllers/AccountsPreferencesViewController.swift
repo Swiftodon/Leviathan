@@ -22,26 +22,52 @@ class AccountsPreferencesViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
-    private var accountController: AccountController! = Globals.injectionContainer.resolve(AccountController.self)
+    private var viewModel: Observable<AccountsPreferencesViewModel>!
     private let settings = Globals.injectionContainer.resolve(Settings.self)
+    private let defaultImage = Asset.icAccount.image
+    private let imageSize = CGSize(width: 24, height: 24)
     private let disposeBag = DisposeBag()
+    
     
     // MARK: - UIViewController 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let accountController = accountController else {
+        self.createBindings()
+    }
+
+    
+    // MARK: - Action Handlers
+    
+    @IBAction fileprivate func done(sender: UIBarButtonItem) {
+
+        if settings?.activeAccount == nil {
             
-            preconditionFailure()
         }
         
-        let imageSize = CGSize(width: 24, height: 24)
+        self.navigationController?.dismiss(animated: true)
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    fileprivate func createBindings() {
         
-        self.accountController.loadData()
-        
-        Observable.just(accountController.accounts)
-            .bind(to: tableView.rx.items(cellIdentifier: String.accountCell)) {
+        guard let accountModel = Globals.injectionContainer.resolve(AccountModel.self) else {
+            preconditionFailure()
+        }
+        let initialState = AccountsPreferencesViewModel(accountModel.loadData())
+        let deleteCommand = self.tableView.rx
+                                .itemDeleted
+                                .map(AccountsPreferencesViewEditingCommand.delete)
+        viewModel = Observable.system(initialState,
+                                      accumulator: AccountsPreferencesViewModel.executeCommand,
+                                      scheduler: MainScheduler.instance,
+                                      feedback: { _ in deleteCommand }).shareReplay(1)
+        viewModel
+            .map { $0.model.accounts }
+            .bind(to: self.tableView.rx.items(cellIdentifier: String.accountCell)) {
                 (row, element, cell) in
                 
                 cell.textLabel?.text = "@\(element.username)"
@@ -50,29 +76,31 @@ class AccountsPreferencesViewController: UIViewController {
                 if let avatarData = element.avatarData {
                     
                     cell.imageView?.image = Toucan(image: UIImage(data: avatarData)!)
-                                                .resize(imageSize)
-                                                .maskWithEllipse()
-                                                .image
+                        .resize(self.imageSize)
+                        .maskWithEllipse()
+                        .image
                     
                 }
                 else {
                     
-                    cell.imageView?.image = Asset.icAccount.image
+                    cell.imageView?.image = self.defaultImage
                 }
             }
             .disposed(by: disposeBag)
-    }
-
-    
-    // MARK: - Action Handlers
-    
-    @IBAction func done(sender: UIBarButtonItem) {
-        
-        if settings?.activeAccount == nil && accountController.accounts.count > 0 {
-            
-            settings?.activeAccount = accountController.accounts.first
-        }
-        
-        self.navigationController?.dismiss(animated: true)
+        viewModel
+            .map { $0.model.accounts }
+            .subscribe { event in
+                switch (self.settings?.activeAccount, event.element?.first) {
+                case let (activeAccount, firstAccount) where activeAccount != nil && firstAccount == nil:
+                    self.settings?.activeAccount = nil
+                    break
+                case let (activeAccount, firstAccount) where activeAccount == nil && firstAccount != nil:
+                    self.settings?.activeAccount = firstAccount
+                    break
+                default:
+                    break
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }

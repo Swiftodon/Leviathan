@@ -41,10 +41,10 @@ fileprivate extension String {
             guard let username = userDefaults.string(forKey: String.activeAccountUsername) else {
                 return nil
             }
-            guard let accountController = Globals.injectionContainer.resolve(AccountController.self) else {
+            guard let accountModel = Globals.injectionContainer.resolve(AccountModel.self) else {
                 return nil
             }
-            return accountController.find(server, username)
+            return accountModel.find(server, username)
         }
         set {
             guard let newValue = newValue else {

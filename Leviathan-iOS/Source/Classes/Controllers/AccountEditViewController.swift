@@ -40,7 +40,7 @@ class AccountEditViewController: FormViewController {
     private var token: AccessToken!
     private let disposeBag = DisposeBag()
     private var account: Account? = nil
-    private let accountController = Globals.injectionContainer.resolve(AccountController.self)
+    private let accountModel = Globals.injectionContainer.resolve(AccountModel.self)
 
     
     // MARK: - UIViewController
@@ -133,7 +133,7 @@ class AccountEditViewController: FormViewController {
         
         if account == nil {
             
-            account = self.accountController?.create(server: self.server.value,
+            account = self.accountModel?.create(server: self.server.value,
                                                             email: self.email.value)
         }
         
@@ -144,7 +144,8 @@ class AccountEditViewController: FormViewController {
         
         account?.verifyAccount({ (verified, error) in
         
-            self.accountController?.saveData()
+            // TODO handle error
+            self.accountModel?.saveData()
             self.navigationController?.popViewController(animated: true)
         })
     }
@@ -209,7 +210,7 @@ class AccountEditViewController: FormViewController {
             }
         let accountValid: Observable<Bool>
             = Observable.combineLatest(self.server.asObservable(), self.email.asObservable()) {
-                self.accountController?.find($0, $1) == nil
+                self.accountModel?.find($0, $1) == nil
             }
         let passwordValid: Observable<Bool> = self.password.asObservable()
             .map { text -> Bool in

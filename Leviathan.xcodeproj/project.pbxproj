@@ -86,6 +86,9 @@
 		E91355791EA29E040046DAF0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91355771EA29E040046DAF0 /* Account.swift */; };
 		E944A9D51EB1BD40006AB6A2 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; };
 		E944A9D61EB1BD57006AB6A2 /* Eureka.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E944A9E41EB740AC006AB6A2 /* AccountsPreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944A9E31EB740AC006AB6A2 /* AccountsPreferencesViewModel.swift */; };
+		E944A9E61EB7AD3F006AB6A2 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */; };
+		E944A9E71EB7AD3F006AB6A2 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
@@ -105,8 +108,8 @@
 		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
 		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
 		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
-		E9E258941EA69008001E0E71 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountController.swift */; };
-		E9E258951EA69008001E0E71 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountController.swift */; };
+		E9E258941EA69008001E0E71 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountModel.swift */; };
+		E9E258951EA69008001E0E71 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountModel.swift */; };
 		E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */; };
 		E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */; };
 		E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */; };
@@ -217,6 +220,8 @@
 		E91355241EA289D50046DAF0 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		E91355771EA29E040046DAF0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		E944A9D41EB1BD40006AB6A2 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		E944A9E31EB740AC006AB6A2 /* AccountsPreferencesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewModel.swift; sourceTree = "<group>"; };
+		E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -238,7 +243,7 @@
 		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E984B5F01E98DB0D008DACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E984B5F71E98DC0F008DACDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9E258931EA69008001E0E71 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		E9E258931EA69008001E0E71 /* AccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
 		E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				E90E61181E9E88E500E2DC19 /* Globals.swift */,
+				E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */,
 				B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */,
 				E90E611B1E9F973200E2DC19 /* Classes */,
 			);
@@ -320,10 +326,18 @@
 			isa = PBXGroup;
 			children = (
 				E91355771EA29E040046DAF0 /* Account.swift */,
-				E9E258931EA69008001E0E71 /* AccountController.swift */,
+				E9E258931EA69008001E0E71 /* AccountModel.swift */,
 				E971A24A1EAC9DE700E1F77C /* Settings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E944A9E21EB7407A006AB6A2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E944A9E31EB740AC006AB6A2 /* AccountsPreferencesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E95B2C041E9554F000EDC598 = {
@@ -363,6 +377,7 @@
 			children = (
 				E96B18001E9CFC4C0029D636 /* Application */,
 				E9F3C83F1EA557E9009BE3E8 /* Controllers */,
+				E944A9E21EB7407A006AB6A2 /* ViewModels */,
 				E971A2501EADC4E300E1F77C /* Views */,
 			);
 			path = Classes;
@@ -673,10 +688,12 @@
 				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,
 				B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */,
 				B3A60A951EB0680400DD5B6D /* PostNoteViewController.swift in Sources */,
-				E9E258951EA69008001E0E71 /* AccountController.swift in Sources */,
+				E9E258951EA69008001E0E71 /* AccountModel.swift in Sources */,
+				E944A9E41EB740AC006AB6A2 /* AccountsPreferencesViewModel.swift in Sources */,
 				E971A22C1EAB55BA00E1F77C /* Images.swift in Sources */,
 				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
 				E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */,
+				E944A9E71EB7AD3F006AB6A2 /* Observable+Extensions.swift in Sources */,
 				E91355791EA29E040046DAF0 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,8 +702,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E944A9E61EB7AD3F006AB6A2 /* Observable+Extensions.swift in Sources */,
 				E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */,
-				E9E258941EA69008001E0E71 /* AccountController.swift in Sources */,
+				E9E258941EA69008001E0E71 /* AccountModel.swift in Sources */,
 				E91355781EA29E040046DAF0 /* Account.swift in Sources */,
 				B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */,
 				E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */,

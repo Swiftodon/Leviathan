@@ -1,5 +1,5 @@
 //
-//  AccountController.swift
+//  AccountModel.swift
 //  Leviathan
 //
 //  Created by Thomas Bonk on 18.04.17.
@@ -10,7 +10,12 @@ import Foundation
 import Gloss
 
 
-class AccountController {
+class AccountModel {
+    
+    // MARK: - Private Properties
+    
+    private let fileLock = DispatchQueue(label: "AccountModel_IO_Lock")
+    
     
     // MARK: - Public Properties
     
@@ -30,22 +35,32 @@ class AccountController {
     
     // MARK: - Load and save data
     
-    func loadData() {
+    func loadData() -> AccountModel {
         
-        if let arr = NSArray(contentsOf: self.fileUrl) {
+        fileLock.sync {
             
-            let jsonArray = arr as! [JSON]
+            if let arr = NSArray(contentsOf: self.fileUrl) {
+            
+                let jsonArray = arr as! [JSON]
         
-            self.accounts = [Account].from(jsonArray: jsonArray)!
+                self.accounts = [Account].from(jsonArray: jsonArray)!
+            }
         }
+        
+        return self
     }
     
-    func saveData() {
+    func saveData() -> AccountModel {
         
-        let jsonArray = self.accounts.toJSONArray()
-        let arr = jsonArray! as NSArray
+        fileLock.sync {
+            
+            let jsonArray = self.accounts.toJSONArray()
+            let arr = jsonArray! as NSArray
         
-        arr.write(to: self.fileUrl, atomically: true)
+            arr.write(to: self.fileUrl, atomically: true)
+        }
+        
+        return self
     }
     
     
@@ -67,8 +82,13 @@ class AccountController {
         
         if let index = self.accounts.index(where: { $0 == account } ) {
             
-            self.accounts.remove(at: index)
+            self.delete(at: index)
         }
+    }
+    
+    func delete(at index: Int) {
+        
+        self.accounts.remove(at: index)
     }
     
     func find(_ server: String, _ username: String) -> Account? {

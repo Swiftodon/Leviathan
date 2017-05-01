@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let di = (
         settings: Globals.injectionContainer.resolve(Settings.self)!,
-        accountController: Globals.injectionContainer.resolve(AccountController.self)!
+        accountModel: Globals.injectionContainer.resolve(AccountModel.self)!
     )
 
     // MARK: - UIApplicationDelegate
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        if let firstAccount = di.accountController.accounts.first {
+        if let firstAccount = di.accountModel.accounts.first {
             if di.settings.activeAccount == nil {
                 di.settings.activeAccount = firstAccount
             }
