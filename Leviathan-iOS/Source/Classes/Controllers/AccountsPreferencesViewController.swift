@@ -63,7 +63,7 @@ class AccountsPreferencesViewController: UIViewController {
         guard let accountModel = Globals.injectionContainer.resolve(AccountModel.self) else {
             preconditionFailure()
         }
-        let initialState = AccountsPreferencesViewModel(accountModel.loadData())
+        let initialState = AccountsPreferencesViewModel(accountModel)
         let deleteCommand = self.tableView.rx
                                 .itemDeleted
                                 .map(AccountsPreferencesViewEditingCommand.delete)
