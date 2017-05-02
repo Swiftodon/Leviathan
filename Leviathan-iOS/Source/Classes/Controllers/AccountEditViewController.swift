@@ -145,8 +145,12 @@ class AccountEditViewController: FormViewController {
         account?.verifyAccount({ (verified, error) in
         
             // TODO handle error
-            self.accountModel?.saveData()
-            self.navigationController?.popViewController(animated: true)
+            DispatchQueue.main.async {
+                self.accountModel?.saveData()
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
         })
     }
     

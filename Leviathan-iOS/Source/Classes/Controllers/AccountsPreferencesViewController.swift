@@ -42,8 +42,14 @@ class AccountsPreferencesViewController: UIViewController {
     
     @IBAction fileprivate func done(sender: UIBarButtonItem) {
 
+        let accounts = Globals.injectionContainer.resolve(AccountModel.self)?.accounts
+        
         if settings?.activeAccount == nil {
             
+            self.settings?.activeAccount = accounts?.first
+        }
+        else if accounts?.first == nil {
+            self.settings?.activeAccount = nil
         }
         
         self.navigationController?.dismiss(animated: true)
@@ -84,21 +90,6 @@ class AccountsPreferencesViewController: UIViewController {
                 else {
                     
                     cell.imageView?.image = self.defaultImage
-                }
-            }
-            .disposed(by: disposeBag)
-        viewModel
-            .map { $0.model.accounts }
-            .subscribe { event in
-                switch (self.settings?.activeAccount, event.element?.first) {
-                case let (activeAccount, firstAccount) where activeAccount != nil && firstAccount == nil:
-                    self.settings?.activeAccount = nil
-                    break
-                case let (activeAccount, firstAccount) where activeAccount == nil && firstAccount != nil:
-                    self.settings?.activeAccount = firstAccount
-                    break
-                default:
-                    break
                 }
             }
             .disposed(by: disposeBag)

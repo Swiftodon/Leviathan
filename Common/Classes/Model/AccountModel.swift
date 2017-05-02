@@ -14,7 +14,7 @@ class AccountModel {
     
     // MARK: - Private Properties
     
-    private let fileLock = DispatchQueue(label: "AccountModel_IO_Lock")
+    private let fileLock = NSLock() //DispatchQueue(label: "AccountModel_IO_Lock")
     
     
     // MARK: - Public Properties
@@ -35,30 +35,34 @@ class AccountModel {
     
     // MARK: - Load and save data
     
-    func loadData() -> AccountModel {
+    @discardableResult func loadData() -> AccountModel {
         
-        fileLock.sync {
-            
-            if let arr = NSArray(contentsOf: self.fileUrl) {
-            
-                let jsonArray = arr as! [JSON]
+        fileLock.lock()
+        defer {
+            fileLock.unlock()
+        }
         
-                self.accounts = [Account].from(jsonArray: jsonArray)!
-            }
+        if let arr = NSArray(contentsOf: self.fileUrl) {
+            
+            let jsonArray = arr as! [JSON]
+        
+            self.accounts = [Account].from(jsonArray: jsonArray)!
         }
         
         return self
     }
     
-    func saveData() -> AccountModel {
+    @discardableResult func saveData() -> AccountModel {
         
-        fileLock.sync {
-            
-            let jsonArray = self.accounts.toJSONArray()
-            let arr = jsonArray! as NSArray
-        
-            arr.write(to: self.fileUrl, atomically: true)
+        fileLock.lock()
+        defer {
+            fileLock.unlock()
         }
+            
+        let jsonArray = self.accounts.toJSONArray()
+        let arr = jsonArray! as NSArray
+        
+        arr.write(to: self.fileUrl, atomically: true)
         
         return self
     }

@@ -28,15 +28,15 @@ class TimelineViewController: UITableViewController {
     
     
     // MARK: - UIViewController
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        guard let settings = settings else {
+        guard let _ = settings else {
             preconditionFailure()
         }
         
-        setAvatarImage(for: settings.activeAccount)
-        settings.accountSubject.subscribe { event in
+        setAvatarImage(for: settings?.activeAccount)
+        settings?.accountSubject.subscribe { event in
             switch event {
             case .next(let account):
                 self.setAvatarImage(for: account)
