@@ -89,6 +89,27 @@
 		E944A9D61EB1BD57006AB6A2 /* Eureka.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E944A9E61EB7AD3F006AB6A2 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */; };
 		E944A9E71EB7AD3F006AB6A2 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */; };
+		E95908C41EBA61D0001CDB3A /* Alamofire.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908AF1EBA61CF001CDB3A /* Alamofire.framework.dSYM */; };
+		E95908C51EBA61D0001CDB3A /* Eureka.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B01EBA61CF001CDB3A /* Eureka.framework.dSYM */; };
+		E95908C61EBA61D0001CDB3A /* Gloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B11EBA61D0001CDB3A /* Gloss.framework.dSYM */; };
+		E95908C71EBA61D0001CDB3A /* Locksmith.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B21EBA61D0001CDB3A /* Locksmith.framework.dSYM */; };
+		E95908C81EBA61D0001CDB3A /* MastodonSwift.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B31EBA61D0001CDB3A /* MastodonSwift.framework.dSYM */; };
+		E95908C91EBA61D0001CDB3A /* Moya.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B41EBA61D0001CDB3A /* Moya.framework.dSYM */; };
+		E95908CA1EBA61D0001CDB3A /* MoyaGloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B51EBA61D0001CDB3A /* MoyaGloss.framework.dSYM */; };
+		E95908CB1EBA61D0001CDB3A /* Popover.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B61EBA61D0001CDB3A /* Popover.framework.dSYM */; };
+		E95908CC1EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B71EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM */; };
+		E95908CD1EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B81EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM */; };
+		E95908CE1EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B91EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM */; };
+		E95908CF1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BA1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM */; };
+		E95908D01EBA61D0001CDB3A /* Result.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BB1EBA61D0001CDB3A /* Result.framework.dSYM */; };
+		E95908D11EBA61D0001CDB3A /* RxBlocking.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BC1EBA61D0001CDB3A /* RxBlocking.framework.dSYM */; };
+		E95908D21EBA61D0001CDB3A /* RxCocoa.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BD1EBA61D0001CDB3A /* RxCocoa.framework.dSYM */; };
+		E95908D31EBA61D0001CDB3A /* RxMoya.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BE1EBA61D0001CDB3A /* RxMoya.framework.dSYM */; };
+		E95908D41EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BF1EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM */; };
+		E95908D51EBA61D0001CDB3A /* RxSwift.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C01EBA61D0001CDB3A /* RxSwift.framework.dSYM */; };
+		E95908D61EBA61D0001CDB3A /* RxTest.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */; };
+		E95908D71EBA61D0001CDB3A /* Swinject.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */; };
+		E95908D81EBA61D0001CDB3A /* Toucan.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
@@ -173,6 +194,37 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E95908AE1EBA619E001CDB3A /* Copy Framework Debug Symbols */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				E95908C41EBA61D0001CDB3A /* Alamofire.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908C51EBA61D0001CDB3A /* Eureka.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908C61EBA61D0001CDB3A /* Gloss.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908C71EBA61D0001CDB3A /* Locksmith.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908C81EBA61D0001CDB3A /* MastodonSwift.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908C91EBA61D0001CDB3A /* Moya.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908CA1EBA61D0001CDB3A /* MoyaGloss.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908CB1EBA61D0001CDB3A /* Popover.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908CC1EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908CD1EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908CE1EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908CF1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D01EBA61D0001CDB3A /* Result.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D11EBA61D0001CDB3A /* RxBlocking.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D21EBA61D0001CDB3A /* RxCocoa.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D31EBA61D0001CDB3A /* RxMoya.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D41EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D51EBA61D0001CDB3A /* RxSwift.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D61EBA61D0001CDB3A /* RxTest.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D71EBA61D0001CDB3A /* Swinject.framework.dSYM in Copy Framework Debug Symbols */,
+				E95908D81EBA61D0001CDB3A /* Toucan.framework.dSYM in Copy Framework Debug Symbols */,
+			);
+			name = "Copy Framework Debug Symbols";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +274,27 @@
 		E91355771EA29E040046DAF0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		E944A9D41EB1BD40006AB6A2 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		E944A9E51EB7AD3F006AB6A2 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		E95908AF1EBA61CF001CDB3A /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		E95908B01EBA61CF001CDB3A /* Eureka.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Eureka.framework.dSYM; path = Carthage/Build/iOS/Eureka.framework.dSYM; sourceTree = "<group>"; };
+		E95908B11EBA61D0001CDB3A /* Gloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Gloss.framework.dSYM; path = Carthage/Build/iOS/Gloss.framework.dSYM; sourceTree = "<group>"; };
+		E95908B21EBA61D0001CDB3A /* Locksmith.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Locksmith.framework.dSYM; path = Carthage/Build/iOS/Locksmith.framework.dSYM; sourceTree = "<group>"; };
+		E95908B31EBA61D0001CDB3A /* MastodonSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MastodonSwift.framework.dSYM; path = Carthage/Build/iOS/MastodonSwift.framework.dSYM; sourceTree = "<group>"; };
+		E95908B41EBA61D0001CDB3A /* Moya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Moya.framework.dSYM; path = Carthage/Build/iOS/Moya.framework.dSYM; sourceTree = "<group>"; };
+		E95908B51EBA61D0001CDB3A /* MoyaGloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MoyaGloss.framework.dSYM; path = Carthage/Build/iOS/MoyaGloss.framework.dSYM; sourceTree = "<group>"; };
+		E95908B61EBA61D0001CDB3A /* Popover.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Popover.framework.dSYM; path = Carthage/Build/iOS/Popover.framework.dSYM; sourceTree = "<group>"; };
+		E95908B71EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
+		E95908B81EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveMoya.framework.dSYM; path = Carthage/Build/iOS/ReactiveMoya.framework.dSYM; sourceTree = "<group>"; };
+		E95908B91EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveMoyaGloss.framework.dSYM; path = Carthage/Build/iOS/ReactiveMoyaGloss.framework.dSYM; sourceTree = "<group>"; };
+		E95908BA1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveSwift.framework.dSYM; path = Carthage/Build/iOS/ReactiveSwift.framework.dSYM; sourceTree = "<group>"; };
+		E95908BB1EBA61D0001CDB3A /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
+		E95908BC1EBA61D0001CDB3A /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		E95908BD1EBA61D0001CDB3A /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxCocoa.framework.dSYM; path = Carthage/Build/iOS/RxCocoa.framework.dSYM; sourceTree = "<group>"; };
+		E95908BE1EBA61D0001CDB3A /* RxMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxMoya.framework.dSYM; path = Carthage/Build/iOS/RxMoya.framework.dSYM; sourceTree = "<group>"; };
+		E95908BF1EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxMoyaGloss.framework.dSYM; path = Carthage/Build/iOS/RxMoyaGloss.framework.dSYM; sourceTree = "<group>"; };
+		E95908C01EBA61D0001CDB3A /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTest.framework.dSYM; path = Carthage/Build/iOS/RxTest.framework.dSYM; sourceTree = "<group>"; };
+		E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/iOS/Swinject.framework.dSYM; sourceTree = "<group>"; };
+		E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Toucan.framework.dSYM; path = Carthage/Build/iOS/Toucan.framework.dSYM; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -340,6 +413,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E95908D91EBA61DE001CDB3A /* Symbol Files */ = {
+			isa = PBXGroup;
+			children = (
+				E95908AF1EBA61CF001CDB3A /* Alamofire.framework.dSYM */,
+				E95908B01EBA61CF001CDB3A /* Eureka.framework.dSYM */,
+				E95908B11EBA61D0001CDB3A /* Gloss.framework.dSYM */,
+				E95908B21EBA61D0001CDB3A /* Locksmith.framework.dSYM */,
+				E95908B31EBA61D0001CDB3A /* MastodonSwift.framework.dSYM */,
+				E95908B41EBA61D0001CDB3A /* Moya.framework.dSYM */,
+				E95908B51EBA61D0001CDB3A /* MoyaGloss.framework.dSYM */,
+				E95908B61EBA61D0001CDB3A /* Popover.framework.dSYM */,
+				E95908B71EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM */,
+				E95908B81EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM */,
+				E95908B91EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM */,
+				E95908BA1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM */,
+				E95908BB1EBA61D0001CDB3A /* Result.framework.dSYM */,
+				E95908BC1EBA61D0001CDB3A /* RxBlocking.framework.dSYM */,
+				E95908BD1EBA61D0001CDB3A /* RxCocoa.framework.dSYM */,
+				E95908BE1EBA61D0001CDB3A /* RxMoya.framework.dSYM */,
+				E95908BF1EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM */,
+				E95908C01EBA61D0001CDB3A /* RxSwift.framework.dSYM */,
+				E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */,
+				E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */,
+				E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */,
+			);
+			name = "Symbol Files";
+			sourceTree = "<group>";
+		};
 		E95B2C041E9554F000EDC598 = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +521,7 @@
 		E96B18141E9D3D3C0029D636 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E95908D91EBA61DE001CDB3A /* Symbol Files */,
 				E944A9D41EB1BD40006AB6A2 /* Eureka.framework */,
 				E971A24D1EADBBB000E1F77C /* Popover.framework */,
 				E971A22F1EABB1BF00E1F77C /* Toucan.framework */,
@@ -555,6 +657,7 @@
 				E96B17E31E9CDEF00029D636 /* Frameworks */,
 				E96B17E41E9CDEF00029D636 /* Resources */,
 				E913554C1EA28AC20046DAF0 /* Copy Frameworks */,
+				E95908AE1EBA619E001CDB3A /* Copy Framework Debug Symbols */,
 			);
 			buildRules = (
 			);
