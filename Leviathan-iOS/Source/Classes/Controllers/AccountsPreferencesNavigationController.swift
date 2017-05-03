@@ -8,13 +8,13 @@
 
 import UIKit
 
+
+fileprivate extension String {
+    static let identifier = "MastodonAccountsPreferences"
+}
+
 class AccountsPreferencesNavigationController: UINavigationController {
-    
-    // MARK: - Public Constants
-    
-    static let Identifier = "MastodonAccountsPreferences"
-    
-    
+
     // MARK: - Class Methods
     
     static func present() {
@@ -24,15 +24,8 @@ class AccountsPreferencesNavigationController: UINavigationController {
             name: Bundle.main.object(forInfoDictionaryKey: "UIMainStoryboardFile") as! String,
             bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(
-            withIdentifier: AccountsPreferencesNavigationController.Identifier)
+            withIdentifier: String.identifier)
         
         AppDelegate.shared.window?.rootViewController?.present(viewController, animated: true)
-    }
-
-    
-    // MARK: - UINavigationController
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
     }
 }

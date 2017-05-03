@@ -54,6 +54,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Keg-Oc-vTk" id="gA9-x2-3t3"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,10 +80,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dataSource" destination="Keg-Oc-vTk" id="1mZ-oI-tig"/>
                         <outlet property="tableView" destination="OYN-Ie-9VU" id="hS3-wF-Veg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5g-m9-aXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Keg-Oc-vTk" customClass="AccountsPreferencesViewDataSource" customModule="Leviathan" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1086" y="-1362"/>
         </scene>
@@ -210,7 +215,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tPt-3O-B5r" id="a0f-z9-3NS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

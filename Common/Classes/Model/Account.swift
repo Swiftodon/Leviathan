@@ -139,9 +139,11 @@ class Account: NSObject, Decodable, Encodable {
     func verifyAccount(_ completed: ((_ verified: Bool?, _ error: Swift.Error?) -> ())?) {
         
         var avatarUrl: URL? = nil
+        let accessToken = self.accessToken
+        let token = accessToken?.token
+        let accessTokenPlugin = AccessTokenPlugin(token: token!)
         
-        RxMoyaProvider<Mastodon.Account>(endpointClosure: /self.baseUrl,
-                                         plugins: [AccessTokenPlugin(token: accessToken!.token)])
+        RxMoyaProvider<Mastodon.Account>(endpointClosure: /self.baseUrl, plugins: [accessTokenPlugin])
             .request(.verifyCredentials)
             .mapObject(type: MastodonSwift.Account.self)
             .subscribe(

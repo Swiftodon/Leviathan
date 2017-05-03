@@ -7,91 +7,74 @@
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
 import Toucan
 
-fileprivate extension String {
-    static let accountCell = "MastodonAccountCell"
-}
 
-
-class AccountsPreferencesViewController: UIViewController {
+class AccountsPreferencesViewController
+    : UIViewController
+    , UITableViewDelegate
+    , UINavigationControllerDelegate {
     
     // MARK: - Private Properties
     
-    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet private weak var tableView : UITableView!
+    @IBOutlet private var dataSource: AccountsPreferencesViewDataSource!
     
-    private var viewModel: Observable<AccountsPreferencesViewModel>!
+    
     private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let defaultImage = Asset.icAccount.image
     private let imageSize = CGSize(width: 24, height: 24)
-    private let disposeBag = DisposeBag()
     
     
-    // MARK: - UIViewController 
+    // MARK: - UIViewController
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.createBindings()
+        self.navigationController?.delegate = self
+    }
+    
+    
+    // MARK: - UINavigationControllerDelegate
+    
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        
+        return .portrait
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        self.tableView.reloadData()
+    }
+    
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        
+        self.tableView.beginUpdates()
+    }
+    
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        
+        self.tableView.endUpdates()
     }
 
     
     // MARK: - Action Handlers
     
     @IBAction fileprivate func done(sender: UIBarButtonItem) {
-
-        let accounts = Globals.injectionContainer.resolve(AccountModel.self)?.accounts
+        
+        let firstAccount = self.dataSource.model.accounts.first
         
         if settings?.activeAccount == nil {
             
-            self.settings?.activeAccount = accounts?.first
+            self.settings?.activeAccount = firstAccount
         }
-        else if accounts?.first == nil {
+        else if firstAccount == nil {
             self.settings?.activeAccount = nil
         }
         
         self.navigationController?.dismiss(animated: true)
-    }
-    
-    
-    // MARK: - Private Methods
-    
-    fileprivate func createBindings() {
-        
-        guard let accountModel = Globals.injectionContainer.resolve(AccountModel.self) else {
-            preconditionFailure()
-        }
-        let initialState = AccountsPreferencesViewModel(accountModel)
-        let deleteCommand = self.tableView.rx
-                                .itemDeleted
-                                .map(AccountsPreferencesViewEditingCommand.delete)
-        viewModel = Observable.system(initialState,
-                                      accumulator: AccountsPreferencesViewModel.executeCommand,
-                                      scheduler: MainScheduler.instance,
-                                      feedback: { _ in deleteCommand }).shareReplay(1)
-        viewModel
-            .map { $0.model.accounts }
-            .bind(to: self.tableView.rx.items(cellIdentifier: String.accountCell)) {
-                (row, element, cell) in
-                
-                cell.textLabel?.text = "@\(element.username)"
-                cell.detailTextLabel?.text = String(describing: element.baseUrl)
-                
-                if let avatarData = element.avatarData {
-                    
-                    cell.imageView?.image = Toucan(image: UIImage(data: avatarData)!)
-                        .resize(self.imageSize)
-                        .maskWithEllipse()
-                        .image
-                    
-                }
-                else {
-                    
-                    cell.imageView?.image = self.defaultImage
-                }
-            }
-            .disposed(by: disposeBag)
     }
 }
