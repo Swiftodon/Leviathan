@@ -44,7 +44,7 @@ fileprivate extension String {
             guard let accountModel = Globals.injectionContainer.resolve(AccountModel.self) else {
                 return nil
             }
-            return accountModel.find(server, username)
+            return accountModel.find(username: username, server: server)
         }
         set {
             guard let newValue = newValue else {

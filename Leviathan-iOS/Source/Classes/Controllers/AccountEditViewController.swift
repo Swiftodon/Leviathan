@@ -214,7 +214,7 @@ class AccountEditViewController: FormViewController {
             }
         let accountValid: Observable<Bool>
             = Observable.combineLatest(self.server.asObservable(), self.email.asObservable()) {
-                self.accountModel?.find($0, $1) == nil
+                self.accountModel?.find(email: $1, server: $0) == nil
             }
         let passwordValid: Observable<Bool> = self.password.asObservable()
             .map { text -> Bool in

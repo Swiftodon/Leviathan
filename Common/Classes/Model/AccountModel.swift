@@ -8,6 +8,7 @@
 
 import Foundation
 import Gloss
+import Locksmith
 
 
 class AccountModel {
@@ -92,16 +93,32 @@ class AccountModel {
     
     func delete(at index: Int) {
         
+        let account = self.accounts[index]
+        
+        try! Locksmith.deleteDataForUserAccount(userAccount: account.email, inService: account.server)
         self.accounts.remove(at: index)
     }
     
-    func find(_ server: String, _ username: String) -> Account? {
+    func find(email: String, server: String) -> Account? {
         
-        let foundAccounts = self.accounts.filter { account in
-            (account.server.caseInsensitiveCompare(server) == .orderedSame) &&
-            (account.username.caseInsensitiveCompare(username) == .orderedSame)
-        }
+        return self.filter { account in
+                (account.server.caseInsensitiveCompare(server) == .orderedSame) &&
+                (account.email.caseInsensitiveCompare(email) == .orderedSame)
+            }
+            .first
+    }
+    
+    func find(username: String, server: String) -> Account? {
         
-        return foundAccounts.first
+        return self.filter { account in
+                (account.server.caseInsensitiveCompare(server) == .orderedSame) &&
+                (account.username.caseInsensitiveCompare(username) == .orderedSame)
+            }
+            .first
+    }
+    
+    func filter(_ isIncluded: (Account) -> Bool) -> [Account] {
+        
+        return self.accounts.filter(isIncluded)
     }
 }
