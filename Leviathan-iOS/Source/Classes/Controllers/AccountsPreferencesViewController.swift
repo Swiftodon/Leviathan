@@ -75,6 +75,7 @@ class AccountsPreferencesViewController
             self.settings?.activeAccount = nil
         }
         
+        self.dataSource.model.saveData()
         self.navigationController?.dismiss(animated: true)
     }
 }
