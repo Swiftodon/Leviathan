@@ -131,26 +131,21 @@ class AccountEditViewController: FormViewController {
     
     fileprivate func oauthCompleted() {
         
-        if account == nil {
-            
-            account = self.accountModel?.create(server: self.server.value,
-                                                            email: self.email.value)
-        }
+        let acc = self.account ?? Leviathan.Account()
+                
+        acc.server = self.server.value
+        acc.email = self.email.value
+        acc.password = self.password.value
+        acc.clientId = app.clientId
+        acc.clientSecret = app.clientSecret
+        acc.accessToken = token
         
-        account?.password = self.password.value
-        account?.clientId = app.clientId
-        account?.clientSecret = app.clientSecret
-        account?.accessToken = token
-        
-        account?.verifyAccount({ (verified, error) in
+        acc.verifyAccount({ (verified, error) in
         
             // TODO handle error
-            DispatchQueue.main.async {
-                self.accountModel?.saveData()
-            }
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
-            }
+            self.accountModel?.addIfNotExisting(acc)
+            self.accountModel?.saveData()
+            self.navigationController?.popViewController(animated: true)
         })
     }
     

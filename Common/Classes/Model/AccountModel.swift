@@ -71,16 +71,13 @@ class AccountModel {
     
     // MARK: - Operations
     
-    func create(server: String, email: String) -> Account {
+    func addIfNotExisting(_ account: Account) {
         
-        let account = Account()
-        
-        account.server = server
-        account.email = email
+        guard self.find(email: account.email, server: account.server) == nil else {
+            return
+        }
         
         self.accounts.append(account)
-        
-        return account
     }
     
     func delete(_ account: Account) {
