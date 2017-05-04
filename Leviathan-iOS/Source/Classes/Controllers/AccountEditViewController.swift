@@ -39,7 +39,7 @@ class AccountEditViewController: FormViewController {
     private var app: App!
     private var token: AccessToken!
     private let disposeBag = DisposeBag()
-    private var account: Account? = nil
+    private var account: Leviathan.Account? = nil
     private let accountModel = Globals.injectionContainer.resolve(AccountModel.self)
 
     
