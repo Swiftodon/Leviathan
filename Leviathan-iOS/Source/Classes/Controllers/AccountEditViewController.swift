@@ -61,9 +61,6 @@ class AccountEditViewController: FormViewController {
         self.url = URL(string: "https://\(self.server.value)")
         
         self.unlockView.value = false
-        //self.spinningView.isHidden = false
-        //self.cancelButton.isEnabled = false
-        //self.saveButton.isEnabled = false
         
         let credentialsPlugin = CredentialsPlugin { _ in
             URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
@@ -102,9 +99,6 @@ class AccountEditViewController: FormViewController {
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Button Title"), style: .cancel)
         
         self.unlockView.value = true
-        //self.spinningView.isHidden = true
-        //self.cancelButton.isEnabled = true
-        //self.saveButton.isEnabled = true
         
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true)
@@ -137,13 +131,16 @@ class AccountEditViewController: FormViewController {
         acc.clientSecret = self.app.clientSecret
         acc.accessToken = self.token
         
-        acc.verifyAccount({ (verified, error) in
-        
-            // TODO handle error
-            self.accountModel?.addIfNotExisting(acc)
-            self.accountModel?.saveData()
-            self.navigationController?.popViewController(animated: true)
-        })
+        self.accountModel?.verify(account: acc,
+            completed: {
+                self.accountModel?.addIfNotExisting(acc)
+                self.accountModel?.saveData()
+                self.navigationController?.popViewController(animated: true)
+            },
+            error: { error in
+                
+                // TODO error handling
+            })
     }
     
     

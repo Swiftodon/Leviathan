@@ -9,13 +9,17 @@
 import Foundation
 import Gloss
 import Locksmith
+import Moya
+import RxSwift
+import RxMoya
+import MastodonSwift
 
 
 class AccountModel {
     
     // MARK: - Private Properties
     
-    private let fileLock = NSLock() //DispatchQueue(label: "AccountModel_IO_Lock")
+    private let fileLock = NSLock()
     
     
     // MARK: - Public Properties
@@ -117,5 +121,40 @@ class AccountModel {
     func filter(_ isIncluded: (Account) -> Bool) -> [Account] {
         
         return self.accounts.filter(isIncluded)
+    }
+    
+    func verify(account: Leviathan.Account, completed: (() -> ())?, error: ((Swift.Error) -> ())? = nil) {
+        
+        var avatarUrl: URL? = nil
+        let accessToken = account.accessToken
+        let token = accessToken?.token
+        let accessTokenPlugin = AccessTokenPlugin(token: token!)
+        
+        RxMoyaProvider<Mastodon.Account>(endpointClosure: /account.baseUrl, plugins: [accessTokenPlugin])
+            .request(.verifyCredentials)
+            .mapObject(type: MastodonSwift.Account.self)
+            .subscribe(
+                EventHandler(onNext: { acc in
+                    
+                    account.username = acc.username
+                    avatarUrl = acc.avatar
+                },
+                onError: { err in
+                    
+                    error?(err)
+                },
+                onCompleted: {
+                    
+                    completed?()
+                    /* TODO
+                    if let url = avatarUrl {
+                        
+                    }
+                    else {
+                        
+                        completed?()
+                    }*/
+                }))
+            //.disposed(by: disposeBag)
     }
 }
