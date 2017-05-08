@@ -34,6 +34,7 @@ class AccountEditViewController: FormViewController {
     private var email = Variable<String>("")
     private var password = Variable<String>("")
     private var inputValidator: Observable<Bool>!
+    private var unlockView = Variable<Bool>(true)
     
     private var url: URL!
     private var app: App!
@@ -59,24 +60,20 @@ class AccountEditViewController: FormViewController {
         
         self.url = URL(string: "https://\(self.server.value)")
         
-        self.spinningView.isHidden = false
-        self.cancelButton.isEnabled = false
-        self.saveButton.isEnabled = false
+        self.unlockView.value = false
+        //self.spinningView.isHidden = false
+        //self.cancelButton.isEnabled = false
+        //self.saveButton.isEnabled = false
         
-        RxMoyaProvider<Mastodon.Apps>(endpointClosure: /self.url,
-                                      plugins: [CredentialsPlugin {
-                                                    _ -> URLCredential? in
-                                        
-                                                    return URLCredential(user: self.email.value,
-                                                                         password: self.password.value,
-                                                                         persistence: .none)
-                                                }])
-            // TODO define constants for this
-            .request(.register("Leviathan for iOS",
-                               "urn:ietf:wg:oauth:2.0:oob",
-                               "read write follow",
-                               "https://github.com/Swiftodon"))
-            .mapObject(type: App.self)
+        let credentialsPlugin = CredentialsPlugin { _ in
+            URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
+        }
+        
+        MastodonClient(plugins: [credentialsPlugin])
+            .createApp("Leviathan for iOS",
+                       scopes: ["read", "write", "follow"],
+                       url: URL(string: "https://github.com/Swiftodon")!,
+                       endpointClosure: /self.url)
             .subscribe(
                 EventHandler(onNext: self.applicationRegistration,
                              onError: self.requestErrorOccured,
@@ -104,9 +101,10 @@ class AccountEditViewController: FormViewController {
                                                 preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Button Title"), style: .cancel)
         
-        self.spinningView.isHidden = true
-        self.cancelButton.isEnabled = true
-        self.saveButton.isEnabled = true
+        self.unlockView.value = true
+        //self.spinningView.isHidden = true
+        //self.cancelButton.isEnabled = true
+        //self.saveButton.isEnabled = true
         
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true)
@@ -114,9 +112,8 @@ class AccountEditViewController: FormViewController {
     
     fileprivate func applicationRegistrationCompleted() {
         
-        RxMoyaProvider<Mastodon.OAuth>(endpointClosure: /self.url)
-            .request(.authenticate(self.app, self.email.value, self.password.value))
-            .mapObject(type: AccessToken.self)
+        MastodonClient()
+            .getToken(self.app, username: self.email.value, password: self.password.value, endpointClosure: /self.url)
             .subscribe(
                 EventHandler(onNext: self.accessTokenReceived,
                              onError: self.requestErrorOccured,
@@ -136,9 +133,9 @@ class AccountEditViewController: FormViewController {
         acc.server = self.server.value
         acc.email = self.email.value
         acc.password = self.password.value
-        acc.clientId = app.clientId
-        acc.clientSecret = app.clientSecret
-        acc.accessToken = token
+        acc.clientId = self.app.clientId
+        acc.clientSecret = self.app.clientSecret
+        acc.accessToken = self.token
         
         acc.verifyAccount({ (verified, error) in
         
@@ -221,8 +218,20 @@ class AccountEditViewController: FormViewController {
                 $0[0] && $0[1] && $0[2]
             }
         
-        
         everythingValid
+            .bind(to: self.saveButton.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+        
+        self.unlockView
+            .asObservable()
+            .bind(to: self.spinningView.rx.isHidden)
+            .disposed(by: self.disposeBag)
+        self.unlockView
+            .asObservable()
+            .bind(to: self.cancelButton.rx.isEnabled)
+            .disposed(by: self.disposeBag)
+        self.unlockView
+            .asObservable()
             .bind(to: self.saveButton.rx.isEnabled)
             .disposed(by: self.disposeBag)
     }
