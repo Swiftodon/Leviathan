@@ -134,51 +134,6 @@ class Account: NSObject, Decodable, Encodable {
     }
     
     
-    // MARK: - Public Methods
-    
-    func verifyAccount(_ completed: ((_ verified: Bool?, _ error: Swift.Error?) -> ())?) {
-        
-        var avatarUrl: URL? = nil
-        let accessToken = self.accessToken
-        let token = accessToken?.token
-        let accessTokenPlugin = AccessTokenPlugin(token: token!)
-        
-        RxMoyaProvider<Mastodon.Account>(endpointClosure: /self.baseUrl, plugins: [accessTokenPlugin])
-            .request(.verifyCredentials)
-            .mapObject(type: MastodonSwift.Account.self)
-            .subscribe(
-                EventHandler(onNext: { account in
-                    
-                    self.username = account.username
-                    avatarUrl = account.avatar
-                }, onError: { error in
-                    
-                    completed?(false, error)
-                }, onCompleted: {
-                    
-                    if let url = avatarUrl {
-                        
-                        Alamofire
-                            .request(url)
-                            .responseData { response in
-                                
-                                if response.error == nil {
-                                
-                                    self.avatarData = response.data
-                                }
-                                
-                                completed?(true, nil)
-                            }
-                    }
-                    else {
-                        
-                        completed?(true, nil)
-                    }
-                }))
-            .disposed(by: disposeBag)
-    }
-    
-    
     // MARK: - Private Methods
     
     fileprivate func saveToKeychain(password: String? = nil,
