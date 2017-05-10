@@ -60,7 +60,7 @@ class PostNoteViewController: FormViewController {
         let token = accessToken?.token
         let accessTokenPlugin = AccessTokenPlugin(token: token!)
         
-        RxMoyaProvider<Mastodon.Statuses>(endpointClosure: /account!.baseUrl, plugins: [accessTokenPlugin])
+        RxMoyaProvider<Mastodon.Statuses>(endpointClosure: /account!.baseUrl, plugins: [accessTokenPlugin, NetworkLoggerPlugin(verbose: true)])
             .request(.new(self.note.value, nil, nil, false, "", .pub))
             .mapObject(type: MastodonSwift.Status)
             .subscribe(
