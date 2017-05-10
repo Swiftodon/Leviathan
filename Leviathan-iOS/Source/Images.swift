@@ -18,19 +18,33 @@ enum Asset: String {
   case icFederated = "ic_federated"
   case icHome = "ic_home"
   case icLocal = "ic_local"
-  case icNotifications = "ic_notifications"
   case icNotificationsNone = "ic_notifications_none"
+  case icNotifications = "ic_notifications"
   case icSettings = "ic_settings"
   case icWritePost = "ic_write_post"
 
   var image: Image {
-    return Image(asset: self)
+    let bundle = Bundle(for: BundleToken.self)
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    let image = Image(named: rawValue, in: bundle, compatibleWith: nil)
+    #elseif os(OSX)
+    let image = bundle.image(forResource: rawValue)
+    #endif
+    guard let result = image else { fatalError("Unable to load image \(rawValue).") }
+    return result
   }
 }
 // swiftlint:enable type_body_length
 
 extension Image {
   convenience init!(asset: Asset) {
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    let bundle = Bundle(for: BundleToken.self)
+    self.init(named: asset.rawValue, in: bundle, compatibleWith: nil)
+    #elseif os(OSX)
     self.init(named: asset.rawValue)
+    #endif
   }
 }
+
+private final class BundleToken {}

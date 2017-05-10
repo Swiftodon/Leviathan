@@ -308,7 +308,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="ic_account"/>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Nxq-vK-II8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Nxq-vK-II8">
+                            <connections>
+                                <action selector="postWithSender:" destination="OQd-Nw-ztS" id="6JO-bh-1yg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="accountIndicatorButton" destination="v1X-eV-rdh" id="xgY-cb-JTY"/>

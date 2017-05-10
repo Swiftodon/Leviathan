@@ -10,6 +10,9 @@ import UIKit
 import Eureka
 import RxCocoa
 import RxSwift
+import Moya
+import RxMoya
+import MastodonSwift
 import Toucan
 
 class PostNoteViewController: FormViewController {
@@ -26,8 +29,11 @@ class PostNoteViewController: FormViewController {
         }
     }
     @IBOutlet private var accountIndicatorButton: UIButton!
+    
     private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let disposeBag = DisposeBag()
+    
+    private var note = Variable<String>("")
     
     
     // MARK: - UIViewController
@@ -47,6 +53,32 @@ class PostNoteViewController: FormViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction fileprivate func post(sender: UIBarButtonItem) {
+        
+        let account = settings?.activeAccount
+        let accessToken = account?.accessToken
+        let token = accessToken?.token
+        let accessTokenPlugin = AccessTokenPlugin(token: token!)
+        
+        RxMoyaProvider<Mastodon.Statuses>(endpointClosure: /account!.baseUrl, plugins: [accessTokenPlugin])
+            .request(.new(self.note.value, nil, nil, false, "", .pub))
+            .mapObject(type: MastodonSwift.Status)
+            .subscribe(
+                EventHandler(onNext: { status in
+                 
+                    NSLog("Error: \(status)")
+                },
+                onError: { err in
+                    
+                    NSLog("Error: \(err.localizedDescription)")
+                },
+                onCompleted: {
+                
+                    self.dismiss(animated: true)
+                }))
+            .disposed(by: self.disposeBag)
+    }
+    
     
     // MARK: - Private Methods
     
@@ -55,6 +87,7 @@ class PostNoteViewController: FormViewController {
         self.form +++ Section("Note")
             <<< TextAreaRow() { row in
                     row.textAreaHeight = .dynamic(initialTextViewHeight: 44)
+                    row.onChange { self.note.value = $0.value ?? "" }
                 }
     }
     
