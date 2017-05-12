@@ -1,7 +1,7 @@
 github "Alamofire/Alamofire" "4.4.0"
 github "Moya/Moya" "8.0.4"
 github "ReactiveCocoa/ReactiveCocoa" "5.0.3"
-github "ReactiveCocoa/ReactiveSwift" "1.1.1"
+github "ReactiveCocoa/ReactiveSwift" "1.1.2"
 github "ReactiveX/RxSwift" "3.4.1"
 github "Swiftodon/Mastodon.swift" "1.2.3"
 github "Swinject/Swinject" "2.1.0"

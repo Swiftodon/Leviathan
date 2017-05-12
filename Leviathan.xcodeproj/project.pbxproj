@@ -11,6 +11,9 @@
 		B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC61EA7692000B5413D /* AccountEditViewController.swift */; };
 		B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
 		B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
+		B3960A931EC5C51200D21AC4 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960A921EC5C51200D21AC4 /* AvatarImage.swift */; };
+		B3960A941EC5C51200D21AC4 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960A921EC5C51200D21AC4 /* AvatarImage.swift */; };
+		B3960A971EC5C96200D21AC4 /* OsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960A951EC5C8A800D21AC4 /* OsDependencies.swift */; };
 		B3A60A951EB0680400DD5B6D /* PostNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */; };
 		B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */; };
 		E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
@@ -229,6 +232,8 @@
 		B316F24D1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewDataSource.swift; sourceTree = "<group>"; };
 		B37CECC61EA7692000B5413D /* AccountEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEditViewController.swift; sourceTree = "<group>"; };
 		B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveTools.swift; sourceTree = "<group>"; };
+		B3960A921EC5C51200D21AC4 /* AvatarImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		B3960A951EC5C8A800D21AC4 /* OsDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OsDependencies.swift; sourceTree = "<group>"; };
 		B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNoteViewController.swift; sourceTree = "<group>"; };
 		B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
 		E90E61181E9E88E500E2DC19 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -386,6 +391,7 @@
 			children = (
 				E90E61181E9E88E500E2DC19 /* Globals.swift */,
 				B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */,
+				B3960A921EC5C51200D21AC4 /* AvatarImage.swift */,
 				E90E611B1E9F973200E2DC19 /* Classes */,
 			);
 			path = Common;
@@ -464,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				E971A22B1EAB55BA00E1F77C /* Images.swift */,
+				B3960A951EC5C8A800D21AC4 /* OsDependencies.swift */,
 				E96B17FF1E9CFC4C0029D636 /* Classes */,
 			);
 			path = Source;
@@ -780,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B316F24E1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift in Sources */,
+				B3960A941EC5C51200D21AC4 /* AvatarImage.swift in Sources */,
 				E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */,
 				B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */,
 				E971A2521EADC51C00E1F77C /* AccountMenu.swift in Sources */,
@@ -793,6 +801,7 @@
 				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
 				E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */,
 				E91355791EA29E040046DAF0 /* Account.swift in Sources */,
+				B3960A971EC5C96200D21AC4 /* OsDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +812,7 @@
 				E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */,
 				E9E258941EA69008001E0E71 /* AccountModel.swift in Sources */,
 				E91355781EA29E040046DAF0 /* Account.swift in Sources */,
+				B3960A931EC5C51200D21AC4 /* AvatarImage.swift in Sources */,
 				B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */,
 				E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */,
 				E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */,

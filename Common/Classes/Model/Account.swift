@@ -90,7 +90,8 @@ class Account: NSObject, Decodable, Encodable {
         }
     }
     
-    public private(set) var avatarData: Data? = nil
+    public var avatarData: Data? = nil
+    public var headerData: Data? = nil
     
     public var baseUrl: URL {
         return URL(string: "https://\(self.server)")!
@@ -109,6 +110,7 @@ class Account: NSObject, Decodable, Encodable {
         self.email = ("email" <~~ json)!
         self.username = ("username" <~~ json)!
         self.avatarData = "avatarData" <~~ json
+        self.headerData = "headerData" <~~ json
     }
     
     
@@ -129,7 +131,8 @@ class Account: NSObject, Decodable, Encodable {
             "server" ~~> self.server,
             "email" ~~> self.email,
             "username" ~~> self.username,
-            "avatarData" ~~> self.avatarData
+            "avatarData" ~~> self.avatarData,
+            "headerData" ~~> self.headerData
             ])
     }
     

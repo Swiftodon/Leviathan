@@ -12,6 +12,7 @@ import Locksmith
 import Moya
 import RxSwift
 import RxMoya
+import Alamofire
 import MastodonSwift
 
 
@@ -126,6 +127,7 @@ class AccountModel {
     func verify(account: Leviathan.Account, completed: (() -> ())?, error: ((Swift.Error) -> ())? = nil) {
         
         var avatarUrl: URL? = nil
+        var headerUrl: URL? = nil
         let accessToken = account.accessToken
         let token = accessToken?.token
         let accessTokenPlugin = AccessTokenPlugin(token: token!)
@@ -138,23 +140,65 @@ class AccountModel {
                     
                     account.username = acc.username
                     avatarUrl = acc.avatar
+                    headerUrl = acc.header
                 },
                 onError: { err in
                     
                     error?(err)
                 },
                 onCompleted: {
-                    
-                    completed?()
-                    /* TODO
-                    if let url = avatarUrl {
-                        
-                    }
-                    else {
-                        
-                        completed?()
-                    }*/
+
+                    self.loadImages(account, avatarUrl, headerUrl, completed, error)
                 }))
-            //.disposed(by: disposeBag)
+            //.disposed(by: disposeBag!)
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    fileprivate func loadImages(_ account: Leviathan.Account, _ avatarUrl: URL?, _ headerUrl: URL?, _ completed: (() -> ())?, _ error: ((Swift.Error) -> ())? = nil) {
+        
+        
+        RxMoyaProvider<AvatarImage>()
+            .request(.download(avatarUrl!))
+            .mapImage()
+            .subscribe(
+                EventHandler(onNext: { img in
+                    
+                    if let _ = img {
+                        
+                        account.avatarData = imageToData(img!)
+                    }
+                },
+                onError: { err in
+                                
+                    error?(err)
+                },
+                onCompleted: {
+                                
+                    
+                }))
+        //.disposed(by: disposeBag!)
+        
+        RxMoyaProvider<AvatarImage>()
+            .request(.download(headerUrl!))
+            .mapImage()
+            .subscribe(
+                EventHandler(onNext: { img in
+                    
+                    if let _ = img {
+                        
+                        account.headerData = imageToData(img!)
+                    }
+                },
+                onError: { err in
+                                
+                    error?(err)
+                },
+                onCompleted: {
+                                
+                                
+                }))
+        //.disposed(by: disposeBag!)
     }
 }
