@@ -124,7 +124,7 @@ class AccountModel {
         return self.accounts.filter(isIncluded)
     }
     
-    func verify(account: Leviathan.Account, completed: (() -> ())?, error: ((Swift.Error) -> ())? = nil) {
+    func verify(account: Leviathan.Account, disposeBag: DisposeBag, completed: (() -> ())?, error: ((Swift.Error) -> ())? = nil) {
         
         var avatarUrl: URL? = nil
         var headerUrl: URL? = nil
@@ -148,16 +148,20 @@ class AccountModel {
                 },
                 onCompleted: {
 
-                    self.loadImages(account, avatarUrl, headerUrl, completed, error)
+                    self.loadImages(account, avatarUrl, headerUrl, disposeBag, completed, error)
                 }))
-            //.disposed(by: disposeBag!)
+            .disposed(by: disposeBag)
     }
     
     
     // MARK: - Private Methods
     
-    fileprivate func loadImages(_ account: Leviathan.Account, _ avatarUrl: URL?, _ headerUrl: URL?, _ completed: (() -> ())?, _ error: ((Swift.Error) -> ())? = nil) {
+    fileprivate func loadImages(_ account: Leviathan.Account, _ avatarUrl: URL?, _ headerUrl: URL?, _ disposeBag: DisposeBag, _ completed: (() -> ())?, _ error: ((Swift.Error) -> ())? = nil) {
         
+        guard let _ = avatarUrl else {
+            completed?()
+            return
+        }
         
         RxMoyaProvider<AvatarImage>()
             .request(.download(avatarUrl!))
@@ -176,29 +180,8 @@ class AccountModel {
                 },
                 onCompleted: {
                                 
-                    
+                    completed?()
                 }))
-        //.disposed(by: disposeBag!)
-        
-        RxMoyaProvider<AvatarImage>()
-            .request(.download(headerUrl!))
-            .mapImage()
-            .subscribe(
-                EventHandler(onNext: { img in
-                    
-                    if let _ = img {
-                        
-                        account.headerData = imageToData(img!)
-                    }
-                },
-                onError: { err in
-                                
-                    error?(err)
-                },
-                onCompleted: {
-                                
-                                
-                }))
-        //.disposed(by: disposeBag!)
+        .disposed(by: disposeBag)
     }
 }

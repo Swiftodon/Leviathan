@@ -66,7 +66,7 @@ class AccountEditViewController: FormViewController {
             URLCredential(user: self.email.value, password: self.password.value, persistence: .none)
         }
         
-        MastodonClient(plugins: [credentialsPlugin, NetworkLoggerPlugin(verbose: true)])
+        MastodonClient(plugins: [credentialsPlugin])
             .createApp("Leviathan for iOS",
                        scopes: ["read", "write", "follow"],
                        url: URL(string: "https://github.com/Swiftodon")!,
@@ -135,7 +135,7 @@ class AccountEditViewController: FormViewController {
         acc.clientSecret = self.app.clientSecret
         acc.accessToken = self.token
         
-        self.accountModel?.verify(account: acc,
+        self.accountModel?.verify(account: acc, disposeBag: disposeBag,
             completed: {
                 self.accountModel?.addIfNotExisting(acc)
                 self.accountModel?.saveData()
