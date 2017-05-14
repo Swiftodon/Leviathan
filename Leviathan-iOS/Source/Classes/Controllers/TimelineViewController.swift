@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import MastodonSwift
 import Toucan
 
 // MARK: - Key Paths
@@ -20,8 +21,10 @@ class TimelineViewController: UITableViewController {
     
     // MARK: - Private Properties
     @IBOutlet weak var accountButton: UIButton?
+    private var statuses: [Status] = []
     private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let disposeBag = DisposeBag()
+    
 
     // MARK: - Public Properties
     @IBInspectable var timelineId = Timeline.Home
@@ -44,9 +47,14 @@ class TimelineViewController: UITableViewController {
                 break
             }
         }.addDisposableTo(disposeBag)
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 140
     }
     
+    
     // MARK: - Action Handlers
+    
     @IBAction fileprivate func showAccountMenu(sender: UIButton) {
         
         let width = self.view.frame.width * 0.8
