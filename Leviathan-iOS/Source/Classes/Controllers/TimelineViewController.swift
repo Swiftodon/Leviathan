@@ -49,7 +49,7 @@ class TimelineViewController: UITableViewController {
         }.addDisposableTo(disposeBag)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 140
+        self.tableView.estimatedRowHeight = 70
     }
     
     

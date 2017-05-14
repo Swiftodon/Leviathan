@@ -111,6 +111,7 @@
 		E95908D61EBA61D0001CDB3A /* RxTest.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */; };
 		E95908D71EBA61D0001CDB3A /* Swinject.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */; };
 		E95908D81EBA61D0001CDB3A /* Toucan.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */; };
+		E95908DC1EC8D7D8001CDB3A /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
@@ -297,6 +298,7 @@
 		E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTest.framework.dSYM; path = Carthage/Build/iOS/RxTest.framework.dSYM; sourceTree = "<group>"; };
 		E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/iOS/Swinject.framework.dSYM; sourceTree = "<group>"; };
 		E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Toucan.framework.dSYM; path = Carthage/Build/iOS/Toucan.framework.dSYM; sourceTree = "<group>"; };
+		E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -443,6 +445,14 @@
 			name = "Symbol Files";
 			sourceTree = "<group>";
 		};
+		E95908DA1EC8D7B1001CDB3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E95B2C041E9554F000EDC598 = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +492,7 @@
 				E96B18001E9CFC4C0029D636 /* Application */,
 				E9F3C83F1EA557E9009BE3E8 /* Controllers */,
 				B316F24C1EB9DAE6004C08F6 /* DataSources */,
+				E95908DA1EC8D7B1001CDB3A /* Cells */,
 				E971A2501EADC4E300E1F77C /* Views */,
 			);
 			path = Classes;
@@ -794,6 +805,7 @@
 				B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */,
 				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
 				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,
+				E95908DC1EC8D7D8001CDB3A /* StatusTableViewCell.swift in Sources */,
 				B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */,
 				B3A60A951EB0680400DD5B6D /* PostNoteViewController.swift in Sources */,
 				E9E258951EA69008001E0E71 /* AccountModel.swift in Sources */,
