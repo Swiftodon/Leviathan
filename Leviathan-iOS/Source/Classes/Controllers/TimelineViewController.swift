@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Moya
 import MastodonSwift
 import Toucan
 
@@ -17,20 +18,34 @@ fileprivate extension String {
     static let activeAccount = "activeAccount"
 }
 
-class TimelineViewController: UITableViewController {
+class TimelineViewController: UITableViewController {    
     
     // MARK: - Private Properties
+    
     @IBOutlet weak var accountButton: UIButton?
-    private var statuses: [Status] = []
+    
+    private var dataSource: TimelineDataSource!
+    
     private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let disposeBag = DisposeBag()
     
 
     // MARK: - Public Properties
+    
     @IBInspectable var timelineId = Timeline.Home
     
     
+    // MARK: - Initialization
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.dataSource = TimelineDataSource(self.timelineId)
+    }
+    
+    
     // MARK: - UIViewController
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

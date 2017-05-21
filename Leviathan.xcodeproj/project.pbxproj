@@ -112,6 +112,7 @@
 		E95908D71EBA61D0001CDB3A /* Swinject.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */; };
 		E95908D81EBA61D0001CDB3A /* Toucan.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */; };
 		E95908DC1EC8D7D8001CDB3A /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */; };
+		E95908DE1ED0443B001CDB3A /* TimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95908DD1ED0443B001CDB3A /* TimelineDataSource.swift */; };
 		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
 		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
 		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
@@ -299,6 +300,7 @@
 		E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/iOS/Swinject.framework.dSYM; sourceTree = "<group>"; };
 		E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Toucan.framework.dSYM; path = Carthage/Build/iOS/Toucan.framework.dSYM; sourceTree = "<group>"; };
 		E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		E95908DD1ED0443B001CDB3A /* TimelineDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDataSource.swift; sourceTree = "<group>"; };
 		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				B316F24D1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift */,
+				E95908DD1ED0443B001CDB3A /* TimelineDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95908DE1ED0443B001CDB3A /* TimelineDataSource.swift in Sources */,
 				B316F24E1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift in Sources */,
 				B3960A941EC5C51200D21AC4 /* AvatarImage.swift in Sources */,
 				E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */,
