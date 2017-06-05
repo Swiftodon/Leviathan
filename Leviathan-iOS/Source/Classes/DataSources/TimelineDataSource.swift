@@ -24,10 +24,15 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
     private var timeline: Leviathan.Timeline!
     private var account: Leviathan.Account! = nil
     private var client: MastodonClient! = nil
-    private var timelineRectriever: TimelineRetriever! = nil
+    private var timelineRetriever: TimelineRetriever! = nil
     
     private let settings = Globals.injectionContainer.resolve(Settings.self)
     private let dispoaseBag = DisposeBag()
+    
+    
+    // MARK: - Public Properties
+    
+    public private(set) var statuses = Variable<[MastodonSwift.Status]>([])
     
     
     // MARK: - Initialization
@@ -53,6 +58,7 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
                 break
             }
             }.addDisposableTo(dispoaseBag)
+        self.updateTimeline()
     }
     
     
@@ -64,7 +70,29 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        
+        return self.statuses.value.count
+    }
+    
+    
+    // MARK: - Public Methods
+    
+    func updateTimeline() {
+        
+        self.timelineRetriever(nil, nil)
+            .subscribe(
+                EventHandler(
+                    onNext: { statuses in
+                        
+                        self.statuses.value.insert(contentsOf: statuses, at: 0)
+                    },
+                    onError: { err in
+                        
+                    },
+                    onCompleted: {
+                        // Do Nothing
+                    }))
+            .disposed(by: self.dispoaseBag)
     }
 
     
@@ -74,7 +102,7 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
         
         self.account = account
         self.client = MastodonClient(plugins: [AccessTokenPlugin(token: (account?.accessToken?.token)!)])
-        self.timelineRectriever = self.retrieveTimelineRetriever()
+        self.timelineRetriever = self.retrieveTimelineRetriever()
     }
     
     private func retrieveTimelineRetriever() -> TimelineRetriever? {
