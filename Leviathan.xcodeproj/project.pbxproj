@@ -3,925 +3,211 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B316F24E1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B316F24D1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift */; };
-		B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC61EA7692000B5413D /* AccountEditViewController.swift */; };
-		B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
-		B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */; };
-		B3960A931EC5C51200D21AC4 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960A921EC5C51200D21AC4 /* AvatarImage.swift */; };
-		B3960A941EC5C51200D21AC4 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960A921EC5C51200D21AC4 /* AvatarImage.swift */; };
-		B3960A971EC5C96200D21AC4 /* OsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960A951EC5C8A800D21AC4 /* OsDependencies.swift */; };
-		B3A60A951EB0680400DD5B6D /* PostNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */; };
-		B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */; };
-		E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
-		E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E61181E9E88E500E2DC19 /* Globals.swift */; };
-		E91354FF1EA289AF0046DAF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EC1EA289AF0046DAF0 /* Alamofire.framework */; };
-		E91355001EA289AF0046DAF0 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354ED1EA289AF0046DAF0 /* Gloss.framework */; };
-		E91355011EA289AF0046DAF0 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EE1EA289AF0046DAF0 /* Locksmith.framework */; };
-		E91355031EA289AF0046DAF0 /* MastodonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F01EA289AF0046DAF0 /* MastodonSwift.framework */; };
-		E91355041EA289AF0046DAF0 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F11EA289AF0046DAF0 /* Moya.framework */; };
-		E91355051EA289AF0046DAF0 /* MoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F21EA289AF0046DAF0 /* MoyaGloss.framework */; };
-		E91355061EA289AF0046DAF0 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F31EA289AF0046DAF0 /* ReactiveCocoa.framework */; };
-		E91355071EA289AF0046DAF0 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F41EA289AF0046DAF0 /* ReactiveMoya.framework */; };
-		E91355081EA289AF0046DAF0 /* ReactiveMoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F51EA289AF0046DAF0 /* ReactiveMoyaGloss.framework */; };
-		E91355091EA289AF0046DAF0 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F61EA289AF0046DAF0 /* ReactiveSwift.framework */; };
-		E913550A1EA289AF0046DAF0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F71EA289AF0046DAF0 /* Result.framework */; };
-		E913550B1EA289AF0046DAF0 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F81EA289AF0046DAF0 /* RxBlocking.framework */; };
-		E913550C1EA289AF0046DAF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F91EA289AF0046DAF0 /* RxCocoa.framework */; };
-		E913550D1EA289AF0046DAF0 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FA1EA289AF0046DAF0 /* RxMoya.framework */; };
-		E913550E1EA289AF0046DAF0 /* RxMoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FB1EA289AF0046DAF0 /* RxMoyaGloss.framework */; };
-		E913550F1EA289AF0046DAF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FC1EA289AF0046DAF0 /* RxSwift.framework */; };
-		E91355111EA289AF0046DAF0 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FE1EA289AF0046DAF0 /* Swinject.framework */; };
-		E91355251EA289D50046DAF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355121EA289D50046DAF0 /* Alamofire.framework */; };
-		E91355261EA289D50046DAF0 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355131EA289D50046DAF0 /* Gloss.framework */; };
-		E91355271EA289D50046DAF0 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355141EA289D50046DAF0 /* Locksmith.framework */; };
-		E91355291EA289D50046DAF0 /* MastodonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355161EA289D50046DAF0 /* MastodonSwift.framework */; };
-		E913552A1EA289D50046DAF0 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355171EA289D50046DAF0 /* Moya.framework */; };
-		E913552B1EA289D50046DAF0 /* MoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355181EA289D50046DAF0 /* MoyaGloss.framework */; };
-		E913552C1EA289D50046DAF0 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355191EA289D50046DAF0 /* ReactiveCocoa.framework */; };
-		E913552D1EA289D50046DAF0 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913551A1EA289D50046DAF0 /* ReactiveMoya.framework */; };
-		E913552E1EA289D50046DAF0 /* ReactiveMoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913551B1EA289D50046DAF0 /* ReactiveMoyaGloss.framework */; };
-		E913552F1EA289D50046DAF0 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913551C1EA289D50046DAF0 /* ReactiveSwift.framework */; };
-		E91355301EA289D50046DAF0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913551D1EA289D50046DAF0 /* Result.framework */; };
-		E91355311EA289D50046DAF0 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913551E1EA289D50046DAF0 /* RxBlocking.framework */; };
-		E91355321EA289D50046DAF0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E913551F1EA289D50046DAF0 /* RxCocoa.framework */; };
-		E91355331EA289D50046DAF0 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355201EA289D50046DAF0 /* RxMoya.framework */; };
-		E91355341EA289D50046DAF0 /* RxMoyaGloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355211EA289D50046DAF0 /* RxMoyaGloss.framework */; };
-		E91355351EA289D50046DAF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355221EA289D50046DAF0 /* RxSwift.framework */; };
-		E91355371EA289D50046DAF0 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91355241EA289D50046DAF0 /* Swinject.framework */; };
-		E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355121EA289D50046DAF0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355131EA289D50046DAF0 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913554F1EA28AD90046DAF0 /* Locksmith.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355141EA289D50046DAF0 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355511EA28AD90046DAF0 /* MastodonSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355161EA289D50046DAF0 /* MastodonSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355521EA28AD90046DAF0 /* Moya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355171EA289D50046DAF0 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355531EA28AD90046DAF0 /* MoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355181EA289D50046DAF0 /* MoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355541EA28AD90046DAF0 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355191EA289D50046DAF0 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355551EA28AD90046DAF0 /* ReactiveMoya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E913551A1EA289D50046DAF0 /* ReactiveMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355561EA28AD90046DAF0 /* ReactiveMoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E913551B1EA289D50046DAF0 /* ReactiveMoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355571EA28AD90046DAF0 /* ReactiveSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E913551C1EA289D50046DAF0 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355581EA28AD90046DAF0 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E913551D1EA289D50046DAF0 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355591EA28AD90046DAF0 /* RxBlocking.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E913551E1EA289D50046DAF0 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913555A1EA28AD90046DAF0 /* RxCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E913551F1EA289D50046DAF0 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913555B1EA28AD90046DAF0 /* RxMoya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355201EA289D50046DAF0 /* RxMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913555C1EA28AD90046DAF0 /* RxMoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355211EA289D50046DAF0 /* RxMoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913555D1EA28AD90046DAF0 /* RxSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355221EA289D50046DAF0 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913555F1EA28AD90046DAF0 /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91355241EA289D50046DAF0 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355641EA28BD70046DAF0 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EC1EA289AF0046DAF0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355651EA28BD70046DAF0 /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354ED1EA289AF0046DAF0 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355661EA28BD70046DAF0 /* Locksmith.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354EE1EA289AF0046DAF0 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355681EA28BD70046DAF0 /* MastodonSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F01EA289AF0046DAF0 /* MastodonSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355691EA28BD70046DAF0 /* Moya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F11EA289AF0046DAF0 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913556A1EA28BD70046DAF0 /* MoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F21EA289AF0046DAF0 /* MoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913556B1EA28BD70046DAF0 /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F31EA289AF0046DAF0 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913556C1EA28BD70046DAF0 /* ReactiveMoya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F41EA289AF0046DAF0 /* ReactiveMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913556D1EA28BD70046DAF0 /* ReactiveMoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F51EA289AF0046DAF0 /* ReactiveMoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913556E1EA28BD70046DAF0 /* ReactiveSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F61EA289AF0046DAF0 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E913556F1EA28BD70046DAF0 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F71EA289AF0046DAF0 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355701EA28BD70046DAF0 /* RxBlocking.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F81EA289AF0046DAF0 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355711EA28BD70046DAF0 /* RxCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354F91EA289AF0046DAF0 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355721EA28BD70046DAF0 /* RxMoya.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FA1EA289AF0046DAF0 /* RxMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355731EA28BD70046DAF0 /* RxMoyaGloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FB1EA289AF0046DAF0 /* RxMoyaGloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355741EA28BD70046DAF0 /* RxSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FC1EA289AF0046DAF0 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355751EA28BD70046DAF0 /* Swinject.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E91354FE1EA289AF0046DAF0 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E91355781EA29E040046DAF0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91355771EA29E040046DAF0 /* Account.swift */; };
-		E91355791EA29E040046DAF0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91355771EA29E040046DAF0 /* Account.swift */; };
-		E944A9D51EB1BD40006AB6A2 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; };
-		E944A9D61EB1BD57006AB6A2 /* Eureka.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E944A9D41EB1BD40006AB6A2 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E95908C41EBA61D0001CDB3A /* Alamofire.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908AF1EBA61CF001CDB3A /* Alamofire.framework.dSYM */; };
-		E95908C51EBA61D0001CDB3A /* Eureka.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B01EBA61CF001CDB3A /* Eureka.framework.dSYM */; };
-		E95908C61EBA61D0001CDB3A /* Gloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B11EBA61D0001CDB3A /* Gloss.framework.dSYM */; };
-		E95908C71EBA61D0001CDB3A /* Locksmith.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B21EBA61D0001CDB3A /* Locksmith.framework.dSYM */; };
-		E95908C81EBA61D0001CDB3A /* MastodonSwift.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B31EBA61D0001CDB3A /* MastodonSwift.framework.dSYM */; };
-		E95908C91EBA61D0001CDB3A /* Moya.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B41EBA61D0001CDB3A /* Moya.framework.dSYM */; };
-		E95908CA1EBA61D0001CDB3A /* MoyaGloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B51EBA61D0001CDB3A /* MoyaGloss.framework.dSYM */; };
-		E95908CB1EBA61D0001CDB3A /* Popover.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B61EBA61D0001CDB3A /* Popover.framework.dSYM */; };
-		E95908CC1EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B71EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM */; };
-		E95908CD1EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B81EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM */; };
-		E95908CE1EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908B91EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM */; };
-		E95908CF1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BA1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM */; };
-		E95908D01EBA61D0001CDB3A /* Result.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BB1EBA61D0001CDB3A /* Result.framework.dSYM */; };
-		E95908D11EBA61D0001CDB3A /* RxBlocking.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BC1EBA61D0001CDB3A /* RxBlocking.framework.dSYM */; };
-		E95908D21EBA61D0001CDB3A /* RxCocoa.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BD1EBA61D0001CDB3A /* RxCocoa.framework.dSYM */; };
-		E95908D31EBA61D0001CDB3A /* RxMoya.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BE1EBA61D0001CDB3A /* RxMoya.framework.dSYM */; };
-		E95908D41EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908BF1EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM */; };
-		E95908D51EBA61D0001CDB3A /* RxSwift.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C01EBA61D0001CDB3A /* RxSwift.framework.dSYM */; };
-		E95908D61EBA61D0001CDB3A /* RxTest.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */; };
-		E95908D71EBA61D0001CDB3A /* Swinject.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */; };
-		E95908D81EBA61D0001CDB3A /* Toucan.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */; };
-		E95908DC1EC8D7D8001CDB3A /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */; };
-		E95908DE1ED0443B001CDB3A /* TimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95908DD1ED0443B001CDB3A /* TimelineDataSource.swift */; };
-		E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17EE1E9CDEF00029D636 /* Main.storyboard */; };
-		E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F11E9CDEF00029D636 /* Assets.xcassets */; };
-		E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */; };
-		E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18011E9CFC4C0029D636 /* AppDelegate.swift */; };
-		E96B18051E9D038F0029D636 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18041E9D038F0029D636 /* Images.swift */; };
-		E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B18081E9D3AF70029D636 /* Globals+macOS.swift */; };
-		E96B181D1E9D403E0029D636 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B181C1E9D403E0029D636 /* WindowController.swift */; };
-		E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */; };
-		E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */; };
-		E971A22C1EAB55BA00E1F77C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A22B1EAB55BA00E1F77C /* Images.swift */; };
-		E971A2301EABB1BF00E1F77C /* Toucan.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A22F1EABB1BF00E1F77C /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E971A24B1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
-		E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A24A1EAC9DE700E1F77C /* Settings.swift */; };
-		E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; };
-		E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E971A24D1EADBBB000E1F77C /* Popover.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E971A2521EADC51C00E1F77C /* AccountMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971A2511EADC51C00E1F77C /* AccountMenu.swift */; };
-		E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E984B5EB1E98DB0D008DACDC /* Assets.xcassets */; };
-		E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984B5ED1E98DB0D008DACDC /* Main.storyboard */; };
-		E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B5F71E98DC0F008DACDC /* AppDelegate.swift */; };
-		E98837D61EE5E833007DCF6C /* OsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98837D51EE5E833007DCF6C /* OsDependencies.swift */; };
-		E9E258941EA69008001E0E71 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountModel.swift */; };
-		E9E258951EA69008001E0E71 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E258931EA69008001E0E71 /* AccountModel.swift */; };
-		E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */; };
-		E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */; };
-		E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */; };
+		E90B5936290FC89A00324E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90B5935290FC89A00324E6B /* Assets.xcassets */; };
+		E90B593A290FC89A00324E6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90B5939290FC89A00324E6B /* Preview Assets.xcassets */; };
+		E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5943290FCBC400324E6B /* LeviathanApp.swift */; };
+		E90B5947290FCBC400324E6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5945290FCBC400324E6B /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E913554C1EA28AC20046DAF0 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E944A9D61EB1BD57006AB6A2 /* Eureka.framework in Copy Frameworks */,
-				E971A24F1EADBBBC00E1F77C /* Popover.framework in Copy Frameworks */,
-				E913554D1EA28AD90046DAF0 /* Alamofire.framework in Copy Frameworks */,
-				E913554E1EA28AD90046DAF0 /* Gloss.framework in Copy Frameworks */,
-				E913554F1EA28AD90046DAF0 /* Locksmith.framework in Copy Frameworks */,
-				E91355511EA28AD90046DAF0 /* MastodonSwift.framework in Copy Frameworks */,
-				E91355521EA28AD90046DAF0 /* Moya.framework in Copy Frameworks */,
-				E91355531EA28AD90046DAF0 /* MoyaGloss.framework in Copy Frameworks */,
-				E91355541EA28AD90046DAF0 /* ReactiveCocoa.framework in Copy Frameworks */,
-				E91355551EA28AD90046DAF0 /* ReactiveMoya.framework in Copy Frameworks */,
-				E91355561EA28AD90046DAF0 /* ReactiveMoyaGloss.framework in Copy Frameworks */,
-				E91355571EA28AD90046DAF0 /* ReactiveSwift.framework in Copy Frameworks */,
-				E91355581EA28AD90046DAF0 /* Result.framework in Copy Frameworks */,
-				E91355591EA28AD90046DAF0 /* RxBlocking.framework in Copy Frameworks */,
-				E913555A1EA28AD90046DAF0 /* RxCocoa.framework in Copy Frameworks */,
-				E913555B1EA28AD90046DAF0 /* RxMoya.framework in Copy Frameworks */,
-				E913555C1EA28AD90046DAF0 /* RxMoyaGloss.framework in Copy Frameworks */,
-				E913555D1EA28AD90046DAF0 /* RxSwift.framework in Copy Frameworks */,
-				E913555F1EA28AD90046DAF0 /* Swinject.framework in Copy Frameworks */,
-				E971A2301EABB1BF00E1F77C /* Toucan.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E91355631EA28BC00046DAF0 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E91355641EA28BD70046DAF0 /* Alamofire.framework in Copy Frameworks */,
-				E91355651EA28BD70046DAF0 /* Gloss.framework in Copy Frameworks */,
-				E91355661EA28BD70046DAF0 /* Locksmith.framework in Copy Frameworks */,
-				E91355681EA28BD70046DAF0 /* MastodonSwift.framework in Copy Frameworks */,
-				E91355691EA28BD70046DAF0 /* Moya.framework in Copy Frameworks */,
-				E913556A1EA28BD70046DAF0 /* MoyaGloss.framework in Copy Frameworks */,
-				E913556B1EA28BD70046DAF0 /* ReactiveCocoa.framework in Copy Frameworks */,
-				E913556C1EA28BD70046DAF0 /* ReactiveMoya.framework in Copy Frameworks */,
-				E913556D1EA28BD70046DAF0 /* ReactiveMoyaGloss.framework in Copy Frameworks */,
-				E913556E1EA28BD70046DAF0 /* ReactiveSwift.framework in Copy Frameworks */,
-				E913556F1EA28BD70046DAF0 /* Result.framework in Copy Frameworks */,
-				E91355701EA28BD70046DAF0 /* RxBlocking.framework in Copy Frameworks */,
-				E91355711EA28BD70046DAF0 /* RxCocoa.framework in Copy Frameworks */,
-				E91355721EA28BD70046DAF0 /* RxMoya.framework in Copy Frameworks */,
-				E91355731EA28BD70046DAF0 /* RxMoyaGloss.framework in Copy Frameworks */,
-				E91355741EA28BD70046DAF0 /* RxSwift.framework in Copy Frameworks */,
-				E91355751EA28BD70046DAF0 /* Swinject.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E95908AE1EBA619E001CDB3A /* Copy Framework Debug Symbols */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				E95908C41EBA61D0001CDB3A /* Alamofire.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908C51EBA61D0001CDB3A /* Eureka.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908C61EBA61D0001CDB3A /* Gloss.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908C71EBA61D0001CDB3A /* Locksmith.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908C81EBA61D0001CDB3A /* MastodonSwift.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908C91EBA61D0001CDB3A /* Moya.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908CA1EBA61D0001CDB3A /* MoyaGloss.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908CB1EBA61D0001CDB3A /* Popover.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908CC1EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908CD1EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908CE1EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908CF1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D01EBA61D0001CDB3A /* Result.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D11EBA61D0001CDB3A /* RxBlocking.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D21EBA61D0001CDB3A /* RxCocoa.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D31EBA61D0001CDB3A /* RxMoya.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D41EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D51EBA61D0001CDB3A /* RxSwift.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D61EBA61D0001CDB3A /* RxTest.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D71EBA61D0001CDB3A /* Swinject.framework.dSYM in Copy Framework Debug Symbols */,
-				E95908D81EBA61D0001CDB3A /* Toucan.framework.dSYM in Copy Framework Debug Symbols */,
-			);
-			name = "Copy Framework Debug Symbols";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		B316F24D1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewDataSource.swift; sourceTree = "<group>"; };
-		B37CECC61EA7692000B5413D /* AccountEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEditViewController.swift; sourceTree = "<group>"; };
-		B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveTools.swift; sourceTree = "<group>"; };
-		B3960A921EC5C51200D21AC4 /* AvatarImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
-		B3960A951EC5C8A800D21AC4 /* OsDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OsDependencies.swift; sourceTree = "<group>"; };
-		B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNoteViewController.swift; sourceTree = "<group>"; };
-		B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
-		E90E61181E9E88E500E2DC19 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		E91354EC1EA289AF0046DAF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		E91354ED1EA289AF0046DAF0 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/Mac/Gloss.framework; sourceTree = "<group>"; };
-		E91354EE1EA289AF0046DAF0 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/Mac/Locksmith.framework; sourceTree = "<group>"; };
-		E91354EF1EA289AF0046DAF0 /* MAIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAIKit.framework; path = Carthage/Build/Mac/MAIKit.framework; sourceTree = "<group>"; };
-		E91354F01EA289AF0046DAF0 /* MastodonSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonSwift.framework; path = Carthage/Build/Mac/MastodonSwift.framework; sourceTree = "<group>"; };
-		E91354F11EA289AF0046DAF0 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/Mac/Moya.framework; sourceTree = "<group>"; };
-		E91354F21EA289AF0046DAF0 /* MoyaGloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoyaGloss.framework; path = Carthage/Build/Mac/MoyaGloss.framework; sourceTree = "<group>"; };
-		E91354F31EA289AF0046DAF0 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		E91354F41EA289AF0046DAF0 /* ReactiveMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoya.framework; path = Carthage/Build/Mac/ReactiveMoya.framework; sourceTree = "<group>"; };
-		E91354F51EA289AF0046DAF0 /* ReactiveMoyaGloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoyaGloss.framework; path = Carthage/Build/Mac/ReactiveMoyaGloss.framework; sourceTree = "<group>"; };
-		E91354F61EA289AF0046DAF0 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/Mac/ReactiveSwift.framework; sourceTree = "<group>"; };
-		E91354F71EA289AF0046DAF0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
-		E91354F81EA289AF0046DAF0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
-		E91354F91EA289AF0046DAF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
-		E91354FA1EA289AF0046DAF0 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/Mac/RxMoya.framework; sourceTree = "<group>"; };
-		E91354FB1EA289AF0046DAF0 /* RxMoyaGloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoyaGloss.framework; path = Carthage/Build/Mac/RxMoyaGloss.framework; sourceTree = "<group>"; };
-		E91354FC1EA289AF0046DAF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
-		E91354FD1EA289AF0046DAF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
-		E91354FE1EA289AF0046DAF0 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
-		E91355121EA289D50046DAF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		E91355131EA289D50046DAF0 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
-		E91355141EA289D50046DAF0 /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
-		E91355161EA289D50046DAF0 /* MastodonSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonSwift.framework; path = Carthage/Build/iOS/MastodonSwift.framework; sourceTree = "<group>"; };
-		E91355171EA289D50046DAF0 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
-		E91355181EA289D50046DAF0 /* MoyaGloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoyaGloss.framework; path = Carthage/Build/iOS/MoyaGloss.framework; sourceTree = "<group>"; };
-		E91355191EA289D50046DAF0 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		E913551A1EA289D50046DAF0 /* ReactiveMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoya.framework; path = Carthage/Build/iOS/ReactiveMoya.framework; sourceTree = "<group>"; };
-		E913551B1EA289D50046DAF0 /* ReactiveMoyaGloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoyaGloss.framework; path = Carthage/Build/iOS/ReactiveMoyaGloss.framework; sourceTree = "<group>"; };
-		E913551C1EA289D50046DAF0 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
-		E913551D1EA289D50046DAF0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		E913551E1EA289D50046DAF0 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		E913551F1EA289D50046DAF0 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		E91355201EA289D50046DAF0 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
-		E91355211EA289D50046DAF0 /* RxMoyaGloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoyaGloss.framework; path = Carthage/Build/iOS/RxMoyaGloss.framework; sourceTree = "<group>"; };
-		E91355221EA289D50046DAF0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		E91355231EA289D50046DAF0 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		E91355241EA289D50046DAF0 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
-		E91355771EA29E040046DAF0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		E944A9D41EB1BD40006AB6A2 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
-		E95908AF1EBA61CF001CDB3A /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
-		E95908B01EBA61CF001CDB3A /* Eureka.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Eureka.framework.dSYM; path = Carthage/Build/iOS/Eureka.framework.dSYM; sourceTree = "<group>"; };
-		E95908B11EBA61D0001CDB3A /* Gloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Gloss.framework.dSYM; path = Carthage/Build/iOS/Gloss.framework.dSYM; sourceTree = "<group>"; };
-		E95908B21EBA61D0001CDB3A /* Locksmith.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Locksmith.framework.dSYM; path = Carthage/Build/iOS/Locksmith.framework.dSYM; sourceTree = "<group>"; };
-		E95908B31EBA61D0001CDB3A /* MastodonSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MastodonSwift.framework.dSYM; path = Carthage/Build/iOS/MastodonSwift.framework.dSYM; sourceTree = "<group>"; };
-		E95908B41EBA61D0001CDB3A /* Moya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Moya.framework.dSYM; path = Carthage/Build/iOS/Moya.framework.dSYM; sourceTree = "<group>"; };
-		E95908B51EBA61D0001CDB3A /* MoyaGloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MoyaGloss.framework.dSYM; path = Carthage/Build/iOS/MoyaGloss.framework.dSYM; sourceTree = "<group>"; };
-		E95908B61EBA61D0001CDB3A /* Popover.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Popover.framework.dSYM; path = Carthage/Build/iOS/Popover.framework.dSYM; sourceTree = "<group>"; };
-		E95908B71EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
-		E95908B81EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveMoya.framework.dSYM; path = Carthage/Build/iOS/ReactiveMoya.framework.dSYM; sourceTree = "<group>"; };
-		E95908B91EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveMoyaGloss.framework.dSYM; path = Carthage/Build/iOS/ReactiveMoyaGloss.framework.dSYM; sourceTree = "<group>"; };
-		E95908BA1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveSwift.framework.dSYM; path = Carthage/Build/iOS/ReactiveSwift.framework.dSYM; sourceTree = "<group>"; };
-		E95908BB1EBA61D0001CDB3A /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
-		E95908BC1EBA61D0001CDB3A /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
-		E95908BD1EBA61D0001CDB3A /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxCocoa.framework.dSYM; path = Carthage/Build/iOS/RxCocoa.framework.dSYM; sourceTree = "<group>"; };
-		E95908BE1EBA61D0001CDB3A /* RxMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxMoya.framework.dSYM; path = Carthage/Build/iOS/RxMoya.framework.dSYM; sourceTree = "<group>"; };
-		E95908BF1EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxMoyaGloss.framework.dSYM; path = Carthage/Build/iOS/RxMoyaGloss.framework.dSYM; sourceTree = "<group>"; };
-		E95908C01EBA61D0001CDB3A /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
-		E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTest.framework.dSYM; path = Carthage/Build/iOS/RxTest.framework.dSYM; sourceTree = "<group>"; };
-		E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/iOS/Swinject.framework.dSYM; sourceTree = "<group>"; };
-		E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Toucan.framework.dSYM; path = Carthage/Build/iOS/Toucan.framework.dSYM; sourceTree = "<group>"; };
-		E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
-		E95908DD1ED0443B001CDB3A /* TimelineDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDataSource.swift; sourceTree = "<group>"; };
-		E96B17E61E9CDEF00029D636 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E96B17EF1E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E96B17F11E9CDEF00029D636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E96B17F41E9CDEF00029D636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E96B17F61E9CDEF00029D636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E96B18011E9CFC4C0029D636 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E96B18041E9D038F0029D636 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
-		E96B18081E9D3AF70029D636 /* Globals+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Globals+macOS.swift"; sourceTree = "<group>"; };
-		E96B181C1E9D403E0029D636 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesTabViewController.swift; sourceTree = "<group>"; };
-		E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesNavigationController.swift; sourceTree = "<group>"; };
-		E971A22B1EAB55BA00E1F77C /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = "Leviathan-iOS/Source/Images.swift"; sourceTree = SOURCE_ROOT; };
-		E971A22F1EABB1BF00E1F77C /* Toucan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toucan.framework; path = Carthage/Build/iOS/Toucan.framework; sourceTree = "<group>"; };
-		E971A24A1EAC9DE700E1F77C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		E971A24D1EADBBB000E1F77C /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
-		E971A2511EADC51C00E1F77C /* AccountMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMenu.swift; sourceTree = "<group>"; };
-		E984B5E41E98DB0D008DACDC /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E984B5EB1E98DB0D008DACDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		E984B5EE1E98DB0D008DACDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E984B5F01E98DB0D008DACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		E984B5F71E98DC0F008DACDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E98837D51EE5E833007DCF6C /* OsDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OsDependencies.swift; sourceTree = "<group>"; };
-		E9E258931EA69008001E0E71 /* AccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesViewController.swift; sourceTree = "<group>"; };
-		E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		E90B592E290FC89900324E6B /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90B5935290FC89A00324E6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E90B5937290FC89A00324E6B /* Leviathan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leviathan.entitlements; sourceTree = "<group>"; };
+		E90B5939290FC89A00324E6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E90B5943290FCBC400324E6B /* LeviathanApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeviathanApp.swift; sourceTree = "<group>"; };
+		E90B5945290FCBC400324E6B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E96B17E31E9CDEF00029D636 /* Frameworks */ = {
+		E90B592B290FC89900324E6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E944A9D51EB1BD40006AB6A2 /* Eureka.framework in Frameworks */,
-				E91355251EA289D50046DAF0 /* Alamofire.framework in Frameworks */,
-				E91355261EA289D50046DAF0 /* Gloss.framework in Frameworks */,
-				E91355271EA289D50046DAF0 /* Locksmith.framework in Frameworks */,
-				E91355291EA289D50046DAF0 /* MastodonSwift.framework in Frameworks */,
-				E913552A1EA289D50046DAF0 /* Moya.framework in Frameworks */,
-				E913552B1EA289D50046DAF0 /* MoyaGloss.framework in Frameworks */,
-				E913552C1EA289D50046DAF0 /* ReactiveCocoa.framework in Frameworks */,
-				E913552D1EA289D50046DAF0 /* ReactiveMoya.framework in Frameworks */,
-				E913552E1EA289D50046DAF0 /* ReactiveMoyaGloss.framework in Frameworks */,
-				E913552F1EA289D50046DAF0 /* ReactiveSwift.framework in Frameworks */,
-				E91355301EA289D50046DAF0 /* Result.framework in Frameworks */,
-				E91355311EA289D50046DAF0 /* RxBlocking.framework in Frameworks */,
-				E91355321EA289D50046DAF0 /* RxCocoa.framework in Frameworks */,
-				E91355331EA289D50046DAF0 /* RxMoya.framework in Frameworks */,
-				E91355341EA289D50046DAF0 /* RxMoyaGloss.framework in Frameworks */,
-				E91355351EA289D50046DAF0 /* RxSwift.framework in Frameworks */,
-				E91355371EA289D50046DAF0 /* Swinject.framework in Frameworks */,
-				E971A24E1EADBBB000E1F77C /* Popover.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E984B5E11E98DB0D008DACDC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E91354FF1EA289AF0046DAF0 /* Alamofire.framework in Frameworks */,
-				E91355001EA289AF0046DAF0 /* Gloss.framework in Frameworks */,
-				E91355011EA289AF0046DAF0 /* Locksmith.framework in Frameworks */,
-				E91355031EA289AF0046DAF0 /* MastodonSwift.framework in Frameworks */,
-				E91355041EA289AF0046DAF0 /* Moya.framework in Frameworks */,
-				E91355051EA289AF0046DAF0 /* MoyaGloss.framework in Frameworks */,
-				E91355061EA289AF0046DAF0 /* ReactiveCocoa.framework in Frameworks */,
-				E91355071EA289AF0046DAF0 /* ReactiveMoya.framework in Frameworks */,
-				E91355081EA289AF0046DAF0 /* ReactiveMoyaGloss.framework in Frameworks */,
-				E91355091EA289AF0046DAF0 /* ReactiveSwift.framework in Frameworks */,
-				E913550A1EA289AF0046DAF0 /* Result.framework in Frameworks */,
-				E913550B1EA289AF0046DAF0 /* RxBlocking.framework in Frameworks */,
-				E913550C1EA289AF0046DAF0 /* RxCocoa.framework in Frameworks */,
-				E913550D1EA289AF0046DAF0 /* RxMoya.framework in Frameworks */,
-				E913550E1EA289AF0046DAF0 /* RxMoyaGloss.framework in Frameworks */,
-				E913550F1EA289AF0046DAF0 /* RxSwift.framework in Frameworks */,
-				E91355111EA289AF0046DAF0 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B316F24C1EB9DAE6004C08F6 /* DataSources */ = {
+		E90B5925290FC89900324E6B = {
 			isa = PBXGroup;
 			children = (
-				B316F24D1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift */,
-				E95908DD1ED0443B001CDB3A /* TimelineDataSource.swift */,
-			);
-			path = DataSources;
-			sourceTree = "<group>";
-		};
-		E90E61171E9E88D400E2DC19 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				E90E61181E9E88E500E2DC19 /* Globals.swift */,
-				B37CECC81EA77A0C00B5413D /* ReactiveTools.swift */,
-				B3960A921EC5C51200D21AC4 /* AvatarImage.swift */,
-				E90E611B1E9F973200E2DC19 /* Classes */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		E90E611B1E9F973200E2DC19 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E91355761EA29DDD0046DAF0 /* Model */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		E91355761EA29DDD0046DAF0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E91355771EA29E040046DAF0 /* Account.swift */,
-				E9E258931EA69008001E0E71 /* AccountModel.swift */,
-				E971A24A1EAC9DE700E1F77C /* Settings.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E95908D91EBA61DE001CDB3A /* Symbol Files */ = {
-			isa = PBXGroup;
-			children = (
-				E95908AF1EBA61CF001CDB3A /* Alamofire.framework.dSYM */,
-				E95908B01EBA61CF001CDB3A /* Eureka.framework.dSYM */,
-				E95908B11EBA61D0001CDB3A /* Gloss.framework.dSYM */,
-				E95908B21EBA61D0001CDB3A /* Locksmith.framework.dSYM */,
-				E95908B31EBA61D0001CDB3A /* MastodonSwift.framework.dSYM */,
-				E95908B41EBA61D0001CDB3A /* Moya.framework.dSYM */,
-				E95908B51EBA61D0001CDB3A /* MoyaGloss.framework.dSYM */,
-				E95908B61EBA61D0001CDB3A /* Popover.framework.dSYM */,
-				E95908B71EBA61D0001CDB3A /* ReactiveCocoa.framework.dSYM */,
-				E95908B81EBA61D0001CDB3A /* ReactiveMoya.framework.dSYM */,
-				E95908B91EBA61D0001CDB3A /* ReactiveMoyaGloss.framework.dSYM */,
-				E95908BA1EBA61D0001CDB3A /* ReactiveSwift.framework.dSYM */,
-				E95908BB1EBA61D0001CDB3A /* Result.framework.dSYM */,
-				E95908BC1EBA61D0001CDB3A /* RxBlocking.framework.dSYM */,
-				E95908BD1EBA61D0001CDB3A /* RxCocoa.framework.dSYM */,
-				E95908BE1EBA61D0001CDB3A /* RxMoya.framework.dSYM */,
-				E95908BF1EBA61D0001CDB3A /* RxMoyaGloss.framework.dSYM */,
-				E95908C01EBA61D0001CDB3A /* RxSwift.framework.dSYM */,
-				E95908C11EBA61D0001CDB3A /* RxTest.framework.dSYM */,
-				E95908C21EBA61D0001CDB3A /* Swinject.framework.dSYM */,
-				E95908C31EBA61D0001CDB3A /* Toucan.framework.dSYM */,
-			);
-			name = "Symbol Files";
-			sourceTree = "<group>";
-		};
-		E95908DA1EC8D7B1001CDB3A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E95908DB1EC8D7D8001CDB3A /* StatusTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		E95B2C041E9554F000EDC598 = {
-			isa = PBXGroup;
-			children = (
-				E90E61171E9E88D400E2DC19 /* Common */,
-				E984B5E61E98DB0D008DACDC /* Leviathan-macOS */,
-				E96B17E71E9CDEF00029D636 /* Leviathan-iOS */,
-				E984B5E51E98DB0D008DACDC /* Products */,
-				E984B5FA1E98DC7F008DACDC /* Frameworks */,
+				E90B5930290FC89900324E6B /* Leviathan */,
+				E90B592F290FC89900324E6B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E96B17E71E9CDEF00029D636 /* Leviathan-iOS */ = {
+		E90B592F290FC89900324E6B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E96B17FE1E9CFC4C0029D636 /* Source */,
-				E96B17EE1E9CDEF00029D636 /* Main.storyboard */,
-				E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */,
-				E96B17F11E9CDEF00029D636 /* Assets.xcassets */,
-				E96B17F61E9CDEF00029D636 /* Info.plist */,
-			);
-			path = "Leviathan-iOS";
-			sourceTree = "<group>";
-		};
-		E96B17FE1E9CFC4C0029D636 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				E971A22B1EAB55BA00E1F77C /* Images.swift */,
-				B3960A951EC5C8A800D21AC4 /* OsDependencies.swift */,
-				E96B17FF1E9CFC4C0029D636 /* Classes */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		E96B17FF1E9CFC4C0029D636 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E96B18001E9CFC4C0029D636 /* Application */,
-				E9F3C83F1EA557E9009BE3E8 /* Controllers */,
-				B316F24C1EB9DAE6004C08F6 /* DataSources */,
-				E95908DA1EC8D7B1001CDB3A /* Cells */,
-				E971A2501EADC4E300E1F77C /* Views */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		E96B18001E9CFC4C0029D636 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				E96B18011E9CFC4C0029D636 /* AppDelegate.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		E96B18131E9D3D220029D636 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				E91354EC1EA289AF0046DAF0 /* Alamofire.framework */,
-				E91354ED1EA289AF0046DAF0 /* Gloss.framework */,
-				E91354EE1EA289AF0046DAF0 /* Locksmith.framework */,
-				E91354EF1EA289AF0046DAF0 /* MAIKit.framework */,
-				E91354F01EA289AF0046DAF0 /* MastodonSwift.framework */,
-				E91354F11EA289AF0046DAF0 /* Moya.framework */,
-				E91354F21EA289AF0046DAF0 /* MoyaGloss.framework */,
-				E91354F31EA289AF0046DAF0 /* ReactiveCocoa.framework */,
-				E91354F41EA289AF0046DAF0 /* ReactiveMoya.framework */,
-				E91354F51EA289AF0046DAF0 /* ReactiveMoyaGloss.framework */,
-				E91354F61EA289AF0046DAF0 /* ReactiveSwift.framework */,
-				E91354F71EA289AF0046DAF0 /* Result.framework */,
-				E91354F81EA289AF0046DAF0 /* RxBlocking.framework */,
-				E91354F91EA289AF0046DAF0 /* RxCocoa.framework */,
-				E91354FA1EA289AF0046DAF0 /* RxMoya.framework */,
-				E91354FB1EA289AF0046DAF0 /* RxMoyaGloss.framework */,
-				E91354FC1EA289AF0046DAF0 /* RxSwift.framework */,
-				E91354FD1EA289AF0046DAF0 /* RxTest.framework */,
-				E91354FE1EA289AF0046DAF0 /* Swinject.framework */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
-		E96B18141E9D3D3C0029D636 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E95908D91EBA61DE001CDB3A /* Symbol Files */,
-				E944A9D41EB1BD40006AB6A2 /* Eureka.framework */,
-				E971A24D1EADBBB000E1F77C /* Popover.framework */,
-				E971A22F1EABB1BF00E1F77C /* Toucan.framework */,
-				E91355121EA289D50046DAF0 /* Alamofire.framework */,
-				E91355131EA289D50046DAF0 /* Gloss.framework */,
-				E91355141EA289D50046DAF0 /* Locksmith.framework */,
-				E91355161EA289D50046DAF0 /* MastodonSwift.framework */,
-				E91355171EA289D50046DAF0 /* Moya.framework */,
-				E91355181EA289D50046DAF0 /* MoyaGloss.framework */,
-				E91355191EA289D50046DAF0 /* ReactiveCocoa.framework */,
-				E913551A1EA289D50046DAF0 /* ReactiveMoya.framework */,
-				E913551B1EA289D50046DAF0 /* ReactiveMoyaGloss.framework */,
-				E913551C1EA289D50046DAF0 /* ReactiveSwift.framework */,
-				E913551D1EA289D50046DAF0 /* Result.framework */,
-				E913551E1EA289D50046DAF0 /* RxBlocking.framework */,
-				E913551F1EA289D50046DAF0 /* RxCocoa.framework */,
-				E91355201EA289D50046DAF0 /* RxMoya.framework */,
-				E91355211EA289D50046DAF0 /* RxMoyaGloss.framework */,
-				E91355221EA289D50046DAF0 /* RxSwift.framework */,
-				E91355231EA289D50046DAF0 /* RxTest.framework */,
-				E91355241EA289D50046DAF0 /* Swinject.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E96B181B1E9D403E0029D636 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E9F3C83B1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift */,
-				E96B181E1E9D40760029D636 /* TimelinesTabViewController.swift */,
-				E9F3C83D1EA5575E009BE3E8 /* TimelineViewController.swift */,
-				E96B181C1E9D403E0029D636 /* WindowController.swift */,
-			);
-			name = Controllers;
-			path = "Leviathan-macOS/Source/Classes/Controllers";
-			sourceTree = SOURCE_ROOT;
-		};
-		E971A2501EADC4E300E1F77C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E971A2511EADC51C00E1F77C /* AccountMenu.swift */,
-			);
-			name = Views;
-			path = "Leviathan-iOS/Source/Classes/Views";
-			sourceTree = SOURCE_ROOT;
-		};
-		E984B5E51E98DB0D008DACDC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E984B5E41E98DB0D008DACDC /* Leviathan.app */,
-				E96B17E61E9CDEF00029D636 /* Leviathan.app */,
+				E90B592E290FC89900324E6B /* Leviathan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E984B5E61E98DB0D008DACDC /* Leviathan-macOS */ = {
+		E90B5930290FC89900324E6B /* Leviathan */ = {
 			isa = PBXGroup;
 			children = (
-				E984B5F41E98DC0F008DACDC /* Source */,
-				E984B5F91E98DC26008DACDC /* Resources */,
+				E90B5941290FCBC400324E6B /* Sources */,
+				E90B5935290FC89A00324E6B /* Assets.xcassets */,
+				E90B5937290FC89A00324E6B /* Leviathan.entitlements */,
+				E90B5938290FC89A00324E6B /* Preview Content */,
 			);
-			path = "Leviathan-macOS";
+			path = Leviathan;
 			sourceTree = "<group>";
 		};
-		E984B5F41E98DC0F008DACDC /* Source */ = {
+		E90B5938290FC89A00324E6B /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				E96B18081E9D3AF70029D636 /* Globals+macOS.swift */,
-				E96B18041E9D038F0029D636 /* Images.swift */,
-				E98837D51EE5E833007DCF6C /* OsDependencies.swift */,
-				E984B5F51E98DC0F008DACDC /* Classes */,
+				E90B5939290FC89A00324E6B /* Preview Assets.xcassets */,
 			);
-			path = Source;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E984B5F51E98DC0F008DACDC /* Classes */ = {
+		E90B5941290FCBC400324E6B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E984B5F61E98DC0F008DACDC /* Application */,
-				E96B181B1E9D403E0029D636 /* Controllers */,
+				E90B5942290FCBC400324E6B /* Application */,
+				E90B5944290FCBC400324E6B /* Views */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		E984B5F61E98DC0F008DACDC /* Application */ = {
+		E90B5942290FCBC400324E6B /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E984B5F71E98DC0F008DACDC /* AppDelegate.swift */,
+				E90B5943290FCBC400324E6B /* LeviathanApp.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
 		};
-		E984B5F91E98DC26008DACDC /* Resources */ = {
+		E90B5944290FCBC400324E6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E984B5ED1E98DB0D008DACDC /* Main.storyboard */,
-				E984B5EB1E98DB0D008DACDC /* Assets.xcassets */,
-				E984B5F01E98DB0D008DACDC /* Info.plist */,
+				E90B5945290FCBC400324E6B /* ContentView.swift */,
 			);
-			name = Resources;
-			path = Source;
-			sourceTree = "<group>";
-		};
-		E984B5FA1E98DC7F008DACDC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E96B18141E9D3D3C0029D636 /* iOS */,
-				E96B18131E9D3D220029D636 /* macOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E9F3C83F1EA557E9009BE3E8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E9F3C8401EA5588C009BE3E8 /* TimelineViewController.swift */,
-				E971A2281EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift */,
-				B3C971ED1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift */,
-				B37CECC61EA7692000B5413D /* AccountEditViewController.swift */,
-				B3A60A941EB0680400DD5B6D /* PostNoteViewController.swift */,
-			);
-			path = Controllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E96B17E51E9CDEF00029D636 /* Leviathan-iOS */ = {
+		E90B592D290FC89900324E6B /* Leviathan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E96B17F71E9CDEF00029D636 /* Build configuration list for PBXNativeTarget "Leviathan-iOS" */;
+			buildConfigurationList = E90B593D290FC89A00324E6B /* Build configuration list for PBXNativeTarget "Leviathan" */;
 			buildPhases = (
-				E971A22A1EAB558C00E1F77C /* SwiftGen */,
-				E96B17E21E9CDEF00029D636 /* Sources */,
-				E96B17E31E9CDEF00029D636 /* Frameworks */,
-				E96B17E41E9CDEF00029D636 /* Resources */,
-				E913554C1EA28AC20046DAF0 /* Copy Frameworks */,
-				E95908AE1EBA619E001CDB3A /* Copy Framework Debug Symbols */,
+				E90B592A290FC89900324E6B /* Sources */,
+				E90B592B290FC89900324E6B /* Frameworks */,
+				E90B592C290FC89900324E6B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Leviathan-iOS";
-			productName = "Leviathan-iOS";
-			productReference = E96B17E61E9CDEF00029D636 /* Leviathan.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E984B5E31E98DB0D008DACDC /* Leviathan-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E984B5F31E98DB0D008DACDC /* Build configuration list for PBXNativeTarget "Leviathan-macOS" */;
-			buildPhases = (
-				E96B18031E9D021D0029D636 /* SwiftGen */,
-				E984B5E01E98DB0D008DACDC /* Sources */,
-				E984B5E11E98DB0D008DACDC /* Frameworks */,
-				E984B5E21E98DB0D008DACDC /* Resources */,
-				E91355631EA28BC00046DAF0 /* Copy Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Leviathan-macOS";
-			productName = "Leviathan-macOS";
-			productReference = E984B5E41E98DB0D008DACDC /* Leviathan.app */;
+			name = Leviathan;
+			productName = Leviathan;
+			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E95B2C051E9554F000EDC598 /* Project object */ = {
+		E90B5926290FC89900324E6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					E96B17E51E9CDEF00029D636 = {
-						CreatedOnToolsVersion = 8.3.1;
-						ProvisioningStyle = Automatic;
-					};
-					E984B5E31E98DB0D008DACDC = {
-						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Automatic;
+					E90B592D290FC89900324E6B = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
-			buildConfigurationList = E95B2C081E9554F000EDC598 /* Build configuration list for PBXProject "Leviathan" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = E90B5929290FC89900324E6B /* Build configuration list for PBXProject "Leviathan" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = E95B2C041E9554F000EDC598;
-			productRefGroup = E984B5E51E98DB0D008DACDC /* Products */;
+			mainGroup = E90B5925290FC89900324E6B;
+			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E984B5E31E98DB0D008DACDC /* Leviathan-macOS */,
-				E96B17E51E9CDEF00029D636 /* Leviathan-iOS */,
+				E90B592D290FC89900324E6B /* Leviathan */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E96B17E41E9CDEF00029D636 /* Resources */ = {
+		E90B592C290FC89900324E6B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96B17F51E9CDEF00029D636 /* LaunchScreen.storyboard in Resources */,
-				E96B17F21E9CDEF00029D636 /* Assets.xcassets in Resources */,
-				E96B17F01E9CDEF00029D636 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E984B5E21E98DB0D008DACDC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E984B5EC1E98DB0D008DACDC /* Assets.xcassets in Resources */,
-				E984B5EF1E98DB0D008DACDC /* Main.storyboard in Resources */,
+				E90B593A290FC89A00324E6B /* Preview Assets.xcassets in Resources */,
+				E90B5936290FC89A00324E6B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		E96B18031E9D021D0029D636 /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen images \"$PROJECT_DIR/Leviathan-macOS/Assets.xcassets\" --output \"$PROJECT_DIR/Leviathan-macOS/Source/Images.swift\"\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
-		};
-		E971A22A1EAB558C00E1F77C /* SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftGen;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftgen >/dev/null; then\nswiftgen images -t swift3 \"$PROJECT_DIR/Leviathan-iOS/Assets.xcassets\" --output \"$PROJECT_DIR/Leviathan-iOS/Source/Images.swift\"\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		E96B17E21E9CDEF00029D636 /* Sources */ = {
+		E90B592A290FC89900324E6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95908DE1ED0443B001CDB3A /* TimelineDataSource.swift in Sources */,
-				B316F24E1EB9DAE6004C08F6 /* AccountsPreferencesViewDataSource.swift in Sources */,
-				B3960A941EC5C51200D21AC4 /* AvatarImage.swift in Sources */,
-				E971A2291EA6A8F300E1F77C /* AccountsPreferencesNavigationController.swift in Sources */,
-				B37CECCA1EA77A0C00B5413D /* ReactiveTools.swift in Sources */,
-				E971A2521EADC51C00E1F77C /* AccountMenu.swift in Sources */,
-				B3C971EE1EA61CA400EB1AA3 /* AccountsPreferencesViewController.swift in Sources */,
-				E90E611A1E9E88E500E2DC19 /* Globals.swift in Sources */,
-				E9F3C8411EA5588C009BE3E8 /* TimelineViewController.swift in Sources */,
-				E95908DC1EC8D7D8001CDB3A /* StatusTableViewCell.swift in Sources */,
-				B37CECC71EA7692000B5413D /* AccountEditViewController.swift in Sources */,
-				B3A60A951EB0680400DD5B6D /* PostNoteViewController.swift in Sources */,
-				E9E258951EA69008001E0E71 /* AccountModel.swift in Sources */,
-				E971A22C1EAB55BA00E1F77C /* Images.swift in Sources */,
-				E96B18021E9CFC4C0029D636 /* AppDelegate.swift in Sources */,
-				E971A24C1EAC9DE700E1F77C /* Settings.swift in Sources */,
-				E91355791EA29E040046DAF0 /* Account.swift in Sources */,
-				B3960A971EC5C96200D21AC4 /* OsDependencies.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E984B5E01E98DB0D008DACDC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E96B181F1E9D40760029D636 /* TimelinesTabViewController.swift in Sources */,
-				E9E258941EA69008001E0E71 /* AccountModel.swift in Sources */,
-				E91355781EA29E040046DAF0 /* Account.swift in Sources */,
-				B3960A931EC5C51200D21AC4 /* AvatarImage.swift in Sources */,
-				E98837D61EE5E833007DCF6C /* OsDependencies.swift in Sources */,
-				B37CECC91EA77A0C00B5413D /* ReactiveTools.swift in Sources */,
-				E96B18091E9D3AF70029D636 /* Globals+macOS.swift in Sources */,
-				E90E61191E9E88E500E2DC19 /* Globals.swift in Sources */,
-				E971A24B1EAC9DE700E1F77C /* Settings.swift in Sources */,
-				E984B5F81E98DC0F008DACDC /* AppDelegate.swift in Sources */,
-				E9F3C83E1EA5575E009BE3E8 /* TimelineViewController.swift in Sources */,
-				E96B181D1E9D403E0029D636 /* WindowController.swift in Sources */,
-				E96B18051E9D038F0029D636 /* Images.swift in Sources */,
-				E9F3C83C1EA36D06009BE3E8 /* AccountsPreferencesViewController.swift in Sources */,
+				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
+				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		E96B17EE1E9CDEF00029D636 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E96B17EF1E9CDEF00029D636 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E96B17F31E9CDEF00029D636 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E96B17F41E9CDEF00029D636 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E984B5ED1E98DB0D008DACDC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E984B5EE1E98DB0D008DACDC /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		E95B2C091E9554F000EDC598 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		E95B2C0A1E9554F000EDC598 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		E96B17F81E9CDEF00029D636 /* Debug */ = {
+		E90B593B290FC89A00324E6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -935,54 +221,51 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Leviathan-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
-				PRODUCT_NAME = Leviathan;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		E96B17F91E9CDEF00029D636 /* Release */ = {
+		E90B593C290FC89A00324E6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -990,164 +273,107 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Leviathan-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
-				PRODUCT_NAME = Leviathan;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				VALIDATE_PRODUCT = YES;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		E984B5F11E98DB0D008DACDC /* Debug */ = {
+		E90B593E290FC89A00324E6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Leviathan-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
-				PRODUCT_NAME = Leviathan;
-				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Leviathan/Leviathan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Leviathan/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.Swiftodon.Leviathan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E984B5F21E98DB0D008DACDC /* Release */ = {
+		E90B593F290FC89A00324E6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Leviathan-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.swiftodon.Leviathan;
-				PRODUCT_NAME = Leviathan;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Leviathan/Leviathan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Leviathan/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.Swiftodon.Leviathan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E95B2C081E9554F000EDC598 /* Build configuration list for PBXProject "Leviathan" */ = {
+		E90B5929290FC89900324E6B /* Build configuration list for PBXProject "Leviathan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E95B2C091E9554F000EDC598 /* Debug */,
-				E95B2C0A1E9554F000EDC598 /* Release */,
+				E90B593B290FC89A00324E6B /* Debug */,
+				E90B593C290FC89A00324E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E96B17F71E9CDEF00029D636 /* Build configuration list for PBXNativeTarget "Leviathan-iOS" */ = {
+		E90B593D290FC89A00324E6B /* Build configuration list for PBXNativeTarget "Leviathan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E96B17F81E9CDEF00029D636 /* Debug */,
-				E96B17F91E9CDEF00029D636 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E984B5F31E98DB0D008DACDC /* Build configuration list for PBXNativeTarget "Leviathan-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E984B5F11E98DB0D008DACDC /* Debug */,
-				E984B5F21E98DB0D008DACDC /* Release */,
+				E90B593E290FC89A00324E6B /* Debug */,
+				E90B593F290FC89A00324E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E95B2C051E9554F000EDC598 /* Project object */;
+	rootObject = E90B5926290FC89900324E6B /* Project object */;
 }
