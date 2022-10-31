@@ -1,3 +1,3 @@
 # Leviathan
 
-Leviathan is a iOS and macOS client application for the Mastodon social network.
+Leviathan is an iOS and macOS client application for the Mastodon social network.
