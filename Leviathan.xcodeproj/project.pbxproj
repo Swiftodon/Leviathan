@@ -11,6 +11,13 @@
 		E90B593A290FC89A00324E6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90B5939290FC89A00324E6B /* Preview Assets.xcassets */; };
 		E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5943290FCBC400324E6B /* LeviathanApp.swift */; };
 		E90B5947290FCBC400324E6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5945290FCBC400324E6B /* ContentView.swift */; };
+		E981006B291047F1001F4133 /* MultiplatformTabBar in Frameworks */ = {isa = PBXBuildFile; productRef = E981006A291047F1001F4133 /* MultiplatformTabBar */; };
+		E981006E29105347001F4133 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006D29105347001F4133 /* TimelineModel.swift */; };
+		E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006F2910537B001F4133 /* LocalTimelineModel.swift */; };
+		E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810071291053A5001F4133 /* FederatedTimelineModel.swift */; };
+		E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810073291053D4001F4133 /* NotificationsModel.swift */; };
+		E9810076291054CB001F4133 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810075291054CB001F4133 /* TimelineView.swift */; };
+		E9810078291055C1001F4133 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810077291055C1001F4133 /* NotificationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,12 @@
 		E90B5945290FCBC400324E6B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E90B5948290FCC7000324E6B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E90B5949290FCC7700324E6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E981006D29105347001F4133 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
+		E981006F2910537B001F4133 /* LocalTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTimelineModel.swift; sourceTree = "<group>"; };
+		E9810071291053A5001F4133 /* FederatedTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederatedTimelineModel.swift; sourceTree = "<group>"; };
+		E9810073291053D4001F4133 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		E9810075291054CB001F4133 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		E9810077291055C1001F4133 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E981006B291047F1001F4133 /* MultiplatformTabBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				E90B5942290FCBC400324E6B /* Application */,
+				E981006C29105332001F4133 /* Model */,
 				E90B5944290FCBC400324E6B /* Views */,
 			);
 			path = Sources;
@@ -93,8 +108,21 @@
 			isa = PBXGroup;
 			children = (
 				E90B5945290FCBC400324E6B /* ContentView.swift */,
+				E9810075291054CB001F4133 /* TimelineView.swift */,
+				E9810077291055C1001F4133 /* NotificationsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E981006C29105332001F4133 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E981006D29105347001F4133 /* TimelineModel.swift */,
+				E981006F2910537B001F4133 /* LocalTimelineModel.swift */,
+				E9810071291053A5001F4133 /* FederatedTimelineModel.swift */,
+				E9810073291053D4001F4133 /* NotificationsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +141,9 @@
 			dependencies = (
 			);
 			name = Leviathan;
+			packageProductDependencies = (
+				E981006A291047F1001F4133 /* MultiplatformTabBar */,
+			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +172,9 @@
 				Base,
 			);
 			mainGroup = E90B5925290FC89900324E6B;
+			packageReferences = (
+				E9810069291047F1001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */,
+			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,8 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
+				E9810076291054CB001F4133 /* TimelineView.swift in Sources */,
 				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
+				E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */,
+				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
+				E981006E29105347001F4133 /* TimelineModel.swift in Sources */,
+				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +344,12 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Swiftodon.Leviathan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,12 +381,12 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Swiftodon.Leviathan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -380,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9810069291047F1001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Appracatappra/MultiplatformTabBar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E981006A291047F1001F4133 /* MultiplatformTabBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9810069291047F1001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */;
+			productName = MultiplatformTabBar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E90B5926290FC89900324E6B /* Project object */;
 }

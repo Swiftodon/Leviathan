@@ -18,23 +18,48 @@
 //  limitations under the License.
 //
 
+import MultiplatformTabBar
 import SwiftUI
 
 struct ContentView: View {
+  
+  // MARK: - Public Properties
+  
   var body: some View {
-    
-    VStack {
-      Image(systemName: "globe")
-        .imageScale(.large)
-        .foregroundColor(.accentColor)
-      Text("Hello, world!")
-    }
-    .padding()
+    MultiplatformTabBar(tabPosition: .bottom, barHorizontalAlignment: .center)
+      .tab(title: "Timeline", icon: Image(systemName: "clock")) {
+        TimelineView(title: "Timeline", model: timelineModel)
+      }
+      .tab(title: "Local", icon: Image(systemName: "location.circle")) {
+        TimelineView(title: "Local Timeline", model: localTimelineModel)
+      }
+      .tab(title: "Federated", icon: Image(systemName: "globe")) {
+        TimelineView(title: "Federated Timeline", model: federatedTimelineModel)
+      }
+      .tab(title: "Notifications", icon: Image(systemName: "bell.circle")) {
+        NotificationsView(model: notificationsModel)
+      }
   }
+  
+  
+  // MARK: - Private Properties
+  
+  @EnvironmentObject
+  private var timelineModel: TimelineModel
+  @EnvironmentObject
+  private var localTimelineModel: LocalTimelineModel
+  @EnvironmentObject
+  private var federatedTimelineModel: FederatedTimelineModel
+  @EnvironmentObject
+  private var notificationsModel: NotificationsModel
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .environmentObject(TimelineModel())
+      .environmentObject(LocalTimelineModel())
+      .environmentObject(FederatedTimelineModel())
+      .environmentObject(NotificationsModel())
   }
 }

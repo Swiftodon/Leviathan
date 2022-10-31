@@ -22,9 +22,28 @@ import SwiftUI
 
 @main
 struct LeviathanApp: App {
+  
+  // MARK: - Public Properties
+  
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(timelineModel)
+        .environmentObject(localTimelineModel)
+        .environmentObject(federatedTimelineModel)
+        .environmentObject(notificationsModel)
     }
   }
+  
+  
+  // MARK: - Private Properties
+  
+  @ObservedObject
+  private var timelineModel = TimelineModel()
+  @ObservedObject
+  private var localTimelineModel = LocalTimelineModel()
+  @ObservedObject
+  private var federatedTimelineModel = FederatedTimelineModel()
+  @ObservedObject
+  private var notificationsModel = NotificationsModel()
 }
