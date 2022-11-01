@@ -12,7 +12,9 @@ struct NotificationsView: View {
   // MARK: - Public Properties
   
   var body: some View {
-    Text("Notifications")
+    Header(title: "Notifications") {
+      Text("Notifications")
+    }
   }
   
   @ObservedObject

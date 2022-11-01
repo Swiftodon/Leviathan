@@ -27,16 +27,16 @@ struct ContentView: View {
   
   var body: some View {
     MultiplatformTabBar(tabPosition: .bottom, barHorizontalAlignment: .center)
-      .tab(title: "Timeline", icon: Image(systemName: "clock")) {
+      .tab(icon: Image(systemName: "clock")) {
         TimelineView(title: "Timeline", model: timelineModel)
       }
-      .tab(title: "Local", icon: Image(systemName: "location.circle")) {
+      .tab(icon: Image(systemName: "location.circle")) {
         TimelineView(title: "Local Timeline", model: localTimelineModel)
       }
-      .tab(title: "Federated", icon: Image(systemName: "globe")) {
+      .tab(icon: Image(systemName: "globe")) {
         TimelineView(title: "Federated Timeline", model: federatedTimelineModel)
       }
-      .tab(title: "Notifications", icon: Image(systemName: "bell.circle")) {
+      .tab(icon: Image(systemName: "bell.circle")) {
         NotificationsView(model: notificationsModel)
       }
   }

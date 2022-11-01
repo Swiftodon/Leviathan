@@ -12,7 +12,9 @@ struct TimelineView: View {
   // MARK: - Public Properties
   
   var body: some View {
-    Text(title)
+    Header(title: title) {
+      Text(title)
+    }
   }
   
   var title: LocalizedStringKey
