@@ -1,8 +1,8 @@
 //
-//  TimelineModel.swift
+//  String+applicationName.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 02.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,10 @@
 //  limitations under the License.
 //
 
+
 import Foundation
 
-class TimelineModel: ObservableObject {
-  
+extension String {
+    static let ApplicationName = "Leviathen"
+    static let ApplicationURI  = "https://github.com/Swiftodon/Leviathan"
 }

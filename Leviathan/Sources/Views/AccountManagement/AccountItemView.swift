@@ -1,8 +1,8 @@
 //
-//  LeviathanApp.swift
+//  AccountItemView.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 02.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,19 +20,21 @@
 
 import SwiftUI
 
-@main
-struct LeviathanApp: App {
+struct AccountItemView: View {
     
     // MARK: - Public Properties
     
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environmentObject(TimelineModel())
-                .environmentObject(LocalTimelineModel())
-                .environmentObject(FederatedTimelineModel())
-                .environmentObject(NotificationsModel())
-                .environmentObject(AccountModel.shared)
-        }
+    var body: some View {
+        Text(account.name).font(.headline)
+            .padding()
+    }
+    
+    @ObservedObject
+    var account: AccountModel.Account
+}
+
+struct AccountItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        AccountItemView(account: .init())
     }
 }

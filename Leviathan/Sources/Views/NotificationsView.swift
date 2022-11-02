@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct NotificationsView: View {
-  
-  // MARK: - Public Properties
-  
-  var body: some View {
-    Header(title: "Notifications") {
-      Text("Notifications")
+    
+    // MARK: - Public Properties
+    
+    var body: some View {
+        Header(title: "Notifications") {
+            Text("Notifications")
+        }
     }
-  }
-  
-  @ObservedObject
-  var model: NotificationsModel
+    
+    @ObservedObject
+    var model: NotificationsModel
 }
 
 struct NotificationsView_Previews: PreviewProvider {
-  static var previews: some View {
-    NotificationsView(model: NotificationsModel())
-  }
+    static var previews: some View {
+        NotificationsView(model: NotificationsModel())
+    }
 }

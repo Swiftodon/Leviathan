@@ -1,8 +1,8 @@
 //
-//  LeviathanApp.swift
+//  View+compatability.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 01.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,21 +18,22 @@
 //  limitations under the License.
 //
 
+#if os(macOS)
+
 import SwiftUI
 
-@main
-struct LeviathanApp: App {
-    
-    // MARK: - Public Properties
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environmentObject(TimelineModel())
-                .environmentObject(LocalTimelineModel())
-                .environmentObject(FederatedTimelineModel())
-                .environmentObject(NotificationsModel())
-                .environmentObject(AccountModel.shared)
-        }
+struct NavigationBarItem {
+    enum TitleDisplayMode {
+        case automatic
+        case inline
+        case large
     }
 }
+
+extension View {
+    func navigationBarTitleDisplayMode(_ displayMode: NavigationBarItem.TitleDisplayMode) -> some View {
+        return self
+    }
+}
+
+#endif

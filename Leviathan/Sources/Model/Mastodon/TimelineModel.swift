@@ -1,5 +1,5 @@
 //
-//  LeviathanApp.swift
+//  TimelineModel.swift
 //  Leviathan
 //
 //  Created by Thomas Bonk on 31.10.22.
@@ -18,21 +18,8 @@
 //  limitations under the License.
 //
 
-import SwiftUI
+import Foundation
 
-@main
-struct LeviathanApp: App {
+class TimelineModel: ObservableObject {
     
-    // MARK: - Public Properties
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environmentObject(TimelineModel())
-                .environmentObject(LocalTimelineModel())
-                .environmentObject(FederatedTimelineModel())
-                .environmentObject(NotificationsModel())
-                .environmentObject(AccountModel.shared)
-        }
-    }
 }

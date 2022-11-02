@@ -19,6 +19,14 @@
 		E9810078291055C1001F4133 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810077291055C1001F4133 /* NotificationsView.swift */; };
 		E981007A29105CBE001F4133 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981007929105CBE001F4133 /* Header.swift */; };
 		E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */ = {isa = PBXBuildFile; productRef = E981007F2911004D001F4133 /* MultiplatformTabBar */; };
+		E981008929117DDE001F4133 /* View+compatability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981008829117DDE001F4133 /* View+compatability.swift */; };
+		E981008C2911D549001F4133 /* MastodonSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E981008B2911D549001F4133 /* MastodonSwift */; };
+		E981008F2911DA37001F4133 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = E981008E2911DA37001F4133 /* Valet */; };
+		E981009329126CEB001F4133 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981009229126CEB001F4133 /* AccountModel.swift */; };
+		E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB729127E9500323B78 /* String+applicationName.swift */; };
+		E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB92912846500323B78 /* AccountManagementView.swift */; };
+		E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBC2912B53400323B78 /* AccountItemView.swift */; };
+		E9914EBF2912B83200323B78 /* AccountDetailEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBE2912B83200323B78 /* AccountDetailEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,12 @@
 		E9810077291055C1001F4133 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		E981007929105CBE001F4133 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		E981008129110280001F4133 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E981008829117DDE001F4133 /* View+compatability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+compatability.swift"; sourceTree = "<group>"; };
+		E981009229126CEB001F4133 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		E9914EB729127E9500323B78 /* String+applicationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+applicationName.swift"; sourceTree = "<group>"; };
+		E9914EB92912846500323B78 /* AccountManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementView.swift; sourceTree = "<group>"; };
+		E9914EBC2912B53400323B78 /* AccountItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItemView.swift; sourceTree = "<group>"; };
+		E9914EBE2912B83200323B78 /* AccountDetailEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E981008F2911DA37001F4133 /* Valet in Frameworks */,
 				E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */,
+				E981008C2911D549001F4133 /* MastodonSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				E90B5942290FCBC400324E6B /* Application */,
+				E981008629117DAA001F4133 /* Extensions */,
 				E981006C29105332001F4133 /* Model */,
 				E90B5944290FCBC400324E6B /* Views */,
 			);
@@ -111,6 +128,7 @@
 		E90B5944290FCBC400324E6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E9914EBB2912846900323B78 /* AccountManagement */,
 				E90B5945290FCBC400324E6B /* ContentView.swift */,
 				E9810075291054CB001F4133 /* TimelineView.swift */,
 				E9810077291055C1001F4133 /* NotificationsView.swift */,
@@ -122,12 +140,56 @@
 		E981006C29105332001F4133 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E981009229126CEB001F4133 /* AccountModel.swift */,
+				E9914EB229127DFA00323B78 /* Mastodon */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E981008629117DAA001F4133 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9914EB629127E7E00323B78 /* Foundation */,
+				E981008729117DB4001F4133 /* SwiftUI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E981008729117DB4001F4133 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				E981008829117DDE001F4133 /* View+compatability.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		E9914EB229127DFA00323B78 /* Mastodon */ = {
+			isa = PBXGroup;
+			children = (
 				E981006D29105347001F4133 /* TimelineModel.swift */,
 				E981006F2910537B001F4133 /* LocalTimelineModel.swift */,
 				E9810071291053A5001F4133 /* FederatedTimelineModel.swift */,
 				E9810073291053D4001F4133 /* NotificationsModel.swift */,
 			);
-			path = Model;
+			path = Mastodon;
+			sourceTree = "<group>";
+		};
+		E9914EB629127E7E00323B78 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				E9914EB729127E9500323B78 /* String+applicationName.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		E9914EBB2912846900323B78 /* AccountManagement */ = {
+			isa = PBXGroup;
+			children = (
+				E9914EB92912846500323B78 /* AccountManagementView.swift */,
+				E9914EBC2912B53400323B78 /* AccountItemView.swift */,
+				E9914EBE2912B83200323B78 /* AccountDetailEditorView.swift */,
+			);
+			path = AccountManagement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +210,8 @@
 			name = Leviathan;
 			packageProductDependencies = (
 				E981007F2911004D001F4133 /* MultiplatformTabBar */,
+				E981008B2911D549001F4133 /* MastodonSwift */,
+				E981008E2911DA37001F4133 /* Valet */,
 			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
@@ -179,6 +243,8 @@
 			mainGroup = E90B5925290FC89900324E6B;
 			packageReferences = (
 				E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */,
+				E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */,
+				E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */,
 			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
@@ -211,9 +277,15 @@
 				E9810076291054CB001F4133 /* TimelineView.swift in Sources */,
 				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
+				E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */,
+				E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */,
 				E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */,
 				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
+				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
+				E9914EBF2912B83200323B78 /* AccountDetailEditorView.swift in Sources */,
 				E981006E29105347001F4133 /* TimelineModel.swift in Sources */,
+				E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */,
+				E981009329126CEB001F4133 /* AccountModel.swift in Sources */,
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Leviathan/Preview Content\"";
+				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
@@ -376,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Leviathan/Preview Content\"";
+				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
@@ -436,6 +510,22 @@
 				kind = branch;
 			};
 		};
+		E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swiftodon/Mastodon.swift/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+		E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/square/Valet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -443,6 +533,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */;
 			productName = MultiplatformTabBar;
+		};
+		E981008B2911D549001F4133 /* MastodonSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */;
+			productName = MastodonSwift;
+		};
+		E981008E2911DA37001F4133 /* Valet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */;
+			productName = Valet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
