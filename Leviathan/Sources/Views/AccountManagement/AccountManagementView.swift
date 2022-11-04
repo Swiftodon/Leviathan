@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+import SwiftletUtilities
 import SwiftUI
 
 struct AccountManagementView: View {
@@ -25,7 +26,7 @@ struct AccountManagementView: View {
     // MARK: - Public Properties
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List(selection: $selectedAccount) {
                 ForEach(accountModel.accounts, id: \.id) { account in
                     NavigationLink {
@@ -36,8 +37,8 @@ struct AccountManagementView: View {
                     .tag(account.id)
                 }
             }
-            .listStyle(.sidebar)
             .navigationTitle("Accounts")
+            .listStyle(.sidebar)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button { accountModel.add(account: .init()) } label: { Text("Add") }
@@ -50,16 +51,26 @@ struct AccountManagementView: View {
                 }
             }
         }
-        .frame(minWidth: 400, minHeight: 500)
+        .frame(minWidth: size.width, minHeight: size.height)
         .onAppear {
             if !accountModel.accounts.isEmpty {
-                selectedAccount = accountModel.accounts[0].id
+                DispatchQueue.main.async {
+                    selectedAccount = accountModel.accounts[0].id
+                }
             }
         }
     }
     
     
     // MARK: - Private Properties
+    
+    private var size: CGSize {
+        if HardwareInformation.isMac || HardwareInformation.isPad {
+            return CGSize(width: 600, height: 500)
+        } else {
+            return CGSize(width: 400, height: 500)
+        }
+    }
     
     @Environment(\.dismiss)
     private var dismiss

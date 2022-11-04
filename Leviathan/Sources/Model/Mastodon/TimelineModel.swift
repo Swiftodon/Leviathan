@@ -18,8 +18,25 @@
 //  limitations under the License.
 //
 
+import MastodonSwift
 import Foundation
 
 class TimelineModel: ObservableObject {
     
+    // MARK: - Public Properties
+    
+    @Published
+    public var timeline: [Status] = []
+    
+    
+    // MARK: - Public Methods
+    
+    func readTimeline() async throws {
+        guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline() else {
+            self.timeline = []
+            return
+        }
+        
+        self.timeline = timeline
+    }
 }

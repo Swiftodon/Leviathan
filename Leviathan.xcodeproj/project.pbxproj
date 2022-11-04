@@ -27,6 +27,7 @@
 		E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB92912846500323B78 /* AccountManagementView.swift */; };
 		E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBC2912B53400323B78 /* AccountItemView.swift */; };
 		E9914EBF2912B83200323B78 /* AccountDetailEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBE2912B83200323B78 /* AccountDetailEditorView.swift */; };
+		E9914EC42915123200323B78 /* SwiftletUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = E9914EC32915123200323B78 /* SwiftletUtilities */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 				E981008F2911DA37001F4133 /* Valet in Frameworks */,
 				E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */,
 				E981008C2911D549001F4133 /* MastodonSwift in Frameworks */,
+				E9914EC42915123200323B78 /* SwiftletUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +214,7 @@
 				E981007F2911004D001F4133 /* MultiplatformTabBar */,
 				E981008B2911D549001F4133 /* MastodonSwift */,
 				E981008E2911DA37001F4133 /* Valet */,
+				E9914EC32915123200323B78 /* SwiftletUtilities */,
 			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
@@ -245,6 +248,7 @@
 				E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */,
 				E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */,
 				E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */,
+				E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */,
 			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
@@ -526,6 +530,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Appracatappra/SwiftletUtilities";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -543,6 +555,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */;
 			productName = Valet;
+		};
+		E9914EC32915123200323B78 /* SwiftletUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */;
+			productName = SwiftletUtilities;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -28,14 +28,22 @@ struct AccountDetailEditorView: View {
         VStack {
             Form {
                 TextField("Account Name:", text: $account.name, prompt: Text("Account Name"))
+                    .keyboardType(.default)
+                    .fixedSize()
                 TextField("Mastodon Server URL:", text: $account.serverUrl, prompt: Text("Mastodon Server URL"))
+                    .keyboardType(.URL)
+                    .fixedSize()
                 TextField("Email:", text: $account.email, prompt: Text("Email Address"))
+                    .keyboardType(.emailAddress)
+                    .fixedSize()
                 SecureField("Password", text: $account.password, prompt: Text("Password"))
+                    .keyboardType(.default)
             }
             Spacer()
         }
         .padding()
         .navigationTitle(account.name)
+        .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
         .toolbar {
             if let _ = account.accessToken {
                 Button(action: disconnect, label: { Text("Disconnect") })

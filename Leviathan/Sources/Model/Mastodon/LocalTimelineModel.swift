@@ -21,5 +21,15 @@
 import Foundation
 
 class LocalTimelineModel: TimelineModel {
+    
+    // MARK: - Public Methods
   
+    override func readTimeline() async throws {
+        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline() else {
+            self.timeline = []
+            return
+        }
+        
+        self.timeline = timeline
+    }
 }

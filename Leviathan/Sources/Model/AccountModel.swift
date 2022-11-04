@@ -41,6 +41,26 @@ class AccountModel: ObservableObject {
         didSet { saveAccounts() }
     }
     
+    @Published
+    public var currentAccount: Account? {
+        didSet {
+            guard let currentAccount else {
+                auth = nil
+                return
+            }
+            
+            Task {
+                if currentAccount.accessToken == nil {
+                    try await currentAccount.connect()
+                }
+                
+                let client = MastodonClient(baseURL: URL(string: currentAccount.serverUrl)!)
+                auth = client.getAuthenticated(token: currentAccount.accessToken!.token)
+            }
+        }
+    }
+    public private(set) var auth: MastodonClientAuthenticated?
+    
     
     // MARK: - Private Properties
     
@@ -66,7 +86,7 @@ class AccountModel: ObservableObject {
     }
     
     
-    // MARK: - Manage Connected Servers
+    // MARK: - Manage Accounts
     
     public func add(account: Account) {
         accounts.append(account)
@@ -99,8 +119,10 @@ class AccountModel: ObservableObject {
     }
     
     private func saveAccounts() {
-        if let data = try? JSONEncoder().encode(accounts) {
-            try? valet.setObject(data, forKey: .Accounts)
+        DispatchQueue.global(qos: .background).async {
+            if let data = try? JSONEncoder().encode(self.accounts) {
+                try? self.valet.setObject(data, forKey: .Accounts)
+            }
         }
     }
     
@@ -204,26 +226,28 @@ class AccountModel: ObservableObject {
 extension AccountModel.Account {
     func connect() async throws {
         let client = MastodonClient(baseURL: URL(string: self.serverUrl)!)
+        var app: App! = self.app
+        var accessToken: AccessToken! = self.accessToken
         
-        if self.app == nil {
-            let app =  try await client.createApp(
+        if app == nil {
+            app =  try await client.createApp(
                 named: .ApplicationName,
                 scopes: ["read", "write", "follow"],
                 website: URL(string: .ApplicationURI)!)
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [app] in
                 self.app = app
             }
         }
         
-        if self.accessToken == nil {
-            let accessToken = try await client.getToken(
-                withApp: self.app!,
+        if accessToken == nil {
+            accessToken = try await client.getToken(
+                withApp: app,
                 username: self.email,
                 password: self.password,
                 scope: ["read", "write", "follow"])
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [accessToken] in
                 self.accessToken = accessToken
             }
         }

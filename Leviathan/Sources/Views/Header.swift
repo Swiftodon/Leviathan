@@ -35,8 +35,18 @@ struct Header<Content>: View where Content: View {
                 .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
-                        Button {
-                            
+                        Menu {
+                            if accountModel.accounts.isEmpty {
+                                Text("No accounts configured")
+                            } else {
+                                ForEach(accountModel.accounts, id: \.id) { account in
+                                    Button {
+                                        accountModel.currentAccount = account
+                                    } label: {
+                                        Text(account.name)
+                                    }
+                                }
+                            }
                         } label: {
                             // TODO: Use the image of the user here
                             Image(systemName: "person.circle")
@@ -60,6 +70,9 @@ struct Header<Content>: View where Content: View {
         }
     }
     
+    var title: LocalizedStringKey
+    var content: () -> Content
+    
     
     // MARK: - Initialization
     
@@ -68,8 +81,11 @@ struct Header<Content>: View where Content: View {
         self.content = content
     }
     
-    var title: LocalizedStringKey
-    var content: () -> Content
+    
+    // MARK: - Private Properties
+    
+    @EnvironmentObject
+    private var accountModel: AccountModel
 }
 
 struct Header_Previews: PreviewProvider {

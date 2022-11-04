@@ -50,7 +50,7 @@ struct ContentView: View {
                 showAccountManagementSheet.toggle()
             }
             .sheet(isPresented: $showAccountManagementSheet) { AccountManagementView() }
-        /*
+        /* TODO: 
             .onAppear {
                 let client = MastodonClient(baseURL: URL(string: "https://mastodon.online")!)
                 
