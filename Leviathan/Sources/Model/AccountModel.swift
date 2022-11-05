@@ -54,7 +54,7 @@ class AccountModel: ObservableObject {
                     do {
                         try await currentAccount.connect()
                     } catch {
-                        Alert(type: .error(error), message: "Can't authenticate you!", duration: 5).show()
+                        ToastView.Toast(type: .error, message: "You can't be authenticate!", error: error).show()
                     }
                 }
                 

@@ -94,10 +94,10 @@ struct TimelineView: View {
             if let _ = AccountModel.shared.auth {
                 try await model.readTimeline()
             } else {
-                Alert(type: .warning, message: "You are not logged in, can't update your timeline.").show()
+                ToastView.Toast(type: .warning, message: "You are not logged in. Can't update your timeline.").show()
             }
         } catch {
-            Alert(type: .error(error), message: "Error while loading the timeline.").show()
+            ToastView.Toast(type: .error, message: "An error occured while loading your timeline.", error: error).show()
         }
     }
 }

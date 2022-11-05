@@ -15,7 +15,6 @@
 		E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */; };
 		E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BF29156D0600FC0BA0 /* Status+images.swift */; };
 		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
-		E91CC3C729164E2B00FC0BA0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C629164E2B00FC0BA0 /* Alert.swift */; };
 		E91CC3CA291651A800FC0BA0 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = E91CC3C9291651A800FC0BA0 /* AlertToast */; };
 		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
 		E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CF291681F600FC0BA0 /* Status+actions.swift */; };
@@ -32,6 +31,7 @@
 		E981008F2911DA37001F4133 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = E981008E2911DA37001F4133 /* Valet */; };
 		E981009329126CEB001F4133 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981009229126CEB001F4133 /* AccountModel.swift */; };
 		E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597EF291688DF003C5187 /* StatusOperationProvider.swift */; };
+		E98597F22916AAC2003C5187 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597F12916AAC2003C5187 /* ToastView.swift */; };
 		E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB729127E9500323B78 /* String+applicationName.swift */; };
 		E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB92912846500323B78 /* AccountManagementView.swift */; };
 		E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBC2912B53400323B78 /* AccountItemView.swift */; };
@@ -52,7 +52,6 @@
 		E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		E91CC3BF29156D0600FC0BA0 /* Status+images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+images.swift"; sourceTree = "<group>"; };
 		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
-		E91CC3C629164E2B00FC0BA0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
 		E91CC3CF291681F600FC0BA0 /* Status+actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+actions.swift"; sourceTree = "<group>"; };
 		E981006D29105347001F4133 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		E981008829117DDE001F4133 /* View+compatability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+compatability.swift"; sourceTree = "<group>"; };
 		E981009229126CEB001F4133 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		E98597EF291688DF003C5187 /* StatusOperationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOperationProvider.swift; sourceTree = "<group>"; };
+		E98597F12916AAC2003C5187 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		E9914EB729127E9500323B78 /* String+applicationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+applicationName.swift"; sourceTree = "<group>"; };
 		E9914EB92912846500323B78 /* AccountManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementView.swift; sourceTree = "<group>"; };
 		E9914EBC2912B53400323B78 /* AccountItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItemView.swift; sourceTree = "<group>"; };
@@ -153,6 +153,7 @@
 				E90B5945290FCBC400324E6B /* ContentView.swift */,
 				E9810077291055C1001F4133 /* NotificationsView.swift */,
 				E981007929105CBE001F4133 /* Header.swift */,
+				E98597F12916AAC2003C5187 /* ToastView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,7 +188,6 @@
 		E981006C29105332001F4133 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E91CC3C629164E2B00FC0BA0 /* Alert.swift */,
 				E981009229126CEB001F4133 /* AccountModel.swift */,
 				E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */,
 				E9914EB229127DFA00323B78 /* Mastodon */,
@@ -344,12 +344,12 @@
 				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
 				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
 				E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */,
+				E98597F22916AAC2003C5187 /* ToastView.swift in Sources */,
 				E9914EBF2912B83200323B78 /* AccountDetailEditorView.swift in Sources */,
 				E981006E29105347001F4133 /* TimelineModel.swift in Sources */,
 				E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */,
 				E981009329126CEB001F4133 /* AccountModel.swift in Sources */,
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
-				E91CC3C729164E2B00FC0BA0 /* Alert.swift in Sources */,
 				E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

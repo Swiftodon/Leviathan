@@ -64,7 +64,7 @@ struct AccountDetailEditorView: View {
             do {
                 try await account.connect()
             } catch {
-                Alert(type: .error(error), message: "Can't authenticate you!").show()
+                ToastView.Toast(type: .error, message: "You can't be authenticate!", error: error).show()
             }
         }
     }

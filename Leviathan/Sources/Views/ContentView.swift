@@ -50,23 +50,9 @@ struct ContentView: View {
             .onReceive(NotificationCenter.default.publisher(for: .ShowServerConfiguration)) { _ in
                 showAccountManagementSheet.toggle()
             }
-            .onReceive(NotificationCenter.default.publisher(for: .ShowAlert), perform: triggerAlert)
+            .onReceive(NotificationCenter.default.publisher(for: .ShowToast), perform: triggerAlert)
             .sheet(isPresented: $showAccountManagementSheet) { AccountManagementView() }
-            .toast(isPresenting: $showAlert, duration: Double(currentAlert?.duration ?? 2), tapToDismiss: true) {
-                if let currentAlert {
-                    return currentAlert.toast()
-                } else {
-                    return AlertToast(type: .regular, subTitle: "The king is dead, long live the king!")
-                }
-            } onTap: {
-                if let currentAlert {
-                    currentAlert.onTap?(currentAlert)
-                }
-            } completion: {
-                if let currentAlert {
-                    currentAlert.completion?(currentAlert)
-                }
-            }
+            .toastView(toast: $currentToast)
         /* TODO: 
             .onAppear {
                 let client = MastodonClient(baseURL: URL(string: "https://mastodon.online")!)
@@ -91,9 +77,7 @@ struct ContentView: View {
     @State
     private var showAccountManagementSheet = false
     @State
-    private var currentAlert: Alert?
-    @State
-    private var showAlert = false
+    private var currentToast: ToastView.Toast? = nil
     
     @EnvironmentObject
     private var timelineModel: TimelineModel
@@ -108,8 +92,7 @@ struct ContentView: View {
     // MARK: - Private Methods
     
     private func triggerAlert(_ notification: Foundation.Notification) {
-        currentAlert = (notification.object as! Alert)
-        showAlert.toggle()
+        currentToast = (notification.object as! ToastView.Toast)
     }
 }
 
