@@ -21,37 +21,40 @@
 import MastodonSwift
 import Foundation
 
+fileprivate var dateFormatter: ISO8601DateFormatter = {
+    let dateFormatter = ISO8601DateFormatter()
+    dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+    
+    return dateFormatter
+}()
+
 extension Status {
+    var timestamp: Date {
+        return dateFormatter.date(from: self.createdAt)!
+    }
+    
     var createdAtRelative: String {
-        let dateFormatter = ISO8601DateFormatter()
-        dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        var difference = timestamp.distance(to: Date())
         
-        if let createdAt = dateFormatter.date(from: self.createdAt) {
-            var difference = createdAt.distance(to: Date())
-            
-            if difference < 60 {
-                return "just now"
-            }
-            
-            difference = difference / 60
-            if difference < 60 {
-                return "\(Int(difference)) min ago"
-            }
-            
-            difference = difference / 60
-            if difference < 24 {
-                if Int(difference) < 2 {
-                    return "\(Int(difference)) hour ago"
-                } else {
-                    return "\(Int(difference)) hours ago"
-                }
-            }
-            
-            difference = difference / 24
-            return "\(Int(difference)) days ago"
-            
+        if difference < 60 {
+            return "just now"
         }
         
-        return "???"
+        difference = difference / 60
+        if difference < 60 {
+            return "\(Int(difference)) min ago"
+        }
+        
+        difference = difference / 60
+        if difference < 24 {
+            if Int(difference) < 2 {
+                return "\(Int(difference)) hour ago"
+            } else {
+                return "\(Int(difference)) hours ago"
+            }
+        }
+        
+        difference = difference / 24
+        return "\(Int(difference)) days ago"
     }
 }
