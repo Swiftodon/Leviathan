@@ -49,6 +49,7 @@ struct AccountDetailEditorView: View {
                 Button(action: disconnect, label: { Text("Disconnect") })
             } else {
                 Button(action: connect, label: { Text("Connect") })
+                    .disabled(!account.isReadyToConnect)
             }
         }
     }
