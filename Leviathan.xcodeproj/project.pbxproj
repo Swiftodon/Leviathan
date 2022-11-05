@@ -11,6 +11,13 @@
 		E90B593A290FC89A00324E6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90B5939290FC89A00324E6B /* Preview Assets.xcassets */; };
 		E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5943290FCBC400324E6B /* LeviathanApp.swift */; };
 		E90B5947290FCBC400324E6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5945290FCBC400324E6B /* ContentView.swift */; };
+		E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3B9291551E400FC0BA0 /* StatusView.swift */; };
+		E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */; };
+		E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BF29156D0600FC0BA0 /* Status+images.swift */; };
+		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
+		E91CC3C729164E2B00FC0BA0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C629164E2B00FC0BA0 /* Alert.swift */; };
+		E91CC3CA291651A800FC0BA0 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = E91CC3C9291651A800FC0BA0 /* AlertToast */; };
+		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
 		E981006E29105347001F4133 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006D29105347001F4133 /* TimelineModel.swift */; };
 		E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006F2910537B001F4133 /* LocalTimelineModel.swift */; };
 		E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810071291053A5001F4133 /* FederatedTimelineModel.swift */; };
@@ -39,6 +46,12 @@
 		E90B5945290FCBC400324E6B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E90B5948290FCC7000324E6B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E90B5949290FCC7700324E6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E91CC3B9291551E400FC0BA0 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		E91CC3BF29156D0600FC0BA0 /* Status+images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+images.swift"; sourceTree = "<group>"; };
+		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
+		E91CC3C629164E2B00FC0BA0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
 		E981006D29105347001F4133 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
 		E981006F2910537B001F4133 /* LocalTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTimelineModel.swift; sourceTree = "<group>"; };
 		E9810071291053A5001F4133 /* FederatedTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederatedTimelineModel.swift; sourceTree = "<group>"; };
@@ -63,6 +76,7 @@
 				E981008F2911DA37001F4133 /* Valet in Frameworks */,
 				E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */,
 				E981008C2911D549001F4133 /* MastodonSwift in Frameworks */,
+				E91CC3CA291651A800FC0BA0 /* AlertToast in Frameworks */,
 				E9914EC42915123200323B78 /* SwiftletUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,18 +145,46 @@
 			isa = PBXGroup;
 			children = (
 				E9914EBB2912846900323B78 /* AccountManagement */,
+				E91CC3B8291551C700FC0BA0 /* Timeline */,
 				E90B5945290FCBC400324E6B /* ContentView.swift */,
-				E9810075291054CB001F4133 /* TimelineView.swift */,
 				E9810077291055C1001F4133 /* NotificationsView.swift */,
 				E981007929105CBE001F4133 /* Header.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E91CC3B8291551C700FC0BA0 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				E9810075291054CB001F4133 /* TimelineView.swift */,
+				E91CC3B9291551E400FC0BA0 /* StatusView.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		E91CC3BD29156CD100FC0BA0 /* Mastodon.swift */ = {
+			isa = PBXGroup;
+			children = (
+				E91CC3BE29156CE900FC0BA0 /* Entities */,
+			);
+			path = Mastodon.swift;
+			sourceTree = "<group>";
+		};
+		E91CC3BE29156CE900FC0BA0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E91CC3BF29156D0600FC0BA0 /* Status+images.swift */,
+				E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		E981006C29105332001F4133 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E91CC3C629164E2B00FC0BA0 /* Alert.swift */,
 				E981009229126CEB001F4133 /* AccountModel.swift */,
+				E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */,
 				E9914EB229127DFA00323B78 /* Mastodon */,
 			);
 			path = Model;
@@ -152,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E9914EB629127E7E00323B78 /* Foundation */,
+				E91CC3BD29156CD100FC0BA0 /* Mastodon.swift */,
 				E981008729117DB4001F4133 /* SwiftUI */,
 			);
 			path = Extensions;
@@ -180,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				E9914EB729127E9500323B78 /* String+applicationName.swift */,
+				E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -215,6 +259,7 @@
 				E981008B2911D549001F4133 /* MastodonSwift */,
 				E981008E2911DA37001F4133 /* Valet */,
 				E9914EC32915123200323B78 /* SwiftletUtilities */,
+				E91CC3C9291651A800FC0BA0 /* AlertToast */,
 			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
@@ -249,6 +294,7 @@
 				E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */,
 				E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */,
 				E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */,
+				E91CC3C8291651A800FC0BA0 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
@@ -278,19 +324,25 @@
 			files = (
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
 				E981007A29105CBE001F4133 /* Header.swift in Sources */,
+				E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */,
 				E9810076291054CB001F4133 /* TimelineView.swift in Sources */,
+				E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */,
 				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
 				E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */,
+				E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */,
 				E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */,
 				E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */,
 				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
 				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
+				E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */,
 				E9914EBF2912B83200323B78 /* AccountDetailEditorView.swift in Sources */,
 				E981006E29105347001F4133 /* TimelineModel.swift in Sources */,
 				E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */,
 				E981009329126CEB001F4133 /* AccountModel.swift in Sources */,
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
+				E91CC3C729164E2B00FC0BA0 /* Alert.swift in Sources */,
+				E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +558,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E91CC3C8291651A800FC0BA0 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/MultiplatformTabBar";
@@ -518,8 +578,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/Mastodon.swift/";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.1;
+				branch = main;
+				kind = branch;
 			};
 		};
 		E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */ = {
@@ -541,6 +601,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E91CC3C9291651A800FC0BA0 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E91CC3C8291651A800FC0BA0 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
 		E981007F2911004D001F4133 /* MultiplatformTabBar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */;

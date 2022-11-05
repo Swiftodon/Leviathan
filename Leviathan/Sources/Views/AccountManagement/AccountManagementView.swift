@@ -54,7 +54,7 @@ struct AccountManagementView: View {
         .frame(minWidth: size.width, minHeight: size.height)
         .onAppear {
             if !accountModel.accounts.isEmpty {
-                DispatchQueue.main.async {
+                update {
                     selectedAccount = accountModel.accounts[0].id
                 }
             }

@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+import AlertToast
 import MastodonSwift
 import MultiplatformTabBar
 import SwiftUI
@@ -49,7 +50,23 @@ struct ContentView: View {
             .onReceive(NotificationCenter.default.publisher(for: .ShowServerConfiguration)) { _ in
                 showAccountManagementSheet.toggle()
             }
+            .onReceive(NotificationCenter.default.publisher(for: .ShowAlert), perform: triggerAlert)
             .sheet(isPresented: $showAccountManagementSheet) { AccountManagementView() }
+            .toast(isPresenting: $showAlert, duration: Double(currentAlert?.duration ?? 2), tapToDismiss: true) {
+                if let currentAlert {
+                    return currentAlert.toast()
+                } else {
+                    return AlertToast(type: .regular, subTitle: "The king is dead, long live the king!")
+                }
+            } onTap: {
+                if let currentAlert {
+                    currentAlert.onTap?(currentAlert)
+                }
+            } completion: {
+                if let currentAlert {
+                    currentAlert.completion?(currentAlert)
+                }
+            }
         /* TODO: 
             .onAppear {
                 let client = MastodonClient(baseURL: URL(string: "https://mastodon.online")!)
@@ -73,6 +90,10 @@ struct ContentView: View {
     
     @State
     private var showAccountManagementSheet = false
+    @State
+    private var currentAlert: Alert?
+    @State
+    private var showAlert = false
     
     @EnvironmentObject
     private var timelineModel: TimelineModel
@@ -82,6 +103,14 @@ struct ContentView: View {
     private var federatedTimelineModel: FederatedTimelineModel
     @EnvironmentObject
     private var notificationsModel: NotificationsModel
+    
+    
+    // MARK: - Private Methods
+    
+    private func triggerAlert(_ notification: Foundation.Notification) {
+        currentAlert = (notification.object as! Alert)
+        showAlert.toggle()
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

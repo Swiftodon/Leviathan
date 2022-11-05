@@ -27,16 +27,29 @@ class TimelineModel: ObservableObject {
     
     @Published
     public var timeline: [Status] = []
+    @Published
+    public var isLoading = false
     
     
     // MARK: - Public Methods
     
     func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline() else {
+        let sinceId: StatusId? = !timeline.isEmpty ? timeline[0].id : nil
+        
+        update { self.isLoading = true }
+        defer {
+            update { self.isLoading = false }
+        }
+        
+        guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: sinceId) else {
             self.timeline = []
             return
         }
         
-        self.timeline = timeline
+        update { [timeline] in
+            if !timeline.isEmpty {
+                self.timeline.insert(contentsOf: timeline, at: 0)
+            }
+        }
     }
 }

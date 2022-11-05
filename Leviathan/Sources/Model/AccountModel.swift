@@ -105,7 +105,7 @@ class AccountModel: ObservableObject {
     
     private func subscribe(toChangesOf account: Account) {
         let cancellable = account.objectWillChange.sink { _ in
-            DispatchQueue.main.async {
+            update  {
                 self.saveAccounts()
             }
         }
@@ -235,7 +235,7 @@ extension AccountModel.Account {
                 scopes: ["read", "write", "follow"],
                 website: URL(string: .ApplicationURI)!)
             
-            DispatchQueue.main.async { [app] in
+            update { [app] in
                 self.app = app
             }
         }
@@ -247,7 +247,7 @@ extension AccountModel.Account {
                 password: self.password,
                 scope: ["read", "write", "follow"])
             
-            DispatchQueue.main.async { [accessToken] in
+            update { [accessToken] in
                 self.accessToken = accessToken
             }
         }
