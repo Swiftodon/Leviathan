@@ -50,16 +50,24 @@ class AccountModel: ObservableObject {
             }
             
             Task {
-                if currentAccount.accessToken == nil {
+                guard currentAccount.isReadyToConnect else {
+                    return
+                }
+                
+                guard let url = URL(string: currentAccount.serverUrl) else {
+                    return
+                }
+                
+                if let accessToken =  currentAccount.accessToken {
+                    let client = MastodonClient(baseURL: url)
+                    auth = client.getAuthenticated(token: accessToken.token)
+                } else {
                     do {
                         try await currentAccount.connect()
                     } catch {
                         Alert(type: .error(error), message: "Can't authenticate you!", duration: 5).show()
                     }
                 }
-                
-                let client = MastodonClient(baseURL: URL(string: currentAccount.serverUrl)!)
-                auth = client.getAuthenticated(token: currentAccount.accessToken!.token)
             }
         }
     }
@@ -152,6 +160,9 @@ class AccountModel: ObservableObject {
         @Published
         var accessToken: AccessToken?
         
+        var isReadyToConnect: Bool {
+            !serverUrl.isEmpty && !email.isEmpty && !password.isEmpty
+        }
         
         // MARK: - Initialization
         
@@ -162,7 +173,6 @@ class AccountModel: ObservableObject {
             email = ""
             password = ""
         }
-        
         
         // MARK: - Encodable / Decodable
         
@@ -229,7 +239,12 @@ class AccountModel: ObservableObject {
 
 extension AccountModel.Account {
     func connect() async throws {
-        let client = MastodonClient(baseURL: URL(string: self.serverUrl)!)
+        guard
+            let url = URL(string: self.serverUrl)
+        else {
+            return
+        }
+        let client = MastodonClient(baseURL: url)
         var app: App! = self.app
         var accessToken: AccessToken! = self.accessToken
         
