@@ -21,7 +21,7 @@
 import MastodonSwift
 import Foundation
 
-class TimelineModel: ObservableObject {
+class TimelineModel: ObservableObject, StatusOperationProvider {
     
     // MARK: - Public Properties
     
@@ -51,5 +51,18 @@ class TimelineModel: ObservableObject {
                 self.timeline.insert(contentsOf: timeline, at: 0)
             }
         }
+    }
+    
+    
+    // MARK: - StatusOperationProvider
+    
+    func boost(status: MastodonSwift.Status) async throws {
+        if let _ = try await status.boost() {
+            try await readTimeline()
+        }
+    }
+    
+    func unboost(status: MastodonSwift.Status) async throws {
+        
     }
 }

@@ -18,6 +18,7 @@
 		E91CC3C729164E2B00FC0BA0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C629164E2B00FC0BA0 /* Alert.swift */; };
 		E91CC3CA291651A800FC0BA0 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = E91CC3C9291651A800FC0BA0 /* AlertToast */; };
 		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
+		E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CF291681F600FC0BA0 /* Status+actions.swift */; };
 		E981006E29105347001F4133 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006D29105347001F4133 /* TimelineModel.swift */; };
 		E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006F2910537B001F4133 /* LocalTimelineModel.swift */; };
 		E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9810071291053A5001F4133 /* FederatedTimelineModel.swift */; };
@@ -30,6 +31,7 @@
 		E981008C2911D549001F4133 /* MastodonSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E981008B2911D549001F4133 /* MastodonSwift */; };
 		E981008F2911DA37001F4133 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = E981008E2911DA37001F4133 /* Valet */; };
 		E981009329126CEB001F4133 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981009229126CEB001F4133 /* AccountModel.swift */; };
+		E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597EF291688DF003C5187 /* StatusOperationProvider.swift */; };
 		E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB729127E9500323B78 /* String+applicationName.swift */; };
 		E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB92912846500323B78 /* AccountManagementView.swift */; };
 		E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBC2912B53400323B78 /* AccountItemView.swift */; };
@@ -52,6 +54,7 @@
 		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
 		E91CC3C629164E2B00FC0BA0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
+		E91CC3CF291681F600FC0BA0 /* Status+actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+actions.swift"; sourceTree = "<group>"; };
 		E981006D29105347001F4133 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
 		E981006F2910537B001F4133 /* LocalTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTimelineModel.swift; sourceTree = "<group>"; };
 		E9810071291053A5001F4133 /* FederatedTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederatedTimelineModel.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		E981008129110280001F4133 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E981008829117DDE001F4133 /* View+compatability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+compatability.swift"; sourceTree = "<group>"; };
 		E981009229126CEB001F4133 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		E98597EF291688DF003C5187 /* StatusOperationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOperationProvider.swift; sourceTree = "<group>"; };
 		E9914EB729127E9500323B78 /* String+applicationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+applicationName.swift"; sourceTree = "<group>"; };
 		E9914EB92912846500323B78 /* AccountManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementView.swift; sourceTree = "<group>"; };
 		E9914EBC2912B53400323B78 /* AccountItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItemView.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			children = (
 				E91CC3BF29156D0600FC0BA0 /* Status+images.swift */,
 				E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */,
+				E91CC3CF291681F600FC0BA0 /* Status+actions.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 		E9914EB229127DFA00323B78 /* Mastodon */ = {
 			isa = PBXGroup;
 			children = (
+				E98597EF291688DF003C5187 /* StatusOperationProvider.swift */,
 				E981006D29105347001F4133 /* TimelineModel.swift */,
 				E981006F2910537B001F4133 /* LocalTimelineModel.swift */,
 				E9810071291053A5001F4133 /* FederatedTimelineModel.swift */,
@@ -323,12 +329,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
+				E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */,
 				E981007A29105CBE001F4133 /* Header.swift in Sources */,
 				E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */,
 				E9810076291054CB001F4133 /* TimelineView.swift in Sources */,
 				E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */,
 				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
+				E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */,
 				E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */,
 				E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */,
 				E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */,
@@ -578,7 +586,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/Mastodon.swift/";
 			requirement = {
-				branch = main;
+				branch = "feat/boost-status";
 				kind = branch;
 			};
 		};

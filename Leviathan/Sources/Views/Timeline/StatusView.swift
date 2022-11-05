@@ -29,14 +29,19 @@ struct StatusView: View {
         VStack {
             rebloggedHeader()
             statusContent(status.reblog != nil ? status.reblog! : status)
-            Divider()
+            actionBar(status.reblog != nil ? status.reblog! : status)
+            Divider().padding(.bottom, 2)
         }
+        .padding(.bottom, 5)
+        .background(backgroundColor)
+        .cornerRadius(10)
         .onTapGesture {
             showActions.toggle()
         }
     }
     
     var status: Status
+    var statusOperations: StatusOperationProvider
     
     
     // MARK: - Private Properties
@@ -53,6 +58,10 @@ struct StatusView: View {
         }
         
         return "Unknown"
+    }
+    
+    private var backgroundColor: Color {
+        return showActions ? Color.secondaryBackgroundColor : Color.clear
     }
     
     
@@ -83,6 +92,24 @@ struct StatusView: View {
         }
     }
     
+    @ViewBuilder
+    private func actionBar(_ status: Status) -> some View {
+        if showActions {
+            HStack {
+                Button { } label: { Image(systemName: "bubble.right") }
+                    .padding(.trailing, 5)
+                Button(action: boost, label: { Label("\(status.reblogsCount)", systemImage: "repeat") })
+                    .padding(.trailing, 5)
+                Button {} label: { Label("\(status.favouritesCount)", systemImage: "star") }
+                    .padding(.trailing, 5)
+                Spacer()
+            }
+            .buttonStyle(.borderless)
+        } else {
+            EmptyView()
+        }
+    }
+    
     private func statusHeader(_ status: Status) -> some View {
         LazyVGrid(columns: [GridItem(.fixed(32), alignment: .topLeading), GridItem(alignment: .topLeading)]) {
             accountImage(status)
@@ -105,6 +132,19 @@ struct StatusView: View {
         VStack {
             status.accountImage
             Spacer()
+        }
+    }
+    
+    
+    // MARK: - Actions
+    
+    private func boost() {
+        Task {
+            do {
+                try await statusOperations.boost(status: status)
+            } catch {
+                NSLog("\(error)")
+            }
         }
     }
 }

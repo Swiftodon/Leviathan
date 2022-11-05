@@ -73,7 +73,7 @@ struct Alert {
             case .info, .warning:
                 return .banner(.pop)
             default:
-                return .alert
+                return .alert // TODO: Check whether this is a good choice.
         }
     }
     
@@ -94,18 +94,23 @@ struct Alert {
     // MARK: - Initialization
     
     init(
-              type: Alert.`Type`,
-           message: String,
-          duration: Int? = nil,
-             onTap: OnTapCallback? = nil,
+        type: Alert.`Type`,
+        message: String,
+        duration: Int? = nil,
+        onTap: OnTapCallback? = nil,
         completion: CompletionCallback? = nil) {
             
-        self.type = type
-        self.message = message
-        self.duration = duration ?? 0
-        self.onTap = onTap
-        self.completion = completion
-    }
+            self.type = type
+            self.message = message
+            self.duration = duration ?? 0
+            self.onTap = onTap
+            
+            if case .fatalError(_) = self.type {
+                self.completion = { _ in fatalError(message) }
+            } else {
+                self.completion = completion
+            }
+        }
     
     
     // MARK: - Methods
@@ -115,10 +120,18 @@ struct Alert {
     }
     
     func toast() -> AlertToast {
+        var msg = message
+        
+        if case let .error(err) = type {
+            msg = "\(message)\n\n\(err.localizedDescription)"
+        } else if case let .fatalError(err) = type {
+            msg = "\(message)\n\n\(err.localizedDescription)"
+        }
+        
         return AlertToast(displayMode: displayMode,
                           type: alertType,
                           title: title,
-                          subTitle: message,
+                          subTitle: msg,
                           style: .style(titleFont: .title, subTitleFont: .body))
     }
 }

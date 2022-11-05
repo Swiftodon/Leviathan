@@ -51,7 +51,11 @@ class AccountModel: ObservableObject {
             
             Task {
                 if currentAccount.accessToken == nil {
-                    try await currentAccount.connect()
+                    do {
+                        try await currentAccount.connect()
+                    } catch {
+                        Alert(type: .error(error), message: "Can't authenticate you!", duration: 5).show()
+                    }
                 }
                 
                 let client = MastodonClient(baseURL: URL(string: currentAccount.serverUrl)!)

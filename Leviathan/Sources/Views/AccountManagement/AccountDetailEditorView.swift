@@ -61,7 +61,11 @@ struct AccountDetailEditorView: View {
     
     private func connect() {
         Task {
-            try await account.connect()
+            do {
+                try await account.connect()
+            } catch {
+                Alert(type: .error(error), message: "Can't authenticate you!").show()
+            }
         }
     }
     

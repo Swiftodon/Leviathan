@@ -31,7 +31,7 @@ struct TimelineView: View {
             Header(title: title) {
                 List {
                     ForEach(model.timeline, id: \.id) { status in
-                        StatusView(status: status)
+                        StatusView(status: status, statusOperations: model)
                     }
                 }
                 .refreshable(action: refresh)
@@ -93,6 +93,8 @@ struct TimelineView: View {
         do {
             if let _ = AccountModel.shared.auth {
                 try await model.readTimeline()
+            } else {
+                Alert(type: .warning, message: "You are not logged in, can't update your timeline.").show()
             }
         } catch {
             Alert(type: .error(error), message: "Error while loading the timeline.").show()
