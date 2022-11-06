@@ -159,6 +159,8 @@ class AccountModel: ObservableObject {
         var app: App?
         @Published
         var accessToken: AccessToken?
+        @Published
+        var accountInfo: MastodonSwift.Account?
         
         var isReadyToConnect: Bool {
             !serverUrl.isEmpty && !email.isEmpty && !password.isEmpty
@@ -190,6 +192,9 @@ class AccountModel: ObservableObject {
             if container.contains(.accessToken) {
                 accessToken = try container.decode(AccessToken.self, forKey: .accessToken)
             }
+            if container.contains(.accountInfo) {
+                accountInfo = try container.decode(MastodonSwift.Account.self, forKey: .accountInfo)
+            }
         }
         
         func encode(to encoder: Encoder) throws {
@@ -205,6 +210,9 @@ class AccountModel: ObservableObject {
             }
             if let accessToken {
                 try container.encode(accessToken, forKey: .accessToken)
+            }
+            if let accountInfo {
+                try container.encode(accountInfo, forKey: .accountInfo)
             }
         }
         
@@ -233,6 +241,7 @@ class AccountModel: ObservableObject {
             case password
             case app
             case accessToken
+            case accountInfo
         }
     }
 }
@@ -268,6 +277,13 @@ extension AccountModel.Account {
             
             update { [accessToken] in
                 self.accessToken = accessToken
+            }
+        }
+        
+        let auth = client.getAuthenticated(token: accessToken.token)
+        if let acctInfo = try? await auth.verifyCredentials() {
+            update { [acctInfo] in
+                self.accountInfo = acctInfo
             }
         }
     }
