@@ -24,7 +24,7 @@ import Foundation
 import Valet
 
 fileprivate extension String {
-    static let Accounts = "\(String.ApplicationName).ACCOUNTS"
+    static let Accounts = "\(String.ApplicationBundleId).ACCOUNTS"
 }
 
 class AccountModel: ObservableObject {
@@ -83,7 +83,7 @@ class AccountModel: ObservableObject {
     // MARK: - Initialization
     
     private init() {
-        valet = Valet.iCloudValet(with: Identifier(nonEmpty: .ApplicationName)!, accessibility: .whenUnlocked)
+        valet = Valet.iCloudValet(with: Identifier(nonEmpty: .ApplicationBundleId)!, accessibility: .whenUnlocked)
         
         guard let data = try? valet.object(forKey: .Accounts) else {
             return

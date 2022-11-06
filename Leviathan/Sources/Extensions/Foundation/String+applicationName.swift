@@ -23,5 +23,8 @@ import Foundation
 
 extension String {
     static let ApplicationName = "Leviathen"
+    static var ApplicationBundleId: String = {
+        return Bundle.main.bundleIdentifier!
+    }()
     static let ApplicationURI  = "https://github.com/Swiftodon/Leviathan"
 }
