@@ -18,7 +18,6 @@
 //  limitations under the License.
 //
 
-import AlertToast
 import MastodonSwift
 import MultiplatformTabBar
 import SwiftUI

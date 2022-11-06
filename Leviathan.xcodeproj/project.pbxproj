@@ -15,7 +15,6 @@
 		E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */; };
 		E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BF29156D0600FC0BA0 /* Status+images.swift */; };
 		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
-		E91CC3CA291651A800FC0BA0 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = E91CC3C9291651A800FC0BA0 /* AlertToast */; };
 		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
 		E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CF291681F600FC0BA0 /* Status+actions.swift */; };
 		E981006E29105347001F4133 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006D29105347001F4133 /* TimelineModel.swift */; };
@@ -80,7 +79,6 @@
 				E981008F2911DA37001F4133 /* Valet in Frameworks */,
 				E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */,
 				E981008C2911D549001F4133 /* MastodonSwift in Frameworks */,
-				E91CC3CA291651A800FC0BA0 /* AlertToast in Frameworks */,
 				E9914EC42915123200323B78 /* SwiftletUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +271,6 @@
 				E981008B2911D549001F4133 /* MastodonSwift */,
 				E981008E2911DA37001F4133 /* Valet */,
 				E9914EC32915123200323B78 /* SwiftletUtilities */,
-				E91CC3C9291651A800FC0BA0 /* AlertToast */,
 			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
@@ -308,7 +305,6 @@
 				E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */,
 				E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */,
 				E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */,
-				E91CC3C8291651A800FC0BA0 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
@@ -574,14 +570,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E91CC3C8291651A800FC0BA0 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/elai950/AlertToast";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/MultiplatformTabBar";
@@ -617,11 +605,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E91CC3C9291651A800FC0BA0 /* AlertToast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E91CC3C8291651A800FC0BA0 /* XCRemoteSwiftPackageReference "AlertToast" */;
-			productName = AlertToast;
-		};
 		E981007F2911004D001F4133 /* MultiplatformTabBar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */;
