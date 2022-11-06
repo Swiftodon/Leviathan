@@ -111,8 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				E90B5941290FCBC400324E6B /* Sources */,
-				E90B5935290FC89A00324E6B /* Assets.xcassets */,
-				E90B5937290FC89A00324E6B /* Leviathan.entitlements */,
+				E98598132917AE5D003C5187 /* Resources */,
 				E90B5938290FC89A00324E6B /* Preview Content */,
 			);
 			path = Leviathan;
@@ -211,6 +210,15 @@
 				E981008829117DDE001F4133 /* View+compatability.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		E98598132917AE5D003C5187 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E90B5935290FC89A00324E6B /* Assets.xcassets */,
+				E90B5937290FC89A00324E6B /* Leviathan.entitlements */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E9914EB229127DFA00323B78 /* Mastodon */ = {
