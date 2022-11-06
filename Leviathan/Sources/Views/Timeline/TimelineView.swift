@@ -27,28 +27,29 @@ struct TimelineView: View {
     // MARK: - Public Properties
     
     var body: some View {
-        ZStack {
-            Header(title: title) {
-                List {
-                    ForEach(model.timeline, id: \.id) { status in
-                        StatusView(status: status, statusOperations: model)
-                    }
+        Header(title: title) {
+            List {
+                ForEach(model.timeline, id: \.id) { status in
+                    StatusView(status: status, statusOperations: model)
                 }
-                .refreshable(action: refresh)
-                .toolbar {
-                    ToolbarItem(placement: .navigation) {
+            }
+            .refreshable(action: refresh)
+            .toolbar {
+                ToolbarItem(placement: .navigation) {
+                    if model.isLoading {
+                        ProgressView()
+                            // TODO: This is ugly; is there a better way have the same size as the button?
+                            .scaleEffect(0.5)
+                            .padding(.horizontal, -4)
+                    } else {
                         Button { refreshInTask() } label: { Image(systemName: "arrow.clockwise") }
                             .buttonStyle(.borderless)
                             .padding(.horizontal, 5)
                     }
                 }
-                .onAppear(perform: appearing)
-                .onDisappear(perform: disappearing)
             }
-            
-            if model.isLoading {
-                ProgressView()
-            }
+            .onAppear(perform: appearing)
+            .onDisappear(perform: disappearing)
         }
     }
     
