@@ -1,8 +1,8 @@
 //
-//  LocalTimelineModel.swift
+//  EntityNameProvider.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 06.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,18 +20,7 @@
 
 import Foundation
 
-class LocalTimelineModel: TimelineModel {
-    
-    // MARK: - Public Properties
-    
-    public override var timelineId: PersistedStatus.Timeline { PersistedStatus.Timeline.local }
-
-    
-    // MARK: - Public Methods
-  
-    override func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: true) else {
-            return
-        }
-    }
+@objc
+protocol NamedEntity {
+    static var entityName: String { get }
 }

@@ -22,7 +22,7 @@
 import Foundation
 
 extension String {
-    static let ApplicationName = "Leviathen"
+    static let ApplicationName = "Leviathan"
     static var ApplicationBundleId: String = {
         return Bundle.main.bundleIdentifier!
     }()

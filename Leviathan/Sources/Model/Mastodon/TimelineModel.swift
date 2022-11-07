@@ -18,39 +18,79 @@
 //  limitations under the License.
 //
 
-import MastodonSwift
+import CoreData
 import Foundation
+import MastodonSwift
 
 class TimelineModel: ObservableObject, StatusOperationProvider {
     
     // MARK: - Public Properties
-    
-    @Published
-    public var timeline: [Status] = []
+
     @Published
     public var isLoading = false
     
+    public var timelineId: PersistedStatus.Timeline { PersistedStatus.Timeline.home }
+    public var sortDescriptors: [NSSortDescriptor] { [NSSortDescriptor(key: "timestamp", ascending: false)] }
+    
+    
+    // MARK: - Private Properties
+    
+    private var context: NSManagedObjectContext
+    private var lastStatusIdFetchRequest: NSFetchRequest<PersistedStatus> {
+        let request = PersistedStatus.makeFetchRequest() // NSFetchRequest<PersistedStatus>(entityName: PersistedStatus.entityName)
+        request.predicate = readFilter()
+        request.sortDescriptors = sortDescriptors
+        
+        return request
+    }
+    
+    private var lastStatusId: String? {
+        do {
+            let result = try context.fetch(lastStatusIdFetchRequest)
+            if result.count > 0 {
+                return result[0].statusId
+            }
+        } catch {
+            NSLog("\(error)")
+        }
+        
+        return nil
+    }
+    
+    
+    // MARK: - Initialization
+    
+    init() {
+        context = PersistenceController.shared.container.viewContext
+    }
+
     
     // MARK: - Public Methods
     
+    func readFilter() -> NSPredicate {
+        let accountId = AccountModel.shared.currentAccount?.accountInfo?.id
+        
+        return NSPredicate(
+            format: "tl == %d AND accountId == %@",
+            timelineId.rawValue,
+            accountId ?? 0)
+    }
+    
     func readTimeline() async throws {
-        let sinceId: StatusId? = !timeline.isEmpty ? timeline[0].id : nil
+        guard AccountModel.shared.currentAccount != nil else {
+            return
+        }
         
         update { self.isLoading = true }
         defer {
             update { self.isLoading = false }
         }
         
-        guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: sinceId) else {
-            self.timeline = []
+        guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: lastStatusId) else {
             return
         }
         
-        update { [timeline] in
-            if !timeline.isEmpty {
-                self.timeline.insert(contentsOf: timeline, at: 0)
-            }
-        }
+        persist(timeline: timeline)
     }
     
     
@@ -64,5 +104,36 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
     
     func unboost(status: MastodonSwift.Status) async throws {
         
+    }
+    
+    
+    // MARK: - Methods for internal usage
+    
+    func persist(timeline: [MastodonSwift.Status]) {
+        guard !timeline.isEmpty else {
+            return
+        }
+        
+        Task {
+            timeline.forEach { status in
+                context.perform {
+                    let persistedStatus: PersistedStatus = self.context.createEntity()
+                    
+                    persistedStatus.statusId = status.id
+                    persistedStatus.accountId = AccountModel.shared.currentAccount!.accountInfo!.id
+                    persistedStatus.timeline = self.timelineId
+                    persistedStatus.timestamp = status.timestamp
+                    persistedStatus.status = status
+                }
+            }
+            
+            context.perform {
+                do {
+                    try self.context.save()
+                } catch {
+                    ToastView.Toast(type: .error, message: "Can't save the new statuses.", error: error).show()
+                }
+            }
+        }
     }
 }

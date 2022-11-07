@@ -20,6 +20,7 @@
 
 import MastodonSwift
 import MultiplatformTabBar
+import SwiftletUtilities
 import SwiftUI
 
 struct ContentView: View {
@@ -27,9 +28,9 @@ struct ContentView: View {
     // MARK: - Public Properties
     
     var body: some View {
-        MultiplatformTabBar(tabPosition: .bottom, barHorizontalAlignment: .center)
-            .tab(icon: Image(systemName: "clock")) {
-                TimelineView(title: "Timeline", model: timelineModel)
+        tabBar()
+            .tab(icon: Image(systemName: "house.circle")) {
+                TimelineView(title: "Home", model: timelineModel)
             }
             .tab(icon: Image(systemName: "location.circle")) {
                 TimelineView(title: "Local Timeline", model: localTimelineModel)
@@ -52,22 +53,6 @@ struct ContentView: View {
             .onReceive(NotificationCenter.default.publisher(for: .ShowToast), perform: triggerAlert)
             .sheet(isPresented: $showAccountManagementSheet) { AccountManagementView() }
             .toastView(toast: $currentToast)
-        /* TODO: 
-            .onAppear {
-                let client = MastodonClient(baseURL: URL(string: "https://mastodon.online")!)
-                
-                Task {
-                    do {
-                        let app = try await client.createApp(named: "Leviathan", scopes: ["read", "write", "follow"], website: URL(string: "https://github.com/Swiftodon/Leviathan")!)
-                        let response = try await client.getToken(withApp: app, username: "thomas@meandmymac.de", password: "caecum6grove2epigram", scope: ["read", "write", "follow"])
-                        
-                        NSLog("\(response)")
-                    } catch {
-                        NSLog("\(error)")
-                    }
-                }
-            }
-         */
     }
     
     
@@ -89,6 +74,14 @@ struct ContentView: View {
     
     
     // MARK: - Private Methods
+    
+    private func tabBar() -> MultiplatformTabBar {
+        if HardwareInformation.isMac || HardwareInformation.isPad {
+            return MultiplatformTabBar(tabPosition: .left, barVerticalAlignment: .top)
+        } else {
+            return MultiplatformTabBar(tabPosition: .bottom, barHorizontalAlignment: .center)
+        }
+    }
     
     private func triggerAlert(_ notification: Foundation.Notification) {
         currentToast = (notification.object as! ToastView.Toast)

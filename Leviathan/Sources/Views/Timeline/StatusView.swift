@@ -32,7 +32,7 @@ struct StatusView: View {
             actionBar(status.reblog != nil ? status.reblog! : status)
             Divider().padding(.bottom, 2)
         }
-        .padding(.bottom, 5)
+        .padding(.all, 5)
         .background(backgroundColor)
         .cornerRadius(10)
         .onTapGesture {

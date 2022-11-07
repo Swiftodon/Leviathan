@@ -22,5 +22,17 @@
 import Foundation
 
 class FederatedTimelineModel: TimelineModel {
+    
+    // MARK: - Public Properties
+    
+    public override var timelineId: PersistedStatus.Timeline { PersistedStatus.Timeline.federated }
+
+    
+    // MARK: - Public Methods
   
+    override func readTimeline() async throws {
+        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: false) else {
+            return
+        }
+    }
 }

@@ -29,8 +29,8 @@ struct TimelineView: View {
     var body: some View {
         Header(title: title) {
             List {
-                ForEach(model.timeline, id: \.id) { status in
-                    StatusView(status: status, statusOperations: model)
+                ForEach(persistedStatuses, id: \.statusId) { status in
+                    StatusView(status: status.status!, statusOperations: model)
                 }
             }
             .refreshable(action: refresh)
@@ -57,8 +57,21 @@ struct TimelineView: View {
     @ObservedObject
     var model: TimelineModel
     
+    
+    // MARK: - Initialization
+    
+    init(title: LocalizedStringKey, model: TimelineModel) {
+        self.title = title
+        self.model = model
+        self._persistedStatuses =
+            FetchRequest<PersistedStatus>(sortDescriptors: model.sortDescriptors, predicate: model.readFilter())
+    }
+    
+    
     // MARK: - Private Properties
     
+    @FetchRequest
+    private var persistedStatuses: FetchedResults<PersistedStatus>
     @EnvironmentObject
     private var accountModel: AccountModel
     @State
@@ -67,9 +80,18 @@ struct TimelineView: View {
     
     // MARK: - Private Methods
     
+    private mutating func do__() {
+        self._persistedStatuses =
+            FetchRequest<PersistedStatus>(sortDescriptors: model.sortDescriptors, predicate: model.readFilter())
+    }
+    
     private func appearing() {
         reloadCancellable = accountModel.objectWillChange.sink { _ in
             update {
+                guard accountModel.currentAccount != nil else {
+                    return
+                }
+                persistedStatuses.nsPredicate = model.readFilter()
                 refreshInTask()
             }
         }

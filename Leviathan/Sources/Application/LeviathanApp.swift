@@ -28,6 +28,7 @@ struct LeviathanApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(TimelineModel())
                 .environmentObject(LocalTimelineModel())
                 .environmentObject(FederatedTimelineModel())
@@ -35,4 +36,9 @@ struct LeviathanApp: App {
                 .environmentObject(AccountModel.shared)
         }
     }
+    
+    
+    // MARK: - Private Properties
+    
+    private let persistenceController = PersistenceController.shared
 }

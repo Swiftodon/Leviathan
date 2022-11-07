@@ -31,6 +31,11 @@
 		E981009329126CEB001F4133 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981009229126CEB001F4133 /* AccountModel.swift */; };
 		E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597EF291688DF003C5187 /* StatusOperationProvider.swift */; };
 		E98597F22916AAC2003C5187 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597F12916AAC2003C5187 /* ToastView.swift */; };
+		E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E98598142917B1E8003C5187 /* Leviathan.xcdatamodeld */; };
+		E98598232917BDCE003C5187 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98598212917BDCE003C5187 /* Model.swift */; };
+		E98598282917BEFC003C5187 /* PersistedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98598272917BEFC003C5187 /* PersistedStatus.swift */; };
+		E985982A2917C176003C5187 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98598292917C176003C5187 /* PersistenceController.swift */; };
+		E985982F2917D3AF003C5187 /* NamedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985982E2917D3AF003C5187 /* NamedEntity.swift */; };
 		E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB729127E9500323B78 /* String+applicationName.swift */; };
 		E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB92912846500323B78 /* AccountManagementView.swift */; };
 		E9914EBD2912B53400323B78 /* AccountItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EBC2912B53400323B78 /* AccountItemView.swift */; };
@@ -65,6 +70,13 @@
 		E981009229126CEB001F4133 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		E98597EF291688DF003C5187 /* StatusOperationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOperationProvider.swift; sourceTree = "<group>"; };
 		E98597F12916AAC2003C5187 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		E98598152917B1E8003C5187 /* Leviathan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Leviathan.xcdatamodel; sourceTree = "<group>"; };
+		E985981E2917BCAD003C5187 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		E98598212917BDCE003C5187 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E98598272917BEFC003C5187 /* PersistedStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStatus.swift; sourceTree = "<group>"; };
+		E98598292917C176003C5187 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		E985982E2917D3AF003C5187 /* NamedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedEntity.swift; sourceTree = "<group>"; };
+		E985983029197F5A003C5187 /* coredata.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; name = coredata.stencil; path = "swiftgen-templates/coredata.stencil"; sourceTree = "<group>"; };
 		E9914EB729127E9500323B78 /* String+applicationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+applicationName.swift"; sourceTree = "<group>"; };
 		E9914EB92912846500323B78 /* AccountManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementView.swift; sourceTree = "<group>"; };
 		E9914EBC2912B53400323B78 /* AccountItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItemView.swift; sourceTree = "<group>"; };
@@ -92,6 +104,8 @@
 				E981008129110280001F4133 /* .gitignore */,
 				E90B5949290FCC7700324E6B /* README.md */,
 				E90B5948290FCC7000324E6B /* LICENSE */,
+				E985981E2917BCAD003C5187 /* swiftgen.yml */,
+				E985983029197F5A003C5187 /* coredata.stencil */,
 				E90B5930290FC89900324E6B /* Leviathan */,
 				E90B592F290FC89900324E6B /* Products */,
 			);
@@ -129,7 +143,9 @@
 				E90B5942290FCBC400324E6B /* Application */,
 				E981008629117DAA001F4133 /* Extensions */,
 				E981006C29105332001F4133 /* Model */,
+				E98598252917BED0003C5187 /* Persistence */,
 				E90B5944290FCBC400324E6B /* Views */,
+				E985981F2917BDCE003C5187 /* Generated */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -215,8 +231,43 @@
 			children = (
 				E90B5935290FC89A00324E6B /* Assets.xcassets */,
 				E90B5937290FC89A00324E6B /* Leviathan.entitlements */,
+				E98598142917B1E8003C5187 /* Leviathan.xcdatamodeld */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E985981F2917BDCE003C5187 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E98598202917BDCE003C5187 /* CoreDataEntites */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		E98598202917BDCE003C5187 /* CoreDataEntites */ = {
+			isa = PBXGroup;
+			children = (
+				E98598212917BDCE003C5187 /* Model.swift */,
+			);
+			path = CoreDataEntites;
+			sourceTree = "<group>";
+		};
+		E98598252917BED0003C5187 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E98598292917C176003C5187 /* PersistenceController.swift */,
+				E98598262917BEE6003C5187 /* Model */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		E98598262917BEE6003C5187 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E985982E2917D3AF003C5187 /* NamedEntity.swift */,
+				E98598272917BEFC003C5187 /* PersistedStatus.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E9914EB229127DFA00323B78 /* Mastodon */ = {
@@ -257,6 +308,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E90B593D290FC89A00324E6B /* Build configuration list for PBXNativeTarget "Leviathan" */;
 			buildPhases = (
+				E985981D2917BC20003C5187 /* swiftgen */,
 				E90B592A290FC89900324E6B /* Sources */,
 				E90B592B290FC89900324E6B /* Frameworks */,
 				E90B592C290FC89900324E6B /* Resources */,
@@ -284,7 +336,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					E90B592D290FC89900324E6B = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -327,6 +379,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E985981D2917BC20003C5187 /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Leviathan.xcdatamodeld/Leviathan.xcdatamodel/contents",
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				Leviathan/Sources/Generated/CoreDataEntites/Model.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E90B592A290FC89900324E6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -334,13 +409,17 @@
 			files = (
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
 				E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */,
+				E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */,
 				E981007A29105CBE001F4133 /* Header.swift in Sources */,
 				E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */,
 				E9810076291054CB001F4133 /* TimelineView.swift in Sources */,
 				E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */,
 				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
+				E985982A2917C176003C5187 /* PersistenceController.swift in Sources */,
 				E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */,
+				E98598232917BDCE003C5187 /* Model.swift in Sources */,
+				E98598282917BEFC003C5187 /* PersistedStatus.swift in Sources */,
 				E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */,
 				E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */,
 				E9914EBA2912846500323B78 /* AccountManagementView.swift in Sources */,
@@ -348,6 +427,7 @@
 				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
 				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
 				E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */,
+				E985982F2917D3AF003C5187 /* NamedEntity.swift in Sources */,
 				E98597F22916AAC2003C5187 /* ToastView.swift in Sources */,
 				E9914EBF2912B83200323B78 /* AccountDetailEditorView.swift in Sources */,
 				E981006E29105347001F4133 /* TimelineModel.swift in Sources */,
@@ -394,6 +474,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -452,6 +533,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -476,8 +558,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Leviathan/Leviathan.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Leviathan/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
@@ -514,8 +600,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Leviathan/Leviathan.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Leviathan/Preview Content\"";
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
@@ -626,6 +716,19 @@
 			productName = SwiftletUtilities;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E98598142917B1E8003C5187 /* Leviathan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E98598152917B1E8003C5187 /* Leviathan.xcdatamodel */,
+			);
+			currentVersion = E98598152917B1E8003C5187 /* Leviathan.xcdatamodel */;
+			path = Leviathan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E90B5926290FC89900324E6B /* Project object */;
 }
