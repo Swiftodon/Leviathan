@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3B900E2919AC4A00233857 /* AccountAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B900D2919AC4A00233857 /* AccountAvatar.swift */; };
 		E90B5936290FC89A00324E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90B5935290FC89A00324E6B /* Assets.xcassets */; };
 		E90B593A290FC89A00324E6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90B5939290FC89A00324E6B /* Preview Assets.xcassets */; };
 		E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5943290FCBC400324E6B /* LeviathanApp.swift */; };
 		E90B5947290FCBC400324E6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B5945290FCBC400324E6B /* ContentView.swift */; };
 		E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3B9291551E400FC0BA0 /* StatusView.swift */; };
 		E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */; };
-		E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BF29156D0600FC0BA0 /* Status+images.swift */; };
 		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
 		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
 		E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CF291681F600FC0BA0 /* Status+actions.swift */; };
@@ -44,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A3B900D2919AC4A00233857 /* AccountAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAvatar.swift; sourceTree = "<group>"; };
 		E90B592E290FC89900324E6B /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90B5935290FC89A00324E6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90B5937290FC89A00324E6B /* Leviathan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leviathan.entitlements; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		E90B5949290FCC7700324E6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E91CC3B9291551E400FC0BA0 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
-		E91CC3BF29156D0600FC0BA0 /* Status+images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+images.swift"; sourceTree = "<group>"; };
 		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
 		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
 		E91CC3CF291681F600FC0BA0 /* Status+actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+actions.swift"; sourceTree = "<group>"; };
@@ -176,6 +176,7 @@
 			children = (
 				E9810075291054CB001F4133 /* TimelineView.swift */,
 				E91CC3B9291551E400FC0BA0 /* StatusView.swift */,
+				2A3B900D2919AC4A00233857 /* AccountAvatar.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -191,7 +192,6 @@
 		E91CC3BE29156CE900FC0BA0 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E91CC3BF29156D0600FC0BA0 /* Status+images.swift */,
 				E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */,
 				E91CC3CF291681F600FC0BA0 /* Status+actions.swift */,
 			);
@@ -410,10 +410,10 @@
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
 				E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */,
 				E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */,
+				2A3B900E2919AC4A00233857 /* AccountAvatar.swift in Sources */,
 				E981007A29105CBE001F4133 /* Header.swift in Sources */,
 				E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */,
 				E9810076291054CB001F4133 /* TimelineView.swift in Sources */,
-				E91CC3C029156D0600FC0BA0 /* Status+images.swift in Sources */,
 				E90B5947290FCBC400324E6B /* ContentView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
 				E985982A2917C176003C5187 /* PersistenceController.swift in Sources */,
