@@ -33,6 +33,7 @@ struct AccountAvatar: View {
                 accountAvatar
                     .resizable()
                     .frame(width: 32, height: 32)
+                    .cornerRadius(4)
             } else {
                 Image(systemName: "person.circle")
                     .resizable()
