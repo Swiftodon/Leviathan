@@ -77,20 +77,26 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
     }
     
     func readTimeline() async throws {
-        guard AccountModel.shared.currentAccount != nil else {
-            return
-        }
+        var finished = false
         
-        update { self.isLoading = true }
         defer {
             update { self.isLoading = false }
         }
         
-        guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: lastStatusId) else {
-            return
-        }
-        
-        persist(timeline: timeline)
+        repeat {
+            guard AccountModel.shared.currentAccount != nil else {
+                return
+            }
+            
+            update { self.isLoading = true }
+            
+            guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: lastStatusId) else {
+                return
+            }
+            
+            persist(timeline: timeline)
+            finished = timeline.count == 0
+        } while !finished
     }
     
     

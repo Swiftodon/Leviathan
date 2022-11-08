@@ -6,5 +6,10 @@
         <attribute name="statusId" attributeType="String" defaultValueString=""/>
         <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="689418840" usesScalarValueType="NO"/>
         <attribute name="tl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="statusId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>
