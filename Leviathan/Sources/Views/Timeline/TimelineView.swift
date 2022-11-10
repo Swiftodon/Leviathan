@@ -28,40 +28,45 @@ struct TimelineView: View {
     
     var body: some View {
         Header(title: title) {
-            List {
-                ForEach(persistedStatuses, id: \.statusId) { status in
-                    StatusView(status: status.status!, statusOperations: model)
-                }
-            }
-            .refreshable(action: refresh)
-            .toolbar {
-                ToolbarItem(placement: .navigation) {
-                    if model.isLoading {
-                        ProgressView()
-                            // TODO: This is ugly; is there a better way have the same size as the button?
-                            .scaleEffect(0.5)
-                            .padding(.horizontal, -4)
-                    } else {
-                        Button { refreshInTask() } label: { Image(systemName: "arrow.clockwise") }
-                            .buttonStyle(.borderless)
-                            .padding(.horizontal, 5)
+            ScrollViewReader { proxy in
+                List {
+                    ForEach(persistedStatuses, id: \.statusId) { status in
+                        StatusView(status: status.status!, statusOperations: model)
+                            .id(status.status!.id)
                     }
                 }
+                .refreshable { refreshInTask(proxy) }
+                .toolbar {
+                    ToolbarItem(placement: .navigation) {
+                        if model.isLoading {
+                            ProgressView()
+                            // TODO: This is ugly; is there a better way have the same size as the button?
+                                .scaleEffect(0.5)
+                                .padding(.horizontal, -4)
+                        } else {
+                            Button { refreshInTask(proxy) } label: { Image(systemName: "arrow.clockwise") }
+                                .buttonStyle(.borderless)
+                                .padding(.horizontal, 5)
+                        }
+                    }
+                }
+                .onAppear { appearing(proxy) }
+                .onDisappear(perform: disappearing)
             }
-            .onAppear(perform: appearing)
-            .onDisappear(perform: disappearing)
         }
     }
     
     var title: LocalizedStringKey
+    var timeline: TimelineId
     @ObservedObject
     var model: TimelineModel
     
     
     // MARK: - Initialization
     
-    init(title: LocalizedStringKey, model: TimelineModel) {
+    init(title: LocalizedStringKey, timeline: TimelineId, model: TimelineModel) {
         self.title = title
+        self.timeline = timeline
         self.model = model
         self._persistedStatuses =
             FetchRequest<PersistedStatus>(sortDescriptors: model.sortDescriptors, predicate: model.readFilter())
@@ -69,7 +74,7 @@ struct TimelineView: View {
     
     
     // MARK: - Private Properties
-    
+
     @FetchRequest
     private var persistedStatuses: FetchedResults<PersistedStatus>
     @EnvironmentObject
@@ -80,17 +85,15 @@ struct TimelineView: View {
     
     // MARK: - Private Methods
     
-    private mutating func do__() {
-        self._persistedStatuses =
-            FetchRequest<PersistedStatus>(sortDescriptors: model.sortDescriptors, predicate: model.readFilter())
-    }
-    
-    private func appearing() {
+    private func appearing(_ proxy: ScrollViewProxy? = nil) {
         reloadCancellable = accountModel.objectWillChange.sink { _ in
             update {
-                guard accountModel.currentAccount != nil else {
+                guard
+                    accountModel.currentAccount != nil
+                else {
                     return
                 }
+                
                 persistedStatuses.nsPredicate = model.readFilter()
                 refreshInTask()
             }
@@ -105,7 +108,7 @@ struct TimelineView: View {
         reloadCancellable.cancel()
     }
     
-    private func refreshInTask() {
+    private func refreshInTask(_ proxy: ScrollViewProxy? = nil) {
         Task {
             await refresh()
         }
@@ -127,6 +130,6 @@ struct TimelineView: View {
 
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        TimelineView(title: "Timeline", model: TimelineModel())
+        TimelineView(title: "Timeline", timeline: .home, model: TimelineModel())
     }
 }

@@ -12,9 +12,9 @@ import SwiftUI
 extension String {
     
     public var attributedString: AttributedString? {
-        let data = Data(self.utf8)
+        let data = self.data(using: self.fastestEncoding)!
         
-        guard let attrStr = try? NSAttributedString(
+        guard let attrStr = try? NSMutableAttributedString(
             data: data,
             options: [.documentType: NSAttributedString.DocumentType.html],
             documentAttributes: nil) else {
@@ -22,7 +22,9 @@ extension String {
             return nil
         }
         
-        
+        attrStr.enumerateAttribute(.font, in: NSMakeRange(0, attrStr.length)) { value, range, _ in
+            attrStr.addAttributes([.font: Font.platformBody], range: range)
+        }
         
         return AttributedString(attrStr)
     }
@@ -40,7 +42,5 @@ extension String {
         let attributedString = try? NSAttributedString(data: htmlStringData, options: options, documentAttributes: nil)
         return attributedString?.string
     }
-    
-    
     
 }

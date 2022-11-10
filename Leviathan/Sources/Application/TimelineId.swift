@@ -1,8 +1,8 @@
 //
-//  LocalTimelineModel.swift
+//  TimelineId.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 09.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,18 +20,9 @@
 
 import Foundation
 
-class LocalTimelineModel: TimelineModel {
-    
-    // MARK: - Public Properties
-    
-    public override var timelineId: TimelineId { TimelineId.local }
-
-    
-    // MARK: - Public Methods
-  
-    override func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: true) else {
-            return
-        }
-    }
+enum TimelineId: Int16 {
+    case home       = 0
+    case local      = 1
+    case federated  = 2
+    case unknown    = 0xAAA
 }

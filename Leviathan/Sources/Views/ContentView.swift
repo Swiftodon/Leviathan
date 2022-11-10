@@ -30,13 +30,13 @@ struct ContentView: View {
     var body: some View {
         tabBar()
             .tab(icon: Image(systemName: "house.circle")) {
-                TimelineView(title: "Home", model: timelineModel)
+                TimelineView(title: "Home", timeline: .home, model: timelineModel)
             }
             .tab(icon: Image(systemName: "location.circle")) {
-                TimelineView(title: "Local Timeline", model: localTimelineModel)
+                TimelineView(title: "Local Timeline", timeline: .local, model: localTimelineModel)
             }
             .tab(icon: Image(systemName: "globe")) {
-                TimelineView(title: "Federated Timeline", model: federatedTimelineModel)
+                TimelineView(title: "Federated Timeline", timeline: .federated, model: federatedTimelineModel)
             }
             .tab(icon: Image(systemName: "at.circle")) {
                 Text("Mentions")

@@ -29,7 +29,7 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
     @Published
     public var isLoading = false
     
-    public var timelineId: PersistedStatus.Timeline { PersistedStatus.Timeline.home }
+    public var timelineId: TimelineId { TimelineId.home }
     public var sortDescriptors: [NSSortDescriptor] { [NSSortDescriptor(key: "timestamp", ascending: false)] }
     
     

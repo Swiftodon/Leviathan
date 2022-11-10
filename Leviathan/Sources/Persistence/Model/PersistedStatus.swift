@@ -23,24 +23,15 @@ import MastodonSwift
 
 extension PersistedStatus: Identifiable, NamedEntity {
     
-    // MARK: - Enums
-    
-    enum Timeline: Int16 {
-        case home       = 0
-        case local      = 1
-        case federated  = 2
-        case unknown    = 0xAAA
-    }
-    
     
     // MARK: - Properties
     
-    var timeline: Timeline {
+    var timeline: TimelineId {
         set {
             self.tl = newValue.rawValue
         }
         get {
-            return Timeline(rawValue: self.tl) ?? .unknown
+            return TimelineId(rawValue: self.tl) ?? .unknown
         }
     }
     

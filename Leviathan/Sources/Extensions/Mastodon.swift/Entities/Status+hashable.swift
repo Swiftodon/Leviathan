@@ -1,8 +1,8 @@
 //
-//  LocalTimelineModel.swift
+//  Status+hashable.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 09.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,19 +19,15 @@
 //
 
 import Foundation
+import MastodonSwift
 
-class LocalTimelineModel: TimelineModel {
+extension Status: Hashable {
     
-    // MARK: - Public Properties
+    public static func == (lhs: MastodonSwift.Status, rhs: MastodonSwift.Status) -> Bool {
+        lhs.hashValue == rhs.hashValue
+    }
     
-    public override var timelineId: TimelineId { TimelineId.local }
-
-    
-    // MARK: - Public Methods
-  
-    override func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: true) else {
-            return
-        }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
     }
 }

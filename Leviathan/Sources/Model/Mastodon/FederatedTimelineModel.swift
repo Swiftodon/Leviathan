@@ -25,7 +25,7 @@ class FederatedTimelineModel: TimelineModel {
     
     // MARK: - Public Properties
     
-    public override var timelineId: PersistedStatus.Timeline { PersistedStatus.Timeline.federated }
+    public override var timelineId: TimelineId { TimelineId.federated }
 
     
     // MARK: - Public Methods

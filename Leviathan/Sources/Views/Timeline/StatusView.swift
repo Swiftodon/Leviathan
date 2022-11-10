@@ -84,10 +84,9 @@ struct StatusView: View {
         VStack {
             statusHeader(status)
             HStack {
-                Text(status.content.trimHTMLTags()!)
+                Text(status.content.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
-                Spacer()
             }
         }
     }
