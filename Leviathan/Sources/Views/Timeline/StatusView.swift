@@ -38,6 +38,9 @@ struct StatusView: View {
         .onTapGesture {
             showActions.toggle()
         }
+        .environment(\.openURL, OpenURLAction(handler: { url in
+            return .systemAction(url)
+        }))
     }
     
     var status: Status
