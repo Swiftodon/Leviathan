@@ -41,9 +41,7 @@ struct Header<Content>: View where Content: View {
                             } else {
                                 ForEach(accountModel.accounts, id: \.id) { account in
                                     Button {
-                                        if accountModel.currentAccount != account {
-                                            accountModel.currentAccount = account
-                                        }
+                                        accountModel.select(account: account)
                                     } label: {
                                         Text(account.name)
                                     }

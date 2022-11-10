@@ -23,10 +23,12 @@ import Foundation
 
 extension Status {
     func boost() async throws -> Status? {
+        /* TODO: store auth in the account object
         if let auth = AccountModel.shared.auth {
             return try await auth.boost(status: self)
         }
         
+         */
         return nil
     }
 }

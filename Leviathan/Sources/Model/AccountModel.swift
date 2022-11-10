@@ -42,36 +42,17 @@ class AccountModel: ObservableObject {
     }
     
     @Published
+    public private(set) var currentAccountIndex: Int = -1
+    
     public var currentAccount: Account? {
-        didSet {
-            guard let currentAccount else {
-                auth = nil
-                return
-            }
-            
-            Task {
-                guard currentAccount.isReadyToConnect else {
-                    return
-                }
-                
-                guard let url = URL(string: currentAccount.serverUrl) else {
-                    return
-                }
-                
-                if let accessToken =  currentAccount.accessToken {
-                    let client = MastodonClient(baseURL: url)
-                    auth = client.getAuthenticated(token: accessToken.token)
-                } else {
-                    do {
-                        try await currentAccount.connect()
-                    } catch {
-                        ToastView.Toast(type: .error, message: "You can't be authenticate!", error: error).show()
-                    }
-                }
-            }
+        guard
+            currentAccountIndex != -1 && currentAccountIndex > 0 && currentAccountIndex < accounts.count
+        else {
+            return nil
         }
+        
+        return accounts[currentAccountIndex]
     }
-    public private(set) var auth: MastodonClientAuthenticated?
     
     
     // MARK: - Private Properties
@@ -107,8 +88,29 @@ class AccountModel: ObservableObject {
     
     public func remove(account: Account) {
         if let index = accounts.firstIndex(where: { account == $0 }) {
+            var currAct: Account! = nil
+            
+            if index == currentAccountIndex {
+                currentAccountIndex = -1
+            } else {
+                currAct = accounts[currentAccountIndex]
+            }
+            
             unsubscribe(fromChangesOf: account)
             accounts.remove(at: index)
+            
+            if let currAct {
+                select(account: currAct)
+            }
+        }
+    }
+    
+    
+    // MARK: - Select Account
+    
+    public func select(account: Account) {
+        if let index = accounts.firstIndex(of: account), index != currentAccountIndex {
+            currentAccountIndex = index
         }
     }
     

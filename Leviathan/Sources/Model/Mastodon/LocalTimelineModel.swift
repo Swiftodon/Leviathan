@@ -30,8 +30,10 @@ class LocalTimelineModel: TimelineModel {
     // MARK: - Public Methods
   
     override func readTimeline() async throws {
+        /* TODO: store auth in the account object
         guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: true) else {
             return
         }
+         */
     }
 }

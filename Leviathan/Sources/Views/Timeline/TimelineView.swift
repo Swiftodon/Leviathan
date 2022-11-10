@@ -100,7 +100,7 @@ struct TimelineView: View {
         }
         
         if accountModel.currentAccount == nil && !accountModel.accounts.isEmpty {
-            accountModel.currentAccount = accountModel.accounts[0]
+            accountModel.select(account: accountModel.accounts[0])
         }
     }
     
@@ -116,6 +116,7 @@ struct TimelineView: View {
     
     @Sendable
     private func refresh() async {
+        /* TODO: store auth in the account object
         do {
             if let _ = AccountModel.shared.auth {
                 try await model.readTimeline()
@@ -125,6 +126,7 @@ struct TimelineView: View {
         } catch {
             ToastView.Toast(type: .error, message: "An error occured while loading your timeline.", error: error).show()
         }
+         */
     }
 }
 

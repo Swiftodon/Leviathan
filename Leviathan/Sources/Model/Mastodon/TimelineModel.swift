@@ -90,12 +90,17 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
             
             update { self.isLoading = true }
             
+            /* TODO: store auth in the account object
             guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: lastStatusId) else {
                 return
             }
             
             persist(timeline: timeline)
+            
             finished = timeline.count == 0
+             */
+            
+            finished = true
         } while !finished
     }
     
