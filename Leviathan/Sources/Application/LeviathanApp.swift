@@ -19,22 +19,8 @@
 //
 
 import SwiftUI
-import MastodonSwift
-
-#if os(macOS)
-import AppKit
-#elseif os(iOS)
-import UIKit
-#endif
-
 @main
 struct LeviathanApp: SwiftUI.App {
-    
-    #if os(macOS)
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    #elseif os(iOS)
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    #endif
     
     // MARK: - Public Properties
     
@@ -49,34 +35,11 @@ struct LeviathanApp: SwiftUI.App {
                 .environmentObject(AccountModel.shared)
         }
     }
-    
-    
+
     // MARK: - Private Properties
+
+    @ApplicationDelegateAdaptor(AppDelegate.self)
+    private var appDelegate
     
     private let persistenceController = PersistenceController.shared
 }
-
-#if os(macOS)
-class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ notification: AppKit.Notification) {
-        NSAppleEventManager.shared().setEventHandler(self, andSelector:#selector(AppDelegate.handleGetURL(event:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
-    }
-    
-    @objc func handleGetURL(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {
-        let zamazingo = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue
-        
-        if let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue, let url = URL(string: urlString), url.host == "oauth-callback" {
-            MastodonClient.handleOAuthResponse(url: url)
-        }
-    }
-}
-#elseif os(iOS)
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
-      if url.host == "oauth-callback" {
-          MastodonClient.handleOAuthResponse(url: url)
-      }
-      return true
-    }
-}
-#endif
