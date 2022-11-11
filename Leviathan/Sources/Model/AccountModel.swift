@@ -100,9 +100,33 @@ class AccountModel: ObservableObject {
     
     // MARK: - Manage Accounts
     
-    public func add(account: Account) {
-        accounts.append(account)
-        subscribe(toChangesOf: account)
+    public func add(accountAt instanceURL: URL) {
+//        accounts.append(account)
+//        subscribe(toChangesOf: account)
+        Task {
+            do {
+                let scopes = ["read", "write"]
+                let client = MastodonClient(baseURL: instanceURL)
+                let app = try await client.createApp(named: "Leviathan", redirectUri: "leviathan://oauth-callback", scopes: scopes, website: URL(string: "https://github.com/Swiftodon/Leviathan")!)
+                let authToken = try await client.authentiate(app: app, scope: scopes)
+                
+                print("token", authToken)
+                let account = Account(accessToken: AccessToken(credential: authToken))
+//                try await account.connect()
+                
+                DispatchQueue.main.async {
+                    account.serverUrl = instanceURL.absoluteString
+                    
+                    self.accounts.append(account)
+                    self.subscribe(toChangesOf: account)
+                    
+                    self.currentAccount = account
+                }
+            } catch {
+                preconditionFailure()
+            }
+        }
+        
     }
     
     public func remove(account: Account) {
@@ -163,17 +187,17 @@ class AccountModel: ObservableObject {
         var accountInfo: MastodonSwift.Account?
         
         var isReadyToConnect: Bool {
-            !serverUrl.isEmpty && !email.isEmpty && !password.isEmpty
+            !serverUrl.isEmpty && (accessToken != nil || (!email.isEmpty && !password.isEmpty))
         }
         
         // MARK: - Initialization
-        
-        init() {
+        init(accessToken: AccessToken? = nil) {
             id = UUID()
             name = "No Name"
             serverUrl = ""
             email = ""
             password = ""
+            self.accessToken = accessToken
         }
         
         // MARK: - Encodable / Decodable

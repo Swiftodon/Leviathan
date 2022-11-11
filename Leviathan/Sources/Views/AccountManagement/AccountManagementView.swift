@@ -25,6 +25,8 @@ struct AccountManagementView: View {
     
     // MARK: - Public Properties
     
+    @State private var instanceURL: String = "https://mastodon.social"
+    
     var body: some View {
         NavigationView {
             List(selection: $selectedAccount) {
@@ -40,8 +42,11 @@ struct AccountManagementView: View {
             .navigationTitle("Accounts")
             .listStyle(.sidebar)
             .toolbar {
+                ToolbarItem {
+                    TextField("Instance URL", text: $instanceURL)
+                }
                 ToolbarItem(placement: .primaryAction) {
-                    Button { accountModel.add(account: .init()) } label: { Text("Add") }
+                    Button { accountModel.add(accountAt: URL(string: instanceURL)!) } label: { Text("Add") }
                 }
                 ToolbarItem(placement: .destructiveAction) {
                     Button { deleteAccount() } label: { Text("Remove") }.disabled(selectedAccount == nil)
