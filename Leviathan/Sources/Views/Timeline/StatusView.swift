@@ -48,7 +48,8 @@ struct StatusView: View {
             showActions.toggle()
         }
     }
-    
+
+    @ObservedObject
     var persistedStatus: PersistedStatus
     var statusOperations: StatusOperationProvider
     
