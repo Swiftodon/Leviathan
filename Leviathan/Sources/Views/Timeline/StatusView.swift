@@ -21,6 +21,15 @@
 import MastodonSwift
 import SwiftUI
 
+fileprivate extension LocalizedStringKey {
+    static let visibilityImage: [Status.Visibility: String] = [
+        .pub: "􀆪",
+        .unlisted: "􁙠",
+        .priv: "􀎠",
+        .direct: "􀍕"
+    ]
+}
+
 struct StatusView: View {
     
     // MARK: - Public Properties
@@ -45,6 +54,9 @@ struct StatusView: View {
     
     
     // MARK: - Private Properties
+
+    @State
+    private var revealed = false
 
     var status: Status {
         return persistedStatus.status!
@@ -87,11 +99,32 @@ struct StatusView: View {
     private func statusContent(_ status: Status) -> some View {
         VStack {
             statusHeader(status)
-            HStack {
-                Text(status.content.attributedString!)
-                    .lineLimit(40)
-                    .multilineTextAlignment(.leading)
-                Spacer()
+            if status.sensitive {
+                VStack {
+                    HStack {
+                        Text(status.spoilerText!.attributedString!)
+                            .lineLimit(40)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
+
+                    Button {
+                        revealed.toggle()
+                    } label: {
+                        Text(revealed ? "Hide" : "Show")
+                    }
+                }
+            }
+
+            if !status.sensitive || revealed {
+                VStack {
+                    HStack {
+                        Text(status.content.attributedString!)
+                            .lineLimit(40)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
+                }
             }
         }
     }
@@ -129,6 +162,7 @@ struct StatusView: View {
                     Text("@\(status.account?.acct ?? "Unknown")")
                     Text("·")
                     Text(status.createdAtRelative)
+                    Text(LocalizedStringKey.visibilityImage[status.visibility]!)
                     Spacer()
                 }
                 .foregroundColor(.secondary)
