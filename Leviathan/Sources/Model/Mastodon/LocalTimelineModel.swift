@@ -19,6 +19,7 @@
 //
 
 import Foundation
+import MastodonSwift
 
 class LocalTimelineModel: TimelineModel {
     
@@ -29,9 +30,7 @@ class LocalTimelineModel: TimelineModel {
     
     // MARK: - Public Methods
   
-    override func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: true) else {
-            return
-        }
+    override func retrieveTimeline() async throws -> [Status]? {
+        return try await SessionModel.shared.currentSession?.auth?.getPublicTimeline(isLocal: true, sinceId: lastStatusId)
     }
 }

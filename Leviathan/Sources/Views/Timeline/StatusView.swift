@@ -87,6 +87,7 @@ struct StatusView: View {
                 Text(status.content.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
+                Spacer()
             }
         }
     }
@@ -129,7 +130,7 @@ struct StatusView: View {
     
     private func accountImage(_ status: Status) -> some View {
         VStack {
-            AccountAvatar(status: status)
+            AccountAvatar(account: status.account!)
             Spacer()
         }
     }

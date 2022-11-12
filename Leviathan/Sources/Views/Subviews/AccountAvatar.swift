@@ -1,8 +1,8 @@
 //
-//  FederatedTimelineModel.swift
+//  AccountAvatar.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Marcus Kida on 07.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,19 +18,25 @@
 //  limitations under the License.
 //
 
-import Foundation
 import MastodonSwift
+import SwiftUI
 
-class FederatedTimelineModel: TimelineModel {
+struct AccountAvatar: View {
     
     // MARK: - Public Properties
     
-    public override var timelineId: TimelineId { TimelineId.federated }
-
-    
-    // MARK: - Public Methods
-  
-    override func retrieveTimeline() async throws -> [Status]? {
-        return try await SessionModel.shared.currentSession?.auth?.getPublicTimeline(isLocal: false, sinceId: lastStatusId)
+    var body: some View {
+        AsyncImage(url: account.avatar) { image in
+            image
+                .resizable()
+                .frame(width: 32, height: 32)
+                .cornerRadius(4)
+        } placeholder: {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 32, height: 32)
+        }
     }
+
+    let account: Account
 }
