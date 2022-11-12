@@ -130,7 +130,7 @@ struct StatusView: View {
     
     private func accountImage(_ status: Status) -> some View {
         VStack {
-            AccountAvatar(status: status)
+            AccountAvatar(account: status.account!)
             Spacer()
         }
     }

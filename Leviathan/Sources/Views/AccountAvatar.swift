@@ -23,7 +23,7 @@ import SwiftUI
 
 struct AccountAvatar: View {
     
-    let status: Status
+    let account: Account
     
     @State private var accountAvatar: Image?
     
@@ -43,7 +43,7 @@ struct AccountAvatar: View {
         .onAppear {
             Task {
                 guard
-                    let avatarUrl = status.account?.avatar,
+                    let avatarUrl = account.avatar,
                     let (data, _) = try? await URLSession.shared.data(from: avatarUrl)
                 else {
                     return

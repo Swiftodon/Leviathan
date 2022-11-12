@@ -187,6 +187,7 @@
 				E9810077291055C1001F4133 /* NotificationsView.swift */,
 				E981007929105CBE001F4133 /* Header.swift */,
 				E98597F12916AAC2003C5187 /* ToastView.swift */,
+				2A3B900D2919AC4A00233857 /* AccountAvatar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,7 +197,6 @@
 			children = (
 				E9810075291054CB001F4133 /* TimelineView.swift */,
 				E91CC3B9291551E400FC0BA0 /* StatusView.swift */,
-				2A3B900D2919AC4A00233857 /* AccountAvatar.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
