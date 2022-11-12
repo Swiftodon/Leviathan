@@ -700,7 +700,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/Mastodon.swift/";
 			requirement = {
-				branch = oath2;
+				branch = main;
 				kind = branch;
 			};
 		};
