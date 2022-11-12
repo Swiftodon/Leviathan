@@ -31,31 +31,20 @@ struct Header<Content>: View where Content: View {
                 .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
-                        Menu {
-                            if sessionModel.sessions.isEmpty {
-                                Text("No sessions connected")
-                            } else {
-                                ForEach(sessionModel.sessions, id: \.id) { session in
-                                    Button {
-                                        sessionModel.select(session: session)
-                                    } label: {
-                                        Text(session.account.displayName!)
-                                    }
-                                }
-
-                                Divider()
-
-                                Button {
-
-                                } label: {
-                                    Text("Add account...")
-                                }
-                            }
+                        Button {
+                            NotificationCenter.default.showMenuSheet()
                         } label: {
-                            // TODO: Use the image of the user here
-                            Image(systemName: "person.circle")
-                                .resizable()
-                                .frame(width: 24, height: 24)
+                            AsyncImage(url: sessionModel.currentSession?.account.avatar) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .cornerRadius(4)
+                            } placeholder: {
+                                Image(systemName: "person.circle")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                            }
+
                         }
                         .buttonStyle(.borderless)
                     }

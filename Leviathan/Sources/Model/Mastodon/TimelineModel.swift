@@ -43,8 +43,7 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
         
         return request
     }
-    
-    private var lastStatusId: String? {
+    var lastStatusId: String? {
         do {
             let result = try context.fetch(lastStatusIdFetchRequest)
             if result.count > 0 {
@@ -75,6 +74,10 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
             timelineId.rawValue,
             accountId ?? 0)
     }
+
+    func retrieveTimeline() async throws -> [Status]? {
+        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(sinceId: lastStatusId)
+    }
     
     func readTimeline() async throws {
         var finished = false
@@ -90,7 +93,7 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
             
             update { self.isLoading = true }
             
-            guard let timeline = try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(sinceId: lastStatusId) else {
+            guard let timeline = try await retrieveTimeline() else {
                 return
             }
             

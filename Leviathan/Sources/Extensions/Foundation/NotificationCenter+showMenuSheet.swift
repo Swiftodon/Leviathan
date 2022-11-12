@@ -1,8 +1,8 @@
 //
-//  FederatedTimelineModel.swift
+//  NotificationCenter+showMenuSheet.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 12.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,18 +19,13 @@
 //
 
 import Foundation
-import MastodonSwift
 
-class FederatedTimelineModel: TimelineModel {
-    
-    // MARK: - Public Properties
-    
-    public override var timelineId: TimelineId { TimelineId.federated }
+extension Notification.Name {
+    static let ShowMenuSheet = Notification.Name("__SHOW_NOTIFICATION_SHEET__")
+}
 
-    
-    // MARK: - Public Methods
-  
-    override func retrieveTimeline() async throws -> [Status]? {
-        return try await SessionModel.shared.currentSession?.auth?.getPublicTimeline(isLocal: false, sinceId: lastStatusId)
+extension NotificationCenter {
+    func showMenuSheet() {
+        post(name: .ShowMenuSheet, object: nil)
     }
 }

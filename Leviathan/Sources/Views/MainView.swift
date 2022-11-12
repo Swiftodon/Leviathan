@@ -28,27 +28,34 @@ struct MainView: View {
     // MARK: - Public Properties
     
     var body: some View {
-        tabBar()
-            .tab(icon: Image(systemName: "house.circle")) {
-                TimelineView(title: "Home", timeline: .home, model: timelineModel)
-            }
-            .tab(icon: Image(systemName: "location.circle")) {
-                TimelineView(title: "Local Timeline", timeline: .local, model: localTimelineModel)
-            }
-            .tab(icon: Image(systemName: "globe")) {
-                TimelineView(title: "Federated Timeline", timeline: .federated, model: federatedTimelineModel)
-            }
-            .tab(icon: Image(systemName: "at.circle")) {
-                Text("Mentions")
-            }
-            .tab(icon: Image(systemName: "envelope.circle")) {
-                Text("Direct Messages")
-            }
-            .tab(icon: Image(systemName: "bell.circle")) {
-                NotificationsView(model: notificationsModel)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .ShowToast), perform: triggerAlert)
-            .toastView(toast: $currentToast)
+        GeometryReader { geo in
+            tabBar()
+                .tab(icon: Image(systemName: "house.circle")) {
+                    TimelineView(title: "Home", timeline: .home, model: timelineModel)
+                }
+                .tab(icon: Image(systemName: "location.circle")) {
+                    TimelineView(title: "Local Timeline", timeline: .local, model: localTimelineModel)
+                }
+                .tab(icon: Image(systemName: "globe")) {
+                    TimelineView(title: "Federated Timeline", timeline: .federated, model: federatedTimelineModel)
+                }
+                .tab(icon: Image(systemName: "at.circle")) {
+                    Text("Mentions")
+                }
+                .tab(icon: Image(systemName: "envelope.circle")) {
+                    Text("Direct Messages")
+                }
+                .tab(icon: Image(systemName: "bell.circle")) {
+                    NotificationsView(model: notificationsModel)
+                }
+                .onReceive(NotificationCenter.default.publisher(for: .ShowToast), perform: triggerAlert)
+                .onReceive(NotificationCenter.default.publisher(for: .ShowMenuSheet), perform: toggleMenuSheet)
+                .toastView(toast: $currentToast)
+                .sheet(isPresented: $presentMenuSheet) {
+                    MenuView()
+                        .frame(minWidth: geo.size.width - 30, minHeight: geo.size.height - 30)
+                }
+        }
     }
     
     
@@ -56,6 +63,8 @@ struct MainView: View {
 
     @State
     private var currentToast: ToastView.Toast? = nil
+    @State
+    private var presentMenuSheet = false
     
     @EnvironmentObject
     private var timelineModel: TimelineModel
@@ -79,6 +88,10 @@ struct MainView: View {
     
     private func triggerAlert(_ notification: Foundation.Notification) {
         currentToast = (notification.object as! ToastView.Toast)
+    }
+
+    private func toggleMenuSheet(_ notification: Foundation.Notification) {
+        presentMenuSheet.toggle()
     }
 }
 

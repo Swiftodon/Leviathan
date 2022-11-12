@@ -135,6 +135,8 @@ class SessionModel: ObservableObject, Codable {
             if let oldSelectedSession {
                 select(session: oldSelectedSession)
             }
+
+            save()
         }
     }
 

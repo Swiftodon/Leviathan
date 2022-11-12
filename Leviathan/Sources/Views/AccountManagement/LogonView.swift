@@ -23,25 +23,29 @@ import SwiftUI
 
 struct LogonView: View {
     var body: some View {
-        VStack {
-            Text("Please enter the server name of the Mastodon instance, that you wish to logon to.")
-                .lineLimit(5)
-                .multilineTextAlignment(.center)
+        ScrollView {
+            VStack {
+                Text("Please enter the server name of the Mastodon instance, that you wish to logon to.")
+                    .lineLimit(5)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 10)
+
+                Form {
+                    TextField("Server Name:", text: $serverName, prompt: Text("Server Name"))
+                        .fixedSize()
+                        .onChange(of: serverName, perform: loadInstanceInformation(server:))
+                }
                 .padding(.bottom, 10)
 
-            Form {
-                TextField("Server Name:", text: $serverName, prompt: Text("Server Name"))
-                    .fixedSize()
-                    .onChange(of: serverName, perform: loadInstanceInformation(server:))
+                instanceInformation()
+
+                Spacer()
             }
-            .padding(.bottom, 10)
-
-            instanceInformation()
-
-            Spacer()
         }
         .padding(.all, 20)
     }
+
+    var completed: (() -> ())? = nil
 
 
     // MARK: - Private Properties
@@ -91,6 +95,7 @@ struct LogonView: View {
 
     private func logon() {
         sessionModel.logon(instanceURL: URL(string: "https://\(serverName)")!)
+        completed?()
     }
 
     private func loadInstanceInformation(server: String) {

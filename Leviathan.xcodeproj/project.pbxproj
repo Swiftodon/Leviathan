@@ -23,6 +23,8 @@
 		E94A901F291EAC2C008F2B71 /* LogonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901E291EAC2C008F2B71 /* LogonView.swift */; };
 		E94A9021291F0C24008F2B71 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9020291F0C24008F2B71 /* SessionModel.swift */; };
 		E94A9024291F0EC0008F2B71 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9023291F0EC0008F2B71 /* Session.swift */; };
+		E94A9026291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9025291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift */; };
+		E94A9029291F9004008F2B71 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9028291F9004008F2B71 /* MenuView.swift */; };
 		E9699A43291C261F004781F9 /* View+onRendered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9699A42291C261F004781F9 /* View+onRendered.swift */; };
 		E9699A45291C4B7A004781F9 /* Font+platformFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9699A44291C4B7A004781F9 /* Font+platformFonts.swift */; };
 		E981006E29105347001F4133 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006D29105347001F4133 /* TimelineModel.swift */; };
@@ -72,6 +74,8 @@
 		E94A901E291EAC2C008F2B71 /* LogonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonView.swift; sourceTree = "<group>"; };
 		E94A9020291F0C24008F2B71 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		E94A9023291F0EC0008F2B71 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E94A9025291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+showMenuSheet.swift"; sourceTree = "<group>"; };
+		E94A9028291F9004008F2B71 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E9699A42291C261F004781F9 /* View+onRendered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+onRendered.swift"; sourceTree = "<group>"; };
 		E9699A44291C4B7A004781F9 /* Font+platformFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+platformFonts.swift"; sourceTree = "<group>"; };
 		E981006D29105347001F4133 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
@@ -184,10 +188,9 @@
 				E91CC3B8291551C700FC0BA0 /* Timeline */,
 				E94A901C291EAB08008F2B71 /* ContentView.swift */,
 				E90B5945290FCBC400324E6B /* MainView.swift */,
+				E94A9028291F9004008F2B71 /* MenuView.swift */,
 				E9810077291055C1001F4133 /* NotificationsView.swift */,
-				E981007929105CBE001F4133 /* Header.swift */,
-				E98597F12916AAC2003C5187 /* ToastView.swift */,
-				2A3B900D2919AC4A00233857 /* AccountAvatar.swift */,
+				E94A9027291F8FD9008F2B71 /* Subviews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,16 @@
 				E94A9023291F0EC0008F2B71 /* Session.swift */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+		E94A9027291F8FD9008F2B71 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				2A3B900D2919AC4A00233857 /* AccountAvatar.swift */,
+				E981007929105CBE001F4133 /* Header.swift */,
+				E98597F12916AAC2003C5187 /* ToastView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		E981006C29105332001F4133 /* Model */ = {
@@ -344,6 +357,7 @@
 			children = (
 				E9914EB729127E9500323B78 /* String+applicationName.swift */,
 				E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */,
+				E94A9025291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -475,6 +489,7 @@
 				E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */,
 				E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */,
 				2A3B900E2919AC4A00233857 /* AccountAvatar.swift in Sources */,
+				E94A9029291F9004008F2B71 /* MenuView.swift in Sources */,
 				E981007A29105CBE001F4133 /* Header.swift in Sources */,
 				E9699A45291C4B7A004781F9 /* Font+platformFonts.swift in Sources */,
 				E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */,
@@ -497,6 +512,7 @@
 				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
 				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
 				E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */,
+				E94A9026291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift in Sources */,
 				E985982F2917D3AF003C5187 /* NamedEntity.swift in Sources */,
 				E9EA0596291C03FE008F55AF /* Status+hashable.swift in Sources */,
 				E98597F22916AAC2003C5187 /* ToastView.swift in Sources */,
