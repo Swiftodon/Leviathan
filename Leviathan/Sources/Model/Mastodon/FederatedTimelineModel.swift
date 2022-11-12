@@ -31,7 +31,7 @@ class FederatedTimelineModel: TimelineModel {
     // MARK: - Public Methods
   
     override func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: false) else {
+        guard let timeline = try await SessionModel.shared.currentSession?.auth?.getPublicTimeline(isLocal: false) else {
             return
         }
     }

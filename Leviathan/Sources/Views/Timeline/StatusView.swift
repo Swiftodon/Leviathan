@@ -87,6 +87,7 @@ struct StatusView: View {
                 Text(status.content.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
+                Spacer()
             }
         }
     }

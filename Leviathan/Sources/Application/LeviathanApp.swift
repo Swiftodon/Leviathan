@@ -32,7 +32,7 @@ struct LeviathanApp: SwiftUI.App {
                 .environmentObject(LocalTimelineModel())
                 .environmentObject(FederatedTimelineModel())
                 .environmentObject(NotificationsModel())
-                .environmentObject(AccountModel.shared)
+                .environmentObject(SessionModel.shared)
         }
     }
 

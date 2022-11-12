@@ -30,7 +30,7 @@ class LocalTimelineModel: TimelineModel {
     // MARK: - Public Methods
   
     override func readTimeline() async throws {
-        guard let timeline = try await AccountModel.shared.auth?.getPublicTimeline(isLocal: true) else {
+        guard let timeline = try await SessionModel.shared.currentSession?.auth?.getPublicTimeline(isLocal: true) else {
             return
         }
     }

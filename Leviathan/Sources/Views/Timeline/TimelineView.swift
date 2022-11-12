@@ -78,7 +78,7 @@ struct TimelineView: View {
     @FetchRequest
     private var persistedStatuses: FetchedResults<PersistedStatus>
     @EnvironmentObject
-    private var accountModel: AccountModel
+    private var sessionModel: SessionModel
     @State
     private var reloadCancellable: AnyCancellable!
     
@@ -86,10 +86,10 @@ struct TimelineView: View {
     // MARK: - Private Methods
     
     private func appearing(_ proxy: ScrollViewProxy? = nil) {
-        reloadCancellable = accountModel.objectWillChange.sink { _ in
+        reloadCancellable = sessionModel.objectWillChange.sink { _ in
             update {
                 guard
-                    accountModel.currentAccount != nil
+                    sessionModel.currentSession != nil
                 else {
                     return
                 }
@@ -99,8 +99,8 @@ struct TimelineView: View {
             }
         }
         
-        if accountModel.currentAccount == nil && !accountModel.accounts.isEmpty {
-            accountModel.currentAccount = accountModel.accounts[0]
+        if sessionModel.currentSession == nil && !sessionModel.sessions.isEmpty {
+            sessionModel.select(session: sessionModel.sessions[0])
         }
     }
     
@@ -117,7 +117,7 @@ struct TimelineView: View {
     @Sendable
     private func refresh() async {
         do {
-            if let _ = AccountModel.shared.auth {
+            if let _ = SessionModel.shared.currentSession?.auth {
                 try await model.readTimeline()
             } else {
                 ToastView.Toast(type: .warning, message: "You are not logged in. Can't update your timeline.").show()

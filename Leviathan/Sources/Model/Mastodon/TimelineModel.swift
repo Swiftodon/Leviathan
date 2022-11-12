@@ -68,7 +68,7 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
     // MARK: - Public Methods
     
     func readFilter() -> NSPredicate {
-        let accountId = AccountModel.shared.currentAccount?.accountInfo?.id
+        let accountId = SessionModel.shared.currentSession?.account.id
         
         return NSPredicate(
             format: "tl == %d AND accountId == %@",
@@ -84,13 +84,13 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
         }
         
         repeat {
-            guard AccountModel.shared.currentAccount != nil else {
+            guard SessionModel.shared.currentSession != nil else {
                 return
             }
             
             update { self.isLoading = true }
             
-            guard let timeline = try await AccountModel.shared.auth?.getHomeTimeline(sinceId: lastStatusId) else {
+            guard let timeline = try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(sinceId: lastStatusId) else {
                 return
             }
             
@@ -126,7 +126,7 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
                     let persistedStatus: PersistedStatus = self.context.createEntity()
                     
                     persistedStatus.statusId = status.id
-                    persistedStatus.accountId = AccountModel.shared.currentAccount!.accountInfo!.id
+                    persistedStatus.accountId = SessionModel.shared.currentSession!.account.id
                     persistedStatus.timeline = self.timelineId
                     persistedStatus.timestamp = status.timestamp
                     persistedStatus.status = status

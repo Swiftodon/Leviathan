@@ -20,10 +20,6 @@
 
 import SwiftUI
 
-extension Notification.Name {
-    static let ShowServerConfiguration = Notification.Name("ShowServerConfiguration")
-}
-
 struct Header<Content>: View where Content: View {
     
     // MARK: - Public Properties
@@ -36,33 +32,20 @@ struct Header<Content>: View where Content: View {
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
                         Menu {
-                            if accountModel.accounts.isEmpty {
-                                Text("No accounts configured")
+                            if sessionModel.sessions.isEmpty {
+                                Text("No sessions connected")
                             } else {
-                                ForEach(accountModel.accounts, id: \.id) { account in
+                                ForEach(sessionModel.sessions, id: \.id) { session in
                                     Button {
-                                        if accountModel.currentAccount != account {
-                                            accountModel.currentAccount = account
-                                        }
+                                        sessionModel.select(session: session)
                                     } label: {
-                                        Text(account.name)
+                                        Text(session.account.displayName!)
                                     }
                                 }
                             }
                         } label: {
                             // TODO: Use the image of the user here
                             Image(systemName: "person.circle")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                        }
-                        .buttonStyle(.borderless)
-                    }
-                    
-                    ToolbarItem(placement: .automatic) {
-                        Menu {
-                            Button("Manage Accounts") { NotificationCenter.default.post(name: .ShowServerConfiguration, object: nil) }
-                        } label: {
-                            Image(systemName: "filemenu.and.selection")
                                 .resizable()
                                 .frame(width: 24, height: 24)
                         }
@@ -87,7 +70,7 @@ struct Header<Content>: View where Content: View {
     // MARK: - Private Properties
     
     @EnvironmentObject
-    private var accountModel: AccountModel
+    private var sessionModel: SessionModel
 }
 
 struct Header_Previews: PreviewProvider {
