@@ -20,6 +20,7 @@
 
 import MastodonSwift
 import SwiftUI
+import WebView
 
 struct LogonView: View {
     var body: some View {
@@ -39,8 +40,16 @@ struct LogonView: View {
 
                 instanceInformation()
 
+                WebView(webView: webViewStore.webView)
+                    .frame(width: 400, height: 300)
+                    .padding(.vertical, 10)
+                    .cornerRadius(10)
+
                 Spacer()
             }
+        }
+        .onAppear {
+            webViewStore.webView.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/IPSbNdBmWKE")!))
         }
         .padding(.all, 20)
     }
@@ -50,6 +59,8 @@ struct LogonView: View {
 
     // MARK: - Private Properties
 
+    @StateObject
+    private var webViewStore = WebViewStore()
     @EnvironmentObject
     private var sessionModel: SessionModel
     @State

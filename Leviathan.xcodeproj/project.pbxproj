@@ -25,6 +25,7 @@
 		E94A9024291F0EC0008F2B71 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9023291F0EC0008F2B71 /* Session.swift */; };
 		E94A9026291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9025291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift */; };
 		E94A9029291F9004008F2B71 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9028291F9004008F2B71 /* MenuView.swift */; };
+		E94A902F292047DD008F2B71 /* WebView in Frameworks */ = {isa = PBXBuildFile; productRef = E94A902E292047DD008F2B71 /* WebView */; };
 		E9699A43291C261F004781F9 /* View+onRendered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9699A42291C261F004781F9 /* View+onRendered.swift */; };
 		E9699A45291C4B7A004781F9 /* Font+platformFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9699A44291C4B7A004781F9 /* Font+platformFonts.swift */; };
 		E981006E29105347001F4133 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981006D29105347001F4133 /* TimelineModel.swift */; };
@@ -110,6 +111,7 @@
 				E981008F2911DA37001F4133 /* Valet in Frameworks */,
 				E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */,
 				E981008C2911D549001F4133 /* MastodonSwift in Frameworks */,
+				E94A902F292047DD008F2B71 /* WebView in Frameworks */,
 				E9914EC42915123200323B78 /* SwiftletUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +402,7 @@
 				E981008B2911D549001F4133 /* MastodonSwift */,
 				E981008E2911DA37001F4133 /* Valet */,
 				E9914EC32915123200323B78 /* SwiftletUtilities */,
+				E94A902E292047DD008F2B71 /* WebView */,
 			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
@@ -434,6 +437,7 @@
 				E981008A2911D549001F4133 /* XCRemoteSwiftPackageReference "Mastodon" */,
 				E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */,
 				E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */,
+				E94A902D292047DD008F2B71 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */,
 			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
@@ -748,6 +752,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E94A902D292047DD008F2B71 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylehickinson/SwiftUI-WebView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/MultiplatformTabBar";
@@ -783,6 +795,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E94A902E292047DD008F2B71 /* WebView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E94A902D292047DD008F2B71 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */;
+			productName = WebView;
+		};
 		E981007F2911004D001F4133 /* MultiplatformTabBar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E981007E2911004D001F4133 /* XCRemoteSwiftPackageReference "MultiplatformTabBar" */;
