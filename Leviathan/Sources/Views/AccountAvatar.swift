@@ -23,40 +23,20 @@ import SwiftUI
 
 struct AccountAvatar: View {
     
-    let account: Account
-    
-    @State private var accountAvatar: Image?
+    // MARK: - Public Properties
     
     var body: some View {
-        ZStack {
-            if let accountAvatar = accountAvatar {
-                accountAvatar
-                    .resizable()
-                    .frame(width: 32, height: 32)
-                    .cornerRadius(4)
-            } else {
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .frame(width: 32, height: 32)
-            }
-        }
-        .onAppear {
-            Task {
-                guard
-                    let avatarUrl = account.avatar,
-                    let (data, _) = try? await URLSession.shared.data(from: avatarUrl)
-                else {
-                    return
-                }
-                
-                #if os(macOS)
-                guard let image = NSImage(data: data) else { return }
-                accountAvatar = Image(nsImage: image)
-                #elseif os(iOS)
-                guard let image = UIImage(data: data) else { return }
-                accountAvatar = Image(uiImage: image)
-                #endif
-            }
+        AsyncImage(url: account.avatar) { image in
+            image
+                .resizable()
+                .frame(width: 32, height: 32)
+                .cornerRadius(4)
+        } placeholder: {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 32, height: 32)
         }
     }
+
+    let account: Account
 }

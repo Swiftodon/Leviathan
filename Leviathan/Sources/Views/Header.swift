@@ -42,6 +42,14 @@ struct Header<Content>: View where Content: View {
                                         Text(session.account.displayName!)
                                     }
                                 }
+
+                                Divider()
+
+                                Button {
+
+                                } label: {
+                                    Text("Add account...")
+                                }
                             }
                         } label: {
                             // TODO: Use the image of the user here
