@@ -40,11 +40,15 @@ struct StatusView: View {
         }
     }
     
-    var status: Status
+    var persistedStatus: PersistedStatus
     var statusOperations: StatusOperationProvider
     
     
     // MARK: - Private Properties
+
+    var status: Status {
+        return persistedStatus.status!
+    }
     
     @State
     private var showActions = false
@@ -98,8 +102,13 @@ struct StatusView: View {
             HStack {
                 Button { } label: { Image(systemName: "bubble.right") }
                     .padding(.trailing, 5)
-                Button(action: boost, label: { Label("\(status.reblogsCount)", systemImage: "repeat") })
-                    .padding(.trailing, 5)
+                Button {
+                    boost(status)
+                } label: {
+                    Label("\(status.reblogsCount)", systemImage: "repeat")
+                        .foregroundColor(status.reblogged ? .green : .primary)
+                }
+                .padding(.trailing, 5)
                 Button {} label: { Label("\(status.favouritesCount)", systemImage: "star") }
                     .padding(.trailing, 5)
                 Spacer()
@@ -138,13 +147,28 @@ struct StatusView: View {
     
     // MARK: - Actions
     
-    private func boost() {
+    private func boost(_ status: Status) {
         Task {
             do {
-                try await statusOperations.boost(status: status)
+                if status.reblogged {
+                    try await statusOperations.unboost(status: status)
+                } else {
+                    try await statusOperations.boost(status: status)
+                }
+
+                try await refreshStatus(persistedStatus)
             } catch {
-                NSLog("\(error)")
+                ToastView.Toast(
+                    type: .error,
+                    message: "Boosting the status didn't succeed. Please try again!",
+                    error: error)
+                .show()
             }
         }
+    }
+
+    private func refreshStatus(_ persistedStatus: PersistedStatus) async throws {
+        // TODO: Implement this method
+        try await statusOperations.refreshStatus(persistedStatus)
     }
 }

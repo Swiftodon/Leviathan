@@ -31,7 +31,7 @@ struct TimelineView: View {
             ScrollViewReader { proxy in
                 List {
                     ForEach(persistedStatuses, id: \.statusId) { status in
-                        StatusView(status: status.status!, statusOperations: model)
+                        StatusView(persistedStatus: status, statusOperations: model)
                             .id(status.status!.id)
                     }
                 }
