@@ -23,7 +23,7 @@ import Foundation
 
 extension Status {
     func boost() async throws -> Status? {
-        if let auth = AccountModel.shared.auth {
+        if let auth = SessionModel.shared.currentSession?.auth {
             return try await auth.boost(status: self)
         }
         

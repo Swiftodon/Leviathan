@@ -1,8 +1,8 @@
 //
-//  FederatedTimelineModel.swift
+//  AppDelegate.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 31.10.22.
+//  Created by Thomas Bonk on 11.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,19 +18,23 @@
 //  limitations under the License.
 //
 
+#if os(iOS)
+
 import Foundation
 import MastodonSwift
+import SwiftUI
+import UIKit
 
-class FederatedTimelineModel: TimelineModel {
-    
-    // MARK: - Public Properties
-    
-    public override var timelineId: TimelineId { TimelineId.federated }
+typealias ApplicationDelegateAdaptor = UIApplicationDelegateAdaptor
 
-    
-    // MARK: - Public Methods
-  
-    override func retrieveTimeline() async throws -> [Status]? {
-        return try await SessionModel.shared.currentSession?.auth?.getPublicTimeline(isLocal: false, sinceId: lastStatusId)
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
+        if url.host == "oauth-callback" {
+            MastodonClient.handleOAuthResponse(url: url)
+        }
+        return true
     }
 }
+
+#endif
+

@@ -19,9 +19,8 @@
 //
 
 import SwiftUI
-
 @main
-struct LeviathanApp: App {
+struct LeviathanApp: SwiftUI.App {
     
     // MARK: - Public Properties
     
@@ -33,12 +32,14 @@ struct LeviathanApp: App {
                 .environmentObject(LocalTimelineModel())
                 .environmentObject(FederatedTimelineModel())
                 .environmentObject(NotificationsModel())
-                .environmentObject(AccountModel.shared)
+                .environmentObject(SessionModel.shared)
         }
     }
-    
-    
+
     // MARK: - Private Properties
+
+    @ApplicationDelegateAdaptor(AppDelegate.self)
+    private var appDelegate
     
     private let persistenceController = PersistenceController.shared
 }
