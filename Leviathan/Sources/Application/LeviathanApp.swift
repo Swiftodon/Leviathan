@@ -18,7 +18,9 @@
 //  limitations under the License.
 //
 
+import MastodonSwift
 import SwiftUI
+
 @main
 struct LeviathanApp: SwiftUI.App {
     
@@ -33,13 +35,24 @@ struct LeviathanApp: SwiftUI.App {
                 .environmentObject(FederatedTimelineModel())
                 .environmentObject(NotificationsModel())
                 .environmentObject(SessionModel.shared)
+                .onOpenURL(perform: handleUrl)
         }
     }
 
     // MARK: - Private Properties
-
-    @ApplicationDelegateAdaptor(AppDelegate.self)
-    private var appDelegate
     
     private let persistenceController = PersistenceController.shared
+
+
+    // MARK: - Private Methods
+
+    private func handleUrl(_ url: URL) {
+        if url.scheme == "leviathan" {
+            handleOauthCallback(url)
+        }
+    }
+
+    private func handleOauthCallback(_ url: URL) {
+        MastodonClient.handleOAuthResponse(url: url)
+    }
 }

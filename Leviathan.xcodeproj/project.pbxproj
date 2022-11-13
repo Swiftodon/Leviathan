@@ -17,8 +17,6 @@
 		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
 		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
 		E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CF291681F600FC0BA0 /* Status+actions.swift */; };
-		E94A9019291EA783008F2B71 /* AppDelegate+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9018291EA783008F2B71 /* AppDelegate+iOS.swift */; };
-		E94A901B291EA89C008F2B71 /* AppDelegate+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901A291EA7CA008F2B71 /* AppDelegate+macOS.swift */; };
 		E94A901D291EAB08008F2B71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901C291EAB08008F2B71 /* ContentView.swift */; };
 		E94A901F291EAC2C008F2B71 /* LogonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901E291EAC2C008F2B71 /* LogonView.swift */; };
 		E94A9021291F0C24008F2B71 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9020291F0C24008F2B71 /* SessionModel.swift */; };
@@ -68,8 +66,6 @@
 		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
 		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
 		E91CC3CF291681F600FC0BA0 /* Status+actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+actions.swift"; sourceTree = "<group>"; };
-		E94A9018291EA783008F2B71 /* AppDelegate+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+iOS.swift"; sourceTree = "<group>"; };
-		E94A901A291EA7CA008F2B71 /* AppDelegate+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+macOS.swift"; sourceTree = "<group>"; };
 		E94A901C291EAB08008F2B71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E94A901E291EAC2C008F2B71 /* LogonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonView.swift; sourceTree = "<group>"; };
 		E94A9020291F0C24008F2B71 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
@@ -164,7 +160,6 @@
 				E981008629117DAA001F4133 /* Extensions */,
 				E981006C29105332001F4133 /* Model */,
 				E98598252917BED0003C5187 /* Persistence */,
-				E94A9015291EA739008F2B71 /* Platform */,
 				E9EA0592291C022B008F55AF /* Utils */,
 				E90B5944290FCBC400324E6B /* Views */,
 				E985981F2917BDCE003C5187 /* Generated */,
@@ -220,31 +215,6 @@
 				E9EA0595291C03FE008F55AF /* Status+hashable.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		E94A9015291EA739008F2B71 /* Platform */ = {
-			isa = PBXGroup;
-			children = (
-				E94A9016291EA74E008F2B71 /* iOS */,
-				E94A9017291EA756008F2B71 /* macOS */,
-			);
-			path = Platform;
-			sourceTree = "<group>";
-		};
-		E94A9016291EA74E008F2B71 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E94A9018291EA783008F2B71 /* AppDelegate+iOS.swift */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		E94A9017291EA756008F2B71 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				E94A901A291EA7CA008F2B71 /* AppDelegate+macOS.swift */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		E94A9022291F0EAC008F2B71 /* Session */ = {
@@ -484,7 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94A901B291EA89C008F2B71 /* AppDelegate+macOS.swift in Sources */,
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
 				E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */,
 				E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */,
@@ -519,7 +488,6 @@
 				E981006E29105347001F4133 /* TimelineModel.swift in Sources */,
 				E9699A43291C261F004781F9 /* View+onRendered.swift in Sources */,
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
-				E94A9019291EA783008F2B71 /* AppDelegate+iOS.swift in Sources */,
 				E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,12 +30,9 @@ struct LogonView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 10)
 
-                Form {
-                    TextField("Server Name:", text: $serverName, prompt: Text("Server Name"))
-                        .fixedSize()
-                        .onChange(of: serverName, perform: loadInstanceInformation(server:))
-                }
-                .padding(.bottom, 10)
+                TextField("Server Name:", text: $serverName, prompt: Text("Server Name"))
+                    .onChange(of: serverName, perform: loadInstanceInformation(server:))
+                    .padding(.vertical, 10)
 
                 instanceInformation()
 
