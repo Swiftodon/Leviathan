@@ -112,7 +112,18 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
     }
     
     func unboost(status: MastodonSwift.Status) async throws {
-        
+        _ = try await status.unboost()
+    }
+
+    func refreshStatus(_ persistedStatus: PersistedStatus) async throws {
+        if let auth = SessionModel.shared.currentSession?.auth {
+            let status = try await auth.read(statusId: persistedStatus.statusId)
+
+            persistedStatus.status = status
+            try await context.perform {
+                try self.context.save()
+            }
+        }
     }
     
     

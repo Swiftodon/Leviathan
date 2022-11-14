@@ -29,4 +29,12 @@ extension Status {
         
         return nil
     }
+
+    func unboost() async throws -> Status? {
+        if self.reblogged, let auth = SessionModel.shared.currentSession?.auth {
+            return try await auth.unboost(status: self)
+        }
+
+        return nil
+    }
 }

@@ -24,4 +24,5 @@ import Foundation
 protocol StatusOperationProvider {
     func boost(status: Status) async throws
     func unboost(status: Status) async throws
+    func refreshStatus(_ persistedStatus: PersistedStatus) async throws
 }
