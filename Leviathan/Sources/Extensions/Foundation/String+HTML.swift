@@ -12,7 +12,8 @@ import SwiftUI
 extension String {
     
     public var attributedString: AttributedString? {
-        let data = self.data(using: self.fastestEncoding)!
+        let plain = self.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "")
+        let data = self.data(using: plain.fastestEncoding)!
         
         guard let attrStr = try? NSMutableAttributedString(
             data: data,
