@@ -37,8 +37,7 @@ struct StatusView: View {
             StatusContent(persistedStatus: persistedStatus)
             ActionBar(
                 persistedStatus: persistedStatus,
-                status: status.reblog != nil ? status.reblog! : status,
-                statusOperations: statusOperations)
+                status: status.reblog != nil ? status.reblog! : status)
             Divider().padding(.bottom, 2)
         }
         .padding(.all, 5)
@@ -46,7 +45,6 @@ struct StatusView: View {
 
     @ObservedObject
     var persistedStatus: PersistedStatus
-    var statusOperations: StatusOperationProvider
     
     
     // MARK: - Private Properties

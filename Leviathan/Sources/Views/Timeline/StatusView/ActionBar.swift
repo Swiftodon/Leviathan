@@ -31,19 +31,28 @@ struct ActionBar: View {
 
             } label: {
                 Image(systemName: "bubble.right")
-
+                    .foregroundColor(.primary)
             }.padding(.trailing, 5)
 
             Button {
-                boost(persistedStatus.status!)
+
             } label: {
                 Label("\(status.reblogsCount)", systemImage: "repeat")
                     .foregroundColor(status.reblogged ? .green : .primary)
             }.padding(.trailing, 5)
+
             Button {
 
             } label: {
                 Label("\(status.favouritesCount)", systemImage: "star")
+                    .foregroundColor(status.favourited ? .green : .primary)
+            }.padding(.trailing, 5)
+
+            Button {
+
+            } label: {
+                Image(systemName: "bookmark")
+                    .foregroundColor(status.bookmarked ? .green : .primary)
             }.padding(.trailing, 5)
             
             Spacer()
@@ -60,41 +69,4 @@ struct ActionBar: View {
     var persistedStatus: PersistedStatus
     @State
     var status: Status
-    var statusOperations: StatusOperationProvider
-
-
-    // MARK: - Actions
-
-    private func boost(_ status: Status) {
-        Task {
-            do {
-                if status.reblogged {
-                    try await statusOperations.unboost(status: status)
-                } else {
-                    try await statusOperations.boost(status: status)
-                }
-
-                try await refreshStatus(persistedStatus)
-
-                update {
-                    if let reblog = persistedStatus.status?.reblog {
-                        self.status = reblog
-                    } else {
-                        self.status = persistedStatus.status!
-                    }
-                }
-            } catch {
-                ToastView.Toast(
-                    type: .error,
-                    message: "Boosting the status didn't succeed. Please try again!",
-                    error: error)
-                .show()
-            }
-        }
-    }
-
-    private func refreshStatus(_ persistedStatus: PersistedStatus) async throws {
-        // TODO: Implement this method
-        try await statusOperations.refreshStatus(persistedStatus)
-    }
 }

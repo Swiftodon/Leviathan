@@ -37,4 +37,14 @@ extension Status {
 
         return nil
     }
+
+    func toggleBookmark() async throws -> Status? {
+        if self.bookmarked, let auth = SessionModel.shared.currentSession?.auth {
+            return try await auth.bookmark(status: self)
+        } else if !self.bookmarked, let auth = SessionModel.shared.currentSession?.auth {
+            return try await auth.unbookmark(status: self)
+        }
+
+        return nil
+    }
 }

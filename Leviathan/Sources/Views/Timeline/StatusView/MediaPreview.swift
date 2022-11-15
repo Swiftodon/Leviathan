@@ -80,7 +80,7 @@ struct MediaPreview: View {
             ProgressView()
         }
         .onTapGesture {
-            mediumUrl = attachments[0].url
+            mediumUrl = medium.url
         }
         .quickLookPreview($mediumUrl)
     }
@@ -94,6 +94,7 @@ struct MediaPreview: View {
             Link(medium.url.host()!, destination: medium.url)
                 .font(.footnote)
         }
+        .padding(.all, 8)
         .background(Color.backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
