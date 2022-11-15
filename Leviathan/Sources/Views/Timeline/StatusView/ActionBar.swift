@@ -35,7 +35,7 @@ struct ActionBar: View {
             }.padding(.trailing, 5)
 
             Button {
-                boost(status)
+                boost(persistedStatus.status!)
             } label: {
                 Label("\(status.reblogsCount)", systemImage: "repeat")
                     .foregroundColor(status.reblogged ? .green : .primary)
