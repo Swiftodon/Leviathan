@@ -22,7 +22,7 @@ import CoreData
 import Foundation
 import MastodonSwift
 
-class TimelineModel: ObservableObject, StatusOperationProvider {
+class TimelineModel: ObservableObject {
     
     // MARK: - Public Properties
 
@@ -100,30 +100,6 @@ class TimelineModel: ObservableObject, StatusOperationProvider {
             persist(timeline: timeline)
             finished = timeline.count == 0
         } while !finished
-    }
-    
-    
-    // MARK: - StatusOperationProvider
-    
-    func boost(status: MastodonSwift.Status) async throws {
-        if let _ = try await status.boost() {
-            try await readTimeline()
-        }
-    }
-    
-    func unboost(status: MastodonSwift.Status) async throws {
-        _ = try await status.unboost()
-    }
-
-    func refreshStatus(_ persistedStatus: PersistedStatus) async throws {
-        if let auth = SessionModel.shared.currentSession?.auth {
-            let status = try await auth.read(statusId: persistedStatus.statusId)
-
-            persistedStatus.status = status
-            try await context.perform {
-                try self.context.save()
-            }
-        }
     }
     
     

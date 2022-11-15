@@ -40,7 +40,6 @@
 		E981008929117DDE001F4133 /* View+compatability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981008829117DDE001F4133 /* View+compatability.swift */; };
 		E981008C2911D549001F4133 /* MastodonSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E981008B2911D549001F4133 /* MastodonSwift */; };
 		E981008F2911DA37001F4133 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = E981008E2911DA37001F4133 /* Valet */; };
-		E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597EF291688DF003C5187 /* StatusOperationProvider.swift */; };
 		E98597F22916AAC2003C5187 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98597F12916AAC2003C5187 /* ToastView.swift */; };
 		E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E98598142917B1E8003C5187 /* Leviathan.xcdatamodeld */; };
 		E98598232917BDCE003C5187 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98598212917BDCE003C5187 /* Model.swift */; };
@@ -96,7 +95,6 @@
 		E981007929105CBE001F4133 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		E981008129110280001F4133 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E981008829117DDE001F4133 /* View+compatability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+compatability.swift"; sourceTree = "<group>"; };
-		E98597EF291688DF003C5187 /* StatusOperationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOperationProvider.swift; sourceTree = "<group>"; };
 		E98597F12916AAC2003C5187 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		E98598152917B1E8003C5187 /* Leviathan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Leviathan.xcdatamodel; sourceTree = "<group>"; };
 		E985981E2917BCAD003C5187 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -360,7 +358,6 @@
 		E9914EB229127DFA00323B78 /* Mastodon */ = {
 			isa = PBXGroup;
 			children = (
-				E98597EF291688DF003C5187 /* StatusOperationProvider.swift */,
 				E981006D29105347001F4133 /* TimelineModel.swift */,
 				E981006F2910537B001F4133 /* LocalTimelineModel.swift */,
 				E9810071291053A5001F4133 /* FederatedTimelineModel.swift */,
@@ -521,7 +518,6 @@
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
 				E95BDFD02920F20E004F2F71 /* Image+centerCropped.swift in Sources */,
 				E9C99E292922C3CA001D1983 /* Card.swift in Sources */,
-				E98597F0291688DF003C5187 /* StatusOperationProvider.swift in Sources */,
 				E9C99E272922C0CA001D1983 /* StatusHeader.swift in Sources */,
 				E98598162917B1E8003C5187 /* Leviathan.xcdatamodeld in Sources */,
 				2A3B900E2919AC4A00233857 /* AccountAvatar.swift in Sources */,
