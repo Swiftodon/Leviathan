@@ -1,8 +1,8 @@
 //
-//  StatusView.swift
+//  PersistedTag.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 04.11.22.
+//  Created by Thomas Bonk on 17.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,25 +18,29 @@
 //  limitations under the License.
 //
 
+import CoreData
+import Foundation
 import MastodonSwift
-import SwiftUI
-import QuickLook
-import WebView
 
-struct StatusView: View {
-    
-    // MARK: - Public Properties
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            RebloggedHeader(persistedStatus: persistedStatus)
-            StatusContent(persistedStatus: persistedStatus)
-            ActionBar(persistedStatus: persistedStatus)
-            Divider().padding(.bottom, 2)
+extension PersistedTag: Identifiable, NamedEntity {
+
+    // MARK: - Static Methods
+
+    static func create(in context: NSManagedObjectContext, from tag: Tag) throws -> PersistedTag {
+        guard
+            let accountId = SessionModel.shared.currentSession?.account.id
+        else {
+            throw LeviathanError.noUserLoggedOn
         }
-        .padding(.all, 5)
+
+        let persistedTag: PersistedTag = context.createEntity()
+
+        persistedTag.loggedOnAccountId = accountId
+        
+        persistedTag.name = tag.name
+        persistedTag.url = tag.url
+
+        return persistedTag
     }
 
-    @ObservedObject
-    var persistedStatus: PersistedStatus    
 }

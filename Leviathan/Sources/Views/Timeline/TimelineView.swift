@@ -32,7 +32,9 @@ struct TimelineView: View {
                 List {
                     ForEach(persistedStatuses, id: \.statusId) { status in
                         StatusView(persistedStatus: status)
-                            .id(status.status!.id)
+                            .id(status.statusId)
+                            .onAppear { statusAppears(status) }
+                            .onDisappear { statusDisappears(status) }
                     }
                 }
                 .refreshable { refreshInTask(proxy) }
@@ -54,6 +56,7 @@ struct TimelineView: View {
                 .onDisappear(perform: disappearing)
             }
         }
+        .onChange(of: scenePhase, perform: scenePhaseChanged(phase:))
     }
     
     var title: LocalizedStringKey
@@ -69,21 +72,35 @@ struct TimelineView: View {
         self.timeline = timeline
         self.model = model
         self._persistedStatuses =
-            FetchRequest<PersistedStatus>(sortDescriptors: model.sortDescriptors, predicate: model.readFilter())
+            FetchRequest<PersistedStatus>(
+                sortDescriptors: model.sortDescriptors,
+                      predicate: model.readFilter())
     }
     
     
     // MARK: - Private Properties
 
+    @Environment(\.scenePhase)
+    var scenePhase
     @FetchRequest
     private var persistedStatuses: FetchedResults<PersistedStatus>
     @EnvironmentObject
     private var sessionModel: SessionModel
     @State
     private var reloadCancellable: AnyCancellable!
+    @State
+    private var fixedStatus: PersistedStatus? = nil
+    private var visibleStatuses = MutableField(value: Set<PersistedStatus>())
+    private var firstVisibleStatus: PersistedStatus? {
+        visibleStatuses.value.sorted { $0.timestamp > $1.timestamp }.first
+    }
     
     
     // MARK: - Private Methods
+
+    private func scenePhaseChanged(phase: ScenePhase) {
+        NSLog("\(phase)")
+    }
     
     private func appearing(_ proxy: ScrollViewProxy? = nil) {
         reloadCancellable = sessionModel.objectWillChange.sink { _ in
@@ -107,10 +124,30 @@ struct TimelineView: View {
     private func disappearing() {
         reloadCancellable.cancel()
     }
+
+    private func statusAppears(_ status: PersistedStatus) {
+        update {
+            visibleStatuses.value.insert(status)
+        }
+    }
+
+    private func statusDisappears(_ status: PersistedStatus) {
+        update {
+            visibleStatuses.value.remove(status)
+        }
+    }
     
     private func refreshInTask(_ proxy: ScrollViewProxy? = nil) {
+        fixedStatus = firstVisibleStatus
+
         Task {
             await refresh()
+        }
+
+        if let fixedStatus {
+            update {
+                proxy?.scrollTo(fixedStatus, anchor: .zero)
+            }
         }
     }
     

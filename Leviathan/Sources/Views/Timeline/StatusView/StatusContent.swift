@@ -18,7 +18,6 @@
 //  limitations under the License.
 //
 
-import MastodonSwift
 import SwiftUI
 
 struct StatusContent: View {
@@ -27,13 +26,13 @@ struct StatusContent: View {
 
     var body: some View {
         VStack {
-            StatusHeader(status: status)
+            StatusHeader(persistedStatus: statusForDisplay)
 
-            if status.sensitive {
+            if statusForDisplay.sensitive {
                 spoilerView()
             }
 
-            if !status.sensitive || revealed {
+            if !statusForDisplay.sensitive || revealed {
                 statusContent()
             }
         }
@@ -48,8 +47,14 @@ struct StatusContent: View {
     @State
     private var revealed = false
 
-    private var status: Status {
-        persistedStatus.status!.reblog != nil ? persistedStatus.status!.reblog! : persistedStatus.status!
+    // MARK: - Private Properties
+
+    var statusForDisplay: PersistedStatus {
+        if let reblog = persistedStatus.reblog {
+            return reblog
+        }
+
+        return persistedStatus
     }
 
 
@@ -59,18 +64,18 @@ struct StatusContent: View {
     private func statusContent() -> some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
-                Text(status.content.attributedString!)
+                Text(statusForDisplay.content.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
 
-            if !status.mediaAttachments.isEmpty {
-                MediaPreview(attachments: status.mediaAttachments)
+            if let attachments = statusForDisplay.mediaAttachments, !attachments.isEmpty {
+                MediaPreview(attachments: Array(attachments))
             }
 
-            if let card = status.card {
-                Card(card: card)
+            if let card = statusForDisplay.card {
+                CardView(card: card)
             }
         }
     }
@@ -79,7 +84,7 @@ struct StatusContent: View {
     private func spoilerView() -> some View {
         VStack {
             HStack(alignment: .top) {
-                Text(status.spoilerText!.attributedString!)
+                Text(statusForDisplay.spoilerText!.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
                 Spacer()

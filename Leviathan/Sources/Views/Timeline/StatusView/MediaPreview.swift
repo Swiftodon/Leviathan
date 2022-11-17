@@ -30,7 +30,7 @@ struct MediaPreview: View {
     }
 
     @State
-    var attachments: [Attachment]
+    var attachments: [PersistedAttachment]
 
 
     // MARK: - Private Properties
@@ -58,7 +58,7 @@ struct MediaPreview: View {
     }
 
     @ViewBuilder
-    private func mediaPreview(_ medium: Attachment, height: CGFloat) -> some View {
+    private func mediaPreview(_ medium: PersistedAttachment, height: CGFloat) -> some View {
         switch medium.type {
             case .image:
                 imagePreview(medium, height: height)
@@ -70,8 +70,8 @@ struct MediaPreview: View {
     }
 
     @ViewBuilder
-    private func imagePreview(_ medium: Attachment, height: CGFloat) -> some View {
-        AsyncImage(url: medium.previewUrl!) { image in
+    private func imagePreview(_ medium: PersistedAttachment, height: CGFloat) -> some View {
+        AsyncImage(url: medium.previewUrl) { image in
             image
                 .centerCropped()
                 .frame(height: height)
@@ -86,7 +86,7 @@ struct MediaPreview: View {
     }
 
     @ViewBuilder
-    private func unsupportedPreview(_ medium: Attachment) -> some View {
+    private func unsupportedPreview(_ medium: PersistedAttachment) -> some View {
         VStack(alignment: .center) {
             Text("Preview for type '\(medium.type.rawValue)' not supported")
                 .lineLimit(3)

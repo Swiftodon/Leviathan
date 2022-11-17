@@ -21,7 +21,7 @@
 import MastodonSwift
 import SwiftUI
 
-struct Card: View {
+struct CardView: View {
 
     // MARK: - Public Properties
     
@@ -32,8 +32,8 @@ struct Card: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 
-    @State
-    var card: MastodonSwift.Card
+    @ObservedObject
+    var card: PersistedCard
 
 
     // MARK: - Private Methods
@@ -117,7 +117,7 @@ struct LinkCard: View {
             VStack(alignment: .leading) {
                 Text(card.title)
                     .font(.headline)
-                Text(card.description)
+                Text(card.descr)
                     .font(.subheadline)
                 Link(card.url.host()!, destination: card.url)
                     .font(.footnote)
@@ -125,7 +125,7 @@ struct LinkCard: View {
         }
     }
 
-    @State
-    var card: MastodonSwift.Card
+    @ObservedObject
+    var card: PersistedCard
 }
 

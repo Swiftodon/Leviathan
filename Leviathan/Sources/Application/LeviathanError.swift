@@ -1,8 +1,8 @@
 //
-//  Status+createdAt.swift
+//  LeviathanError.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 05.11.22.
+//  Created by Thomas Bonk on 17.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,18 +18,18 @@
 //  limitations under the License.
 //
 
-import MastodonSwift
 import Foundation
 
-fileprivate var dateFormatter: ISO8601DateFormatter = {
-    let dateFormatter = ISO8601DateFormatter()
-    dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-    
-    return dateFormatter
-}()
+enum LeviathanError: Error {
+    case noUserLoggedOn
+}
 
-extension Status {
-    var timestamp: Date {
-        return dateFormatter.date(from: self.createdAt)!
+extension LeviathanError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+            case .noUserLoggedOn:
+                return NSLocalizedString(
+                    "There is no user loggoed on.", comment: "Localized error message")
+        }
     }
 }

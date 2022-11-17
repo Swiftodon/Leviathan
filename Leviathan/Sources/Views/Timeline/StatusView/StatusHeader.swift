@@ -34,15 +34,15 @@ struct StatusHeader: View {
 
     var body: some View {
         LazyVGrid(columns: [GridItem(.fixed(32), alignment: .topLeading), GridItem(alignment: .topLeading)]) {
-            accountImage(status)
+            accountImage(persistedStatus)
             LazyVGrid(columns: [GridItem(alignment: .topLeading)]) {
-                Text(status.account?.displayName ?? (status.account?.username ?? "Unknown"))
+                Text(persistedStatus.account?.displayName ?? (persistedStatus.account?.username ?? "Unknown"))
                     .font(.body)
                 HStack(alignment: .top) {
-                    Text("@\(status.account?.acct ?? "Unknown")")
+                    Text("@\(persistedStatus.account?.acct ?? "Unknown")")
                     Text("·")
-                    Text(status.createdAtRelative)
-                    Text(VisibilityImage[status.visibility]!)
+                    Text(persistedStatus.createdAtRelative)
+                    Text(VisibilityImage[persistedStatus.visibility]!)
                     Spacer()
                 }
                 .foregroundColor(.secondary)
@@ -51,16 +51,25 @@ struct StatusHeader: View {
         }
     }
 
-    @State
-    var status: Status
+    @ObservedObject
+    var persistedStatus: PersistedStatus
 
 
     // MARK: - Private Methods
 
     @ViewBuilder
-    private func accountImage(_ status: Status) -> some View {
+    private func accountImage(_ status: PersistedStatus) -> some View {
         VStack {
-            AccountAvatar(account: status.account!)
+            AsyncImage(url: status.account?.avatar) { image in
+                image
+                    .resizable()
+                    .frame(width: 32, height: 32)
+                    .cornerRadius(4)
+            } placeholder: {
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 32, height: 32)
+            }
             Spacer()
         }
     }

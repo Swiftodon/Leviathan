@@ -34,7 +34,7 @@ class TimelineModel: ObservableObject {
     
     
     // MARK: - Private Properties
-    
+
     private var context: NSManagedObjectContext
     private var lastStatusIdFetchRequest: NSFetchRequest<PersistedStatus> {
         let request = PersistedStatus.makeFetchRequest() // NSFetchRequest<PersistedStatus>(entityName: PersistedStatus.entityName)
@@ -70,7 +70,7 @@ class TimelineModel: ObservableObject {
         let accountId = SessionModel.shared.currentSession?.account.id
         
         return NSPredicate(
-            format: "tl == %d AND accountId == %@",
+            format: "tl == %d AND loggedOnAccountId == %@ AND isReblogChild == false",
             timelineId.rawValue,
             accountId ?? 0)
     }
@@ -80,26 +80,22 @@ class TimelineModel: ObservableObject {
     }
     
     func readTimeline() async throws {
-        var finished = false
         
         defer {
             update { self.isLoading = false }
         }
-        
-        repeat {
-            guard SessionModel.shared.currentSession != nil else {
-                return
-            }
-            
-            update { self.isLoading = true }
-            
-            guard let timeline = try await retrieveTimeline() else {
-                return
-            }
-            
-            persist(timeline: timeline)
-            finished = timeline.count == 0
-        } while !finished
+
+        guard SessionModel.shared.currentSession != nil else {
+            return
+        }
+
+        update { self.isLoading = true }
+
+        guard let timeline = try await retrieveTimeline() else {
+            return
+        }
+
+        persist(timeline: timeline)
     }
     
     
@@ -111,16 +107,10 @@ class TimelineModel: ObservableObject {
         }
         
         Task {
-            timeline.forEach { status in
-                context.perform {
-                    let persistedStatus: PersistedStatus = self.context.createEntity()
-                    
-                    persistedStatus.statusId = status.id
-                    persistedStatus.accountId = SessionModel.shared.currentSession!.account.id
-                    persistedStatus.timeline = self.timelineId
-                    persistedStatus.timestamp = status.timestamp
-                    persistedStatus.status = status
-                }
+            try timeline.forEach { status in
+                let persistedStatus = try PersistedStatus.create(in: context, from: status)
+
+                persistedStatus.timeline = self.timelineId
             }
             
             context.perform {

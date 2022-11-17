@@ -37,27 +37,27 @@ struct ActionBar: View {
             Button {
 
             } label: {
-                Label("\(status.reblogsCount)", systemImage: "repeat")
-                    .foregroundColor(status.reblogged ? .green : .primary)
+                Label("\(statusForAction.reblogsCount)", systemImage: "repeat")
+                    .foregroundColor(statusForAction.reblogged ? .green : .primary)
             }.padding(.trailing, 5)
 
             Button {
 
             } label: {
-                Label("\(status.favouritesCount)", systemImage: "star")
-                    .foregroundColor(status.favourited ? .green : .primary)
+                Label("\(statusForAction.favouritesCount)", systemImage: "star")
+                    .foregroundColor(statusForAction.favourited ? .green : .primary)
             }.padding(.trailing, 5)
 
             Button {
 
             } label: {
                 Image(systemName: "bookmark")
-                    .foregroundColor(status.bookmarked ? .green : .primary)
+                    .foregroundColor(statusForAction.bookmarked ? .green : .primary)
             }.padding(.trailing, 5)
             
             Spacer()
 
-            if let app = status.application {
+            if let app = statusForAction.application {
                 Link(app.name, destination: app.website!)
                     .font(.footnote)
             }
@@ -67,6 +67,15 @@ struct ActionBar: View {
 
     @ObservedObject
     var persistedStatus: PersistedStatus
-    @State
-    var status: Status
+
+
+    // MARK: - Private Properties
+
+    var statusForAction: PersistedStatus {
+        if let reblog = persistedStatus.reblog {
+            return reblog
+        }
+
+        return persistedStatus
+    }
 }
