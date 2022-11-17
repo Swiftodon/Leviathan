@@ -71,10 +71,12 @@ struct TimelineView: View {
         self.title = title
         self.timeline = timeline
         self.model = model
+        
         self._persistedStatuses =
             FetchRequest<PersistedStatus>(
                 sortDescriptors: model.sortDescriptors,
-                      predicate: model.readFilter())
+                      predicate: model.readFilter(),
+                      animation: .easeIn)
     }
     
     
@@ -88,11 +90,11 @@ struct TimelineView: View {
     private var sessionModel: SessionModel
     @State
     private var reloadCancellable: AnyCancellable!
-    @State
-    private var fixedStatus: PersistedStatus? = nil
+    private var fixedStatus: MutableField<PersistedStatus?> = MutableField(value: nil)
+    private var lockStatusAppearanceUpdate = MutableField(value: false)
     private var visibleStatuses = MutableField(value: Set<PersistedStatus>())
     private var firstVisibleStatus: PersistedStatus? {
-        visibleStatuses.value.sorted { $0.timestamp > $1.timestamp }.first
+        visibleStatuses.value.sorted { $0.timestamp < $1.timestamp }.first
     }
     
     
@@ -126,27 +128,44 @@ struct TimelineView: View {
     }
 
     private func statusAppears(_ status: PersistedStatus) {
+        guard
+            !lockStatusAppearanceUpdate.value
+        else {
+            return
+        }
+
         update {
             visibleStatuses.value.insert(status)
         }
     }
 
     private func statusDisappears(_ status: PersistedStatus) {
+        guard
+            !lockStatusAppearanceUpdate.value
+        else {
+            return
+        }
+
         update {
             visibleStatuses.value.remove(status)
         }
     }
     
     private func refreshInTask(_ proxy: ScrollViewProxy? = nil) {
-        fixedStatus = firstVisibleStatus
+        lockStatusAppearanceUpdate.value = true
+        fixedStatus.value = firstVisibleStatus
 
         Task {
             await refresh()
         }
 
-        if let fixedStatus {
+        if let fixedStatus = fixedStatus.value {
             update {
-                proxy?.scrollTo(fixedStatus, anchor: .zero)
+                proxy?.scrollTo(fixedStatus.statusId, anchor: .top)
+
+                update {
+                    lockStatusAppearanceUpdate.value = false
+                }
             }
         }
     }
