@@ -29,7 +29,7 @@ extension LeviathanError: LocalizedError {
         switch self {
             case .noUserLoggedOn:
                 return NSLocalizedString(
-                    "There is no user loggoed on.", comment: "Localized error message")
+                    "You are not logged in to a Mastodon instance.", comment: "Localized error message")
         }
     }
 }

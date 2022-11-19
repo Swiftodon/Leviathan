@@ -16,12 +16,26 @@
         <attribute name="url" optional="YES" attributeType="URI"/>
         <attribute name="username" attributeType="String" defaultValueString=""/>
         <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="account" inverseEntity="Status"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="status"/>
+                <constraint value="accountId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Application" representedClassName=".PersistedApplication" syncable="YES">
         <attribute name="loggedOnAccountId" attributeType="String" defaultValueString=""/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="website" optional="YES" attributeType="URI" defaultValueString=""/>
         <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="application" inverseEntity="Status"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="status"/>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Attachment" representedClassName=".PersistedAttachment" syncable="YES">
         <attribute name="attachmentId" attributeType="String" defaultValueString=""/>
@@ -33,6 +47,13 @@
         <attribute name="type_" attributeType="String" defaultValueString=""/>
         <attribute name="url" attributeType="URI"/>
         <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="mediaAttachments" inverseEntity="Status"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="status"/>
+                <constraint value="attachmentId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Card" representedClassName=".PersistedCard" syncable="YES">
         <attribute name="authorName" optional="YES" attributeType="String"/>
@@ -51,6 +72,12 @@
         <attribute name="url" attributeType="URI"/>
         <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="card" inverseEntity="Status"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="status"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Mention" representedClassName=".PersistedMention" syncable="YES">
         <attribute name="acct" attributeType="String" defaultValueString=""/>
@@ -59,6 +86,13 @@
         <attribute name="url" attributeType="String" defaultValueString=""/>
         <attribute name="username" attributeType="String" defaultValueString=""/>
         <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="mentions" inverseEntity="Status"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="status"/>
+                <constraint value="mentionId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Status" representedClassName=".PersistedStatus" syncable="YES">
         <attribute name="bookmarked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -90,11 +124,26 @@
         <relationship name="reblog" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Status" inverseName="reblogParent" inverseEntity="Status"/>
         <relationship name="reblogParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="reblog" inverseEntity="Status"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="status" inverseEntity="Tag"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="statusId"/>
+                <constraint value="tl"/>
+                <constraint value="reblogParent"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Tag" representedClassName=".PersistedTag" syncable="YES">
         <attribute name="loggedOnAccountId" attributeType="String" defaultValueString=""/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="tags" inverseEntity="Status"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="loggedOnAccountId"/>
+                <constraint value="status"/>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

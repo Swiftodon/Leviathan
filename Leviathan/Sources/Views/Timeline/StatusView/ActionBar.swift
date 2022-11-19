@@ -57,10 +57,14 @@ struct ActionBar: View {
             
             Spacer()
 
-            if let app = statusForAction.application {
-                Link(app.name, destination: app.website!)
-                    .font(.footnote)
+            If(clientApplication != nil) {
+                Alternative(clientApplicationWebsite != nil) {
+                    Link(clientApplication!.name, destination: clientApplicationWebsite!)
+                } ifFalse: {
+                    Text(clientApplication!.name)
+                }
             }
+            .font(.footnote)
         }
         .buttonStyle(.borderless)
     }
@@ -71,11 +75,19 @@ struct ActionBar: View {
 
     // MARK: - Private Properties
 
-    var statusForAction: PersistedStatus {
+    private var statusForAction: PersistedStatus {
         if let reblog = persistedStatus.reblog {
             return reblog
         }
 
         return persistedStatus
+    }
+
+    private var clientApplication: PersistedApplication? {
+        statusForAction.application
+    }
+
+    private var clientApplicationWebsite: URL? {
+        clientApplication?.website
     }
 }

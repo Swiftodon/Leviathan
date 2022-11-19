@@ -32,11 +32,13 @@ struct StatusView: View {
             RebloggedHeader(persistedStatus: persistedStatus)
             StatusContent(persistedStatus: persistedStatus)
             ActionBar(persistedStatus: persistedStatus)
+            #if os(macOS)
             Divider().padding(.bottom, 2)
+            #endif
         }
         .padding(.all, 5)
     }
 
     @ObservedObject
-    var persistedStatus: PersistedStatus    
+    var persistedStatus: PersistedStatus
 }

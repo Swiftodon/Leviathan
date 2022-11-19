@@ -41,9 +41,6 @@ struct LeviathanApp: SwiftUI.App {
 
     // MARK: - Private Properties
 
-    @ApplicationDelegateAdaptor(AppDelegate.self)
-    private var appDelegate
-    
     private let persistenceController = PersistenceController.shared
 
 

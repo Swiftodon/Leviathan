@@ -43,9 +43,9 @@ struct MediaPreview: View {
 
     @ViewBuilder
     private func dynamicMediaLayout() -> some View {
-        if attachments.count == 1 {
+        Alternative(attachments.count == 1) {
             mediaPreview(attachments[0], height: 240)
-        } else {
+        } ifFalse: {
             LazyVGrid(columns: [.init(alignment: .center), .init(alignment: .center)]) {
                 ForEach(attachments, id: \.id) { medium in
                     mediaPreview(medium, height: 120)
@@ -63,7 +63,7 @@ struct MediaPreview: View {
             case .image:
                 imagePreview(medium, height: height)
             case .unknown:
-                Text("Media type not supported")
+                Text("Media type '\(medium.type.rawValue)' not supported")
             default:
                 unsupportedPreview(medium)
         }

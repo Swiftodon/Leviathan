@@ -24,8 +24,8 @@
 		E928E2FE29264F3A00C8C5F5 /* PersistedMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2FD29264F3A00C8C5F5 /* PersistedMention.swift */; };
 		E928E3002926512600C8C5F5 /* PersistedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2FF2926512600C8C5F5 /* PersistedCard.swift */; };
 		E928E3022926534B00C8C5F5 /* PersistedAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E3012926534B00C8C5F5 /* PersistedAttachment.swift */; };
-		E94A9019291EA783008F2B71 /* AppDelegate+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9018291EA783008F2B71 /* AppDelegate+iOS.swift */; };
-		E94A901B291EA89C008F2B71 /* AppDelegate+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901A291EA7CA008F2B71 /* AppDelegate+macOS.swift */; };
+		E928E3052926E2F800C8C5F5 /* Updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E3042926E2F800C8C5F5 /* Updating.swift */; };
+		E928E3072927656500C8C5F5 /* If.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E3062927656500C8C5F5 /* If.swift */; };
 		E94A901D291EAB08008F2B71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901C291EAB08008F2B71 /* ContentView.swift */; };
 		E94A901F291EAC2C008F2B71 /* LogonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A901E291EAC2C008F2B71 /* LogonView.swift */; };
 		E94A9021291F0C24008F2B71 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9020291F0C24008F2B71 /* SessionModel.swift */; };
@@ -89,8 +89,8 @@
 		E928E2FD29264F3A00C8C5F5 /* PersistedMention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedMention.swift; sourceTree = "<group>"; };
 		E928E2FF2926512600C8C5F5 /* PersistedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedCard.swift; sourceTree = "<group>"; };
 		E928E3012926534B00C8C5F5 /* PersistedAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedAttachment.swift; sourceTree = "<group>"; };
-		E94A9018291EA783008F2B71 /* AppDelegate+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+iOS.swift"; sourceTree = "<group>"; };
-		E94A901A291EA7CA008F2B71 /* AppDelegate+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+macOS.swift"; sourceTree = "<group>"; };
+		E928E3042926E2F800C8C5F5 /* Updating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updating.swift; sourceTree = "<group>"; };
+		E928E3062927656500C8C5F5 /* If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = If.swift; sourceTree = "<group>"; };
 		E94A901C291EAB08008F2B71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E94A901E291EAC2C008F2B71 /* LogonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonView.swift; sourceTree = "<group>"; };
 		E94A9020291F0C24008F2B71 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
@@ -192,7 +192,6 @@
 				E981008629117DAA001F4133 /* Extensions */,
 				E981006C29105332001F4133 /* Model */,
 				E98598252917BED0003C5187 /* Persistence */,
-				E94A9015291EA739008F2B71 /* Platform */,
 				E9EA0592291C022B008F55AF /* Utils */,
 				E90B5944290FCBC400324E6B /* Views */,
 				E985981F2917BDCE003C5187 /* Generated */,
@@ -251,29 +250,13 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		E94A9015291EA739008F2B71 /* Platform */ = {
+		E928E3032926E2BC00C8C5F5 /* ToolViews */ = {
 			isa = PBXGroup;
 			children = (
-				E94A9016291EA74E008F2B71 /* iOS */,
-				E94A9017291EA756008F2B71 /* macOS */,
+				E928E3062927656500C8C5F5 /* If.swift */,
+				E928E3042926E2F800C8C5F5 /* Updating.swift */,
 			);
-			path = Platform;
-			sourceTree = "<group>";
-		};
-		E94A9016291EA74E008F2B71 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E94A9018291EA783008F2B71 /* AppDelegate+iOS.swift */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		E94A9017291EA756008F2B71 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				E94A901A291EA7CA008F2B71 /* AppDelegate+macOS.swift */,
-			);
-			path = macOS;
+			path = ToolViews;
 			sourceTree = "<group>";
 		};
 		E94A9022291F0EAC008F2B71 /* Session */ = {
@@ -400,6 +383,7 @@
 		E9914EBB2912846900323B78 /* AccountManagement */ = {
 			isa = PBXGroup;
 			children = (
+				E928E3032926E2BC00C8C5F5 /* ToolViews */,
 				E94A901E291EAC2C008F2B71 /* LogonView.swift */,
 			);
 			path = AccountManagement;
@@ -535,7 +519,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94A901B291EA89C008F2B71 /* AppDelegate+macOS.swift in Sources */,
 				E9810074291053D4001F4133 /* NotificationsModel.swift in Sources */,
 				E95BDFD02920F20E004F2F71 /* Image+centerCropped.swift in Sources */,
 				E9C99E292922C3CA001D1983 /* CardView.swift in Sources */,
@@ -557,6 +540,7 @@
 				E94A9021291F0C24008F2B71 /* SessionModel.swift in Sources */,
 				E928E3022926534B00C8C5F5 /* PersistedAttachment.swift in Sources */,
 				E928E2FC29264DB600C8C5F5 /* PersistedApplication.swift in Sources */,
+				E928E3072927656500C8C5F5 /* If.swift in Sources */,
 				E9C99E252922BF48001D1983 /* StatusContent.swift in Sources */,
 				E98598282917BEFC003C5187 /* PersistedStatus.swift in Sources */,
 				E9EA058F291B7389008F55AF /* TimelineId.swift in Sources */,
@@ -571,6 +555,7 @@
 				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
 				E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */,
 				E928E3002926512600C8C5F5 /* PersistedCard.swift in Sources */,
+				E928E3052926E2F800C8C5F5 /* Updating.swift in Sources */,
 				E94A9026291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift in Sources */,
 				E9C99E2129225E7A001D1983 /* RebloggedHeader.swift in Sources */,
 				E985982F2917D3AF003C5187 /* NamedEntity.swift in Sources */,
@@ -583,7 +568,6 @@
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
 				E9C99E2329225F91001D1983 /* ActionBar.swift in Sources */,
 				E928E2F62925FFE800C8C5F5 /* PersistedAccount.swift in Sources */,
-				E94A9019291EA783008F2B71 /* AppDelegate+iOS.swift in Sources */,
 				E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

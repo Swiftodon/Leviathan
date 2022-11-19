@@ -22,6 +22,21 @@ import Combine
 import MastodonSwift
 import SwiftUI
 
+struct Refresher: View {
+    @Environment(\.refresh) private var refresh // 1
+
+    var body: some View {
+        VStack {
+            Text("Refresher")
+            if let refresh = refresh { // 2
+                Button("Refresh") {
+                    Task { await refresh() }
+                }
+            }
+        }
+    }
+}
+
 struct TimelineView: View {
     
     // MARK: - Public Properties
@@ -37,26 +52,33 @@ struct TimelineView: View {
                             .onDisappear { statusDisappears(status) }
                     }
                 }
-                .refreshable { refreshInTask(proxy) }
-                .toolbar {
-                    ToolbarItem(placement: .navigation) {
-                        if model.isLoading {
-                            ProgressView()
-                            // TODO: This is ugly; is there a better way have the same size as the button?
-                                .scaleEffect(0.5)
-                                .padding(.horizontal, -4)
-                        } else {
-                            Button { refreshInTask(proxy) } label: { Image(systemName: "arrow.clockwise") }
-                                .buttonStyle(.borderless)
-                                .padding(.horizontal, 5)
+                .onAppear { currentProxy = proxy }
+                .refreshable {
+                    await asyncRefresh(proxy)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigation) {
+                    if model.isLoading {
+                        ProgressView()
+                        // TODO: This is ugly; is there a better way have the same size as the button?
+                            .scaleEffect(0.5)
+                            .padding(.horizontal, -4)
+                    } else {
+                        Button {
+                            refresh(currentProxy)
+                        } label: {
+                            Image(systemName: "arrow.clockwise")
+
                         }
+                        .buttonStyle(.borderless)
+                        .padding(.horizontal, 5)
                     }
                 }
-                .onAppear { appearing(proxy) }
-                .onDisappear(perform: disappearing)
             }
+            .onAppear { appearing(currentProxy) }
+            .onDisappear(perform: disappearing)
         }
-        .onChange(of: scenePhase, perform: scenePhaseChanged(phase:))
     }
     
     var title: LocalizedStringKey
@@ -73,36 +95,35 @@ struct TimelineView: View {
         self.model = model
         
         self._persistedStatuses =
-            FetchRequest<PersistedStatus>(
-                sortDescriptors: model.sortDescriptors,
-                      predicate: model.readFilter(),
-                      animation: .easeIn)
+        FetchRequest<PersistedStatus>(
+            sortDescriptors: model.sortDescriptors,
+            predicate: model.readFilter(),
+            animation: .easeIn)
     }
     
     
     // MARK: - Private Properties
 
-    @Environment(\.scenePhase)
-    var scenePhase
     @FetchRequest
     private var persistedStatuses: FetchedResults<PersistedStatus>
     @EnvironmentObject
     private var sessionModel: SessionModel
     @State
+    private var currentProxy: ScrollViewProxy? = nil
+    @State
+    private var sink_: AnyCancellable!
+    @State
     private var reloadCancellable: AnyCancellable!
-    private var fixedStatus: MutableField<PersistedStatus?> = MutableField(value: nil)
-    private var lockStatusAppearanceUpdate = MutableField(value: false)
-    private var visibleStatuses = MutableField(value: Set<PersistedStatus>())
+    @State
+    private var fixedStatus: PersistedStatus? = nil
+    @State
+    private var visibleStatuses: Set<PersistedStatus> = []
     private var firstVisibleStatus: PersistedStatus? {
-        visibleStatuses.value.sorted { $0.timestamp < $1.timestamp }.first
+        visibleStatuses.sorted { $0.timestamp > $1.timestamp }.first
     }
     
     
     // MARK: - Private Methods
-
-    private func scenePhaseChanged(phase: ScenePhase) {
-        NSLog("\(phase)")
-    }
     
     private func appearing(_ proxy: ScrollViewProxy? = nil) {
         reloadCancellable = sessionModel.objectWillChange.sink { _ in
@@ -114,7 +135,6 @@ struct TimelineView: View {
                 }
                 
                 persistedStatuses.nsPredicate = model.readFilter()
-                refreshInTask()
             }
         }
         
@@ -129,57 +149,56 @@ struct TimelineView: View {
 
     private func statusAppears(_ status: PersistedStatus) {
         guard
-            !lockStatusAppearanceUpdate.value
+            !model.isLoading
         else {
             return
         }
 
-        update {
-            visibleStatuses.value.insert(status)
+        Task {
+            update {
+                visibleStatuses.insert(status)
+            }
         }
     }
 
     private func statusDisappears(_ status: PersistedStatus) {
-        guard
-            !lockStatusAppearanceUpdate.value
-        else {
-            return
-        }
-
-        update {
-            visibleStatuses.value.remove(status)
+        Task {
+            update {
+                visibleStatuses.remove(status)
+            }
         }
     }
+
+    private func asyncRefresh(_ proxy: ScrollViewProxy? = nil) async {
+        refresh(proxy)
+    }
     
-    private func refreshInTask(_ proxy: ScrollViewProxy? = nil) {
-        lockStatusAppearanceUpdate.value = true
-        fixedStatus.value = firstVisibleStatus
+    private func refresh(_ proxy: ScrollViewProxy? = nil) {
+        fixedStatus = firstVisibleStatus
+        model.store(marker: fixedStatus?.statusId)
 
-        Task {
-            await refresh()
-        }
-
-        if let fixedStatus = fixedStatus.value {
+        sink_ = model.objectWillChange.sink {
             update {
-                proxy?.scrollTo(fixedStatus.statusId, anchor: .top)
-
-                update {
-                    lockStatusAppearanceUpdate.value = false
+                if !model.isLoading {
+                    if let fixedStatus {
+                        update {
+                            proxy?.scrollTo(fixedStatus.statusId, anchor: .top)
+                        }
+                    }
+                    sink_?.cancel()
                 }
             }
         }
-    }
-    
-    @Sendable
-    private func refresh() async {
+
         do {
-            if let _ = SessionModel.shared.currentSession?.auth {
-                try await model.readTimeline()
-            } else {
-                ToastView.Toast(type: .warning, message: "You are not logged in. Can't update your timeline.").show()
-            }
+            try model.readTimeline()
         } catch {
-            ToastView.Toast(type: .error, message: "An error occured while loading your timeline.", error: error).show()
+            ToastView
+                .Toast(
+                    type: .error,
+                    message: "An error occurred when loading the timeline",
+                    error: error)
+                .show()
         }
     }
 }

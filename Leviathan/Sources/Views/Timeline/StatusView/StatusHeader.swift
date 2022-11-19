@@ -22,10 +22,10 @@ import MastodonSwift
 import SwiftUI
 
 fileprivate let VisibilityImage: [Status.Visibility: String] = [
-    .pub: "􀆪",
-    .unlisted: "􁙠",
-    .priv: "􀎠",
-    .direct: "􀍕"
+    .pub: "globe",
+    .unlisted: "checklist.unchecked",
+    .priv: "lock",
+    .direct: "envelope"
 ]
 
 struct StatusHeader: View {
@@ -36,13 +36,19 @@ struct StatusHeader: View {
         LazyVGrid(columns: [GridItem(.fixed(32), alignment: .topLeading), GridItem(alignment: .topLeading)]) {
             accountImage(persistedStatus)
             LazyVGrid(columns: [GridItem(alignment: .topLeading)]) {
-                Text(persistedStatus.account?.displayName ?? (persistedStatus.account?.username ?? "Unknown"))
+                Text(displayName)
                     .font(.body)
                 HStack(alignment: .top) {
-                    Text("@\(persistedStatus.account?.acct ?? "Unknown")")
+                    Text("@\(accountName)")
                     Text("·")
-                    Text(persistedStatus.createdAtRelative)
-                    Text(VisibilityImage[persistedStatus.visibility]!)
+                    Updating {
+                        Text(createdAt)
+                    } onUpdate: {
+                        createdAt = persistedStatus.createdAtRelative
+                    }
+                    Image(systemName: VisibilityImage[persistedStatus.visibility]!)
+                        .resizable()
+                        .frame(width: 12, height: 12)
                     Spacer()
                 }
                 .foregroundColor(.secondary)
@@ -53,6 +59,24 @@ struct StatusHeader: View {
 
     @ObservedObject
     var persistedStatus: PersistedStatus
+
+
+    // MARK: - Private Properties
+
+    @State
+    private var createdAt: String
+    private var displayName: String
+    private var accountName: String
+
+
+    // MARK: - Initialization
+
+    init(persistedStatus: PersistedStatus) {
+        self.persistedStatus = persistedStatus
+        createdAt = persistedStatus.createdAtRelative
+        displayName = (persistedStatus.account?.displayName ?? persistedStatus.account?.username) ?? "Unknown"
+        accountName = persistedStatus.account?.acct ?? "Unknown"
+    }
 
 
     // MARK: - Private Methods

@@ -28,11 +28,11 @@ struct StatusContent: View {
         VStack {
             StatusHeader(persistedStatus: statusForDisplay)
 
-            if statusForDisplay.sensitive {
+            If(statusForDisplay.sensitive) {
                 spoilerView()
             }
 
-            if !statusForDisplay.sensitive || revealed {
+            If(!statusForDisplay.sensitive || revealed) {
                 statusContent()
             }
         }
@@ -47,14 +47,24 @@ struct StatusContent: View {
     @State
     private var revealed = false
 
-    // MARK: - Private Properties
-
     var statusForDisplay: PersistedStatus {
         if let reblog = persistedStatus.reblog {
             return reblog
         }
 
         return persistedStatus
+    }
+
+    var attachments: [PersistedAttachment] {
+        if let attmnts = statusForDisplay.mediaAttachments {
+            return Array(attmnts)
+        }
+
+        return []
+    }
+
+    var revealedButtonText: LocalizedStringKey {
+        revealed ? "Hide" : "Show"
     }
 
 
@@ -70,12 +80,12 @@ struct StatusContent: View {
                 Spacer()
             }
 
-            if let attachments = statusForDisplay.mediaAttachments, !attachments.isEmpty {
-                MediaPreview(attachments: Array(attachments))
+            If(!attachments.isEmpty) {
+                MediaPreview(attachments: attachments)
             }
 
-            if let card = statusForDisplay.card {
-                CardView(card: card)
+            If(statusForDisplay.card != nil) {
+                CardView(card: statusForDisplay.card!)
             }
         }
     }
@@ -93,7 +103,7 @@ struct StatusContent: View {
             Button {
                 revealed.toggle()
             } label: {
-                Text(revealed ? "Hide" : "Show")
+                Text(revealedButtonText)
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)

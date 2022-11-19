@@ -26,14 +26,16 @@ struct RebloggedHeader: View {
     // MARK: - Public Properties
 
     var body: some View {
-        if persistedStatus.reblog != nil {
+        If(showReblogHeader) {
             HStack(alignment: .top) {
-                Label("\(statusUsername) boosted \(persistedStatus.createdAtRelative)", systemImage: "repeat")
-                    .foregroundColor(.secondary)
+                Updating {
+                    Label("\(statusUsername) boosted \(createdAt)", systemImage: "repeat")
+                        .foregroundColor(.secondary)
+                } onUpdate: {
+                    createdAt = persistedStatus.createdAtRelative
+                }
                 Spacer()
             }
-        } else {
-            EmptyView()
         }
     }
 
@@ -41,8 +43,11 @@ struct RebloggedHeader: View {
     var persistedStatus: PersistedStatus
 
 
-    // MARK: - Private Properties
+    // MARK: - Private properties
 
+    @State
+    private var createdAt: String
+    private var showReblogHeader: Bool
     private var statusUsername: String {
         if let name = persistedStatus.account?.displayName {
             return name
@@ -52,6 +57,15 @@ struct RebloggedHeader: View {
         }
 
         return "Unknown"
+    }
+
+
+    // MARK: - Initialization
+
+    init(persistedStatus: PersistedStatus) {
+        self.persistedStatus = persistedStatus
+        createdAt = persistedStatus.createdAtRelative
+        showReblogHeader = (persistedStatus.reblog != nil)
     }
 }
 

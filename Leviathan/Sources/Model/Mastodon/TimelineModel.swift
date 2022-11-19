@@ -31,6 +31,19 @@ class TimelineModel: ObservableObject {
     
     public var timelineId: TimelineId { TimelineId.home }
     public var sortDescriptors: [NSSortDescriptor] { [NSSortDescriptor(key: "timestamp", ascending: false)] }
+
+    var lastStatusId: String? {
+        do {
+            let result = try context.fetch(lastStatusIdFetchRequest)
+            if result.count > 0 {
+                return result[0].statusId
+            }
+        } catch {
+            NSLog("\(error)")
+        }
+
+        return nil
+    }
     
     
     // MARK: - Private Properties
@@ -43,18 +56,24 @@ class TimelineModel: ObservableObject {
         
         return request
     }
-    var lastStatusId: String? {
-        do {
-            let result = try context.fetch(lastStatusIdFetchRequest)
-            if result.count > 0 {
-                return result[0].statusId
+    private var lastUpdated: TimeInterval? = nil
+    private var canUpdate: Bool {
+        let now = Date().timeIntervalSinceReferenceDate
+
+        if let lastUpdated {
+            if now - lastUpdated > 60 {
+                self.lastUpdated = now
+                return true
             }
-        } catch {
-            NSLog("\(error)")
+            else {
+                return false
+            }
         }
-        
-        return nil
+
+        lastUpdated = now
+        return true
     }
+
     
     
     // MARK: - Initialization
@@ -75,51 +94,85 @@ class TimelineModel: ObservableObject {
             accountId ?? 0)
     }
 
-    func retrieveTimeline() async throws -> [Status]? {
-        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(sinceId: lastStatusId)
+    func store(marker: StatusId?) {
+        guard
+            let statusId = marker
+        else {
+            return
+        }
+        guard
+            let auth = SessionModel.shared.currentSession?.auth
+        else {
+            return
+        }
+
+        guard
+            timelineId == .home
+        else {
+            return
+        }
+
+        Task {
+            try await auth.saveMarkers([.home : statusId])
+        }
     }
     
-    func readTimeline() async throws {
-        
-        defer {
-            update { self.isLoading = false }
+    func readTimeline() throws {
+        guard
+            let _ = SessionModel.shared.currentSession?.auth
+        else {
+            throw LeviathanError.noUserLoggedOn
         }
 
-        guard SessionModel.shared.currentSession != nil else {
+        guard
+            canUpdate
+        else
+        {
+            ToastView
+                .Toast(type: .info, message: "You are all caught-up!")
+                .show()
             return
         }
 
-        update { self.isLoading = true }
+        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
 
-        guard let timeline = try await retrieveTimeline() else {
-            return
+        backgroundContext.perform {
+            Task {
+                update { self.isLoading = true }
+                defer {
+                    update { self.isLoading = false }
+                }
+                if let timeline = try await self.retrieveTimeline() {
+                    if timeline.isEmpty {
+                        ToastView
+                            .Toast(type: .info, message: "You are all caught-up!")
+                            .show()
+                    } else {
+                        try self.persist(timeline: timeline, context: self.context)
+                    }
+                }
+            }
         }
-
-        persist(timeline: timeline)
     }
     
     
     // MARK: - Methods for internal usage
+
+    func retrieveTimeline() async throws -> [Status]? {
+        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(minId: lastStatusId, limit: 200)
+    }
     
-    func persist(timeline: [MastodonSwift.Status]) {
+    func persist(timeline: [MastodonSwift.Status], context: NSManagedObjectContext) throws {
         guard !timeline.isEmpty else {
             return
         }
-        
-        Task {
-            try timeline.forEach { status in
-                let persistedStatus = try PersistedStatus.create(in: context, from: status)
 
-                persistedStatus.timeline = self.timelineId
-            }
-            
-            context.perform {
-                do {
-                    try self.context.save()
-                } catch {
-                    ToastView.Toast(type: .error, message: "Can't save the new statuses.", error: error).show()
-                }
-            }
+        try timeline.forEach { status in
+            let persistedStatus = try PersistedStatus.create(in: context, from: status)
+
+            persistedStatus.timeline = self.timelineId
         }
+
+        try self.context.save()
     }
 }
