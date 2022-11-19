@@ -1,8 +1,8 @@
 //
-//  AppDelegate.swift
+//  PersistedTag.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 11.11.22.
+//  Created by Thomas Bonk on 17.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,23 +18,29 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
-
+import CoreData
 import Foundation
 import MastodonSwift
-import SwiftUI
-import UIKit
 
-typealias ApplicationDelegateAdaptor = UIApplicationDelegateAdaptor
+extension PersistedTag: Identifiable, NamedEntity {
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey  : Any] = [:]) -> Bool {
-        if url.host == "oauth-callback" {
-            MastodonClient.handleOAuthResponse(url: url)
+    // MARK: - Static Methods
+
+    static func create(in context: NSManagedObjectContext, from tag: Tag) throws -> PersistedTag {
+        guard
+            let accountId = SessionModel.shared.currentSession?.account.id
+        else {
+            throw LeviathanError.noUserLoggedOn
         }
-        return true
+
+        let persistedTag: PersistedTag = context.createEntity()
+
+        persistedTag.loggedOnAccountId = accountId
+        
+        persistedTag.name = tag.name
+        persistedTag.url = tag.url
+
+        return persistedTag
     }
+
 }
-
-#endif
-

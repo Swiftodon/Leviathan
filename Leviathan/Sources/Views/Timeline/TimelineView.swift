@@ -22,6 +22,21 @@ import Combine
 import MastodonSwift
 import SwiftUI
 
+struct Refresher: View {
+    @Environment(\.refresh) private var refresh // 1
+
+    var body: some View {
+        VStack {
+            Text("Refresher")
+            if let refresh = refresh { // 2
+                Button("Refresh") {
+                    Task { await refresh() }
+                }
+            }
+        }
+    }
+}
+
 struct TimelineView: View {
     
     // MARK: - Public Properties
@@ -32,27 +47,37 @@ struct TimelineView: View {
                 List {
                     ForEach(persistedStatuses, id: \.statusId) { status in
                         StatusView(persistedStatus: status)
-                            .id(status.status!.id)
+                            .id(status.statusId)
+                            .onAppear { statusAppears(status) }
+                            .onDisappear { statusDisappears(status) }
                     }
                 }
-                .refreshable { refreshInTask(proxy) }
-                .toolbar {
-                    ToolbarItem(placement: .navigation) {
-                        if model.isLoading {
-                            ProgressView()
-                            // TODO: This is ugly; is there a better way have the same size as the button?
-                                .scaleEffect(0.5)
-                                .padding(.horizontal, -4)
-                        } else {
-                            Button { refreshInTask(proxy) } label: { Image(systemName: "arrow.clockwise") }
-                                .buttonStyle(.borderless)
-                                .padding(.horizontal, 5)
-                        }
-                    }
+                .onAppear { currentProxy = proxy }
+                .refreshable {
+                    await asyncRefresh(proxy)
                 }
-                .onAppear { appearing(proxy) }
-                .onDisappear(perform: disappearing)
             }
+            .toolbar {
+                ToolbarItem(placement: .navigation) {
+                    if model.isLoading {
+                        ProgressView()
+                        // TODO: This is ugly; is there a better way have the same size as the button?
+                            .scaleEffect(0.5)
+                            .padding(.horizontal, -4)
+                    } else {
+                        Button {
+                            refresh(currentProxy)
+                        } label: {
+                            Image(systemName: "arrow.clockwise")
+
+                        }
+                        .buttonStyle(.borderless)
+                        .padding(.horizontal, 5)
+                    }
+                }
+            }
+            .onAppear { appearing(currentProxy) }
+            .onDisappear(perform: disappearing)
         }
     }
     
@@ -68,8 +93,12 @@ struct TimelineView: View {
         self.title = title
         self.timeline = timeline
         self.model = model
+        
         self._persistedStatuses =
-            FetchRequest<PersistedStatus>(sortDescriptors: model.sortDescriptors, predicate: model.readFilter())
+        FetchRequest<PersistedStatus>(
+            sortDescriptors: model.sortDescriptors,
+            predicate: model.readFilter(),
+            animation: .easeIn)
     }
     
     
@@ -80,7 +109,18 @@ struct TimelineView: View {
     @EnvironmentObject
     private var sessionModel: SessionModel
     @State
+    private var currentProxy: ScrollViewProxy? = nil
+    @State
+    private var sink_: AnyCancellable!
+    @State
     private var reloadCancellable: AnyCancellable!
+    @State
+    private var fixedStatus: PersistedStatus? = nil
+    @State
+    private var visibleStatuses: Set<PersistedStatus> = []
+    private var firstVisibleStatus: PersistedStatus? {
+        visibleStatuses.sorted { $0.timestamp > $1.timestamp }.first
+    }
     
     
     // MARK: - Private Methods
@@ -95,7 +135,6 @@ struct TimelineView: View {
                 }
                 
                 persistedStatuses.nsPredicate = model.readFilter()
-                refreshInTask()
             }
         }
         
@@ -107,23 +146,59 @@ struct TimelineView: View {
     private func disappearing() {
         reloadCancellable.cancel()
     }
-    
-    private func refreshInTask(_ proxy: ScrollViewProxy? = nil) {
+
+    private func statusAppears(_ status: PersistedStatus) {
+        guard
+            !model.isLoading
+        else {
+            return
+        }
+
         Task {
-            await refresh()
+            update {
+                visibleStatuses.insert(status)
+            }
         }
     }
-    
-    @Sendable
-    private func refresh() async {
-        do {
-            if let _ = SessionModel.shared.currentSession?.auth {
-                try await model.readTimeline()
-            } else {
-                ToastView.Toast(type: .warning, message: "You are not logged in. Can't update your timeline.").show()
+
+    private func statusDisappears(_ status: PersistedStatus) {
+        Task {
+            update {
+                visibleStatuses.remove(status)
             }
+        }
+    }
+
+    private func asyncRefresh(_ proxy: ScrollViewProxy? = nil) async {
+        refresh(proxy)
+    }
+    
+    private func refresh(_ proxy: ScrollViewProxy? = nil) {
+        fixedStatus = firstVisibleStatus
+        model.store(marker: fixedStatus?.statusId)
+
+        sink_ = model.objectWillChange.sink {
+            update {
+                if !model.isLoading {
+                    if let fixedStatus {
+                        update {
+                            proxy?.scrollTo(fixedStatus.statusId, anchor: .top)
+                        }
+                    }
+                    sink_?.cancel()
+                }
+            }
+        }
+
+        do {
+            try model.readTimeline()
         } catch {
-            ToastView.Toast(type: .error, message: "An error occured while loading your timeline.", error: error).show()
+            ToastView
+                .Toast(
+                    type: .error,
+                    message: "An error occurred when loading the timeline",
+                    error: error)
+                .show()
         }
     }
 }

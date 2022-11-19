@@ -31,18 +31,7 @@ class TimelineModel: ObservableObject {
     
     public var timelineId: TimelineId { TimelineId.home }
     public var sortDescriptors: [NSSortDescriptor] { [NSSortDescriptor(key: "timestamp", ascending: false)] }
-    
-    
-    // MARK: - Private Properties
-    
-    private var context: NSManagedObjectContext
-    private var lastStatusIdFetchRequest: NSFetchRequest<PersistedStatus> {
-        let request = PersistedStatus.makeFetchRequest() // NSFetchRequest<PersistedStatus>(entityName: PersistedStatus.entityName)
-        request.predicate = readFilter()
-        request.sortDescriptors = sortDescriptors
-        
-        return request
-    }
+
     var lastStatusId: String? {
         do {
             let result = try context.fetch(lastStatusIdFetchRequest)
@@ -52,9 +41,39 @@ class TimelineModel: ObservableObject {
         } catch {
             NSLog("\(error)")
         }
-        
+
         return nil
     }
+    
+    
+    // MARK: - Private Properties
+
+    private var context: NSManagedObjectContext
+    private var lastStatusIdFetchRequest: NSFetchRequest<PersistedStatus> {
+        let request = PersistedStatus.makeFetchRequest() // NSFetchRequest<PersistedStatus>(entityName: PersistedStatus.entityName)
+        request.predicate = readFilter()
+        request.sortDescriptors = sortDescriptors
+        
+        return request
+    }
+    private var lastUpdated: TimeInterval? = nil
+    private var canUpdate: Bool {
+        let now = Date().timeIntervalSinceReferenceDate
+
+        if let lastUpdated {
+            if now - lastUpdated > 60 {
+                self.lastUpdated = now
+                return true
+            }
+            else {
+                return false
+            }
+        }
+
+        lastUpdated = now
+        return true
+    }
+
     
     
     // MARK: - Initialization
@@ -70,66 +89,90 @@ class TimelineModel: ObservableObject {
         let accountId = SessionModel.shared.currentSession?.account.id
         
         return NSPredicate(
-            format: "tl == %d AND accountId == %@",
+            format: "tl == %d AND loggedOnAccountId == %@ AND isReblogChild == false",
             timelineId.rawValue,
             accountId ?? 0)
     }
 
-    func retrieveTimeline() async throws -> [Status]? {
-        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(sinceId: lastStatusId)
+    func store(marker: StatusId?) {
+        guard
+            let statusId = marker
+        else {
+            return
+        }
+        guard
+            let auth = SessionModel.shared.currentSession?.auth
+        else {
+            return
+        }
+
+        guard
+            timelineId == .home
+        else {
+            return
+        }
+
+        Task {
+            try await auth.saveMarkers([.home : statusId])
+        }
     }
     
-    func readTimeline() async throws {
-        var finished = false
-        
-        defer {
-            update { self.isLoading = false }
+    func readTimeline() throws {
+        guard
+            let _ = SessionModel.shared.currentSession?.auth
+        else {
+            throw LeviathanError.noUserLoggedOn
         }
-        
-        repeat {
-            guard SessionModel.shared.currentSession != nil else {
-                return
+
+        guard
+            canUpdate
+        else
+        {
+            ToastView
+                .Toast(type: .info, message: "You are all caught-up!")
+                .show()
+            return
+        }
+
+        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
+
+        backgroundContext.perform {
+            Task {
+                update { self.isLoading = true }
+                defer {
+                    update { self.isLoading = false }
+                }
+                if let timeline = try await self.retrieveTimeline() {
+                    if timeline.isEmpty {
+                        ToastView
+                            .Toast(type: .info, message: "You are all caught-up!")
+                            .show()
+                    } else {
+                        try self.persist(timeline: timeline, context: self.context)
+                    }
+                }
             }
-            
-            update { self.isLoading = true }
-            
-            guard let timeline = try await retrieveTimeline() else {
-                return
-            }
-            
-            persist(timeline: timeline)
-            finished = timeline.count == 0
-        } while !finished
+        }
     }
     
     
     // MARK: - Methods for internal usage
+
+    func retrieveTimeline() async throws -> [Status]? {
+        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(minId: lastStatusId, limit: 200)
+    }
     
-    func persist(timeline: [MastodonSwift.Status]) {
+    func persist(timeline: [MastodonSwift.Status], context: NSManagedObjectContext) throws {
         guard !timeline.isEmpty else {
             return
         }
-        
-        Task {
-            timeline.forEach { status in
-                context.perform {
-                    let persistedStatus: PersistedStatus = self.context.createEntity()
-                    
-                    persistedStatus.statusId = status.id
-                    persistedStatus.accountId = SessionModel.shared.currentSession!.account.id
-                    persistedStatus.timeline = self.timelineId
-                    persistedStatus.timestamp = status.timestamp
-                    persistedStatus.status = status
-                }
-            }
-            
-            context.perform {
-                do {
-                    try self.context.save()
-                } catch {
-                    ToastView.Toast(type: .error, message: "Can't save the new statuses.", error: error).show()
-                }
-            }
+
+        try timeline.forEach { status in
+            let persistedStatus = try PersistedStatus.create(in: context, from: status)
+
+            persistedStatus.timeline = self.timelineId
         }
+
+        try self.context.save()
     }
 }

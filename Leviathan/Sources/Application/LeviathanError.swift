@@ -1,8 +1,8 @@
 //
-//  StatusView.swift
+//  LeviathanError.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 04.11.22.
+//  Created by Thomas Bonk on 17.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,27 +18,18 @@
 //  limitations under the License.
 //
 
-import MastodonSwift
-import SwiftUI
-import QuickLook
-import WebView
+import Foundation
 
-struct StatusView: View {
-    
-    // MARK: - Public Properties
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            RebloggedHeader(persistedStatus: persistedStatus)
-            StatusContent(persistedStatus: persistedStatus)
-            ActionBar(persistedStatus: persistedStatus)
-            #if os(macOS)
-            Divider().padding(.bottom, 2)
-            #endif
+enum LeviathanError: Error {
+    case noUserLoggedOn
+}
+
+extension LeviathanError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+            case .noUserLoggedOn:
+                return NSLocalizedString(
+                    "You are not logged in to a Mastodon instance.", comment: "Localized error message")
         }
-        .padding(.all, 5)
     }
-
-    @ObservedObject
-    var persistedStatus: PersistedStatus
 }

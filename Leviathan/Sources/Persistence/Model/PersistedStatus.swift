@@ -18,11 +18,11 @@
 //  limitations under the License.
 //
 
+import CoreData
 import Foundation
 import MastodonSwift
 
 extension PersistedStatus: Identifiable, NamedEntity {
-    
     
     // MARK: - Properties
     
@@ -34,16 +34,116 @@ extension PersistedStatus: Identifiable, NamedEntity {
             return TimelineId(rawValue: self.tl) ?? .unknown
         }
     }
-    
-    var status: MastodonSwift.Status? {
+
+    var visibility: Status.Visibility {
         set {
-            if let data = try? JSONEncoder().encode(newValue) {
-                self.statusData = data
-            }
+            visibility_ = newValue.rawValue
         }
         get {
-            let status = try? JSONDecoder().decode(MastodonSwift.Status.self, from: statusData)
-            return status
+            Status.Visibility(rawValue: visibility_)!
         }
+    }
+
+    var createdAtRelative: String {
+        var difference = timestamp.distance(to: Date())
+
+        if difference < 60 {
+            return "just now"
+        }
+
+        difference = difference / 60
+        if difference < 60 {
+            return "\(Int(difference)) min ago"
+        }
+
+        difference = difference / 60
+        if difference < 24 {
+            if Int(difference) < 2 {
+                return "\(Int(difference)) hour ago"
+            } else {
+                return "\(Int(difference)) hours ago"
+            }
+        }
+
+        difference = difference / 24
+        return "\(Int(difference)) days ago"
+    }
+
+
+    // MARK: - Static Methods
+
+    static func create(in context: NSManagedObjectContext, from status: Status) throws -> PersistedStatus {
+        guard
+            let accountId = SessionModel.shared.currentSession?.account.id
+        else {
+            throw LeviathanError.noUserLoggedOn
+        }
+
+        let persistedStatus: PersistedStatus = context.createEntity()
+
+        persistedStatus.loggedOnAccountId = accountId
+        
+        persistedStatus.statusId = status.id
+        persistedStatus.timestamp = status.timestamp
+        persistedStatus.uri = status.uri
+        persistedStatus.url = status.url
+        if let account = status.account {
+            persistedStatus.account = try PersistedAccount.create(in: context, from: account)
+            persistedStatus.account!.status = persistedStatus
+        }
+        persistedStatus.inReplyToId = status.inReplyToId
+        persistedStatus.inReplyToAccount = status.inReplyToAccount
+
+        if let reblog = status.reblog {
+            persistedStatus.reblog = try PersistedStatus.create(in: context, from: reblog)
+            persistedStatus.reblog!.reblogParent = persistedStatus
+            persistedStatus.reblog!.isReblogChild = true
+        }
+
+        persistedStatus.content = status.content
+        persistedStatus.createdAt = status.createdAt
+        persistedStatus.reblogsCount = Int32(status.reblogsCount)
+        persistedStatus.favouritesCount = Int32(status.favouritesCount)
+        persistedStatus.reblogged = status.reblogged
+        persistedStatus.favourited = status.favourited
+        persistedStatus.sensitive = status.sensitive
+        persistedStatus.bookmarked = status.bookmarked
+        persistedStatus.pinned = status.pinned
+        persistedStatus.muted = status.muted
+        persistedStatus.spoilerText = status.spoilerText
+        persistedStatus.visibility = status.visibility
+
+        try status.mediaAttachments.forEach { attachment in
+            let attachmnt = try PersistedAttachment.create(in: context, from: attachment)
+
+            attachmnt.status = persistedStatus
+            persistedStatus.addToMediaAttachments(attachmnt)
+        }
+
+        if let card = status.card {
+            persistedStatus.card = try PersistedCard.create(in: context, from: card)
+            persistedStatus.card?.status = persistedStatus
+        }
+
+        try status.mentions.forEach { mention in
+            let mntn = try PersistedMention.create(in: context, from: mention)
+
+            mntn.status = persistedStatus
+            persistedStatus.addToMentions(mntn)
+        }
+
+        try status.tags.forEach { tag in
+            let tg = try PersistedTag.create(in: context, from: tag)
+
+            tg.status = persistedStatus
+            persistedStatus.addToTags(tg)
+        }
+
+        if let app = status.application {
+            persistedStatus.application = try PersistedApplication.create(in: context, from: app)
+            persistedStatus.application?.status = persistedStatus
+        }
+
+        return persistedStatus
     }
 }

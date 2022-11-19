@@ -32,29 +32,4 @@ extension Status {
     var timestamp: Date {
         return dateFormatter.date(from: self.createdAt)!
     }
-    
-    var createdAtRelative: String {
-        var difference = timestamp.distance(to: Date())
-        
-        if difference < 60 {
-            return "just now"
-        }
-        
-        difference = difference / 60
-        if difference < 60 {
-            return "\(Int(difference)) min ago"
-        }
-        
-        difference = difference / 60
-        if difference < 24 {
-            if Int(difference) < 2 {
-                return "\(Int(difference)) hour ago"
-            } else {
-                return "\(Int(difference)) hours ago"
-            }
-        }
-        
-        difference = difference / 24
-        return "\(Int(difference)) days ago"
-    }
 }

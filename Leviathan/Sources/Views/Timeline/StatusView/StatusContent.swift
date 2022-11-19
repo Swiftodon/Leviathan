@@ -18,7 +18,6 @@
 //  limitations under the License.
 //
 
-import MastodonSwift
 import SwiftUI
 
 struct StatusContent: View {
@@ -27,13 +26,13 @@ struct StatusContent: View {
 
     var body: some View {
         VStack {
-            StatusHeader(status: status)
+            StatusHeader(persistedStatus: statusForDisplay)
 
-            if status.sensitive {
+            If(statusForDisplay.sensitive) {
                 spoilerView()
             }
 
-            if !status.sensitive || revealed {
+            If(!statusForDisplay.sensitive || revealed) {
                 statusContent()
             }
         }
@@ -48,8 +47,24 @@ struct StatusContent: View {
     @State
     private var revealed = false
 
-    private var status: Status {
-        persistedStatus.status!.reblog != nil ? persistedStatus.status!.reblog! : persistedStatus.status!
+    var statusForDisplay: PersistedStatus {
+        if let reblog = persistedStatus.reblog {
+            return reblog
+        }
+
+        return persistedStatus
+    }
+
+    var attachments: [PersistedAttachment] {
+        if let attmnts = statusForDisplay.mediaAttachments {
+            return Array(attmnts)
+        }
+
+        return []
+    }
+
+    var revealedButtonText: LocalizedStringKey {
+        revealed ? "Hide" : "Show"
     }
 
 
@@ -59,18 +74,18 @@ struct StatusContent: View {
     private func statusContent() -> some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
-                Text(status.content.attributedString!)
+                Text(statusForDisplay.content.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
 
-            if !status.mediaAttachments.isEmpty {
-                MediaPreview(attachments: status.mediaAttachments)
+            If(!attachments.isEmpty) {
+                MediaPreview(attachments: attachments)
             }
 
-            if let card = status.card {
-                Card(card: card)
+            If(statusForDisplay.card != nil) {
+                CardView(card: statusForDisplay.card!)
             }
         }
     }
@@ -79,7 +94,7 @@ struct StatusContent: View {
     private func spoilerView() -> some View {
         VStack {
             HStack(alignment: .top) {
-                Text(status.spoilerText!.attributedString!)
+                Text(statusForDisplay.spoilerText!.attributedString!)
                     .lineLimit(40)
                     .multilineTextAlignment(.leading)
                 Spacer()
@@ -88,7 +103,7 @@ struct StatusContent: View {
             Button {
                 revealed.toggle()
             } label: {
-                Text(revealed ? "Hide" : "Show")
+                Text(revealedButtonText)
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
