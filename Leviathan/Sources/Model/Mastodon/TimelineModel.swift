@@ -28,6 +28,8 @@ class TimelineModel: ObservableObject {
 
     @Published
     public var isLoading = false
+    @Published
+    public var marker: Markers? = nil
     
     public var timelineId: TimelineId { TimelineId.home }
     public var sortDescriptors: [NSSortDescriptor] { [NSSortDescriptor(key: "timestamp", ascending: false)] }
@@ -100,6 +102,7 @@ class TimelineModel: ObservableObject {
         else {
             return
         }
+
         guard
             let auth = SessionModel.shared.currentSession?.auth
         else {
@@ -113,8 +116,36 @@ class TimelineModel: ObservableObject {
         }
 
         Task {
-            try await auth.saveMarkers([.home : statusId])
+            _ = try await auth.saveMarkers([.home : statusId])
+            loadMarker()
         }
+    }
+
+    func loadMarker() {
+        guard
+            let auth = SessionModel.shared.currentSession?.auth
+        else {
+            return
+        }
+
+        guard
+            timelineId == .home
+        else {
+            return
+        }
+
+        let waiter = DispatchGroup()
+        waiter.enter()
+        Task {
+            let mrkr = try await auth.readMarkers([.home])
+
+            update {
+                self.marker = mrkr
+            }
+
+            waiter.leave()
+        }
+        waiter.wait()
     }
     
     func readTimeline() throws {
