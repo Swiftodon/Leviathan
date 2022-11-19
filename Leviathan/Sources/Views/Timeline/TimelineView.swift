@@ -22,40 +22,20 @@ import Combine
 import MastodonSwift
 import SwiftUI
 
-struct Refresher: View {
-    @Environment(\.refresh) private var refresh // 1
-
-    var body: some View {
-        VStack {
-            Text("Refresher")
-            if let refresh = refresh { // 2
-                Button("Refresh") {
-                    Task { await refresh() }
-                }
-            }
-        }
-    }
-}
-
 struct TimelineView: View {
     
     // MARK: - Public Properties
     
     var body: some View {
         Header(title: title) {
-            ScrollViewReader { proxy in
-                List {
-                    ForEach(persistedStatuses, id: \.statusId) { status in
-                        StatusView(persistedStatus: status)
-                            .id(status.statusId)
-                            .onAppear { statusAppears(status) }
-                            .onDisappear { statusDisappears(status) }
-                    }
+            List {
+                ForEach(persistedStatuses, id: \.statusId) { status in
+                    StatusView(persistedStatus: status)
+                        .id(status.statusId)
                 }
-                .onAppear { currentProxy = proxy }
-                .refreshable {
-                    await asyncRefresh(proxy)
-                }
+            }
+            .refreshable {
+                await asyncRefresh()
             }
             .toolbar {
                 ToolbarItem(placement: .navigation) {
@@ -66,7 +46,7 @@ struct TimelineView: View {
                             .padding(.horizontal, -4)
                     } else {
                         Button {
-                            refresh(currentProxy)
+                            refresh()
                         } label: {
                             Image(systemName: "arrow.clockwise")
 
@@ -76,7 +56,7 @@ struct TimelineView: View {
                     }
                 }
             }
-            .onAppear { appearing(currentProxy) }
+            .onAppear { appearing() }
             .onDisappear(perform: disappearing)
         }
     }
@@ -109,25 +89,7 @@ struct TimelineView: View {
     @EnvironmentObject
     private var sessionModel: SessionModel
     @State
-    private var currentProxy: ScrollViewProxy? = nil
-    @State
-    private var sink_: AnyCancellable!
-    @State
     private var reloadCancellable: AnyCancellable!
-    @State
-    private var fixedStatusState: PersistedStatus? = nil
-    private var fixedStatusId: StatusId? {
-        if let fixedStatusState {
-            return fixedStatusState.statusId
-        }
-        return model.marker?.home?.lastReadId
-    }
-    @State
-    private var visibleStatuses: Set<PersistedStatus> = []
-    private var firstVisibleStatus: PersistedStatus? {
-        visibleStatuses.sorted { $0.timestamp > $1.timestamp }.first
-    }
-    
     
     // MARK: - Private Methods
     
@@ -155,59 +117,17 @@ struct TimelineView: View {
                 proxy?.scrollTo(mrkr)
             }
         }
-
-        /*Timer.scheduledTimer(withTimeInterval: 180, repeats: true) { _ in
-            model.store(marker: fixedStatusState?.statusId)
-        }*/
     }
     
     private func disappearing() {
         reloadCancellable.cancel()
     }
 
-    private func statusAppears(_ status: PersistedStatus) {
-        guard
-            !model.isLoading
-        else {
-            return
-        }
-
-        Task {
-            update {
-                visibleStatuses.insert(status)
-            }
-        }
-    }
-
-    private func statusDisappears(_ status: PersistedStatus) {
-        Task {
-            update {
-                visibleStatuses.remove(status)
-            }
-        }
-    }
-
-    private func asyncRefresh(_ proxy: ScrollViewProxy? = nil) async {
-        refresh(proxy)
+    private func asyncRefresh() async {
+        refresh()
     }
     
-    private func refresh(_ proxy: ScrollViewProxy? = nil) {
-        fixedStatusState = firstVisibleStatus
-        model.store(marker: fixedStatusState?.statusId)
-
-        sink_ = model.objectWillChange.sink {
-            update {
-                if !model.isLoading {
-                    if let fixedStatusId {
-                        update {
-                            proxy?.scrollTo(fixedStatusId, anchor: .top)
-                        }
-                    }
-                    sink_?.cancel()
-                }
-            }
-        }
-
+    private func refresh() {
         do {
             try model.readTimeline()
         } catch {
