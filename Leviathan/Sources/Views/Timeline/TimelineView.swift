@@ -115,7 +115,13 @@ struct TimelineView: View {
     @State
     private var reloadCancellable: AnyCancellable!
     @State
-    private var fixedStatus: PersistedStatus? = nil
+    private var fixedStatusState: PersistedStatus? = nil
+    private var fixedStatusId: StatusId? {
+        if let fixedStatusState {
+            return fixedStatusState.statusId
+        }
+        return model.marker?.home?.lastReadId
+    }
     @State
     private var visibleStatuses: Set<PersistedStatus> = []
     private var firstVisibleStatus: PersistedStatus? {
@@ -141,6 +147,18 @@ struct TimelineView: View {
         if sessionModel.currentSession == nil && !sessionModel.sessions.isEmpty {
             sessionModel.select(session: sessionModel.sessions[0])
         }
+
+        model.loadMarker()
+
+        update {
+            if let mrkr = model.marker?.home?.lastReadId {
+                proxy?.scrollTo(mrkr)
+            }
+        }
+
+        /*Timer.scheduledTimer(withTimeInterval: 180, repeats: true) { _ in
+            model.store(marker: fixedStatusState?.statusId)
+        }*/
     }
     
     private func disappearing() {
@@ -174,15 +192,15 @@ struct TimelineView: View {
     }
     
     private func refresh(_ proxy: ScrollViewProxy? = nil) {
-        fixedStatus = firstVisibleStatus
-        model.store(marker: fixedStatus?.statusId)
+        fixedStatusState = firstVisibleStatus
+        model.store(marker: fixedStatusState?.statusId)
 
         sink_ = model.objectWillChange.sink {
             update {
                 if !model.isLoading {
-                    if let fixedStatus {
+                    if let fixedStatusId {
                         update {
-                            proxy?.scrollTo(fixedStatus.statusId, anchor: .top)
+                            proxy?.scrollTo(fixedStatusId, anchor: .top)
                         }
                     }
                     sink_?.cancel()
