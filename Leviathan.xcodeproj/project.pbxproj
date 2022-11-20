@@ -212,6 +212,7 @@
 		E90B5944290FCBC400324E6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E928E3032926E2BC00C8C5F5 /* ToolViews */,
 				E9914EBB2912846900323B78 /* AccountManagement */,
 				E91CC3B8291551C700FC0BA0 /* Timeline */,
 				E94A901C291EAB08008F2B71 /* ContentView.swift */,
@@ -383,7 +384,6 @@
 		E9914EBB2912846900323B78 /* AccountManagement */ = {
 			isa = PBXGroup;
 			children = (
-				E928E3032926E2BC00C8C5F5 /* ToolViews */,
 				E94A901E291EAC2C008F2B71 /* LogonView.swift */,
 			);
 			path = AccountManagement;

@@ -34,9 +34,6 @@ struct TimelineView: View {
                         .id(status.statusId)
                 }
             }
-            .refreshable {
-                await asyncRefresh()
-            }
             .toolbar {
                 ToolbarItem(placement: .navigation) {
                     if model.isLoading {
