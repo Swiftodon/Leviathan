@@ -63,7 +63,7 @@ class TimelineModel: ObservableObject {
         let now = Date().timeIntervalSinceReferenceDate
 
         if let lastUpdated {
-            if now - lastUpdated > 60 {
+            if now - lastUpdated > 10 {
                 self.lastUpdated = now
                 return true
             }
@@ -108,8 +108,6 @@ class TimelineModel: ObservableObject {
 
         Task {
             let stat = try await function(status.statusId)
-
-            let statusToRead = status.reblogParent != nil ? status.reblogParent!.statusId : status.statusId
 
             status.reblogged = !status.reblogged
             if stat.reblogsCount > 0 {
@@ -189,9 +187,9 @@ class TimelineModel: ObservableObject {
             return
         }
 
-        Task {
+        waitingTask {
             _ = try await auth.saveMarkers([.home : statusId])
-            loadMarker()
+            self.loadMarker()
         }
     }
 
@@ -208,18 +206,13 @@ class TimelineModel: ObservableObject {
             return
         }
 
-        let waiter = DispatchGroup()
-        waiter.enter()
-        Task {
+        waitingTask {
             let mrkr = try await auth.readMarkers([.home])
 
-            update {
+            mainAsync {
                 self.marker = mrkr
             }
-
-            waiter.leave()
         }
-        waiter.wait()
     }
     
     func readTimeline() throws {
@@ -243,9 +236,9 @@ class TimelineModel: ObservableObject {
 
         backgroundContext.perform {
             Task {
-                update { self.isLoading = true }
+                mainAsync { self.isLoading = true }
                 defer {
-                    update { self.isLoading = false }
+                    mainAsyncAfter(deadline: .now() + 0.2) { self.isLoading = false }
                 }
                 if let timeline = try await self.retrieveTimeline() {
                     if timeline.isEmpty {

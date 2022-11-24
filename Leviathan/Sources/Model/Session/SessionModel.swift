@@ -113,7 +113,7 @@ class SessionModel: ObservableObject, Codable {
                 accessToken: AccessToken(credential: authToken),
                     account: account)
 
-            update {
+            mainAsync {
                 self.sessions.append(session)
                 self.save()
             }

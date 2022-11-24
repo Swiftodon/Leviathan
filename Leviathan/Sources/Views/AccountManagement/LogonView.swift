@@ -116,7 +116,7 @@ struct LogonView: View {
             Task {
                 let instance = try? await client.readInstanceInformation()
 
-                update {
+                mainAsync {
                     self.instance = instance
                 }
             }

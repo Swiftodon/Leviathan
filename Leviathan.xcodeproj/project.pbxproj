@@ -15,7 +15,7 @@
 		E91CC3BA291551E400FC0BA0 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3B9291551E400FC0BA0 /* StatusView.swift */; };
 		E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */; };
 		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
-		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
+		E91CC3CC29166D0B00FC0BA0 /* AsyncUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsyncUtils.swift */; };
 		E928E2F62925FFE800C8C5F5 /* PersistedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2F52925FFE800C8C5F5 /* PersistedAccount.swift */; };
 		E928E2F82926030F00C8C5F5 /* LeviathanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2F72926030F00C8C5F5 /* LeviathanError.swift */; };
 		E928E2FA29264BCA00C8C5F5 /* PersistedTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2F929264BCA00C8C5F5 /* PersistedTag.swift */; };
@@ -61,8 +61,10 @@
 		E9C99E292922C3CA001D1983 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99E282922C3CA001D1983 /* CardView.swift */; };
 		E9C99E2B2922CE95001D1983 /* MediaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99E2A2922CE95001D1983 /* MediaPreview.swift */; };
 		E9EA058F291B7389008F55AF /* TimelineId.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA058E291B7389008F55AF /* TimelineId.swift */; };
-		E9EA0594291C0245008F55AF /* MutableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA0593291C0245008F55AF /* MutableField.swift */; };
 		E9EA0596291C03FE008F55AF /* Status+hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA0595291C03FE008F55AF /* Status+hashable.swift */; };
+		E9FE6CB5292FE66E006CE09C /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = E9FE6CB4292FE66E006CE09C /* Introspect */; };
+		E9FE6CB7292FF9EF006CE09C /* TimelineView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE6CB6292FF9EF006CE09C /* TimelineView+macOS.swift */; };
+		E9FE6CB9292FFA1A006CE09C /* TimelineView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE6CB8292FFA1A006CE09C /* TimelineView+iOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +81,7 @@
 		E91CC3B9291551E400FC0BA0 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
-		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
+		E91CC3CB29166D0B00FC0BA0 /* AsyncUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUtils.swift; sourceTree = "<group>"; };
 		E928E2F52925FFE800C8C5F5 /* PersistedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedAccount.swift; sourceTree = "<group>"; };
 		E928E2F72926030F00C8C5F5 /* LeviathanError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviathanError.swift; sourceTree = "<group>"; };
 		E928E2F929264BCA00C8C5F5 /* PersistedTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedTag.swift; sourceTree = "<group>"; };
@@ -123,8 +125,9 @@
 		E9C99E282922C3CA001D1983 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E9C99E2A2922CE95001D1983 /* MediaPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreview.swift; sourceTree = "<group>"; };
 		E9EA058E291B7389008F55AF /* TimelineId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineId.swift; sourceTree = "<group>"; };
-		E9EA0593291C0245008F55AF /* MutableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableField.swift; sourceTree = "<group>"; };
 		E9EA0595291C03FE008F55AF /* Status+hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+hashable.swift"; sourceTree = "<group>"; };
+		E9FE6CB6292FF9EF006CE09C /* TimelineView+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimelineView+macOS.swift"; path = "../../../../../../../../Documents/TimelineView+macOS.swift"; sourceTree = "<group>"; };
+		E9FE6CB8292FFA1A006CE09C /* TimelineView+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimelineView+iOS.swift"; path = "../../../../../../../../Documents/TimelineView+iOS.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E981008F2911DA37001F4133 /* Valet in Frameworks */,
+				E9FE6CB5292FE66E006CE09C /* Introspect in Frameworks */,
 				E98100802911004D001F4133 /* MultiplatformTabBar in Frameworks */,
 				E981008C2911D549001F4133 /* MastodonSwift in Frameworks */,
 				E94A902F292047DD008F2B71 /* WebView in Frameworks */,
@@ -226,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				E9810075291054CB001F4133 /* TimelineView.swift */,
+				E9FE6CB8292FFA1A006CE09C /* TimelineView+iOS.swift */,
+				E9FE6CB6292FF9EF006CE09C /* TimelineView+macOS.swift */,
 				E9C99E1F29225E3F001D1983 /* StatusView */,
 			);
 			path = Timeline;
@@ -280,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				E94A9022291F0EAC008F2B71 /* Session */,
-				E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */,
 				E9914EB229127DFA00323B78 /* Mastodon */,
 			);
 			path = Model;
@@ -403,7 +408,7 @@
 		E9EA0592291C022B008F55AF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E9EA0593291C0245008F55AF /* MutableField.swift */,
+				E91CC3CB29166D0B00FC0BA0 /* AsyncUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 				E981008E2911DA37001F4133 /* Valet */,
 				E9914EC32915123200323B78 /* SwiftletUtilities */,
 				E94A902E292047DD008F2B71 /* WebView */,
+				E9FE6CB4292FE66E006CE09C /* Introspect */,
 			);
 			productName = Leviathan;
 			productReference = E90B592E290FC89900324E6B /* Leviathan.app */;
@@ -466,6 +472,7 @@
 				E981008D2911DA36001F4133 /* XCRemoteSwiftPackageReference "Valet" */,
 				E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */,
 				E94A902D292047DD008F2B71 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */,
+				E9FE6CB3292FE66E006CE09C /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = E90B592F290FC89900324E6B /* Products */;
 			projectDirPath = "";
@@ -542,8 +549,7 @@
 				E9EA058F291B7389008F55AF /* TimelineId.swift in Sources */,
 				E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */,
 				E94A9024291F0EC0008F2B71 /* Session.swift in Sources */,
-				E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */,
-				E9EA0594291C0245008F55AF /* MutableField.swift in Sources */,
+				E91CC3CC29166D0B00FC0BA0 /* AsyncUtils.swift in Sources */,
 				E928E2F82926030F00C8C5F5 /* LeviathanError.swift in Sources */,
 				E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */,
 				E928E2FE29264F3A00C8C5F5 /* PersistedMention.swift in Sources */,
@@ -561,10 +567,12 @@
 				E9699A43291C261F004781F9 /* View+onRendered.swift in Sources */,
 				E9C99E2B2922CE95001D1983 /* MediaPreview.swift in Sources */,
 				E928E2FA29264BCA00C8C5F5 /* PersistedTag.swift in Sources */,
+				E9FE6CB7292FF9EF006CE09C /* TimelineView+macOS.swift in Sources */,
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
 				E9C99E2329225F91001D1983 /* ActionBar.swift in Sources */,
 				E928E2F62925FFE800C8C5F5 /* PersistedAccount.swift in Sources */,
 				E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */,
+				E9FE6CB9292FFA1A006CE09C /* TimelineView+iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +840,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E9FE6CB3292FE66E006CE09C /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -859,6 +875,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9914EC22915123200323B78 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */;
 			productName = SwiftletUtilities;
+		};
+		E9FE6CB4292FE66E006CE09C /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9FE6CB3292FE66E006CE09C /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 

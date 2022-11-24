@@ -53,7 +53,7 @@ struct LeviathanApp: SwiftUI.App {
     }
 
     private func handleOauthCallback(_ url: URL) {
-        update {
+        mainAsync {
             MastodonClient.handleOAuthResponse(url: url)
         }
     }
