@@ -1,8 +1,8 @@
 //
-//  MutableField.swift
+//  AsynchronousUpdater.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 09.11.22.
+//  Created by Thomas Bonk on 05.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,16 +20,26 @@
 
 import Foundation
 
-class MutableField<T> {
-    
-    // MARK: - Public Properties
-    
-    public var value: T
-    
-    
-    // MARK: - Initialization
-    
-    init(value: T) {
-        self.value = value
+func mainAsync(execute closure: @escaping () -> ()) {
+    DispatchQueue.main.async {
+        closure()
     }
+}
+
+func mainAsyncAfter(deadline: DispatchTime, execute closure: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: deadline) {
+        closure()
+    }
+}
+
+func waitingTask(_ closure: @escaping @Sendable () async throws -> ())  {
+    let dispatchGroup = DispatchGroup()
+    dispatchGroup.enter()
+
+    Task {
+        try await closure()
+        dispatchGroup.leave()
+    }
+
+    dispatchGroup.wait()
 }

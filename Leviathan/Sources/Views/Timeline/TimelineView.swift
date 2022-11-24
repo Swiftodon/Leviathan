@@ -19,6 +19,7 @@
 //
 
 import Combine
+import Introspect
 import MastodonSwift
 import SwiftUI
 
@@ -35,6 +36,7 @@ struct TimelineView: View {
                         .environmentObject(model)
                 }
             }
+            .introspectTableView { tableView = $0 }
             .toolbar {
                 ToolbarItem(placement: .navigation) {
                     if model.isLoading {
@@ -88,12 +90,24 @@ struct TimelineView: View {
     private var sessionModel: SessionModel
     @State
     private var reloadCancellable: AnyCancellable!
+    @State
+    private var tableView: NativeTableView?
+    private var lastReadId: StatusId? {
+        guard
+            model.timelineId == .home
+        else {
+            return nil
+        }
+
+        return model.marker?.home?.lastReadId
+    }
+
     
     // MARK: - Private Methods
     
-    private func appearing(_ proxy: ScrollViewProxy? = nil) {
+    private func appearing() {
         reloadCancellable = sessionModel.objectWillChange.sink { _ in
-            update {
+            mainAsync {
                 guard
                     sessionModel.currentSession != nil
                 else {
@@ -110,15 +124,24 @@ struct TimelineView: View {
 
         model.loadMarker()
 
-        update {
-            if let mrkr = model.marker?.home?.lastReadId {
-                proxy?.scrollTo(mrkr)
+        mainAsync {
+            if let lastReadId {
+                scrollTo(statusId: lastReadId)
             }
         }
     }
     
     private func disappearing() {
         reloadCancellable.cancel()
+        storeMarker()
+    }
+
+    private func storeMarker() {
+        if let firstVisibleRow = firstVisibleRow(in: tableView) {
+            if firstVisibleRow < persistedStatuses.count {
+                model.store(marker: persistedStatuses[firstVisibleRow].statusId)
+            }
+        }
     }
 
     private func asyncRefresh() async {
@@ -127,7 +150,15 @@ struct TimelineView: View {
     
     private func refresh() {
         do {
+            storeMarker()
+
             try model.readTimeline()
+
+            mainAsyncAfter(deadline: .now() + 0.3) {
+                if let lastReadId {
+                    scrollTo(statusId: lastReadId)
+                }
+            }
         } catch {
             ToastView
                 .Toast(
@@ -135,6 +166,12 @@ struct TimelineView: View {
                     message: "An error occurred when loading the timeline",
                     error: error)
                 .show()
+        }
+    }
+
+    private func scrollTo(statusId: StatusId) {
+        if let row = persistedStatuses.firstIndex(where: { $0.statusId == statusId }) {
+            scroll(tableView, to: row)
         }
     }
 }

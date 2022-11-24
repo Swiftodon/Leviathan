@@ -54,7 +54,7 @@ struct ToastView: View {
         // MARK: - Methods
         
         func show() {
-            update {
+            mainAsync {
                 NotificationCenter.default.post(name: .ShowToast, object: self)
             }
         }
