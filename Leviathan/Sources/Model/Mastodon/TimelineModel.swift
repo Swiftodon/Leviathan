@@ -96,6 +96,80 @@ class TimelineModel: ObservableObject {
             accountId ?? 0)
     }
 
+    func toggleBoost(status: PersistedStatus) {
+        guard
+            let auth = SessionModel.shared.currentSession?.auth
+        else {
+            return
+        }
+
+        let function = status.reblogged ? auth.unboost(statusId:) : auth.boost(statusId:)
+        let delta = Int32(status.reblogged ? -1 : 1)
+
+        Task {
+            let stat = try await function(status.statusId)
+
+            let statusToRead = status.reblogParent != nil ? status.reblogParent!.statusId : status.statusId
+
+            status.reblogged = !status.reblogged
+            if stat.reblogsCount > 0 {
+                status.reblogsCount = Int32(stat.reblogsCount) + delta
+            } else {
+                status.reblogsCount = status.reblogsCount + delta
+            }
+
+            try await context.perform {
+                try self.context.save()
+            }
+        }
+    }
+
+    func toggleBookmark(status: PersistedStatus) {
+        guard
+            let auth = SessionModel.shared.currentSession?.auth
+        else {
+            return
+        }
+
+        let function = status.bookmarked ? auth.unbookmark(statusId:) : auth.bookmark(statusId:)
+
+        Task {
+            let stat = try await function(status.statusId)
+
+            status.bookmarked = stat.bookmarked
+
+            try await context.perform {
+                try self.context.save()
+            }
+        }
+    }
+
+    func toggleFavourite(status: PersistedStatus) {
+        guard
+            let auth = SessionModel.shared.currentSession?.auth
+        else {
+            return
+        }
+
+        let function = status.favourited ? auth.unfavourite(statusId:) : auth.favourite(statusId:)
+        let delta = Int32(status.favourited ? -1 : 1)
+
+        Task {
+            let stat = try await function(status.statusId)
+
+            status.favourited = !status.favourited
+            if stat.favouritesCount > 0 {
+                status.favouritesCount = Int32(stat.favouritesCount) + delta
+            } else {
+                status.favouritesCount = status.favouritesCount + delta
+            }
+
+            try await context.perform {
+                try self.context.save()
+            }
+        }
+    }
+
     func store(marker: StatusId?) {
         guard
             let statusId = marker
@@ -179,7 +253,7 @@ class TimelineModel: ObservableObject {
                             .Toast(type: .info, message: "You are all caught-up!")
                             .show()
                     } else {
-                        try self.persist(timeline: timeline, context: self.context)
+                        try await self.persist(timeline: timeline, context: self.context)
                     }
                 }
             }
@@ -193,7 +267,7 @@ class TimelineModel: ObservableObject {
         return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(minId: lastStatusId, limit: 200)
     }
     
-    func persist(timeline: [MastodonSwift.Status], context: NSManagedObjectContext) throws {
+    func persist(timeline: [MastodonSwift.Status], context: NSManagedObjectContext) async throws  {
         guard !timeline.isEmpty else {
             return
         }
@@ -204,6 +278,8 @@ class TimelineModel: ObservableObject {
             persistedStatus.timeline = self.timelineId
         }
 
-        try self.context.save()
+        try await context.perform {
+            try self.context.save()
+        }
     }
 }

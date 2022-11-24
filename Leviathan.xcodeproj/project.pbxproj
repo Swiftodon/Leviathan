@@ -16,7 +16,6 @@
 		E91CC3BC29156A8D00FC0BA0 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */; };
 		E91CC3C22915D82E00FC0BA0 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */; };
 		E91CC3CC29166D0B00FC0BA0 /* AsynchronousUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */; };
-		E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91CC3CF291681F600FC0BA0 /* Status+actions.swift */; };
 		E928E2F62925FFE800C8C5F5 /* PersistedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2F52925FFE800C8C5F5 /* PersistedAccount.swift */; };
 		E928E2F82926030F00C8C5F5 /* LeviathanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2F72926030F00C8C5F5 /* LeviathanError.swift */; };
 		E928E2FA29264BCA00C8C5F5 /* PersistedTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928E2F929264BCA00C8C5F5 /* PersistedTag.swift */; };
@@ -81,7 +80,6 @@
 		E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
 		E91CC3CB29166D0B00FC0BA0 /* AsynchronousUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUpdate.swift; sourceTree = "<group>"; };
-		E91CC3CF291681F600FC0BA0 /* Status+actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+actions.swift"; sourceTree = "<group>"; };
 		E928E2F52925FFE800C8C5F5 /* PersistedAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedAccount.swift; sourceTree = "<group>"; };
 		E928E2F72926030F00C8C5F5 /* LeviathanError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviathanError.swift; sourceTree = "<group>"; };
 		E928E2F929264BCA00C8C5F5 /* PersistedTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedTag.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				E91CC3C12915D82E00FC0BA0 /* Status+createdAt.swift */,
-				E91CC3CF291681F600FC0BA0 /* Status+actions.swift */,
 				E9EA0595291C03FE008F55AF /* Status+hashable.swift */,
 			);
 			path = Entities;
@@ -533,7 +530,6 @@
 				E90B5947290FCBC400324E6B /* MainView.swift in Sources */,
 				E90B5946290FCBC400324E6B /* LeviathanApp.swift in Sources */,
 				E985982A2917C176003C5187 /* PersistenceController.swift in Sources */,
-				E91CC3D0291681F600FC0BA0 /* Status+actions.swift in Sources */,
 				E98598232917BDCE003C5187 /* Model.swift in Sources */,
 				E94A901F291EAC2C008F2B71 /* LogonView.swift in Sources */,
 				E94A901D291EAB08008F2B71 /* ContentView.swift in Sources */,
