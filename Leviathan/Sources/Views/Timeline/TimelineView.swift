@@ -32,6 +32,7 @@ struct TimelineView: View {
                 ForEach(persistedStatuses, id: \.statusId) { status in
                     StatusView(persistedStatus: status)
                         .id(status.statusId)
+                        .environmentObject(model)
                 }
             }
             .toolbar {

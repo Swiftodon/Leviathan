@@ -74,6 +74,8 @@ struct ToastView: View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
                 Image(systemName: type.iconName)
+                    .resizable()
+                    .frame(width: 32, height: 32)
                     .foregroundColor(type.themeColor)
                 
                 VStack(alignment: .leading) {
@@ -111,8 +113,8 @@ struct ToastView: View {
             Rectangle()
                 .fill(type.themeColor)
                 .frame(width: 6)
-                .clipped()
-            , alignment: .leading
+                .clipped(),
+            alignment: .leading
         )
         .frame(minWidth: 0, maxWidth: .infinity)
         .cornerRadius(8)

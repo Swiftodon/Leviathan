@@ -35,21 +35,21 @@ struct ActionBar: View {
             }.padding(.trailing, 5)
 
             Button {
-
+                model.toggleBoost(status: statusForAction)
             } label: {
                 Label("\(statusForAction.reblogsCount)", systemImage: "repeat")
                     .foregroundColor(statusForAction.reblogged ? .green : .primary)
             }.padding(.trailing, 5)
 
             Button {
-
+                model.toggleFavourite(status: statusForAction)
             } label: {
                 Label("\(statusForAction.favouritesCount)", systemImage: "star")
                     .foregroundColor(statusForAction.favourited ? .green : .primary)
             }.padding(.trailing, 5)
 
             Button {
-
+                model.toggleBookmark(status: statusForAction)
             } label: {
                 Image(systemName: "bookmark")
                     .foregroundColor(statusForAction.bookmarked ? .green : .primary)
@@ -69,19 +69,28 @@ struct ActionBar: View {
         .buttonStyle(.borderless)
     }
 
-    @ObservedObject
-    var persistedStatus: PersistedStatus
+
+    // MARK: - Initialization
+
+    init(persistedStatus: PersistedStatus) {
+        self.persistedStatus = persistedStatus
+        if let reblog = persistedStatus.reblog {
+            statusForAction = reblog
+        } else {
+            statusForAction = persistedStatus
+        }
+    }
+
 
 
     // MARK: - Private Properties
 
-    private var statusForAction: PersistedStatus {
-        if let reblog = persistedStatus.reblog {
-            return reblog
-        }
-
-        return persistedStatus
-    }
+    @EnvironmentObject
+    private var model: TimelineModel
+    @ObservedObject
+    private var persistedStatus: PersistedStatus
+    @ObservedObject
+    private var statusForAction: PersistedStatus
 
     private var clientApplication: PersistedApplication? {
         statusForAction.application
