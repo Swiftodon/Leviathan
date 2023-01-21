@@ -50,10 +50,15 @@ struct MainView: View {
                 }
                 .onReceive(NotificationCenter.default.publisher(for: .ShowToast), perform: triggerAlert)
                 .onReceive(NotificationCenter.default.publisher(for: .ShowMenuSheet), perform: toggleMenuSheet)
+                .onReceive(NotificationCenter.default.publisher(for: .ShowComposeSheet), perform: toggleComposeSheet)
                 .toastView(toast: $currentToast)
                 .sheet(isPresented: $presentMenuSheet) {
                     MenuView()
-                        .frame(minWidth: geo.size.width - 30, minHeight: geo.size.height - 30)
+                        .frame(minWidth: geo.size.width * 0.9, minHeight: geo.size.height * 0.75)
+                }
+                .sheet(isPresented: $presentComposeSheet) {
+                    ComposeView()
+                        .frame(minWidth: geo.size.width * 0.9, minHeight: geo.size.height * 0.75)
                 }
         }
     }
@@ -65,6 +70,8 @@ struct MainView: View {
     private var currentToast: ToastView.Toast? = nil
     @State
     private var presentMenuSheet = false
+    @State
+    private var presentComposeSheet = false
     
     @EnvironmentObject
     private var timelineModel: TimelineModel
@@ -92,6 +99,10 @@ struct MainView: View {
 
     private func toggleMenuSheet(_ notification: Foundation.Notification) {
         presentMenuSheet.toggle()
+    }
+
+    private func toggleComposeSheet(_ notification: Foundation.Notification) {
+        presentComposeSheet.toggle()
     }
 }
 

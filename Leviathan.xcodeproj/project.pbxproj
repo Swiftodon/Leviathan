@@ -65,6 +65,8 @@
 		E9FE6CB5292FE66E006CE09C /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = E9FE6CB4292FE66E006CE09C /* Introspect */; };
 		E9FE6CB7292FF9EF006CE09C /* TimelineView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE6CB6292FF9EF006CE09C /* TimelineView+macOS.swift */; };
 		E9FE6CB9292FFA1A006CE09C /* TimelineView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE6CB8292FFA1A006CE09C /* TimelineView+iOS.swift */; };
+		E9FE6CBB2930963A006CE09C /* NotificationCenter+showComposeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE6CBA2930963A006CE09C /* NotificationCenter+showComposeSheet.swift */; };
+		E9FE6CBD2930D52B006CE09C /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE6CBC2930D52B006CE09C /* ComposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,8 @@
 		E9EA0595291C03FE008F55AF /* Status+hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+hashable.swift"; sourceTree = "<group>"; };
 		E9FE6CB6292FF9EF006CE09C /* TimelineView+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimelineView+macOS.swift"; path = "../../../../../../../../Documents/TimelineView+macOS.swift"; sourceTree = "<group>"; };
 		E9FE6CB8292FFA1A006CE09C /* TimelineView+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimelineView+iOS.swift"; path = "../../../../../../../../Documents/TimelineView+iOS.swift"; sourceTree = "<group>"; };
+		E9FE6CBA2930963A006CE09C /* NotificationCenter+showComposeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+showComposeSheet.swift"; sourceTree = SOURCE_ROOT; };
+		E9FE6CBC2930D52B006CE09C /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,7 @@
 				E91CC3B8291551C700FC0BA0 /* Timeline */,
 				E94A901C291EAB08008F2B71 /* ContentView.swift */,
 				E90B5945290FCBC400324E6B /* MainView.swift */,
+				E9FE6CBC2930D52B006CE09C /* ComposeView.swift */,
 				E94A9028291F9004008F2B71 /* MenuView.swift */,
 				E9810077291055C1001F4133 /* NotificationsView.swift */,
 				E94A9027291F8FD9008F2B71 /* Subviews */,
@@ -379,6 +384,7 @@
 				E9914EB729127E9500323B78 /* String+applicationName.swift */,
 				E91CC3BB29156A8D00FC0BA0 /* String+HTML.swift */,
 				E94A9025291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift */,
+				E9FE6CBA2930963A006CE09C /* NotificationCenter+showComposeSheet.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				E91CC3CC29166D0B00FC0BA0 /* AsyncUtils.swift in Sources */,
 				E928E2F82926030F00C8C5F5 /* LeviathanError.swift in Sources */,
 				E9810072291053A5001F4133 /* FederatedTimelineModel.swift in Sources */,
+				E9FE6CBD2930D52B006CE09C /* ComposeView.swift in Sources */,
 				E928E2FE29264F3A00C8C5F5 /* PersistedMention.swift in Sources */,
 				E98100702910537B001F4133 /* LocalTimelineModel.swift in Sources */,
 				E981008929117DDE001F4133 /* View+compatability.swift in Sources */,
@@ -567,6 +574,7 @@
 				E9699A43291C261F004781F9 /* View+onRendered.swift in Sources */,
 				E9C99E2B2922CE95001D1983 /* MediaPreview.swift in Sources */,
 				E928E2FA29264BCA00C8C5F5 /* PersistedTag.swift in Sources */,
+				E9FE6CBB2930963A006CE09C /* NotificationCenter+showComposeSheet.swift in Sources */,
 				E9FE6CB7292FF9EF006CE09C /* TimelineView+macOS.swift in Sources */,
 				E9810078291055C1001F4133 /* NotificationsView.swift in Sources */,
 				E9C99E2329225F91001D1983 /* ActionBar.swift in Sources */,

@@ -157,7 +157,7 @@ class TimelineModel: ObservableObject {
 
             status.favourited = !status.favourited
             if stat.favouritesCount > 0 {
-                status.favouritesCount = Int32(stat.favouritesCount) + delta
+                status.favouritesCount = Int32(stat.favouritesCount)
             } else {
                 status.favouritesCount = status.favouritesCount + delta
             }
@@ -169,6 +169,12 @@ class TimelineModel: ObservableObject {
     }
 
     func store(marker: StatusId?) {
+        guard
+            timelineId == .home
+        else {
+            return
+        }
+
         guard
             let statusId = marker
         else {
@@ -215,7 +221,7 @@ class TimelineModel: ObservableObject {
         }
     }
     
-    func readTimeline() throws {
+    func readTimeline(_ finished: (() -> ())? = nil) throws {
         guard
             let _ = SessionModel.shared.currentSession?.auth
         else {
@@ -238,7 +244,10 @@ class TimelineModel: ObservableObject {
             Task {
                 mainAsync { self.isLoading = true }
                 defer {
-                    mainAsyncAfter(deadline: .now() + 0.2) { self.isLoading = false }
+                    mainAsyncAfter(deadline: .now() + 0.2) {
+                        self.isLoading = false
+                        finished?()
+                    }
                 }
                 if let timeline = try await self.retrieveTimeline() {
                     if timeline.isEmpty {

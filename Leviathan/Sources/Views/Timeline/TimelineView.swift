@@ -55,6 +55,14 @@ struct TimelineView: View {
                         .padding(.horizontal, 5)
                     }
                 }
+
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        NotificationCenter.showComposeSheet()
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
             }
             .onAppear { appearing() }
             .onDisappear(perform: disappearing)
@@ -73,9 +81,8 @@ struct TimelineView: View {
         self.title = title
         self.timeline = timeline
         self.model = model
-        
-        self._persistedStatuses =
-        FetchRequest<PersistedStatus>(
+
+        self._persistedStatuses = FetchRequest<PersistedStatus>(
             sortDescriptors: model.sortDescriptors,
             predicate: model.readFilter(),
             animation: .easeIn)
@@ -124,7 +131,7 @@ struct TimelineView: View {
 
         model.loadMarker()
 
-        mainAsync {
+        mainAsyncAfter(deadline: .now() + 0.5) {
             if let lastReadId {
                 scrollTo(statusId: lastReadId)
             }
@@ -136,7 +143,7 @@ struct TimelineView: View {
         storeMarker()
     }
 
-    private func storeMarker() {
+    private func storeMarker() {        
         if let firstVisibleRow = firstVisibleRow(in: tableView) {
             if firstVisibleRow < persistedStatuses.count {
                 model.store(marker: persistedStatuses[firstVisibleRow].statusId)
@@ -152,12 +159,14 @@ struct TimelineView: View {
         do {
             storeMarker()
 
-            try model.readTimeline()
-
-            mainAsyncAfter(deadline: .now() + 0.3) {
-                if let lastReadId {
-                    scrollTo(statusId: lastReadId)
+            NSLog("NUMBER OF TOOTS: \(persistedStatuses.count)")
+            try model.readTimeline {
+                mainAsyncAfter(deadline: .now() + 0.1) {
+                    if let lastReadId {
+                        scrollTo(statusId: lastReadId)
+                    }
                 }
+                NSLog("NUMBER OF TOOTS: \(persistedStatuses.count)")
             }
         } catch {
             ToastView
