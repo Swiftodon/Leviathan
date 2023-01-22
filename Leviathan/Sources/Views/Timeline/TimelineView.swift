@@ -29,11 +29,49 @@ struct TimelineView: View {
     
     var body: some View {
         Header(title: title) {
-            List {
-                ForEach(persistedStatuses, id: \.statusId) { status in
-                    StatusView(persistedStatus: status)
-                        .id(status.statusId)
-                        .environmentObject(model)
+            ZStack {
+                List {
+                    ForEach(persistedStatuses, id: \.statusId) { status in
+                        StatusView(persistedStatus: status)
+                            .id(status.statusId)
+                            .environmentObject(model)
+                    }
+                }
+
+                if model.cachedTimeline.count > 0 {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+
+                            Button {
+                                model.persistCache()
+                            } label: {
+                                Label("\(model.cachedTimeline.count) Statuses", systemImage: "distribute.vertical.top")
+                                    .foregroundColor(.black)
+                            }
+                            .controlSize(.large)
+                            .buttonStyle(.bordered)
+                            .background(.orange)
+                            .cornerRadius(5)
+                            .padding(.trailing, 10)
+
+                            Button{
+                                model.nextStatusFromCache()
+                            } label: {
+                                Image(systemName: "text.insert")
+                                    .foregroundColor(.black)
+                            }
+                            .controlSize(.large)
+                            .buttonStyle(.bordered)
+                            .background(.green)
+                            .cornerRadius(5)
+                            .padding(.leading, 10)
+
+                            Spacer()
+                        }
+                        .padding(.vertical, 5)
+                    }.opacity(1)
                 }
             }
             .introspectTableView { tableView = $0 }
@@ -92,15 +130,6 @@ struct TimelineView: View {
     private var reloadCancellable: AnyCancellable!
     @State
     private var tableView: NativeTableView?
-    private var lastReadId: StatusId? {
-        guard
-            model.timelineId == .home
-        else {
-            return nil
-        }
-
-        return model.marker?.home?.lastReadId
-    }
 
     
     // MARK: - Private Methods
@@ -121,27 +150,10 @@ struct TimelineView: View {
         if sessionModel.currentSession == nil && !sessionModel.sessions.isEmpty {
             sessionModel.select(session: sessionModel.sessions[0])
         }
-
-        model.loadMarker()
-
-        mainAsync {
-            if let lastReadId {
-                scrollTo(statusId: lastReadId)
-            }
-        }
     }
     
     private func disappearing() {
         reloadCancellable.cancel()
-        storeMarker()
-    }
-
-    private func storeMarker() {
-        if let firstVisibleRow = firstVisibleRow(in: tableView) {
-            if firstVisibleRow < persistedStatuses.count {
-                model.store(marker: persistedStatuses[firstVisibleRow].statusId)
-            }
-        }
     }
 
     private func asyncRefresh() async {
@@ -150,15 +162,7 @@ struct TimelineView: View {
     
     private func refresh() {
         do {
-            storeMarker()
-
-            try model.readTimeline()
-
-            mainAsyncAfter(deadline: .now() + 0.3) {
-                if let lastReadId {
-                    scrollTo(statusId: lastReadId)
-                }
-            }
+            try model.cacheTimeline()
         } catch {
             ToastView
                 .Toast(
