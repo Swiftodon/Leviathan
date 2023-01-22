@@ -24,16 +24,54 @@ import MastodonSwift
 import SwiftUI
 
 struct TimelineView: View {
-    
+
     // MARK: - Public Properties
-    
+
     var body: some View {
         Header(title: title) {
-            List {
-                ForEach(persistedStatuses, id: \.statusId) { status in
-                    StatusView(persistedStatus: status)
-                        .id(status.statusId)
-                        .environmentObject(model)
+            ZStack {
+                List {
+                    ForEach(persistedStatuses, id: \.statusId) { status in
+                        StatusView(persistedStatus: status)
+                            .id(status.statusId)
+                            .environmentObject(model)
+                    }
+                }
+
+                if model.cachedTimeline.count > 0 {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+
+                            Button {
+                                model.persistCache()
+                            } label: {
+                                Label("\(model.cachedTimeline.count) Statuses", systemImage: "distribute.vertical.top")
+                                    .foregroundColor(.black)
+                            }
+                            .controlSize(.large)
+                            .buttonStyle(.bordered)
+                            .background(.orange)
+                            .cornerRadius(5)
+                            .padding(.trailing, 10)
+
+                            Button{
+                                model.nextStatusFromCache()
+                            } label: {
+                                Image(systemName: "text.insert")
+                                    .foregroundColor(.black)
+                            }
+                            .controlSize(.large)
+                            .buttonStyle(.bordered)
+                            .background(.green)
+                            .cornerRadius(5)
+                            .padding(.leading, 10)
+
+                            Spacer()
+                        }
+                        .padding(.vertical, 5)
+                    }.opacity(1)
                 }
             }
             .introspectTableView { tableView = $0 }
@@ -68,15 +106,15 @@ struct TimelineView: View {
             .onDisappear(perform: disappearing)
         }
     }
-    
+
     var title: LocalizedStringKey
     var timeline: TimelineId
     @ObservedObject
     var model: TimelineModel
-    
-    
+
+
     // MARK: - Initialization
-    
+
     init(title: LocalizedStringKey, timeline: TimelineId, model: TimelineModel) {
         self.title = title
         self.timeline = timeline
@@ -87,8 +125,8 @@ struct TimelineView: View {
             predicate: model.readFilter(),
             animation: .easeIn)
     }
-    
-    
+
+
     // MARK: - Private Properties
 
     @FetchRequest
@@ -99,19 +137,10 @@ struct TimelineView: View {
     private var reloadCancellable: AnyCancellable!
     @State
     private var tableView: NativeTableView?
-    private var lastReadId: StatusId? {
-        guard
-            model.timelineId == .home
-        else {
-            return nil
-        }
 
-        return model.marker?.home?.lastReadId
-    }
 
-    
     // MARK: - Private Methods
-    
+
     private func appearing() {
         reloadCancellable = sessionModel.objectWillChange.sink { _ in
             mainAsync {
@@ -120,30 +149,22 @@ struct TimelineView: View {
                 else {
                     return
                 }
-                
+
                 persistedStatuses.nsPredicate = model.readFilter()
             }
         }
-        
+
         if sessionModel.currentSession == nil && !sessionModel.sessions.isEmpty {
             sessionModel.select(session: sessionModel.sessions[0])
         }
-
-        model.loadMarker()
-
-        mainAsyncAfter(deadline: .now() + 0.5) {
-            if let lastReadId {
-                scrollTo(statusId: lastReadId)
-            }
-        }
     }
-    
+
     private func disappearing() {
         reloadCancellable.cancel()
         storeMarker()
     }
 
-    private func storeMarker() {        
+    private func storeMarker() {
         if let firstVisibleRow = firstVisibleRow(in: tableView) {
             if firstVisibleRow < persistedStatuses.count {
                 model.store(marker: persistedStatuses[firstVisibleRow].statusId)
@@ -154,20 +175,10 @@ struct TimelineView: View {
     private func asyncRefresh() async {
         refresh()
     }
-    
+
     private func refresh() {
         do {
-            storeMarker()
-
-            NSLog("NUMBER OF TOOTS: \(persistedStatuses.count)")
-            try model.readTimeline {
-                mainAsyncAfter(deadline: .now() + 0.1) {
-                    if let lastReadId {
-                        scrollTo(statusId: lastReadId)
-                    }
-                }
-                NSLog("NUMBER OF TOOTS: \(persistedStatuses.count)")
-            }
+            try model.cacheTimeline()
         } catch {
             ToastView
                 .Toast(

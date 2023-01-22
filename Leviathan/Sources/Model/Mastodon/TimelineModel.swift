@@ -30,6 +30,8 @@ class TimelineModel: ObservableObject {
     public var isLoading = false
     @Published
     public var marker: Markers? = nil
+    @Published
+    public private(set) var cachedTimeline: [Status] = []
     
     public var timelineId: TimelineId { TimelineId.home }
     public var sortDescriptors: [NSSortDescriptor] { [NSSortDescriptor(key: "timestamp", ascending: false)] }
@@ -63,7 +65,7 @@ class TimelineModel: ObservableObject {
         let now = Date().timeIntervalSinceReferenceDate
 
         if let lastUpdated {
-            if now - lastUpdated > 10 {
+            if now - lastUpdated > 5 {
                 self.lastUpdated = now
                 return true
             }
@@ -220,6 +222,73 @@ class TimelineModel: ObservableObject {
             }
         }
     }
+
+    func cacheTimeline() throws {
+        guard
+            let _ = SessionModel.shared.currentSession?.auth
+        else {
+            throw LeviathanError.noUserLoggedOn
+        }
+
+        Task {
+            mainAsync { self.isLoading = true }
+            defer {
+                mainAsyncAfter(deadline: .now() + 0.2) { self.isLoading = false }
+            }
+
+            if let timeline = try await self.retrieveTimeline() {
+                if timeline.isEmpty {
+                    ToastView
+                        .Toast(type: .info, message: "You are all caught-up!")
+                        .show()
+                } else {
+                    self.cachedTimeline.append(contentsOf: timeline)
+                }
+            }
+        }
+    }
+
+    func persistCache() {
+        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
+
+        backgroundContext.perform {
+            Task {
+                defer {
+                    mainAsyncAfter(deadline: .now() + 0.2) {
+                        self.cachedTimeline.removeAll()
+
+                        if self.cachedTimeline.isEmpty {
+                            mainAsyncAfter(deadline: .now() + 0.2) { try? self.cacheTimeline() }
+                        }
+                    }
+                }
+
+                try await self.persist(timeline: self.cachedTimeline, context: self.context)
+            }
+        }
+    }
+
+    func nextStatusFromCache() {
+        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
+
+        backgroundContext.perform {
+            Task {
+                if let nextStatus = self.cachedTimeline.last {
+                    defer {
+                        mainAsyncAfter(deadline: .now() + 0.2) {
+                            self.cachedTimeline.removeLast()
+
+                            if self.cachedTimeline.isEmpty {
+                                mainAsyncAfter(deadline: .now() + 0.2) { try? self.cacheTimeline() }
+                            }
+                        }
+                    }
+
+                    try await self.persist(timeline: [nextStatus], context: self.context)
+                }
+            }
+        }
+    }
     
     func readTimeline(_ finished: (() -> ())? = nil) throws {
         guard
@@ -266,7 +335,7 @@ class TimelineModel: ObservableObject {
     // MARK: - Methods for internal usage
 
     func retrieveTimeline() async throws -> [Status]? {
-        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(minId: lastStatusId, limit: 200)
+        return try await SessionModel.shared.currentSession?.auth?.getHomeTimeline(minId: lastStatusId, limit: 40)
     }
     
     func persist(timeline: [MastodonSwift.Status], context: NSManagedObjectContext) async throws  {
