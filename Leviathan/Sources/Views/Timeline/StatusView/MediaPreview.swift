@@ -77,7 +77,9 @@ struct MediaPreview: View {
                 .frame(height: height)
                 .cornerRadius(5)
         } placeholder: {
-            ProgressView()
+            Image(systemName: "photo.fill")
+                .centerCropped()
+                .frame(height: height)
         }
         .onTapGesture {
             mediumUrl = medium.url

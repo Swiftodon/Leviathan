@@ -25,49 +25,62 @@ struct MenuView: View {
     // MARK: - Public Properties
 
     var body: some View {
-        NavigationStack {
-            List {
-                Section("Sessions") {
-                    NavigationLink {
-                        LogonView {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                        .navigationTitle("Logon")
-                    } label: {
-                        HStack {
-                            Image(systemName: "plus.circle")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.green)
-                            Text("Add")
-                        }
-                    }
-                    .padding([.horizontal, .top], 5)
-                    .padding(.bottom, 10)
+        VStack {
+            HStack {
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                }
+                .buttonStyle(.borderless)
+                Text("Menu").bold()
+                Spacer()
+            }
+            .padding(.all, 10)
 
-                    ForEach(sessionModel.sessions, id: \.id) { session in
-                        HStack {
-                            AccountAvatar(account: session.account)
-                            Text(session.account.displayName!)
-                            Spacer()
-                            Button {
-                                sessionModel.remove(session: session)
-                            } label: {
-                                Image(systemName: "rectangle.portrait.and.arrow.right")
-                                    .foregroundColor(.red)
+            NavigationStack {
+                List {
+                    Section("Sessions") {
+                        NavigationLink {
+                            LogonView {
+                                presentationMode.wrappedValue.dismiss()
                             }
-                            .buttonStyle(.borderless)
+                            .navigationTitle("Logon")
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus.circle")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.green)
+                                Text("Add")
+                            }
                         }
-                        .onTapGesture {
-                            sessionModel.select(session: session)
-                            presentationMode.wrappedValue.dismiss()
+                        .padding([.horizontal, .top], 5)
+                        .padding(.bottom, 10)
+
+                        ForEach(sessionModel.sessions, id: \.id) { session in
+                            HStack {
+                                AccountAvatar(account: session.account)
+                                Text(session.account.displayName!)
+                                Spacer()
+                                Button {
+                                    sessionModel.remove(session: session)
+                                } label: {
+                                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                                        .foregroundColor(.red)
+                                }
+                                .buttonStyle(.borderless)
+                            }
+                            .onTapGesture {
+                                sessionModel.select(session: session)
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                            .padding(.all, 5)
                         }
-                        .padding(.all, 5)
                     }
                 }
+                .listStyle(.inset)
             }
-            .listStyle(.inset)
-            .navigationTitle("Menu")
         }
     }
 

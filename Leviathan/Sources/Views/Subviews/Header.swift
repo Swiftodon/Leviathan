@@ -32,7 +32,7 @@ struct Header<Content>: View where Content: View {
                 .toolbar {
                     ToolbarItem(placement: .navigation) {
                         Button {
-                            NotificationCenter.default.showMenuSheet()
+                            NotificationCenter.showMenuSheet()
                         } label: {
                             AsyncImage(url: sessionModel.currentSession?.account.avatar) { image in
                                 image

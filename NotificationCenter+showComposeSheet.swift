@@ -1,8 +1,8 @@
 //
-//  NotificationCenter+showMenuSheet.swift
+//  NotificationCenter+showComposeSheet.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 12.11.22.
+//  Created by Thomas Bonk on 25.11.22.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,11 +21,11 @@
 import Foundation
 
 extension Notification.Name {
-    static let ShowMenuSheet = Notification.Name("__SHOW_NOTIFICATION_SHEET__")
+    static let ShowComposeSheet = Notification.Name("__SHOW_COMPOSE_SHEET__")
 }
 
 extension NotificationCenter {
-    static func showMenuSheet() {
-        NotificationCenter.default.post(name: .ShowMenuSheet, object: nil)
+    static func showComposeSheet() {
+        NotificationCenter.default.post(name: .ShowComposeSheet, object: nil)
     }
 }

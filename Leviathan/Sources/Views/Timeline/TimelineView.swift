@@ -24,9 +24,9 @@ import MastodonSwift
 import SwiftUI
 
 struct TimelineView: View {
-    
+
     // MARK: - Public Properties
-    
+
     var body: some View {
         Header(title: title) {
             ZStack {
@@ -93,33 +93,40 @@ struct TimelineView: View {
                         .padding(.horizontal, 5)
                     }
                 }
+
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        NotificationCenter.showComposeSheet()
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
             }
             .onAppear { appearing() }
             .onDisappear(perform: disappearing)
         }
     }
-    
+
     var title: LocalizedStringKey
     var timeline: TimelineId
     @ObservedObject
     var model: TimelineModel
-    
-    
+
+
     // MARK: - Initialization
-    
+
     init(title: LocalizedStringKey, timeline: TimelineId, model: TimelineModel) {
         self.title = title
         self.timeline = timeline
         self.model = model
-        
-        self._persistedStatuses =
-        FetchRequest<PersistedStatus>(
+
+        self._persistedStatuses = FetchRequest<PersistedStatus>(
             sortDescriptors: model.sortDescriptors,
             predicate: model.readFilter(),
             animation: .easeIn)
     }
-    
-    
+
+
     // MARK: - Private Properties
 
     @FetchRequest
@@ -131,9 +138,9 @@ struct TimelineView: View {
     @State
     private var tableView: NativeTableView?
 
-    
+
     // MARK: - Private Methods
-    
+
     private func appearing() {
         reloadCancellable = sessionModel.objectWillChange.sink { _ in
             mainAsync {
@@ -142,16 +149,16 @@ struct TimelineView: View {
                 else {
                     return
                 }
-                
+
                 persistedStatuses.nsPredicate = model.readFilter()
             }
         }
-        
+
         if sessionModel.currentSession == nil && !sessionModel.sessions.isEmpty {
             sessionModel.select(session: sessionModel.sessions[0])
         }
     }
-    
+
     private func disappearing() {
         reloadCancellable.cancel()
     }
@@ -159,7 +166,7 @@ struct TimelineView: View {
     private func asyncRefresh() async {
         refresh()
     }
-    
+
     private func refresh() {
         do {
             try model.cacheTimeline()
