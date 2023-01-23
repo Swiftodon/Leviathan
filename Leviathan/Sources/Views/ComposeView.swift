@@ -133,7 +133,19 @@ struct ComposeView: View {
     public func postToot() {
         if let auth = sessionModel.currentSession?.auth {
             Task {
-                try await auth.new(statusComponents: .init(text: text))
+                do {
+                    _ = try await auth.new(statusComponents: .init(text: text))
+                    presentationMode.wrappedValue.dismiss()
+                } catch {
+                    mainAsync {
+                        ToastView
+                            .Toast(
+                                type: .error,
+                                message: "An error occurred when publishing the toot.",
+                                error: error)
+                            .show()
+                    }
+                }
             }
         }
     }

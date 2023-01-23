@@ -242,20 +242,40 @@ class TimelineModel: ObservableObject {
                         .Toast(type: .info, message: "You are all caught-up!")
                         .show()
                 } else {
-                    self.cachedTimeline.append(contentsOf: timeline)
+                    mainAsync {
+                        self.cachedTimeline.append(contentsOf: timeline)
+                    }
                 }
             }
         }
     }
 
     func persistCache() {
-        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
+        Task {
+            let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
 
-        backgroundContext.perform {
-            Task {
+            defer {
+                mainAsyncAfter(deadline: .now() + 0.2) {
+                    self.cachedTimeline.removeAll()
+
+                    if self.cachedTimeline.isEmpty {
+                        mainAsyncAfter(deadline: .now() + 0.2) { try? self.cacheTimeline() }
+                    }
+                }
+            }
+
+            try await self.persist(timeline: self.cachedTimeline, context: backgroundContext)
+        }
+    }
+
+    func nextStatusFromCache() {
+        Task {
+            let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
+
+            if let nextStatus = self.cachedTimeline.last {
                 defer {
                     mainAsyncAfter(deadline: .now() + 0.2) {
-                        self.cachedTimeline.removeAll()
+                        self.cachedTimeline.removeLast()
 
                         if self.cachedTimeline.isEmpty {
                             mainAsyncAfter(deadline: .now() + 0.2) { try? self.cacheTimeline() }
@@ -263,29 +283,7 @@ class TimelineModel: ObservableObject {
                     }
                 }
 
-                try await self.persist(timeline: self.cachedTimeline, context: self.context)
-            }
-        }
-    }
-
-    func nextStatusFromCache() {
-        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
-
-        backgroundContext.perform {
-            Task {
-                if let nextStatus = self.cachedTimeline.last {
-                    defer {
-                        mainAsyncAfter(deadline: .now() + 0.2) {
-                            self.cachedTimeline.removeLast()
-
-                            if self.cachedTimeline.isEmpty {
-                                mainAsyncAfter(deadline: .now() + 0.2) { try? self.cacheTimeline() }
-                            }
-                        }
-                    }
-
-                    try await self.persist(timeline: [nextStatus], context: self.context)
-                }
+                try await self.persist(timeline: [nextStatus], context: backgroundContext)
             }
         }
     }
@@ -307,25 +305,24 @@ class TimelineModel: ObservableObject {
             return
         }
 
-        let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
 
-        backgroundContext.perform {
-            Task {
-                mainAsync { self.isLoading = true }
-                defer {
-                    mainAsyncAfter(deadline: .now() + 0.2) {
-                        self.isLoading = false
-                        finished?()
-                    }
+        Task {
+            let backgroundContext = PersistenceController.shared.container.newBackgroundContext()
+
+            mainAsync { self.isLoading = true }
+            defer {
+                mainAsyncAfter(deadline: .now() + 0.2) {
+                    self.isLoading = false
+                    finished?()
                 }
-                if let timeline = try await self.retrieveTimeline() {
-                    if timeline.isEmpty {
-                        ToastView
-                            .Toast(type: .info, message: "You are all caught-up!")
-                            .show()
-                    } else {
-                        try await self.persist(timeline: timeline, context: self.context)
-                    }
+            }
+            if let timeline = try await self.retrieveTimeline() {
+                if timeline.isEmpty {
+                    ToastView
+                        .Toast(type: .info, message: "You are all caught-up!")
+                        .show()
+                } else {
+                    try await self.persist(timeline: timeline, context: backgroundContext)
                 }
             }
         }
@@ -349,8 +346,9 @@ class TimelineModel: ObservableObject {
             persistedStatus.timeline = self.timelineId
         }
 
-        try await context.perform {
+        try context.save()
+        /*try await context.perform {
             try self.context.save()
-        }
+        }*/
     }
 }

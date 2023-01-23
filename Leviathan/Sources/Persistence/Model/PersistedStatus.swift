@@ -40,7 +40,7 @@ extension PersistedStatus: Identifiable, NamedEntity {
             visibility_ = newValue.rawValue
         }
         get {
-            Status.Visibility(rawValue: visibility_)!
+            Status.Visibility(rawValue: visibility_) ?? Status.Visibility.unlisted
         }
     }
 

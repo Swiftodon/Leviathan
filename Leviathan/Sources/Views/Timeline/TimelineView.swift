@@ -161,15 +161,6 @@ struct TimelineView: View {
 
     private func disappearing() {
         reloadCancellable.cancel()
-        storeMarker()
-    }
-
-    private func storeMarker() {
-        if let firstVisibleRow = firstVisibleRow(in: tableView) {
-            if firstVisibleRow < persistedStatuses.count {
-                model.store(marker: persistedStatuses[firstVisibleRow].statusId)
-            }
-        }
     }
 
     private func asyncRefresh() async {
