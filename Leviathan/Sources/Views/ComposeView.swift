@@ -134,7 +134,12 @@ struct ComposeView: View {
         if let auth = sessionModel.currentSession?.auth {
             Task {
                 do {
-                    _ = try await auth.new(statusComponents: .init(text: text))
+                    _ = try await auth.new(
+                        statusComponents:
+                                .init(
+                                    text: text,
+                                    spoilerText: self.spoilerText,
+                                    sensitive: self.sensitive))
                     presentationMode.wrappedValue.dismiss()
                 } catch {
                     mainAsync {
