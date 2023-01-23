@@ -38,62 +38,13 @@ struct TimelineView: View {
                     }
                 }
 
-                if model.cachedTimeline.count > 0 {
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-
-                            Button {
-                                model.persistCache()
-                            } label: {
-                                Label("\(model.cachedTimeline.count) Statuses", systemImage: "distribute.vertical.top")
-                                    .foregroundColor(.black)
-                            }
-                            .controlSize(.large)
-                            .buttonStyle(.bordered)
-                            .background(.orange)
-                            .cornerRadius(5)
-                            .padding(.trailing, 10)
-
-                            Button{
-                                model.nextStatusFromCache()
-                            } label: {
-                                Image(systemName: "text.insert")
-                                    .foregroundColor(.black)
-                            }
-                            .controlSize(.large)
-                            .buttonStyle(.bordered)
-                            .background(.green)
-                            .cornerRadius(5)
-                            .padding(.leading, 10)
-
-                            Spacer()
-                        }
-                        .padding(.vertical, 5)
-                    }.opacity(1)
+                VStack {
+                    Spacer()
+                    FloatingTimelineActionBar(model: model, refresh: refresh)
                 }
             }
             .introspectTableView { tableView = $0 }
             .toolbar {
-                ToolbarItem(placement: .navigation) {
-                    if model.isLoading {
-                        ProgressView()
-                        // TODO: This is ugly; is there a better way have the same size as the button?
-                            .scaleEffect(0.5)
-                            .padding(.horizontal, -4)
-                    } else {
-                        Button {
-                            refresh()
-                        } label: {
-                            Image(systemName: "arrow.clockwise")
-
-                        }
-                        .buttonStyle(.borderless)
-                        .padding(.horizontal, 5)
-                    }
-                }
-
                 ToolbarItem(placement: .automatic) {
                     Button {
                         NotificationCenter.showComposeSheet()
@@ -185,6 +136,72 @@ struct TimelineView: View {
             scroll(tableView, to: row)
         }
     }
+}
+
+fileprivate struct FloatingTimelineActionBar: View {
+
+    // MARK: - Public Properties
+
+    var body: some View {
+        HStack {
+            if model.isLoading {
+                ProgressView()
+                // TODO: This is ugly; is there a better way have the same size as the button?
+                    .scaleEffect(0.5)
+                    .padding(.horizontal, -4)
+            } else {
+                Button {
+                    refresh()
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+
+                }
+                .controlSize(.large)
+                .buttonStyle(.bordered)
+                .background(.blue)
+                .cornerRadius(5)
+                .padding(.leading, 10)
+            }
+
+            Spacer()
+
+            if !model.cachedTimeline.isEmpty {
+                Button {
+                    model.persistCache()
+                } label: {
+                    Label("\(model.cachedTimeline.count) Statuses", systemImage: "distribute.vertical.top")
+                        .foregroundColor(.black)
+                }
+                .controlSize(.large)
+                .buttonStyle(.bordered)
+                .background(.orange)
+                .cornerRadius(5)
+                .padding(.trailing, 10)
+
+                Button{
+                    model.nextStatusFromCache()
+                } label: {
+                    Image(systemName: "text.insert")
+                        .foregroundColor(.black)
+                }
+                .controlSize(.large)
+                .buttonStyle(.bordered)
+                .background(.green)
+                .cornerRadius(5)
+                .padding(.leading, 10)
+
+                Spacer()
+            }
+        }
+        .padding(.vertical, 10)
+        .background(.black.opacity(0.75))
+        .cornerRadius(5)
+    }
+
+    @ObservedObject
+    var model: TimelineModel
+
+    var refresh: () -> ()
 }
 
 struct TimelineView_Previews: PreviewProvider {
