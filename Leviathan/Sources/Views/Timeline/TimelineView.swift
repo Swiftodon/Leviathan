@@ -154,7 +154,7 @@ fileprivate struct FloatingTimelineActionBar: View {
                     refresh()
                 } label: {
                     Image(systemName: "arrow.clockwise")
-
+                        .foregroundColor(.black)
                 }
                 .controlSize(.large)
                 .buttonStyle(.bordered)

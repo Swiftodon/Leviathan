@@ -41,7 +41,7 @@ struct StatusHeader: View {
                 HStack(alignment: .top) {
                     Text("@\(accountName)")
                     Text("·")
-                    Updating {
+                    Updating(120) {
                         Text(createdAt)
                     } onUpdate: {
                         createdAt = persistedStatus.createdAtRelative

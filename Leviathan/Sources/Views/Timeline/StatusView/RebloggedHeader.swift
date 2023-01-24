@@ -28,7 +28,7 @@ struct RebloggedHeader: View {
     var body: some View {
         If(showReblogHeader) {
             HStack(alignment: .top) {
-                Updating {
+                Updating(120) {
                     Label("\(statusUsername) boosted \(createdAt)", systemImage: "repeat")
                         .foregroundColor(.secondary)
                 } onUpdate: {

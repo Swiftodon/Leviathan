@@ -24,7 +24,11 @@ extension String {
         }
         
         attrStr.enumerateAttribute(.font, in: NSMakeRange(0, attrStr.length)) { value, range, _ in
-            attrStr.addAttributes([.font: Font.platformBody], range: range)
+            attrStr.addAttributes([.font: Font.platformBody,], range: range)
+        }
+
+        attrStr.enumerateAttribute(.foregroundColor, in: NSMakeRange(0, attrStr.length)) { value, range, _ in
+            attrStr.addAttributes([.foregroundColor: Color.primary], range: range)
         }
         
         return AttributedString(attrStr)

@@ -33,7 +33,7 @@ struct Updating<Content: View>: View {
                     return
                 }
 
-                updateTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
+                updateTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: { _ in
                     onUpdate()
                 })
                 updateTimer?.fire()
