@@ -35,6 +35,7 @@ struct LeviathanApp: SwiftUI.App {
                 .environmentObject(FederatedTimelineModel())
                 .environmentObject(NotificationsModel())
                 .environmentObject(SessionModel.shared)
+                .environmentObject(StatusEvictor())
                 .onOpenURL(perform: handleUrl)
         }
     }

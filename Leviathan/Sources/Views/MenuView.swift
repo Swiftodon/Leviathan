@@ -65,6 +65,7 @@ struct MenuView: View {
                                 Spacer()
                                 Button {
                                     sessionModel.remove(session: session)
+                                    // TODO: Delete all data from database
                                 } label: {
                                     Image(systemName: "rectangle.portrait.and.arrow.right")
                                         .foregroundColor(.red)

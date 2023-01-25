@@ -243,7 +243,9 @@ class TimelineModel: ObservableObject {
                         .show()
                 } else {
                     mainAsync {
-                        self.cachedTimeline.append(contentsOf: timeline)
+                        self.cachedTimeline.append(contentsOf: timeline.sorted(by: { s1, s2 in
+                            s1.timestamp > s2.timestamp
+                        }))
                     }
                 }
             }

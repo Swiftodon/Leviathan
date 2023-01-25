@@ -52,6 +52,7 @@
 		E98598282917BEFC003C5187 /* PersistedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98598272917BEFC003C5187 /* PersistedStatus.swift */; };
 		E985982A2917C176003C5187 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98598292917C176003C5187 /* PersistenceController.swift */; };
 		E985982F2917D3AF003C5187 /* NamedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985982E2917D3AF003C5187 /* NamedEntity.swift */; };
+		E98D5A7D2980353300BD5304 /* StatusEvictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D5A7C2980353300BD5304 /* StatusEvictor.swift */; };
 		E9914EB829127E9500323B78 /* String+applicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9914EB729127E9500323B78 /* String+applicationName.swift */; };
 		E9914EC42915123200323B78 /* SwiftletUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = E9914EC32915123200323B78 /* SwiftletUtilities */; };
 		E9C99E2129225E7A001D1983 /* RebloggedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99E2029225E7A001D1983 /* RebloggedHeader.swift */; };
@@ -119,6 +120,7 @@
 		E98598292917C176003C5187 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E985982E2917D3AF003C5187 /* NamedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedEntity.swift; sourceTree = "<group>"; };
 		E985983029197F5A003C5187 /* coredata.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; name = coredata.stencil; path = "swiftgen-templates/coredata.stencil"; sourceTree = "<group>"; };
+		E98D5A7C2980353300BD5304 /* StatusEvictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEvictor.swift; sourceTree = "<group>"; };
 		E9914EB729127E9500323B78 /* String+applicationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+applicationName.swift"; sourceTree = "<group>"; };
 		E9C99E2029225E7A001D1983 /* RebloggedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RebloggedHeader.swift; sourceTree = "<group>"; };
 		E9C99E2229225F91001D1983 /* ActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				E98598292917C176003C5187 /* PersistenceController.swift */,
+				E98D5A7C2980353300BD5304 /* StatusEvictor.swift */,
 				E98598262917BEE6003C5187 /* Model */,
 			);
 			path = Persistence;
@@ -567,6 +570,7 @@
 				E928E3052926E2F800C8C5F5 /* Updating.swift in Sources */,
 				E94A9026291F8E4E008F2B71 /* NotificationCenter+showMenuSheet.swift in Sources */,
 				E9C99E2129225E7A001D1983 /* RebloggedHeader.swift in Sources */,
+				E98D5A7D2980353300BD5304 /* StatusEvictor.swift in Sources */,
 				E985982F2917D3AF003C5187 /* NamedEntity.swift in Sources */,
 				E9EA0596291C03FE008F55AF /* Status+hashable.swift in Sources */,
 				E98597F22916AAC2003C5187 /* ToastView.swift in Sources */,
