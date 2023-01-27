@@ -1,0 +1,5 @@
+coredata:
+  inputs: Leviathan/Leviathan.xcdatamodeld
+  outputs:
+    templatePath: swiftgen-templates/coredata.stencil
+    output: Leviathan/Sources/Generated/CoreDataEntites/Model.swift

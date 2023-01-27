@@ -13,6 +13,30 @@
 		E9D8430C29842C24007BCB05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D8430A29842C24007BCB05 /* Main.storyboard */; };
 		E9D8430E29842C26007BCB05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D8430D29842C26007BCB05 /* Assets.xcassets */; };
 		E9D8431129842C26007BCB05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D8430F29842C26007BCB05 /* LaunchScreen.storyboard */; };
+		E9D8431F29842ECA007BCB05 /* Leviathan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D8431D29842EC9007BCB05 /* Leviathan.xcdatamodeld */; };
+		E9D8432B29843099007BCB05 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8432A29843099007BCB05 /* Model.swift */; };
+		E9D84338298430C7007BCB05 /* StatusEvictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8432D298430C7007BCB05 /* StatusEvictor.swift */; };
+		E9D84339298430C7007BCB05 /* PersistedAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8432F298430C7007BCB05 /* PersistedAttachment.swift */; };
+		E9D8433A298430C7007BCB05 /* PersistedTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84330298430C7007BCB05 /* PersistedTag.swift */; };
+		E9D8433B298430C7007BCB05 /* PersistedAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84331298430C7007BCB05 /* PersistedAccount.swift */; };
+		E9D8433C298430C7007BCB05 /* PersistedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84332298430C7007BCB05 /* PersistedStatus.swift */; };
+		E9D8433D298430C7007BCB05 /* PersistedMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84333298430C7007BCB05 /* PersistedMention.swift */; };
+		E9D8433E298430C7007BCB05 /* PersistedApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84334298430C7007BCB05 /* PersistedApplication.swift */; };
+		E9D8433F298430C7007BCB05 /* NamedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84335298430C7007BCB05 /* NamedEntity.swift */; };
+		E9D84340298430C7007BCB05 /* PersistedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84336298430C7007BCB05 /* PersistedCard.swift */; };
+		E9D84341298430C7007BCB05 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84337298430C7007BCB05 /* PersistenceController.swift */; };
+		E9D8434429843118007BCB05 /* MastodonSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9D8434329843118007BCB05 /* MastodonSwift */; };
+		E9D8434729843144007BCB05 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = E9D8434629843144007BCB05 /* Valet */; };
+		E9D8434C298431DA007BCB05 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8434A298431DA007BCB05 /* Session.swift */; };
+		E9D8434D298431DA007BCB05 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8434B298431DA007BCB05 /* SessionModel.swift */; };
+		E9D843502984321E007BCB05 /* LeviathanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8434E2984321E007BCB05 /* LeviathanError.swift */; };
+		E9D843512984321E007BCB05 /* TimelineId.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8434F2984321E007BCB05 /* TimelineId.swift */; };
+		E9D8435729843285007BCB05 /* String+applicationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435429843285007BCB05 /* String+applicationName.swift */; };
+		E9D8435829843285007BCB05 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435529843285007BCB05 /* String+HTML.swift */; };
+		E9D8435929843285007BCB05 /* NotificationCenter+showMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435629843285007BCB05 /* NotificationCenter+showMenuSheet.swift */; };
+		E9D8435C29843388007BCB05 /* AsyncUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435B29843388007BCB05 /* AsyncUtils.swift */; };
+		E9D84361298433EC007BCB05 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435F298433EC007BCB05 /* Status+createdAt.swift */; };
+		E9D84362298433EC007BCB05 /* Status+hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84360298433EC007BCB05 /* Status+hashable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +48,34 @@
 		E9D8430D29842C26007BCB05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9D8431029842C26007BCB05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9D8431229842C26007BCB05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D8431B29842D1F007BCB05 /* Leviathan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Leviathan.entitlements; sourceTree = "<group>"; };
+		E9D8431E29842EC9007BCB05 /* Leviathan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Leviathan.xcdatamodel; sourceTree = "<group>"; };
+		E9D8432129842F45007BCB05 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E9D8432229842F46007BCB05 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E9D8432329842F46007BCB05 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		E9D8432429842F64007BCB05 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E9D8432629842F7C007BCB05 /* coredata.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = coredata.stencil; sourceTree = "<group>"; };
+		E9D8432A29843099007BCB05 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E9D8432D298430C7007BCB05 /* StatusEvictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusEvictor.swift; sourceTree = "<group>"; };
+		E9D8432F298430C7007BCB05 /* PersistedAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedAttachment.swift; sourceTree = "<group>"; };
+		E9D84330298430C7007BCB05 /* PersistedTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedTag.swift; sourceTree = "<group>"; };
+		E9D84331298430C7007BCB05 /* PersistedAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedAccount.swift; sourceTree = "<group>"; };
+		E9D84332298430C7007BCB05 /* PersistedStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedStatus.swift; sourceTree = "<group>"; };
+		E9D84333298430C7007BCB05 /* PersistedMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedMention.swift; sourceTree = "<group>"; };
+		E9D84334298430C7007BCB05 /* PersistedApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedApplication.swift; sourceTree = "<group>"; };
+		E9D84335298430C7007BCB05 /* NamedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedEntity.swift; sourceTree = "<group>"; };
+		E9D84336298430C7007BCB05 /* PersistedCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistedCard.swift; sourceTree = "<group>"; };
+		E9D84337298430C7007BCB05 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		E9D8434A298431DA007BCB05 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E9D8434B298431DA007BCB05 /* SessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		E9D8434E2984321E007BCB05 /* LeviathanError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeviathanError.swift; sourceTree = "<group>"; };
+		E9D8434F2984321E007BCB05 /* TimelineId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineId.swift; sourceTree = "<group>"; };
+		E9D8435429843285007BCB05 /* String+applicationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+applicationName.swift"; sourceTree = "<group>"; };
+		E9D8435529843285007BCB05 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		E9D8435629843285007BCB05 /* NotificationCenter+showMenuSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+showMenuSheet.swift"; sourceTree = "<group>"; };
+		E9D8435B29843388007BCB05 /* AsyncUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUtils.swift; sourceTree = "<group>"; };
+		E9D8435F298433EC007BCB05 /* Status+createdAt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
+		E9D84360298433EC007BCB05 /* Status+hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Status+hashable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D8434429843118007BCB05 /* MastodonSwift in Frameworks */,
+				E9D8434729843144007BCB05 /* Valet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +94,12 @@
 		E9D842F829842C24007BCB05 = {
 			isa = PBXGroup;
 			children = (
+				E9D8432129842F45007BCB05 /* .gitignore */,
+				E9D8432429842F64007BCB05 /* LICENSE */,
+				E9D8432229842F46007BCB05 /* README.md */,
+				E9D8432329842F46007BCB05 /* swiftgen.yml */,
 				E9D8430329842C24007BCB05 /* Leviathan */,
+				E9D8432529842F7C007BCB05 /* swiftgen-templates */,
 				E9D8430229842C24007BCB05 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +115,174 @@
 		E9D8430329842C24007BCB05 /* Leviathan */ = {
 			isa = PBXGroup;
 			children = (
-				E9D8430429842C24007BCB05 /* AppDelegate.swift */,
-				E9D8430629842C24007BCB05 /* SceneDelegate.swift */,
-				E9D8430829842C24007BCB05 /* ViewController.swift */,
-				E9D8430A29842C24007BCB05 /* Main.storyboard */,
-				E9D8430D29842C26007BCB05 /* Assets.xcassets */,
-				E9D8430F29842C26007BCB05 /* LaunchScreen.storyboard */,
-				E9D8431229842C26007BCB05 /* Info.plist */,
+				E9D8431829842CC0007BCB05 /* Sources */,
+				E9D8432029842ED3007BCB05 /* Storyboards */,
+				E9D8431C29842E85007BCB05 /* Resources */,
 			);
 			path = Leviathan;
+			sourceTree = "<group>";
+		};
+		E9D8431829842CC0007BCB05 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8431929842CCC007BCB05 /* Application */,
+				E9D8431A29842CE8007BCB05 /* Controllers */,
+				E9D843522984323D007BCB05 /* Extensions */,
+				E9D84348298431B4007BCB05 /* Model */,
+				E9D8432C298430C7007BCB05 /* Persistence */,
+				E9D8435A29843370007BCB05 /* Utils */,
+				E9D843282984301C007BCB05 /* Generated */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E9D8431929842CCC007BCB05 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8430429842C24007BCB05 /* AppDelegate.swift */,
+				E9D8430629842C24007BCB05 /* SceneDelegate.swift */,
+				E9D8434E2984321E007BCB05 /* LeviathanError.swift */,
+				E9D8434F2984321E007BCB05 /* TimelineId.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E9D8431A29842CE8007BCB05 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8430829842C24007BCB05 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E9D8431C29842E85007BCB05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8431D29842EC9007BCB05 /* Leviathan.xcdatamodeld */,
+				E9D8431B29842D1F007BCB05 /* Leviathan.entitlements */,
+				E9D8430D29842C26007BCB05 /* Assets.xcassets */,
+				E9D8431229842C26007BCB05 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E9D8432029842ED3007BCB05 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8430A29842C24007BCB05 /* Main.storyboard */,
+				E9D8430F29842C26007BCB05 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		E9D8432529842F7C007BCB05 /* swiftgen-templates */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8432629842F7C007BCB05 /* coredata.stencil */,
+			);
+			path = "swiftgen-templates";
+			sourceTree = "<group>";
+		};
+		E9D843282984301C007BCB05 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E9D843292984302D007BCB05 /* CoreDataEntites */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		E9D843292984302D007BCB05 /* CoreDataEntites */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8432A29843099007BCB05 /* Model.swift */,
+			);
+			path = CoreDataEntites;
+			sourceTree = "<group>";
+		};
+		E9D8432C298430C7007BCB05 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E9D84337298430C7007BCB05 /* PersistenceController.swift */,
+				E9D8432D298430C7007BCB05 /* StatusEvictor.swift */,
+				E9D8432E298430C7007BCB05 /* Model */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		E9D8432E298430C7007BCB05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8432F298430C7007BCB05 /* PersistedAttachment.swift */,
+				E9D84330298430C7007BCB05 /* PersistedTag.swift */,
+				E9D84331298430C7007BCB05 /* PersistedAccount.swift */,
+				E9D84332298430C7007BCB05 /* PersistedStatus.swift */,
+				E9D84333298430C7007BCB05 /* PersistedMention.swift */,
+				E9D84334298430C7007BCB05 /* PersistedApplication.swift */,
+				E9D84335298430C7007BCB05 /* NamedEntity.swift */,
+				E9D84336298430C7007BCB05 /* PersistedCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9D84348298431B4007BCB05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9D84349298431DA007BCB05 /* Session */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9D84349298431DA007BCB05 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8434A298431DA007BCB05 /* Session.swift */,
+				E9D8434B298431DA007BCB05 /* SessionModel.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		E9D843522984323D007BCB05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8435329843285007BCB05 /* Foundation */,
+				E9D8435D298433EC007BCB05 /* Mastodon.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9D8435329843285007BCB05 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8435429843285007BCB05 /* String+applicationName.swift */,
+				E9D8435529843285007BCB05 /* String+HTML.swift */,
+				E9D8435629843285007BCB05 /* NotificationCenter+showMenuSheet.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		E9D8435A29843370007BCB05 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8435B29843388007BCB05 /* AsyncUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E9D8435D298433EC007BCB05 /* Mastodon.swift */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8435E298433EC007BCB05 /* Entities */,
+			);
+			path = Mastodon.swift;
+			sourceTree = "<group>";
+		};
+		E9D8435E298433EC007BCB05 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8435F298433EC007BCB05 /* Status+createdAt.swift */,
+				E9D84360298433EC007BCB05 /* Status+hashable.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9D8431529842C26007BCB05 /* Build configuration list for PBXNativeTarget "Leviathan" */;
 			buildPhases = (
+				E9D8432729842FC2007BCB05 /* swiftgen */,
 				E9D842FD29842C24007BCB05 /* Sources */,
 				E9D842FE29842C24007BCB05 /* Frameworks */,
 				E9D842FF29842C24007BCB05 /* Resources */,
@@ -83,6 +302,10 @@
 			dependencies = (
 			);
 			name = Leviathan;
+			packageProductDependencies = (
+				E9D8434329843118007BCB05 /* MastodonSwift */,
+				E9D8434629843144007BCB05 /* Valet */,
+			);
 			productName = Leviathan;
 			productReference = E9D8430129842C24007BCB05 /* Leviathan.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +334,10 @@
 				Base,
 			);
 			mainGroup = E9D842F829842C24007BCB05;
+			packageReferences = (
+				E9D8434229843118007BCB05 /* XCRemoteSwiftPackageReference "Mastodon" */,
+				E9D8434529843143007BCB05 /* XCRemoteSwiftPackageReference "Valet" */,
+			);
 			productRefGroup = E9D8430229842C24007BCB05 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,14 +360,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9D8432729842FC2007BCB05 /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				Leviathan/Leviathan.xcdatamodeld/Leviathan.xcdatamodel/contents,
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				Leviathan/Sources/Generated/CoreDataEntites/Model.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9D842FD29842C24007BCB05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D8433E298430C7007BCB05 /* PersistedApplication.swift in Sources */,
+				E9D84339298430C7007BCB05 /* PersistedAttachment.swift in Sources */,
+				E9D8432B29843099007BCB05 /* Model.swift in Sources */,
+				E9D8435929843285007BCB05 /* NotificationCenter+showMenuSheet.swift in Sources */,
 				E9D8430929842C24007BCB05 /* ViewController.swift in Sources */,
+				E9D84361298433EC007BCB05 /* Status+createdAt.swift in Sources */,
+				E9D8433F298430C7007BCB05 /* NamedEntity.swift in Sources */,
+				E9D84338298430C7007BCB05 /* StatusEvictor.swift in Sources */,
+				E9D8433A298430C7007BCB05 /* PersistedTag.swift in Sources */,
+				E9D8433C298430C7007BCB05 /* PersistedStatus.swift in Sources */,
+				E9D843512984321E007BCB05 /* TimelineId.swift in Sources */,
 				E9D8430529842C24007BCB05 /* AppDelegate.swift in Sources */,
+				E9D84362298433EC007BCB05 /* Status+hashable.swift in Sources */,
+				E9D8435729843285007BCB05 /* String+applicationName.swift in Sources */,
+				E9D843502984321E007BCB05 /* LeviathanError.swift in Sources */,
+				E9D84341298430C7007BCB05 /* PersistenceController.swift in Sources */,
+				E9D8431F29842ECA007BCB05 /* Leviathan.xcdatamodeld in Sources */,
 				E9D8430729842C24007BCB05 /* SceneDelegate.swift in Sources */,
+				E9D8435C29843388007BCB05 /* AsyncUtils.swift in Sources */,
+				E9D8434C298431DA007BCB05 /* Session.swift in Sources */,
+				E9D8433D298430C7007BCB05 /* PersistedMention.swift in Sources */,
+				E9D8433B298430C7007BCB05 /* PersistedAccount.swift in Sources */,
+				E9D8435829843285007BCB05 /* String+HTML.swift in Sources */,
+				E9D8434D298431DA007BCB05 /* SessionModel.swift in Sources */,
+				E9D84340298430C7007BCB05 /* PersistedCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Leviathan/Leviathan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQE994U6EG;
@@ -293,15 +566,18 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Swiftodon.Leviathan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Leviathan/Leviathan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQE994U6EG;
@@ -321,15 +598,18 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Swiftodon.Leviathan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -358,6 +638,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9D8434229843118007BCB05 /* XCRemoteSwiftPackageReference "Mastodon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swiftodon/Mastodon.swift/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		E9D8434529843143007BCB05 /* XCRemoteSwiftPackageReference "Valet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/square/Valet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9D8434329843118007BCB05 /* MastodonSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D8434229843118007BCB05 /* XCRemoteSwiftPackageReference "Mastodon" */;
+			productName = MastodonSwift;
+		};
+		E9D8434629843144007BCB05 /* Valet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D8434529843143007BCB05 /* XCRemoteSwiftPackageReference "Valet" */;
+			productName = Valet;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E9D8431D29842EC9007BCB05 /* Leviathan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9D8431E29842EC9007BCB05 /* Leviathan.xcdatamodel */,
+			);
+			currentVersion = E9D8431E29842EC9007BCB05 /* Leviathan.xcdatamodel */;
+			path = Leviathan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E9D842F929842C24007BCB05 /* Project object */;
 }
