@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+import MastodonSwift
 import UIKit
 
 @main
@@ -43,6 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.scheme == "leviathan" {
+            handleOauthCallback(url)
+            return true
+        }
+        
+        return false
+    }
 
+    private func handleOauthCallback(_ url: URL) {
+            mainAsync {
+                MastodonClient.handleOAuthResponse(url: url)
+            }
+        }
 }
 

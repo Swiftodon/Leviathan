@@ -101,18 +101,18 @@ class SessionModel: ObservableObject, Codable {
             let scopes = ["read", "write", "follow"]
             let client = MastodonClient(baseURL: instanceURL)
             let app = try await client.createApp(
-                      named: "Leviathan",
+                named: "Leviathan",
                 redirectUri: "leviathan://oauth-callback",
-                     scopes: scopes,
-                    website: URL(string: "https://github.com/Swiftodon/Leviathan")!)
+                scopes: scopes,
+                website: URL(string: "https://github.com/Swiftodon/Leviathan")!)
             let authToken = try await client.authenticate(app: app, scope: scopes)
             let auth = client.getAuthenticated(token: authToken.oauthToken)
             let account = try await auth.verifyCredentials()
             let session = Session(
-                        url: instanceURL,
+                url: instanceURL,
                 accessToken: AccessToken(credential: authToken),
-                    account: account)
-
+                account: account)
+            
             mainAsync {
                 self.sessions.append(session)
                 self.save()

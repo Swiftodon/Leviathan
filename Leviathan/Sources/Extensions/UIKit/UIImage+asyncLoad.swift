@@ -1,8 +1,8 @@
 //
-//  HardwareInformation+isWideScreen.swift
+//  UIImage+asyncLoad.swift
 //  Leviathan
 //
-//  Created by Thomas Bonk on 27.01.23.
+//  Created by Thomas Bonk on 28.01.23.
 //  Copyright 2022 The Swiftodon Team
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,15 +18,23 @@
 //  limitations under the License.
 //
 
-import SwiftletUtilities
+import UIKit
 
-
-extension HardwareInformation {
-    static var isWideScreen: Bool {
-        self.isTV
-        || self.isCar
-        || self.isMac
-        || self.isMacCatalyst
-        || self.isPad
+extension UIImage {
+    static func asyncLoad(url: URL, defaultImage: UIImage?, callback: @escaping (UIImage?) -> ()) {
+        callback(defaultImage)
+        
+        Task {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            if let img = UIImage(data: data) {
+                mainAsync {
+                    callback(img)
+                }
+            } else {
+                mainAsync {
+                    callback(defaultImage)
+                }
+            }
+        }
     }
 }

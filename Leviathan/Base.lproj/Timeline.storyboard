@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Timeline View Controller-->
         <scene sceneID="kX3-G2-p01">
             <objects>
-                <tableViewController storyboardIdentifier="TimelineController" id="dEy-KS-e5h" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TimelineController" id="dEy-KS-e5h" customClass="TimelineViewController" customModule="Leviathan" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fBw-0e-hlJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,10 +30,17 @@
                             <outlet property="delegate" destination="dEy-KS-e5h" id="vmJ-T5-0Dc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4Wc-KI-ozv">
-                        <barButtonItem key="leftBarButtonItem" image="person" catalog="system" id="uiE-0T-zCU"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" catalog="system" id="Nkb-Z7-fYO"/>
+                    <navigationItem key="navigationItem" id="4Wc-KI-ozv">
+                        <barButtonItem key="leftBarButtonItem" image="person" catalog="system" id="uiE-0T-zCU" userLabel="Account Selector">
+                            <connections>
+                                <action selector="selectAccount" destination="dEy-KS-e5h" id="Sbh-df-LMD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" catalog="system" id="Nkb-Z7-fYO" userLabel="Compose Toot"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="accountSelectorButton" destination="uiE-0T-zCU" id="9A7-db-m6h"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gT9-s8-loN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
