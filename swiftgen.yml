@@ -3,3 +3,11 @@ coredata:
   outputs:
     templatePath: swiftgen-templates/coredata.stencil
     output: Leviathan/Sources/Generated/CoreDataEntites/Model.swift
+
+ib:
+  inputs: Leviathan/Base.lproj
+  outputs:
+    - templateName: scenes-swift5
+      output: Leviathan/Sources/Generated/Storyboard/Scenes.swift
+    - templateName: segues-swift5
+      output: Leviathan/Sources/Generated/Storyboard/Segues.swift

@@ -20,6 +20,7 @@
 
 import CoreData
 import Foundation
+import Toast
 
 extension NSManagedObjectContext {
     func createEntity<E: NamedEntity>() -> E {
@@ -49,18 +50,11 @@ class PersistenceController {
         container = NSPersistentContainer(name: .ApplicationName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                /** TODO: Use another toast package
-                ToastView
-                    .Toast(
-                        type: .fatalError,
-                        message: "Can't open database. The app is going to be terminated!",
-                        error: error,
-                        duration: 0,
-                        onDismissed: {
-                            fatalError("Can't open database. The app is going to be terminated!\n\(error)\n\(error.userInfo)")
-                        })
-                    .show()
-                 */
+                Toast.error(
+                    title: "Fatal Error",
+                    text: "Can't open database. The app is going to be terminated!\n\(error.localizedDescription)") {
+                        fatalError("Can't open database. The app is going to be terminated!\n\(error)\n\(error.userInfo)")
+                    }
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true

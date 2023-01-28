@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E9D8430529842C24007BCB05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430429842C24007BCB05 /* AppDelegate.swift */; };
 		E9D8430729842C24007BCB05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430629842C24007BCB05 /* SceneDelegate.swift */; };
-		E9D8430929842C24007BCB05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430829842C24007BCB05 /* ViewController.swift */; };
+		E9D8430929842C24007BCB05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430829842C24007BCB05 /* MainViewController.swift */; };
 		E9D8430C29842C24007BCB05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D8430A29842C24007BCB05 /* Main.storyboard */; };
 		E9D8430E29842C26007BCB05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D8430D29842C26007BCB05 /* Assets.xcassets */; };
 		E9D8431129842C26007BCB05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D8430F29842C26007BCB05 /* LaunchScreen.storyboard */; };
@@ -37,13 +37,21 @@
 		E9D8435C29843388007BCB05 /* AsyncUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435B29843388007BCB05 /* AsyncUtils.swift */; };
 		E9D84361298433EC007BCB05 /* Status+createdAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8435F298433EC007BCB05 /* Status+createdAt.swift */; };
 		E9D84362298433EC007BCB05 /* Status+hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84360298433EC007BCB05 /* Status+hashable.swift */; };
+		E9D8436829843B4D007BCB05 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E9D8436729843B4D007BCB05 /* Toast */; };
+		E9D8436B29843D66007BCB05 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9D8436A29843D66007BCB05 /* SnapKit */; };
+		E9D843702984571C007BCB05 /* SwiftletUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = E9D8436F2984571C007BCB05 /* SwiftletUtilities */; };
+		E9D8437329845855007BCB05 /* HardwareInformation+isWideScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8437229845855007BCB05 /* HardwareInformation+isWideScreen.swift */; };
+		E9D84376298517EC007BCB05 /* UIImage+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84375298517EC007BCB05 /* UIImage+frame.swift */; };
+		E9D8437A29851B71007BCB05 /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8437829851B71007BCB05 /* Scenes.swift */; };
+		E9D8437B29851B71007BCB05 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8437929851B71007BCB05 /* Segues.swift */; };
+		E9D8438029851EA0007BCB05 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D8438229851EA0007BCB05 /* Timeline.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E9D8430129842C24007BCB05 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D8430429842C24007BCB05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9D8430629842C24007BCB05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9D8430829842C24007BCB05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9D8430829842C24007BCB05 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E9D8430B29842C24007BCB05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9D8430D29842C26007BCB05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9D8431029842C26007BCB05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +84,11 @@
 		E9D8435B29843388007BCB05 /* AsyncUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUtils.swift; sourceTree = "<group>"; };
 		E9D8435F298433EC007BCB05 /* Status+createdAt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Status+createdAt.swift"; sourceTree = "<group>"; };
 		E9D84360298433EC007BCB05 /* Status+hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Status+hashable.swift"; sourceTree = "<group>"; };
+		E9D8437229845855007BCB05 /* HardwareInformation+isWideScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HardwareInformation+isWideScreen.swift"; sourceTree = "<group>"; };
+		E9D84375298517EC007BCB05 /* UIImage+frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+frame.swift"; sourceTree = "<group>"; };
+		E9D8437829851B71007BCB05 /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
+		E9D8437929851B71007BCB05 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		E9D8438129851EA0007BCB05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +96,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D8436829843B4D007BCB05 /* Toast in Frameworks */,
+				E9D8436B29843D66007BCB05 /* SnapKit in Frameworks */,
 				E9D8434429843118007BCB05 /* MastodonSwift in Frameworks */,
+				E9D843702984571C007BCB05 /* SwiftletUtilities in Frameworks */,
 				E9D8434729843144007BCB05 /* Valet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +166,7 @@
 		E9D8431A29842CE8007BCB05 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E9D8430829842C24007BCB05 /* ViewController.swift */,
+				E9D8430829842C24007BCB05 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 			children = (
 				E9D8430A29842C24007BCB05 /* Main.storyboard */,
 				E9D8430F29842C26007BCB05 /* LaunchScreen.storyboard */,
+				E9D8438229851EA0007BCB05 /* Timeline.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -187,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D843292984302D007BCB05 /* CoreDataEntites */,
+				E9D8437729851A61007BCB05 /* Storyboard */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -246,6 +264,8 @@
 			children = (
 				E9D8435329843285007BCB05 /* Foundation */,
 				E9D8435D298433EC007BCB05 /* Mastodon.swift */,
+				E9D8437129845813007BCB05 /* SwiftletUtilities */,
+				E9D84374298517CB007BCB05 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +305,31 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		E9D8437129845813007BCB05 /* SwiftletUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8437229845855007BCB05 /* HardwareInformation+isWideScreen.swift */,
+			);
+			path = SwiftletUtilities;
+			sourceTree = "<group>";
+		};
+		E9D84374298517CB007BCB05 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E9D84375298517EC007BCB05 /* UIImage+frame.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		E9D8437729851A61007BCB05 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8437829851B71007BCB05 /* Scenes.swift */,
+				E9D8437929851B71007BCB05 /* Segues.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,6 +350,9 @@
 			packageProductDependencies = (
 				E9D8434329843118007BCB05 /* MastodonSwift */,
 				E9D8434629843144007BCB05 /* Valet */,
+				E9D8436729843B4D007BCB05 /* Toast */,
+				E9D8436A29843D66007BCB05 /* SnapKit */,
+				E9D8436F2984571C007BCB05 /* SwiftletUtilities */,
 			);
 			productName = Leviathan;
 			productReference = E9D8430129842C24007BCB05 /* Leviathan.app */;
@@ -337,6 +385,9 @@
 			packageReferences = (
 				E9D8434229843118007BCB05 /* XCRemoteSwiftPackageReference "Mastodon" */,
 				E9D8434529843143007BCB05 /* XCRemoteSwiftPackageReference "Valet" */,
+				E9D8436629843B4D007BCB05 /* XCRemoteSwiftPackageReference "Toast" */,
+				E9D8436929843D66007BCB05 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E9D8436E2984571C007BCB05 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */,
 			);
 			productRefGroup = E9D8430229842C24007BCB05 /* Products */;
 			projectDirPath = "";
@@ -353,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D8431129842C26007BCB05 /* LaunchScreen.storyboard in Resources */,
+				E9D8438029851EA0007BCB05 /* Timeline.storyboard in Resources */,
 				E9D8430E29842C26007BCB05 /* Assets.xcassets in Resources */,
 				E9D8430C29842C24007BCB05 /* Main.storyboard in Resources */,
 			);
@@ -370,12 +422,16 @@
 			);
 			inputPaths = (
 				Leviathan/Leviathan.xcdatamodeld/Leviathan.xcdatamodel/contents,
+				Leviathan/Base.lproj/Main.storyboard,
+				Leviathan/Base.lproj/Timeline.storyboard,
 			);
 			name = swiftgen;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				Leviathan/Sources/Generated/CoreDataEntites/Model.swift,
+				Leviathan/Sources/Generated/Storyboard/Scenes.swift,
+				Leviathan/Sources/Generated/Storyboard/Segues.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -388,15 +444,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D8437A29851B71007BCB05 /* Scenes.swift in Sources */,
+				E9D8437329845855007BCB05 /* HardwareInformation+isWideScreen.swift in Sources */,
 				E9D8433E298430C7007BCB05 /* PersistedApplication.swift in Sources */,
 				E9D84339298430C7007BCB05 /* PersistedAttachment.swift in Sources */,
 				E9D8432B29843099007BCB05 /* Model.swift in Sources */,
 				E9D8435929843285007BCB05 /* NotificationCenter+showMenuSheet.swift in Sources */,
-				E9D8430929842C24007BCB05 /* ViewController.swift in Sources */,
+				E9D8430929842C24007BCB05 /* MainViewController.swift in Sources */,
 				E9D84361298433EC007BCB05 /* Status+createdAt.swift in Sources */,
 				E9D8433F298430C7007BCB05 /* NamedEntity.swift in Sources */,
 				E9D84338298430C7007BCB05 /* StatusEvictor.swift in Sources */,
+				E9D84376298517EC007BCB05 /* UIImage+frame.swift in Sources */,
 				E9D8433A298430C7007BCB05 /* PersistedTag.swift in Sources */,
+				E9D8437B29851B71007BCB05 /* Segues.swift in Sources */,
 				E9D8433C298430C7007BCB05 /* PersistedStatus.swift in Sources */,
 				E9D843512984321E007BCB05 /* TimelineId.swift in Sources */,
 				E9D8430529842C24007BCB05 /* AppDelegate.swift in Sources */,
@@ -433,6 +493,14 @@
 				E9D8431029842C26007BCB05 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E9D8438229851EA0007BCB05 /* Timeline.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D8438129851EA0007BCB05 /* Base */,
+			);
+			name = Timeline.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -563,8 +631,10 @@
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leviathan/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Leviathan;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -580,7 +650,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -595,8 +665,10 @@
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leviathan/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Leviathan;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -612,7 +684,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -656,6 +728,30 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		E9D8436629843B4D007BCB05 /* XCRemoteSwiftPackageReference "Toast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bteapot/Toast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		E9D8436929843D66007BCB05 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E9D8436E2984571C007BCB05 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Appracatappra/SwiftletUtilities";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -668,6 +764,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9D8434529843143007BCB05 /* XCRemoteSwiftPackageReference "Valet" */;
 			productName = Valet;
+		};
+		E9D8436729843B4D007BCB05 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D8436629843B4D007BCB05 /* XCRemoteSwiftPackageReference "Toast" */;
+			productName = Toast;
+		};
+		E9D8436A29843D66007BCB05 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D8436929843D66007BCB05 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E9D8436F2984571C007BCB05 /* SwiftletUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D8436E2984571C007BCB05 /* XCRemoteSwiftPackageReference "SwiftletUtilities" */;
+			productName = SwiftletUtilities;
 		};
 /* End XCSwiftPackageProductDependency section */
 
