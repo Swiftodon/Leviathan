@@ -732,7 +732,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swiftodon/Mastodon.swift/";
 			requirement = {
-				branch = main;
+				branch = fix/Main_Thread_Checker_error;
 				kind = branch;
 			};
 		};

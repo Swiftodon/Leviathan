@@ -46,18 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.scheme == "leviathan" {
-            handleOauthCallback(url)
-            return true
-        }
-        
-        return false
+        return true
     }
-
-    private func handleOauthCallback(_ url: URL) {
-            mainAsync {
-                MastodonClient.handleOAuthResponse(url: url)
-            }
-        }
 }
 
