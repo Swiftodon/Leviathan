@@ -25,16 +25,10 @@ import UIKit
 
 class TimelineViewController: UITableViewController {
     
-    
-    
     // MARK: - Private properties for session selection
     
     private var sessionModelCancellable: AnyCancellable? = nil
-    private var selectedSession: Session? = SessionModel.shared.currentSession {
-        didSet {
-            // TODO
-        }
-    }
+    private var selectedSession: Session? = SessionModel.shared.currentSession
     
     
     // MARK: - Private properties for timeline selection
@@ -55,7 +49,12 @@ class TimelineViewController: UITableViewController {
     // MARK: - Private properties for UI controls
     
     @IBOutlet
-    private var accountSelectorButton: UIBarButtonItem!
+    private var accountSelectorButton: UIButton!
+    
+    
+    // MARK: - Private properties for the timeline model
+    
+    private var model: TimelineModel!
     
     
     // MARK: - Initialization and deinitialization
@@ -70,23 +69,19 @@ class TimelineViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.model = TimelineModel()
+        
         sessionModelCancellable = SessionModel.shared.objectWillChange.sink(receiveValue: sessionUpdated)
         createTimelinePicker()
+        updateAvatarImage()
         
-        if let selectedSession, let avatarUrl = selectedSession.account.avatar {
-            UIImage.asyncLoad(url: avatarUrl, defaultImage: UIImage(systemName: "person.fill")?.frame(width: 32, height: 32)) { image in
-                self.accountSelectorButton.image = image?.frame(width: 32, height: 32)
-            }
-        } else {
-            accountSelectorButton.image = UIImage(systemName: "person.fill")?.frame(width: 32, height: 32)
-        }
+        try! self.model.readTimeline()
     }
     
     
     // MARK: - Action Handlers
     
     @IBAction func selectAccount() {
-        // TODO
         let menuViewController = UIHostingController(rootView: MenuView().environmentObject(SessionModel.shared))
         if let sheet = menuViewController.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
@@ -108,6 +103,19 @@ class TimelineViewController: UITableViewController {
     private func sessionUpdated() {
         mainAsync {
             self.selectedSession = SessionModel.shared.currentSession
+            self.updateAvatarImage()
+        }
+    }
+    
+    private func updateAvatarImage() {
+        if let selectedSession, let avatarUrl = selectedSession.account.avatar {
+            UIImage.asyncLoad(url: avatarUrl, defaultImage: UIImage(systemName: "person.fill")?.frame(width: 32, height: 32)) { image in
+                self.accountSelectorButton.setImage(image?.frame(width: 32, height: 32), for: .normal)
+                self.accountSelectorButton.imageView?.layer.cornerRadius = 5.0
+                self.accountSelectorButton.imageView?.layer.masksToBounds = true
+            }
+        } else {
+            accountSelectorButton.setImage(UIImage(systemName: "person.fill")?.frame(width: 32, height: 32), for: .normal)
         }
     }
     

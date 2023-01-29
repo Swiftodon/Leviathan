@@ -22,8 +22,6 @@ import UIKit
 
 extension UIImage {
     static func asyncLoad(url: URL, defaultImage: UIImage?, callback: @escaping (UIImage?) -> ()) {
-        callback(defaultImage)
-        
         Task {
             let (data, _) = try await URLSession.shared.data(from: url)
             if let img = UIImage(data: data) {

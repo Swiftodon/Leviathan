@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,15 +32,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="4Wc-KI-ozv">
-                        <barButtonItem key="leftBarButtonItem" image="person" catalog="system" id="uiE-0T-zCU" userLabel="Account Selector">
-                            <connections>
-                                <action selector="selectAccount" destination="dEy-KS-e5h" id="Sbh-df-LMD"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="OYG-63-9ms">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Ytp-p1-tfK">
+                                <rect key="frame" x="16" y="5.6666666666666679" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="person.fill" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectAccount" destination="dEy-KS-e5h" eventType="touchUpInside" id="Xkp-a3-TYt"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" catalog="system" id="Nkb-Z7-fYO" userLabel="Compose Toot"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="accountSelectorButton" destination="uiE-0T-zCU" id="9A7-db-m6h"/>
+                        <outlet property="accountSelectorButton" destination="Ytp-p1-tfK" id="LcQ-HE-NHJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gT9-s8-loN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -65,7 +74,7 @@
     </scenes>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

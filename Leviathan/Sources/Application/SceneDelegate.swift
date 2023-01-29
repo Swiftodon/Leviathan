@@ -40,13 +40,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        if let urlContext = connectionOptions.urlContexts.first {
-            if urlContext.url.scheme == "leviathan" {
-                mainAsync {
-                    MastodonClient.handleOAuthResponse(url: urlContext.url)
-                }
-            }
-        }
+        handle(URLContexts: connectionOptions.urlContexts)
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        handle(URLContexts: URLContexts)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -77,5 +75,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    
+    // MARK: - Handle URLs
+    
+    private func handle(URLContexts: Set<UIOpenURLContext>) {
+        if let urlContext = URLContexts.first {
+            if urlContext.url.scheme == "leviathan" {
+                mainAsync {
+                    MastodonClient.handleOAuthResponse(url: urlContext.url)
+                }
+            }
+        }
+    }
 }
 

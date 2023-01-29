@@ -12,6 +12,7 @@
 		E991A4C52985B5A900506CE5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991A4C42985B5A900506CE5 /* MenuView.swift */; };
 		E991A4C72985B5D200506CE5 /* LogonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991A4C62985B5D200506CE5 /* LogonView.swift */; };
 		E991A4C92985C97A00506CE5 /* AccountAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991A4C82985C97A00506CE5 /* AccountAvatar.swift */; };
+		E991A4CC2986693200506CE5 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991A4CB2986693200506CE5 /* TimelineModel.swift */; };
 		E9D8430529842C24007BCB05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430429842C24007BCB05 /* AppDelegate.swift */; };
 		E9D8430729842C24007BCB05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430629842C24007BCB05 /* SceneDelegate.swift */; };
 		E9D8430929842C24007BCB05 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8430829842C24007BCB05 /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 		E991A4C42985B5A900506CE5 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E991A4C62985B5D200506CE5 /* LogonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonView.swift; sourceTree = "<group>"; };
 		E991A4C82985C97A00506CE5 /* AccountAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAvatar.swift; sourceTree = "<group>"; };
+		E991A4CB2986693200506CE5 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
 		E9D8430129842C24007BCB05 /* Leviathan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leviathan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D8430429842C24007BCB05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9D8430629842C24007BCB05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 				E991A4C82985C97A00506CE5 /* AccountAvatar.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E991A4CA2986691F00506CE5 /* Mastodon */ = {
+			isa = PBXGroup;
+			children = (
+				E991A4CB2986693200506CE5 /* TimelineModel.swift */,
+			);
+			path = Mastodon;
 			sourceTree = "<group>";
 		};
 		E9D842F829842C24007BCB05 = {
@@ -265,6 +275,7 @@
 		E9D84348298431B4007BCB05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E991A4CA2986691F00506CE5 /* Mastodon */,
 				E9D84349298431DA007BCB05 /* Session */,
 			);
 			path = Model;
@@ -472,6 +483,7 @@
 				E991A4C22985491C00506CE5 /* UIImage+asyncLoad.swift in Sources */,
 				E9D8433A298430C7007BCB05 /* PersistedTag.swift in Sources */,
 				E9D8437B29851B71007BCB05 /* Segues.swift in Sources */,
+				E991A4CC2986693200506CE5 /* TimelineModel.swift in Sources */,
 				E9D8433C298430C7007BCB05 /* PersistedStatus.swift in Sources */,
 				E9D843512984321E007BCB05 /* TimelineId.swift in Sources */,
 				E9D8430529842C24007BCB05 /* AppDelegate.swift in Sources */,
